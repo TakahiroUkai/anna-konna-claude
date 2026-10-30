@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.className+=' js';</script>
+<title>Projectsに資料と指示を入れて、毎回の説明をなくす | あんなことこんなことClaude</title>
+<meta name="description" content="同じ話題で何度もClaudeに相談するとき、背景の説明を毎回書き直さなくて済むように、資料と指示をProjectにまとめておく方法です。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/projects-knowledge.html">
+<meta property="og:title" content="Projectsに資料と指示を入れて、毎回の説明をなくす | あんなことこんなことClaude">
+<meta property="og:description" content="同じ話題で何度もClaudeに相談するとき、背景の説明を毎回書き直さなくて済むように、資料と指示をProjectにまとめておく方法です。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/projects-knowledge.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>Projectsに資料と指示を入れて、毎回の説明をなくす</h1>
+    <p class="summary">同じ話題で何度もClaudeに相談するとき、背景の説明を毎回書き直さなくて済むように、資料と指示をProjectにまとめておく方法です。</p>
+    <p class="stamp">2026-10-30 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約15分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-organize.html">整理する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-projects.html">Projects</a>、<a href="../tags/feature-files.html">ファイルの読み込み</a></td></tr><tr><th scope="row">作れるもの</th><td>自分用の相談部屋(Project)</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">うまくいかないとき</a></li></ul>
+  </div>
+  <p>Claudeに何度も相談する話題があるなら、毎回「私は〜で、目的は〜で」と書き直すのは手間です。Projectは、その話題専用の作業場です。指示と資料を入れておくと、その中で始めたチャットは、同じ前提で答えてくれます。</p><section id="s1"><h2>ねらい</h2><ul><li>背景の説明を毎回書かなくてよくなります。</li><li>同じ前提で答えてもらえるので、答えのぶれが減ります。</li><li>資料と相談の履歴が1か所にまとまり、あとから探しやすくなります。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>Claudeのアカウント。公式ヘルプには、Projectsは無料のアカウントでも使えると書かれています。ただし、無料で作れるProjectは最大5つです(確認日時点)。</li><li>入れたい資料を1〜3つ。メモ、仕様書、過去に書いた文章など、<strong>相談に使うもの</strong>だけにします。</li><li>他人の個人情報や、外に出せない資料は入れません。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: Projectを作って、使い始めるまで</figcaption><ol class="flow"><li><strong>Projectsを開く</strong><span>画面の左側のメニューにある「Projects」から、新しいProjectを作る</span></li><li><strong>名前と説明をつける</strong><span>話題がひと目で分かる名前にする</span></li><li><strong>指示(Instructions)を書く</strong><span>役割、前提、答え方を短く書く。下のプロンプトをそのまま使える</span></li><li><strong>資料を追加する</strong><span>ファイルやメモを入れる。最初は1〜2つで十分</span></li><li><strong>Projectの中で新しいチャットを始める</strong><span>ここで始めたチャットが、指示と資料を前提にして答える</span></li></ol></figure><p>画面の表示名や場所は、アップデートで変わることがあります。見つからないときは、公式ヘルプの手順を確認してください。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>指示(Instructions)の欄に貼る文章</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>あなたは私の「(話題の名前)」の相談相手です。
+- 私の目的: (何のために使うか)
+- 前提: (読む人、予算、期限など)
+- 答え方: 最初に結論を1〜2文で述べ、そのあと理由を3つまで箇条書きにする。
+- 資料に書かれていないことは「推測です」と書き、確認したい点を最後に質問する。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>Projectの中で最初に聞く文章</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>このProjectの資料と指示を読んで、私がいま決めるべきことを3つに整理してください。それぞれ、決めるために足りない情報も書いてください。</code></pre></div></figure><figure class="fig fig-compare"><figcaption>図: Projectを使わないときと、使うとき</figcaption><table><thead><tr><th scope="col">使わないとき</th><th scope="col">使うとき</th></tr></thead><tbody><tr><td>毎回、背景を貼りつける</td><td>指示と資料に、一度書いておく</td></tr><tr><td>チャットごとに答えの方向が変わる</td><td>同じ前提で答えるので、方向がそろう</td></tr><tr><td>資料を探して貼り直す</td><td>Projectの中の資料を前提に相談できる</td></tr></tbody></table></figure></section><section id="s5" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>資料を使ってくれないとき</strong>: 質問に「〇〇の資料をもとに」とファイル名を入れます。</li><li><strong>指示と違う答えが返るとき</strong>: 指示を短くして、箇条書きにします。長い指示は、守られにくくなります。</li><li><strong>これ以上作れないとき</strong>: 無料のアカウントには、Projectの数に上限があります。使っていないProjectを整理します。</li><li><strong>資料を直したとき</strong>: 古い資料と新しい資料が両方残っていないか確認します。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="build" data-features="artifacts chat" data-text="artifactで、割り勘の計算ツールを作る 作りたいツールを言葉で伝えるだけで、会話の横に動くツールができます。割り勘の計算ツールを例に、作り方と、直し方、共有する前の注意点を整理します。 作る artifacts 基本のチャット"><a class="card-title" href="../tips/artifact-mini-tool.html">Artifactで、割り勘の計算ツールを作る</a><p class="card-sum">作りたいツールを言葉で伝えるだけで、会話の横に動くツールができます。割り勘の計算ツールを例に、作り方と、直し方、共有する前の注意点を整理します。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約15分</span><span class="chip">作る</span><span class="chip chip-f">Artifacts</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/9519177" rel="noopener" target="_blank">Claude ヘルプセンター「How can I create and manage projects?」(Projectsの作り方、無料アカウントでの上限)</a></li><li><a href="https://support.claude.com/en/articles/9529781-examples-of-projects-you-can-create" rel="noopener" target="_blank">Claude ヘルプセンター「Examples of projects you can create」(Projectの使い方の例)</a></li><li><a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店「はじめての生成AI Claude「超」活用術」(書誌情報)</a></li><li><a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店「Claude 仕事術&amp;時短技」(書誌情報)</a></li><li><a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店「Claude AIで超効率資料作成・情報整理」(書誌情報)</a></li></ul></section>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>

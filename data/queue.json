@@ -1,0 +1,310 @@
+[
+  {
+    "slug": "projects-knowledge",
+    "title": "Projectsに資料と指示を入れて、毎回の説明をなくす",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "projects",
+      "files"
+    ]
+  },
+  {
+    "slug": "artifact-mini-tool",
+    "title": "Artifactで、割り勘の計算ツールを作る",
+    "level": "beginner",
+    "purpose": "build",
+    "features": [
+      "artifacts",
+      "chat"
+    ]
+  },
+  {
+    "slug": "cowork-scheduled-brief",
+    "title": "毎朝の情報まとめを、定期タスクで自動化する",
+    "level": "intermediate",
+    "purpose": "automate",
+    "features": [
+      "scheduled",
+      "cowork",
+      "search"
+    ]
+  },
+  {
+    "slug": "summarize-long-text",
+    "title": "長い文章を貼って、要点と疑問点を出してもらう",
+    "level": "beginner",
+    "purpose": "learn",
+    "features": [
+      "chat",
+      "files"
+    ]
+  },
+  {
+    "slug": "email-draft-with-purpose",
+    "title": "相手と目的を伝えて、メールの下書きを作る",
+    "level": "beginner",
+    "purpose": "write",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "web-search-fact-check",
+    "title": "Web検索で、気になる情報の裏付けを取る",
+    "level": "beginner",
+    "purpose": "research",
+    "features": [
+      "search"
+    ]
+  },
+  {
+    "slug": "ask-claude-to-ask-you",
+    "title": "「質問してから答えて」と頼んで、条件を詰める",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "tone-rewrite",
+    "title": "同じ文章を、3つの言い方に書き分ける",
+    "level": "beginner",
+    "purpose": "write",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "meeting-notes-to-actions",
+    "title": "メモから、やることリストを取り出す",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "chat",
+      "files"
+    ]
+  },
+  {
+    "slug": "image-read-receipt",
+    "title": "写真を渡して、書かれている内容を表にする",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "files"
+    ]
+  },
+  {
+    "slug": "explain-like-teacher",
+    "title": "分からない用語を、例え話で教えてもらう",
+    "level": "beginner",
+    "purpose": "learn",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "quiz-yourself",
+    "title": "資料からクイズを作って、自分で練習する",
+    "level": "beginner",
+    "purpose": "learn",
+    "features": [
+      "chat",
+      "files"
+    ]
+  },
+  {
+    "slug": "memory-preferences",
+    "title": "メモリに、答え方の好みを覚えてもらう",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "memory"
+    ]
+  },
+  {
+    "slug": "docs-first-draft",
+    "title": "Docsで、レポートの骨組みから作る",
+    "level": "beginner",
+    "purpose": "write",
+    "features": [
+      "docs-slides"
+    ]
+  },
+  {
+    "slug": "slides-from-notes",
+    "title": "メモからスライドを作って、PowerPointで書き出す",
+    "level": "beginner",
+    "purpose": "build",
+    "features": [
+      "docs-slides"
+    ]
+  },
+  {
+    "slug": "artifact-quiz-app",
+    "title": "Artifactで、自作のクイズアプリを作る",
+    "level": "beginner",
+    "purpose": "build",
+    "features": [
+      "artifacts"
+    ]
+  },
+  {
+    "slug": "research-feature-compare",
+    "title": "Research機能で、複数の選択肢を比較する",
+    "level": "intermediate",
+    "purpose": "research",
+    "features": [
+      "search"
+    ]
+  },
+  {
+    "slug": "projects-multi-files",
+    "title": "Projectsに複数の資料を入れて、矛盾を探してもらう",
+    "level": "intermediate",
+    "purpose": "organize",
+    "features": [
+      "projects",
+      "files"
+    ]
+  },
+  {
+    "slug": "custom-style-guide",
+    "title": "自分の文体の見本を渡して、書き方をそろえる",
+    "level": "intermediate",
+    "purpose": "write",
+    "features": [
+      "projects",
+      "memory"
+    ]
+  },
+  {
+    "slug": "skills-first-skill",
+    "title": "手順を『スキル』にして、毎回呼び出す",
+    "level": "intermediate",
+    "purpose": "automate",
+    "features": [
+      "skills"
+    ]
+  },
+  {
+    "slug": "connectors-calendar",
+    "title": "コネクタで、予定を見ながら1日の計画を立てる",
+    "level": "intermediate",
+    "purpose": "organize",
+    "features": [
+      "connectors"
+    ]
+  },
+  {
+    "slug": "artifact-with-data",
+    "title": "Artifactで、CSVを読み込む簡単な集計ツールを作る",
+    "level": "intermediate",
+    "purpose": "build",
+    "features": [
+      "artifacts",
+      "files"
+    ]
+  },
+  {
+    "slug": "artifact-share-check",
+    "title": "Artifactを共有する前の、点検リストを作る",
+    "level": "intermediate",
+    "purpose": "build",
+    "features": [
+      "artifacts"
+    ]
+  },
+  {
+    "slug": "prompt-review-loop",
+    "title": "プロンプトを、Claudeに添削してもらって改善する",
+    "level": "intermediate",
+    "purpose": "learn",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "claude-code-first-script",
+    "title": "Claude Codeで、小さなスクリプトを作る",
+    "level": "intermediate",
+    "purpose": "build",
+    "features": [
+      "claude-code"
+    ]
+  },
+  {
+    "slug": "claude-code-readme",
+    "title": "Claude Codeに、READMEを書かせて、確認する",
+    "level": "intermediate",
+    "purpose": "write",
+    "features": [
+      "claude-code"
+    ]
+  },
+  {
+    "slug": "scheduled-weekly-review",
+    "title": "定期タスクで、週1回の振り返りを作る",
+    "level": "intermediate",
+    "purpose": "automate",
+    "features": [
+      "scheduled",
+      "cowork"
+    ]
+  },
+  {
+    "slug": "cowork-folder-organize",
+    "title": "Coworkで、フォルダの整理案を作ってもらう",
+    "level": "intermediate",
+    "purpose": "automate",
+    "features": [
+      "cowork"
+    ]
+  },
+  {
+    "slug": "docs-collab-edit",
+    "title": "Docsで、文書を直しながら一緒に書く",
+    "level": "intermediate",
+    "purpose": "write",
+    "features": [
+      "docs-slides"
+    ]
+  },
+  {
+    "slug": "design-poster",
+    "title": "Designで、ポスターの案を3つ作る",
+    "level": "intermediate",
+    "purpose": "build",
+    "features": [
+      "docs-slides"
+    ]
+  },
+  {
+    "slug": "cross-check-two-answers",
+    "title": "同じ質問を2通りで聞いて、答えの食い違いを確かめる",
+    "level": "intermediate",
+    "purpose": "research",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "long-task-checklist",
+    "title": "大きな作業を、チェックリストに分けて進める",
+    "level": "intermediate",
+    "purpose": "organize",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "habit-tracker-artifact",
+    "title": "Artifactで、毎日の記録つきの習慣トラッカーを作る",
+    "level": "intermediate",
+    "purpose": "build",
+    "features": [
+      "artifacts"
+    ]
+  }
+]

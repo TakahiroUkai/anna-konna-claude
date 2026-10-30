@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.className+=' js';</script>
+<title>毎朝の情報まとめを、定期タスクで自動化する | あんなことこんなことClaude</title>
+<meta name="description" content="Claude Coworkの定期タスクで、決まった時間に情報まとめを作らせる方法です。条件が合わないと動かないので、動く条件と、最初の確認のしかたも整理します。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/cowork-scheduled-brief.html">
+<meta property="og:title" content="毎朝の情報まとめを、定期タスクで自動化する | あんなことこんなことClaude">
+<meta property="og:description" content="Claude Coworkの定期タスクで、決まった時間に情報まとめを作らせる方法です。条件が合わないと動かないので、動く条件と、最初の確認のしかたも整理します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/cowork-scheduled-brief.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>毎朝の情報まとめを、定期タスクで自動化する</h1>
+    <p class="summary">Claude Coworkの定期タスクで、決まった時間に情報まとめを作らせる方法です。条件が合わないと動かないので、動く条件と、最初の確認のしかたも整理します。</p>
+    <p class="stamp">2026-10-30 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-intermediate.html"><span class="chip lv-intermediate">中級者向け</span></a> 設定や考え方の理解が少し要る。いくつかの機能を組み合わせる。</td></tr><tr><th scope="row">所要時間</th><td>約30分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-automate.html">自動化する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-scheduled.html">定期タスク</a>、<a href="../tags/feature-cowork.html">Cowork</a>、<a href="../tags/feature-search.html">Web検索</a></td></tr><tr><th scope="row">作れるもの</th><td>毎朝できあがる情報まとめ</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">注意すること</a></li><li><a href="#s6">うまくいかないとき</a></li></ul>
+  </div>
+  <p>毎朝、同じ調べものをして、同じ形にまとめているなら、それをClaudeに任せられます。Claude Coworkの定期タスクは、一度説明すると、決めた時間に自動で実行します。</p><section id="s1"><h2>ねらい</h2><ul><li>毎朝のくり返し(調べる、まとめる)を、自分でやらずに済ませます。</li><li>「指示を書く」から「結果を確かめる」へ、自分の役割を移します。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>有料プラン。公式ヘルプには、定期タスクはCoworkのすべての有料プラン(Pro、Max、Team、Enterprise)で使えると書かれています(確認日時点)。</li><li>Claudeのデスクトップアプリ。</li><li><strong>定期タスクが動くのは、パソコンが起動していて、デスクトップアプリが開いているときだけ</strong>です(公式ヘルプ)。朝に動かしたいなら、その時間にパソコンが使える状態にしておく必要があります。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 定期タスクを作って、確かめるまで</figcaption><ol class="flow"><li><strong>まず手動で1回やらせる</strong><span>下のプロンプトを、Coworkのタスクとして1回実行して、結果を見る</span></li><li><strong>結果を直す</strong><span>件数、長さ、書き方を言葉で直して、納得できる形にする</span></li><li><strong>定期タスクにする</strong><span>タスクの中で /schedule と入力するか、左のメニューの「Scheduled」から新しいタスクを作る</span></li><li><strong>時間をきめる</strong><span>毎日、平日のみ、など。時刻もここで選ぶ</span></li><li><strong>翌日に結果を確かめる</strong><span>実行されたか、内容が正しいかを見る。出典のURLも開いて確かめる</span></li></ol></figure></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>定期タスクに入れる指示の例</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>毎朝、次の内容でまとめを作ってください。
+1. 「(テーマ)」について、前日以降に出た新しい情報を3件探す
+2. 1件につき、3行以内の要約と、出典のURLを付ける
+3. 最後に「今日やってみること」を1つだけ提案する
+- 事実と推測を分けて書く
+- 新しい情報がなければ「新しい情報なし」と書く</code></pre></div></figure></section><section id="s5" class="warn"><h2>注意すること</h2><ul><li>いきなり定期にしないで、まず手動で試します。内容が合っているか確かめてから、自動にします。</li><li>送信、購入、削除のように、取り消せない作業は、定期タスクに入れないでください。</li><li>要約はまちがえることがあります。出典のURLを自分で開いて確かめる習慣をつけます。</li></ul></section><section id="s6" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>朝になっても結果がないとき</strong>: パソコンがスリープしていなかったか、デスクトップアプリが開いていたかを確かめます。</li><li><strong>内容が毎回ばらつくとき</strong>: 件数、行数、順番を、指示の中でもっと細かく決めます。</li><li><strong>同じ話題ばかりになるとき</strong>: 「前回と同じ話題は除く」という条件を足します。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="organize" data-features="projects files" data-text="projectsに資料と指示を入れて、毎回の説明をなくす 同じ話題で何度もclaudeに相談するとき、背景の説明を毎回書き直さなくて済むように、資料と指示をprojectにまとめておく方法です。 整理する projects ファイルの読み込み"><a class="card-title" href="../tips/projects-knowledge.html">Projectsに資料と指示を入れて、毎回の説明をなくす</a><p class="card-sum">同じ話題で何度もClaudeに相談するとき、背景の説明を毎回書き直さなくて済むように、資料と指示をProjectにまとめておく方法です。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約15分</span><span class="chip">整理する</span><span class="chip chip-f">Projects</span><span class="chip chip-f">ファイルの読み込み</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork" rel="noopener" target="_blank">Claude ヘルプセンター「Schedule recurring tasks in Claude Cowork」(定期タスクの作り方、動く条件、提供プラン)</a></li><li><a href="https://support.claude.com/articles/13345190" rel="noopener" target="_blank">Claude ヘルプセンター「Claude Cowork」(定期タスクの入り口と、/schedule)</a></li><li><a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店「Claude 仕事術&amp;時短技」(書誌情報)</a></li><li><a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店「はじめての生成AI Claude「超」活用術」(書誌情報)</a></li></ul></section>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
