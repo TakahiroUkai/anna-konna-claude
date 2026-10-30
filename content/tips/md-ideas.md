@@ -9,9 +9,16 @@ summary: 思いついた案を、ideas.mdにいったんためておき、Claude
 added: 2026-10-30
 updated: 2026-10-30
 next: md-todo
+books:
+- はじめての生成AI Claude「超」活用術 | ソーテック社 | 978-4-8007-2163-1
+- 今すぐ使えるかんたんEx Claude 仕事術&時短技 | リンクアップ(技術評論社) | 978-4-297-15838-5
+- これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理 | 秀和システム新社 | 978-4-7980-7738-3
 sources:
 - Claude ヘルプセンター「Upload files to Claude」(対応するファイル形式、チャットの上限。2026年10月30日に確認) | https://support.claude.com/en/articles/8241126-uploading-files-to-claude
 - Claude ヘルプセンター「How can I create and manage projects?」(Projectの指示とナレッジの設定。2026年10月30日に確認) | https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects
+- 丸善ジュンク堂書店「はじめての生成AI Claude「超」活用術」(書誌情報) | https://www.maruzenjunkudo.co.jp/products/9784800721631
+- 丸善ジュンク堂書店「Claude 仕事術&時短技」(書誌情報) | https://www.maruzenjunkudo.co.jp/products/9784297158385
+- 丸善ジュンク堂書店「Claude AIで超効率資料作成・情報整理」(書誌情報) | https://www.maruzenjunkudo.co.jp/products/9784798077383
 ---
 
 案は、思いついた瞬間には光って見えても、時間がたつと色あせます。ideas.mdは、案をいったん置いておく場所です。todo.mdと分けておくと、やることが散らかりません。

@@ -9,9 +9,16 @@ summary: 「なぜそう決めたか」を、decisions.mdに1行ずつ残す方�
 added: 2026-10-30
 updated: 2026-10-30
 next: md-rules
+books:
+- はじめての生成AI Claude「超」活用術 | ソーテック社 | 978-4-8007-2163-1
+- 今すぐ使えるかんたんEx Claude 仕事術&時短技 | リンクアップ(技術評論社) | 978-4-297-15838-5
+- これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理 | 秀和システム新社 | 978-4-7980-7738-3
 sources:
 - Claude ヘルプセンター「How can I create and manage projects?」(Projectの指示とナレッジの設定。2026年10月30日に確認) | https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects
 - Claude ヘルプセンター「Upload files to Claude」(対応するファイル形式、チャットの上限。2026年10月30日に確認) | https://support.claude.com/en/articles/8241126-uploading-files-to-claude
+- 丸善ジュンク堂書店「はじめての生成AI Claude「超」活用術」(書誌情報) | https://www.maruzenjunkudo.co.jp/products/9784800721631
+- 丸善ジュンク堂書店「Claude 仕事術&時短技」(書誌情報) | https://www.maruzenjunkudo.co.jp/products/9784297158385
+- 丸善ジュンク堂書店「Claude AIで超効率資料作成・情報整理」(書誌情報) | https://www.maruzenjunkudo.co.jp/products/9784798077383
 ---
 
 決めたことは覚えていても、理由は忘れがちです。理由を忘れると、同じ議論をやり直したり、Claudeに別の案を勧められて迷ったりします。decisions.mdは、決めた内容と理由を、短く残すためのファイルです。

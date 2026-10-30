@@ -9,8 +9,15 @@ summary: Claude Codeは、作業のはじめにCLAUDE.mdを読みます。置き
 added: 2026-10-30
 updated: 2026-10-30
 next: projects-knowledge
+books:
+- はじめての生成AI Claude「超」活用術 | ソーテック社 | 978-4-8007-2163-1
+- 今すぐ使えるかんたんEx Claude 仕事術&時短技 | リンクアップ(技術評論社) | 978-4-297-15838-5
+- これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理 | 秀和システム新社 | 978-4-7980-7738-3
 sources:
 - Claude Code ドキュメント「How Claude remembers your project」(CLAUDE.mdの置き場所、読み込み、書き方。2026年10月30日に確認) | https://code.claude.com/docs/en/memory
+- 丸善ジュンク堂書店「はじめての生成AI Claude「超」活用術」(書誌情報) | https://www.maruzenjunkudo.co.jp/products/9784800721631
+- 丸善ジュンク堂書店「Claude 仕事術&時短技」(書誌情報) | https://www.maruzenjunkudo.co.jp/products/9784297158385
+- 丸善ジュンク堂書店「Claude AIで超効率資料作成・情報整理」(書誌情報) | https://www.maruzenjunkudo.co.jp/products/9784798077383
 ---
 
 Claude Codeで作業するとき、「このリポジトリのビルドの方法」「書き方の約束」を、毎回説明するのは大変です。公式ドキュメントによると、Claude Codeは、作業のはじめにCLAUDE.mdというmdファイルを読みます。ここに約束を書いておくと、新しい作業のたびに説明し直さなくて済みます。

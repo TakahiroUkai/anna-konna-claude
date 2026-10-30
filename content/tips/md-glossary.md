@@ -9,9 +9,16 @@ summary: 「活用方法」と「使い方」のように、ぶれやすい言�
 added: 2026-10-30
 updated: 2026-10-30
 next: md-style
+books:
+- はじめての生成AI Claude「超」活用術 | ソーテック社 | 978-4-8007-2163-1
+- 今すぐ使えるかんたんEx Claude 仕事術&時短技 | リンクアップ(技術評論社) | 978-4-297-15838-5
+- これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理 | 秀和システム新社 | 978-4-7980-7738-3
 sources:
 - Claude ヘルプセンター「How can I create and manage projects?」(Projectの指示とナレッジの設定。2026年10月30日に確認) | https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects
 - Claude ヘルプセンター「Upload files to Claude」(対応するファイル形式、チャットの上限。2026年10月30日に確認) | https://support.claude.com/en/articles/8241126-uploading-files-to-claude
+- 丸善ジュンク堂書店「はじめての生成AI Claude「超」活用術」(書誌情報) | https://www.maruzenjunkudo.co.jp/products/9784800721631
+- 丸善ジュンク堂書店「Claude 仕事術&時短技」(書誌情報) | https://www.maruzenjunkudo.co.jp/products/9784297158385
+- 丸善ジュンク堂書店「Claude AIで超効率資料作成・情報整理」(書誌情報) | https://www.maruzenjunkudo.co.jp/products/9784798077383
 ---
 
 同じものを、ある記事では「使い方」、別の記事では「活用方法」と書くと、読む人が戸惑います。glossary.mdは、言葉の表記を決めて並べた表です。
