@@ -139,7 +139,8 @@ li { margin: .25rem 0; }
 
 /* 本・出典・タグ */
 .book-list, .source-list, .tag-list { padding-left: 1.2rem; }
-.book-list .by { font-size: .86rem; color: var(--muted); }
+.book-list .by, .source-list .by { font-size: .86rem; color: var(--muted); }
+.source-list .by { display: block; }
 .source-list { font-size: .9rem; }
 .sources h2, .books h2, .related h2 { font-size: 1.1rem; }
 .tag-list { list-style: none; padding: 0; }

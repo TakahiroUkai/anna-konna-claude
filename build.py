@@ -371,11 +371,42 @@ def books_html(m):
             + "".join(book_item(b) for b in m["books"]) + "</ul></section>")
 
 
+def _book_for_source(src, books):
+    """書誌情報の出典から、対応する紹介本(書名, ISBN13)を探す。"""
+    if "書誌情報" not in src[0]:
+        return None
+    url = src[1] if len(src) > 1 else ""
+    mm = re.search(r"(97[89]\d{10})", url)
+    for b in books:
+        isbn = re.sub(r"[^0-9Xx]", "", b[2]) if len(b) > 2 else ""
+        if not isbn:
+            continue
+        if mm and isbn == mm.group(1):
+            return b[0], isbn
+    for b in books:  # URLにISBNが無いときは、書名で対応づける
+        isbn = re.sub(r"[^0-9Xx]", "", b[2]) if len(b) > 2 else ""
+        if isbn and b[0][:10] in src[0]:
+            return b[0], isbn
+    return None
+
+
+def source_item(src, books):
+    tag = CONFIG.get("affiliate", {}).get("amazon_tag", "")
+    book = _book_for_source(src, books or []) if tag else None
+    if book and len(src) > 1:
+        title, isbn = book
+        store = re.split(r"[「(]", src[0])[0]
+        aff = f"https://www.amazon.co.jp/s?k={esc(isbn)}&amp;tag={esc(tag)}"
+        return (f'<li><a href="{aff}" rel="sponsored noopener" target="_blank">{esc(title)}(Amazonで見る)</a>'
+                f'<span class="by">書誌情報の確認: <a href="{esc(src[1])}" rel="noopener" target="_blank">{esc(store)}</a></span></li>')
+    if len(src) > 1:
+        return f'<li><a href="{esc(src[1])}" rel="noopener" target="_blank">{esc(src[0])}</a></li>'
+    return f"<li>{esc(src[0])}</li>"
+
+
 def sources_html(m):
     return ('<section class="sources"><h2>調べた情報源</h2><ul class="source-list">'
-            + "".join(
-                f'<li><a href="{esc(s[1])}" rel="noopener" target="_blank">{esc(s[0])}</a></li>' if len(s) > 1 else f"<li>{esc(s[0])}</li>"
-                for s in m["sources"]) + "</ul></section>")
+            + "".join(source_item(s, m.get("books")) for s in m["sources"]) + "</ul></section>")
 
 
 def related_html(m, tips, root):
