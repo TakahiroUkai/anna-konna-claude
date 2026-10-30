@@ -603,6 +603,13 @@ def build():
     print(f"生成しました: 活用方法 {len(tips)}件 / 最新情報 {len(news)}件 / タグページ {len(tag_pages)}件")
 
 
+def first_prompt(body):
+    for kind, c in to_blocks(body):
+        if kind == "fig" and c[0].startswith("prompt"):
+            return "\n".join(c[1]).strip("\n")
+    return ""
+
+
 def archive_json():
     tips = load_dir(TIPS_DIR, TIP_REQUIRED, "tip")
     news = load_dir(NEWS_DIR, NEWS_REQUIRED, "news")
@@ -612,11 +619,11 @@ def archive_json():
         out["tips"].append({
             "slug": t["slug"], "title": t["title"], "summary": t["summary"], "level": t["level"],
             "minutes": t["minutes"], "purpose": t["purpose"], "features": t["features"], "output": t["output"],
-            "added": t["added"], "updated": t["updated"], "url": f"{base}tips/{t['slug']}.html"})
+            "added": t["added"], "updated": t["updated"], "prompt": first_prompt(t["body"]), "url": f"{base}tips/{t['slug']}.html"})
     for n in sorted_news(news):
         out["news"].append({
             "slug": n["slug"], "title": n["title"], "summary": n["summary"], "date": n["date"],
-            "features": n["features"], "added": n["added"], "updated": n["updated"], "url": f"{base}news/{n['slug']}.html"})
+            "features": n["features"], "added": n["added"], "updated": n["updated"], "prompt": first_prompt(n["body"]), "url": f"{base}news/{n['slug']}.html"})
     out["levels"] = {k: v["name"] for k, v in LEVELS.items()}
     out["purposes"] = {k: v["name"] for k, v in PURPOSES.items()}
     out["features"] = {k: v["name"] for k, v in FEATURES.items()}
