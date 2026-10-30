@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.className+=' js';</script>
+<title>ideas.mdに、案をためて、Claudeと選び分ける | あんなことこんなことClaude</title>
+<meta name="description" content="思いついた案を、ideas.mdにいったんためておき、Claudeと「やる・待つ・やめる」に分ける方法です。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/md-ideas.html">
+<meta property="og:title" content="ideas.mdに、案をためて、Claudeと選び分ける | あんなことこんなことClaude">
+<meta property="og:description" content="思いついた案を、ideas.mdにいったんためておき、Claudeと「やる・待つ・やめる」に分ける方法です。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/md-ideas.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>ideas.mdに、案をためて、Claudeと選び分ける</h1>
+    <p class="summary">思いついた案を、ideas.mdにいったんためておき、Claudeと「やる・待つ・やめる」に分ける方法です。</p>
+    <p class="stamp">2026-10-30 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約10分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-organize.html">整理する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a></td></tr><tr><th scope="row">作れるもの</th><td>案を置いておくメモ(ideas.md)</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">うまくいかないとき</a></li></ul>
+  </div>
+  <p>案は、思いついた瞬間には光って見えても、時間がたつと色あせます。ideas.mdは、案をいったん置いておく場所です。todo.mdと分けておくと、やることが散らかりません。</p><section id="s1"><h2>ねらい</h2><ul><li>思いつきを逃さず、やることとは分けて置きます。</li><li>時間をおいて、冷静に選び直せます。</li><li>案ごとに「確かめること」を添えます。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>案を5〜10個。1行で十分です。</li><li>案ごとの「何が分かれば始められるか」。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: ideas.mdを作って、選び分けるまで</figcaption><ol class="flow"><li><strong>1行で書き足す</strong><span>思いついたらすぐに</span></li><li><strong>週に1度まとめて見る</strong><span>数が増えたときが目安</span></li><li><strong>Claudeと仕分ける</strong><span>下のプロンプトで、やる・待つ・やめるに分ける</span></li><li><strong>やるものを todo.md へ移す</strong><span>次の1歩まで具体的にして移す</span></li></ol></figure><p>画面の表示は変わることがあります。見つからないときは、公式ヘルプを確認してください。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>案を仕分ける</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次のideas.mdの案を、「すぐやる」「確かめてからやる」「やめる」に分けてください。分けた理由を1文ずつ書き、「確かめてからやる」には、何を確かめればよいかも書いてください。収益や成果が出るとは、書かないでください。
+
+(ここにideas.mdを貼る)</code></pre></div></figure></section><section id="s5" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>案が全部よく見えるとき</strong>: 「1週間で試せるものだけ」と条件を足します。</li><li><strong>案が増えすぎたとき</strong>: 「やめる」にした案は、削除せず、理由つきで別の場所に残します。</li><li>ファイルとして渡すときの注意: 公式ヘルプの対応形式の一覧(PDF、DOCX、CSV、TXT、HTML、ODT、RTF、EPUB、JSON、XLSX)に、.mdは載っていません。通るか不安なときは、中身を貼るか、拡張子を.txtにして渡します。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="organize" data-features="chat files" data-text="todo.mdに、やることを書き出して、優先順位をclaudeと決める 頭の中のやることを、todo.mdに書き出してclaudeに渡し、今日やることを3つに絞る方法です。 整理する 基本のチャット ファイルの読み込み"><a class="card-title" href="../tips/md-todo.html">todo.mdに、やることを書き出して、優先順位をClaudeと決める</a><p class="card-sum">頭の中のやることを、todo.mdに書き出してClaudeに渡し、今日やることを3つに絞る方法です。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約10分</span><span class="chip">整理する</span><span class="chip chip-f">基本のチャット</span><span class="chip chip-f">ファイルの読み込み</span></p></li></ul></section>
+  
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/8241126-uploading-files-to-claude" rel="noopener" target="_blank">Claude ヘルプセンター「Upload files to Claude」(対応するファイル形式、チャットの上限。2026年10月30日に確認)</a></li><li><a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" rel="noopener" target="_blank">Claude ヘルプセンター「How can I create and manage projects?」(Projectの指示とナレッジの設定。2026年10月30日に確認)</a></li></ul></section>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.className+=' js';</script>
+<title>decisions.mdに、決めた理由を残して、後で迷わないようにする | あんなことこんなことClaude</title>
+<meta name="description" content="「なぜそう決めたか」を、decisions.mdに1行ずつ残す方法です。後から見直すとき、Claudeにも前提を渡せます。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/md-decisions.html">
+<meta property="og:title" content="decisions.mdに、決めた理由を残して、後で迷わないようにする | あんなことこんなことClaude">
+<meta property="og:description" content="「なぜそう決めたか」を、decisions.mdに1行ずつ残す方法です。後から見直すとき、Claudeにも前提を渡せます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/md-decisions.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>decisions.mdに、決めた理由を残して、後で迷わないようにする</h1>
+    <p class="summary">「なぜそう決めたか」を、decisions.mdに1行ずつ残す方法です。後から見直すとき、Claudeにも前提を渡せます。</p>
+    <p class="stamp">2026-10-30 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約10分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-organize.html">整理する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a>、<a href="../tags/feature-projects.html">Projects</a></td></tr><tr><th scope="row">作れるもの</th><td>決めたことと理由の記録(decisions.md)</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">うまくいかないとき</a></li></ul>
+  </div>
+  <p>決めたことは覚えていても、理由は忘れがちです。理由を忘れると、同じ議論をやり直したり、Claudeに別の案を勧められて迷ったりします。decisions.mdは、決めた内容と理由を、短く残すためのファイルです。</p><section id="s1"><h2>ねらい</h2><ul><li>同じことを、何度も決め直さないようにします。</li><li>Claudeに提案を頼むとき、決めたことを前提として渡します。</li><li>やめたことも、理由つきで残します。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>最近決めたことを3つほど。</li><li>1件につき、日付、決めたこと、理由、(あれば)やめた案。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: decisions.mdを書いて、使うまで</figcaption><ol class="flow"><li><strong>1件ずつ書く</strong><span>「日付 / 決めたこと / 理由 / やめた案」の4行</span></li><li><strong>新しいものを上に足す</strong><span>最新が先に目に入るように</span></li><li><strong>相談のときに渡す</strong><span>提案を頼む前に貼る</span></li><li><strong>見直す</strong><span>前提が変わったら、新しい決定として足す(古いものは消さない)</span></li></ol></figure><p>画面の表示は変わることがあります。見つからないときは、公式ヘルプを確認してください。</p><p>このmdをClaudeに渡す方法は2つです。1つ目は、中身をチャットに貼ること。2つ目は、Projectsの「プロジェクトの指示」に貼るか、ナレッジにファイルとして入れることです。公式ヘルプでは、Projectの指示は「Set project instructions」から保存し、そのProjectのすべてのチャットで使われると説明されています。ナレッジは、プロジェクト画面の右側から「+」で追加します。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>決定を記録の形に直す</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次のメモを、decisions.mdの1件にしてください。形は「日付 / 決めたこと / 理由 / やめた案」です。メモに書かれていない理由は、補わず「理由は未記入」としてください。
+
+(ここにメモを貼る)</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>決定を前提に相談する</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次のdecisions.mdで決めたことを前提にして、次の質問に答えてください。決めたことと食い違う提案をする場合は、その点を最初に書いてください。
+
+【decisions.md】
+(ここに貼る)
+
+【質問】
+(ここに書く)</code></pre></div></figure></section><section id="s5" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>理由が思い出せないとき</strong>: 無理に作らず、「理由は未記入」と残します。</li><li><strong>件数が増えたとき</strong>: 古いものは別ファイルに移し、最近の10件だけを渡します。</li><li>ファイルとして渡すときの注意: 公式ヘルプの対応形式の一覧(PDF、DOCX、CSV、TXT、HTML、ODT、RTF、EPUB、JSON、XLSX)に、.mdは載っていません。通るか不安なときは、中身を貼るか、拡張子を.txtにして渡します。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="write" data-features="chat projects" data-text="rules.mdに、書くときの約束をまとめて、毎回守らせる 「断定しない」「数字は出典を付ける」など、毎回伝えている約束を、rules.mdに1度まとめて、claudeに守ってもらう方法です。 書く 基本のチャット projects"><a class="card-title" href="../tips/md-rules.html">rules.mdに、書くときの約束をまとめて、毎回守らせる</a><p class="card-sum">「断定しない」「数字は出典を付ける」など、毎回伝えている約束を、rules.mdに1度まとめて、Claudeに守ってもらう方法です。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約15分</span><span class="chip">書く</span><span class="chip chip-f">基本のチャット</span><span class="chip chip-f">Projects</span></p></li></ul></section>
+  
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" rel="noopener" target="_blank">Claude ヘルプセンター「How can I create and manage projects?」(Projectの指示とナレッジの設定。2026年10月30日に確認)</a></li><li><a href="https://support.claude.com/en/articles/8241126-uploading-files-to-claude" rel="noopener" target="_blank">Claude ヘルプセンター「Upload files to Claude」(対応するファイル形式、チャットの上限。2026年10月30日に確認)</a></li></ul></section>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>

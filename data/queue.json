@@ -306,5 +306,105 @@
     "features": [
       "artifacts"
     ]
+  },
+  {
+    "slug": "md-claude-md",
+    "title": "CLAUDE.mdに、作業の約束を置いて、Claude Codeに毎回読ませる",
+    "level": "intermediate",
+    "purpose": "automate",
+    "features": [
+      "claude-code"
+    ]
+  },
+  {
+    "slug": "md-decisions",
+    "title": "decisions.mdに、決めた理由を残して、後で迷わないようにする",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "chat",
+      "projects"
+    ]
+  },
+  {
+    "slug": "md-glossary",
+    "title": "glossary.mdに、言葉の表記をそろえて、ぶれをなくす",
+    "level": "beginner",
+    "purpose": "write",
+    "features": [
+      "chat",
+      "projects"
+    ]
+  },
+  {
+    "slug": "md-ideas",
+    "title": "ideas.mdに、案をためて、Claudeと選び分ける",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "md-log",
+    "title": "log.mdに、やったことを日付つきで残して、続きから始める",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "chat",
+      "projects"
+    ]
+  },
+  {
+    "slug": "md-readme",
+    "title": "README.mdに、構成と手順を書いて、Claudeに読ませる",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "chat",
+      "files",
+      "claude-code"
+    ]
+  },
+  {
+    "slug": "md-rules",
+    "title": "rules.mdに、書くときの約束をまとめて、毎回守らせる",
+    "level": "beginner",
+    "purpose": "write",
+    "features": [
+      "chat",
+      "projects"
+    ]
+  },
+  {
+    "slug": "md-sources",
+    "title": "sources.mdに、確認済みの出典をまとめて、毎回の調べ直しをなくす",
+    "level": "beginner",
+    "purpose": "research",
+    "features": [
+      "chat",
+      "files",
+      "search"
+    ]
+  },
+  {
+    "slug": "md-style",
+    "title": "style.mdに、文体の決まりを書いて、文章の調子をそろえる",
+    "level": "beginner",
+    "purpose": "write",
+    "features": [
+      "chat",
+      "projects"
+    ]
+  },
+  {
+    "slug": "md-todo",
+    "title": "todo.mdに、やることを書き出して、優先順位をClaudeと決める",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "chat",
+      "files"
+    ]
   }
 ]

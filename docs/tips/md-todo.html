@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.className+=' js';</script>
+<title>todo.mdに、やることを書き出して、優先順位をClaudeと決める | あんなことこんなことClaude</title>
+<meta name="description" content="頭の中のやることを、todo.mdに書き出してClaudeに渡し、今日やることを3つに絞る方法です。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/md-todo.html">
+<meta property="og:title" content="todo.mdに、やることを書き出して、優先順位をClaudeと決める | あんなことこんなことClaude">
+<meta property="og:description" content="頭の中のやることを、todo.mdに書き出してClaudeに渡し、今日やることを3つに絞る方法です。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/md-todo.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>todo.mdに、やることを書き出して、優先順位をClaudeと決める</h1>
+    <p class="summary">頭の中のやることを、todo.mdに書き出してClaudeに渡し、今日やることを3つに絞る方法です。</p>
+    <p class="stamp">2026-10-30 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約10分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-organize.html">整理する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a>、<a href="../tags/feature-files.html">ファイルの読み込み</a></td></tr><tr><th scope="row">作れるもの</th><td>1画面で見渡せるやることリスト(todo.md)</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">うまくいかないとき</a></li></ul>
+  </div>
+  <p>やることが頭の中に散らかっていると、どれから手をつけるか迷います。todo.mdは、やることを1か所に書き出すための、ただのテキストファイルです。Claudeに見せると、優先順位の相談相手になってくれます。</p><section id="s1"><h2>ねらい</h2><ul><li>やることを見える形にして、迷う時間を減らします。</li><li>「今日やる3つ」と「後回しにしてよいもの」を分けます。</li><li>終わったものを残し、進み具合を見返せるようにします。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>やることを、思いつくまま10個ほど。1行に1つで十分です。</li><li>期限があるものは、日付を添えます。</li><li>他人の個人情報は書きません。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: todo.mdを作って、Claudeに渡し、今日の3つを決めるまで</figcaption><ol class="flow"><li><strong>やることを書き出す</strong><span>1行に1つ。期限と所要時間(分)を、分かる範囲で添える</span></li><li><strong>Claudeに渡す</strong><span>チャットに貼る。毎日使うならProjectに入れておく</span></li><li><strong>今日の3つを出してもらう</strong><span>下のプロンプトを使う</span></li><li><strong>決めた3つに印をつける</strong><span>終わったら、todo.mdの「完了」に移す</span></li><li><strong>次の日に見直す</strong><span>残りを渡して、同じことをくり返す</span></li></ol></figure><p>画面の表示は変わることがあります。見つからないときは、公式ヘルプを確認してください。</p><p>このmdをClaudeに渡す方法は2つです。1つ目は、中身をチャットに貼ること。2つ目は、Projectsの「プロジェクトの指示」に貼るか、ナレッジにファイルとして入れることです。公式ヘルプでは、Projectの指示は「Set project instructions」から保存し、そのProjectのすべてのチャットで使われると説明されています。ナレッジは、プロジェクト画面の右側から「+」で追加します。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>今日の3つを決める</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次のtodo.mdを読んで、今日やることを3つに絞ってください。
+- 期限が近いもの、時間が短くて終わるもの、後回しにすると困るものを優先してください。
+- 選んだ理由を、1つにつき1文で書いてください。
+- 選ばなかったものは、「今週中」「いつか」に分けてください。
+- 書かれていない期限や事情は、補わないでください。
+
+(ここにtodo.mdの中身を貼る)</code></pre></div></figure></section><section id="s5" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>3つに絞られず、全部が大事と言われるとき</strong>: 「所要時間の合計が3時間以内になるように」と条件を足します。</li><li><strong>期限が合っていないとき</strong>: Claudeは今日の日付を知らないことがあります。プロンプトに「今日は(日付)です」と書きます。</li><li><strong>毎日貼るのが面倒なとき</strong>: Projectの指示に「todo.mdを読んで答える」と書き、ナレッジに入れます。ファイルとして渡すときの注意: 公式ヘルプの対応形式の一覧(PDF、DOCX、CSV、TXT、HTML、ODT、RTF、EPUB、JSON、XLSX)に、.mdは載っていません。通るか不安なときは、中身を貼るか、拡張子を.txtにして渡します。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="learn" data-features="chat files" data-text="長い文章を貼って、要点と疑問点を出してもらう 長い記事や資料を、全部読む前に「何が書いてあるか」「どこが怪しいか」をつかむ方法です。貼る・添付するの2通りと、読み違いを減らす聞き方をまとめました。 学ぶ 基本のチャット ファイルの読み込み"><a class="card-title" href="../tips/summarize-long-text.html">長い文章を貼って、要点と疑問点を出してもらう</a><p class="card-sum">長い記事や資料を、全部読む前に「何が書いてあるか」「どこが怪しいか」をつかむ方法です。貼る・添付するの2通りと、読み違いを減らす聞き方をまとめました。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約10分</span><span class="chip">学ぶ</span><span class="chip chip-f">基本のチャット</span><span class="chip chip-f">ファイルの読み込み</span></p></li></ul></section>
+  
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/8241126-uploading-files-to-claude" rel="noopener" target="_blank">Claude ヘルプセンター「Upload files to Claude」(対応するファイル形式、チャットの上限。2026年10月30日に確認)</a></li><li><a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" rel="noopener" target="_blank">Claude ヘルプセンター「How can I create and manage projects?」(Projectの指示とナレッジの設定。2026年10月30日に確認)</a></li></ul></section>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>

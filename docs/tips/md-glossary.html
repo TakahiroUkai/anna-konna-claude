@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>document.documentElement.className+=' js';</script>
+<title>glossary.mdに、言葉の表記をそろえて、ぶれをなくす | あんなことこんなことClaude</title>
+<meta name="description" content="「活用方法」と「使い方」のように、ぶれやすい言葉を、glossary.mdで統一する方法です。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/md-glossary.html">
+<meta property="og:title" content="glossary.mdに、言葉の表記をそろえて、ぶれをなくす | あんなことこんなことClaude">
+<meta property="og:description" content="「活用方法」と「使い方」のように、ぶれやすい言葉を、glossary.mdで統一する方法です。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/md-glossary.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>glossary.mdに、言葉の表記をそろえて、ぶれをなくす</h1>
+    <p class="summary">「活用方法」と「使い方」のように、ぶれやすい言葉を、glossary.mdで統一する方法です。</p>
+    <p class="stamp">2026-10-30 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約10分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-write.html">書く</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a>、<a href="../tags/feature-projects.html">Projects</a></td></tr><tr><th scope="row">作れるもの</th><td>言葉の表記表(glossary.md)</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">うまくいかないとき</a></li></ul>
+  </div>
+  <p>同じものを、ある記事では「使い方」、別の記事では「活用方法」と書くと、読む人が戸惑います。glossary.mdは、言葉の表記を決めて並べた表です。</p><section id="s1"><h2>ねらい</h2><ul><li>表記のぶれを減らします。</li><li>Claudeに文章を直してもらうとき、基準を渡せます。</li><li>用語の意味も、1行で残せます。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>ぶれやすい言葉を5〜10個。</li><li>それぞれの、採用する表記と、避ける表記。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: glossary.mdを作って、点検に使うまで</figcaption><ol class="flow"><li><strong>ぶれた言葉を集める</strong><span>過去の文章から、探す</span></li><li><strong>採用する表記を決める</strong><span>1つに決めて、避ける表記も書く</span></li><li><strong>表にする</strong><span>「採用</span></li><li><strong>点検させる</strong><span>下のプロンプトで、文章の表記を確かめる</span></li></ol></figure><p>画面の表示は変わることがあります。見つからないときは、公式ヘルプを確認してください。</p><p>このmdをClaudeに渡す方法は2つです。1つ目は、中身をチャットに貼ること。2つ目は、Projectsの「プロジェクトの指示」に貼るか、ナレッジにファイルとして入れることです。公式ヘルプでは、Projectの指示は「Set project instructions」から保存し、そのProjectのすべてのチャットで使われると説明されています。ナレッジは、プロジェクト画面の右側から「+」で追加します。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>文章から、表記のぶれを探す</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の文章を読んで、表記がぶれている言葉(同じものを別の言い方で書いている箇所)を、すべて挙げてください。それぞれ、どちらかに統一する案を出してください。文章は、まだ直さないでください。
+
+(ここに文章を貼る)</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>glossary.mdに沿って直す</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次のglossary.mdの表記に合わせて、下の文章を直してください。直した箇所だけを、一覧にして最後に付けてください。
+
+【glossary.md】
+(ここに貼る)
+
+【文章】
+(ここに貼る)</code></pre></div></figure></section><section id="s5" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>直しすぎるとき</strong>: 「表記だけを直し、文の意味や構成は変えない」と書き添えます。</li><li><strong>専門用語の意味まで変わるとき</strong>: 意味の欄に、1行の定義を書きます。</li><li>ファイルとして渡すときの注意: 公式ヘルプの対応形式の一覧(PDF、DOCX、CSV、TXT、HTML、ODT、RTF、EPUB、JSON、XLSX)に、.mdは載っていません。通るか不安なときは、中身を貼るか、拡張子を.txtにして渡します。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="write" data-features="chat projects" data-text="style.mdに、文体の決まりを書いて、文章の調子をそろえる 文の長さ、使わない言葉、見出しの型を、style.mdに書いて、claudeの文章の調子をそろえる方法です。 書く 基本のチャット projects"><a class="card-title" href="../tips/md-style.html">style.mdに、文体の決まりを書いて、文章の調子をそろえる</a><p class="card-sum">文の長さ、使わない言葉、見出しの型を、style.mdに書いて、Claudeの文章の調子をそろえる方法です。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約15分</span><span class="chip">書く</span><span class="chip chip-f">基本のチャット</span><span class="chip chip-f">Projects</span></p></li></ul></section>
+  
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" rel="noopener" target="_blank">Claude ヘルプセンター「How can I create and manage projects?」(Projectの指示とナレッジの設定。2026年10月30日に確認)</a></li><li><a href="https://support.claude.com/en/articles/8241126-uploading-files-to-claude" rel="noopener" target="_blank">Claude ヘルプセンター「Upload files to Claude」(対応するファイル形式、チャットの上限。2026年10月30日に確認)</a></li></ul></section>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
