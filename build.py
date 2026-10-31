@@ -16,6 +16,11 @@ ROOT = Path(__file__).resolve().parent
 TIPS_DIR = ROOT / "content" / "tips"
 NEWS_DIR = ROOT / "content" / "news"
 DOCS = ROOT / "docs"
+GA_TAG = (
+    '<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script>'
+    '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}'
+    "gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>"
+)
 CONFIG = json.loads((ROOT / "config" / "site.json").read_text(encoding="utf-8"))
 QUEUE = json.loads((ROOT / "data" / "queue.json").read_text(encoding="utf-8"))
 
@@ -312,6 +317,7 @@ def layout(title, desc, body, root, path):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light">
+{GA_TAG}
 <script>document.documentElement.className+=' js';</script>
 <title>{esc(full)}</title>
 <meta name="description" content="{esc(desc)}">
