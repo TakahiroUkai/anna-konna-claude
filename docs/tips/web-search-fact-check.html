@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>Web検索で、気になる情報の裏付けを取る | あんなことこんなことClaude</title>
+<meta name="description" content="「本当かな?」と思った話を、そのまま信じも捨てもせずに、出典つきで確かめる方法です。主張を分けて、1つずつ出典をつけてもらい、最後は自分で出典を開いて確かめます。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/web-search-fact-check.html">
+<meta property="og:title" content="Web検索で、気になる情報の裏付けを取る | あんなことこんなことClaude">
+<meta property="og:description" content="「本当かな?」と思った話を、そのまま信じも捨てもせずに、出典つきで確かめる方法です。主張を分けて、1つずつ出典をつけてもらい、最後は自分で出典を開いて確かめます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/web-search-fact-check.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>Web検索で、気になる情報の裏付けを取る</h1>
+    <p class="summary">「本当かな?」と思った話を、そのまま信じも捨てもせずに、出典つきで確かめる方法です。主張を分けて、1つずつ出典をつけてもらい、最後は自分で出典を開いて確かめます。</p>
+    <p class="stamp">2026-10-31 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約10分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-research.html">調べる</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-search.html">Web検索</a>、<a href="../tags/feature-chat.html">基本のチャット</a></td></tr><tr><th scope="row">作れるもの</th><td>主張ごとに出典と確からしさを並べた、裏取りメモ</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">うまくいかないとき</a></li></ul>
+  </div>
+  <p>「この食べ物は体にいいらしい」「この制度が来月変わるらしい」。メッセージやニュースで流れてきた話を、本当かどうか確かめたい場面は多くあります。ここでは、Claudeに「Web検索」を使ってもらい、話を1つずつ分けて、出典つきで裏取りします。Claudeの答えを結論にせず、出典を自分で開いて確かめるところまでが手順です。</p><section id="s1"><h2>ねらい</h2><ul><li>気になる話を、確かめられる主張に分けます。</li><li>主張ごとに、出典と「確認できた・できない」を並べたメモにします。</li><li>「確認できませんでした」と言ってもらうことで、わからないことをわからないまま残します。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>確かめたい話(メッセージ、記事の一文、聞いた話など)。個人情報は消して貼ります。</li><li>Web検索が使える状態のClaude。公式のヘルプでは、チャット欄の「+」ボタンから「Web search」を選び、チェックが付けばオンになると説明されています。一方で、新しい画面ではオン・オフの切り替えがなく、役に立つときにClaudeが自分でWebを検索する、とも書かれています。自分の画面で確かめてください。画面の表示は変わることがあります。</li><li>組織(TeamやEnterprise)のアカウントでは、管理者が先にWeb検索を有効にする必要がある、と公式のヘルプに書かれています。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 話を出典つきの裏取りメモにするまで</figcaption><ol class="flow"><li><strong>話を貼る</strong><span>確かめたい話を、そのまま貼る</span></li><li><strong>主張に分ける</strong><span>「確かめられること」を1行ずつに分けてもらう</span></li><li><strong>1つずつ検索する</strong><span>主張ごとに、出典のURLと該当する箇所を挙げてもらう</span></li><li><strong>確かさを分ける</strong><span>「確認できた」「確認できない」「情報源どうしが食い違う」に分けてもらう</span></li><li><strong>出典を自分で開く</strong><span>大事な主張は、挙げられたページを自分で開いて確かめる</span></li></ol></figure><p>公式のヘルプには、検索させたいときはプロンプトに「Web検索を使って」のように書けること、複数の出典を求めると広く見渡せること、重要な情報は挙げられた出典を自分で照らし合わせること、が書かれています。このページの手順は、これをもとにしています。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>話を主張に分けて、出典つきで確かめる</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の話が本当かどうか、Web検索を使って確かめてください。
+(ここに確かめたい話を貼る)
+
+進め方:
+1. まず、この話を「確かめられる主張」に1行ずつ分けてください。
+2. 主張ごとに、出典を2つ以上、URLつきで挙げてください。できれば公的機関や当事者の公式ページを優先してください。
+3. 主張ごとに、「確認できた」「確認できなかった」「出典どうしで食い違う」のどれかを付け、その理由を1文で書いてください。
+4. 確認できなかったことは、推測で埋めずに「確認できませんでした」と書いてください。
+5. 最後に、私が自分で出典を開くとき、いちばん先に見るべきページを1つ教えてください。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>食い違いの理由を探す</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>上の結果で「出典どうしで食い違う」とした主張について、どのページがどの日付の情報か、数字の定義や対象が違っていないかを整理してください。どちらが新しいか、断定できないときは、断定しないでください。</code></pre></div></figure><figure class="fig fig-compare"><figcaption>図: 見出しだけで判断したときと、裏取りしたとき</figcaption><table><thead><tr><th scope="col">話をそのまま受け取ったとき</th><th scope="col">主張に分けて出典を確かめたとき</th></tr></thead><tbody><tr><td>どこまでが事実で、どこからが推測かわからない</td><td>確かめられることと、確かめられないことが分かれる</td></tr><tr><td>出典がなく、あとから見直せない</td><td>出典のURLが残り、あとから見直せる</td></tr><tr><td>信じるか捨てるかの二択になりやすい</td><td>「ここまでは確認できた」と中間の答えを持てる</td></tr></tbody></table></figure></section><section id="s5" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>検索されていないように見えるとき</strong>: 「Web検索を使って」と書き足します。画面にオン・オフの切り替えがあるときは、オンになっているか確かめます。</li><li><strong>出典のリンクが開けないとき</strong>: 公式のヘルプには、ウェブサイトのリンクが動かないことがある、と書かれています。ページの題名で検索し直してもらうか、別の出典を求めます。</li><li><strong>地域に合わない結果が出るとき</strong>: 公式のヘルプによると、地域に合わせた結果を求めたとき、IPアドレスから推測した位置情報を使うことがあります。「日本の制度について」のように、対象をはっきり書きます。</li><li><strong>すぐに上限が近づくとき</strong>: 無料のアカウントには使用量の上限があり、Web検索や長い記事の読み込みも上限に数えられる、と公式のヘルプに書かれています。長い記事は全文を貼らず、確かめたい一文だけを貼ります。</li><li><strong>結論が出ないとき</strong>: 「確認できませんでした」は、失敗ではなく、1つの結果です。わからなかった主張だけを残し、元の発信者や公式の窓口に直接たずねるのも一つの方法です。</li><li><strong>医療・お金・法律の話のとき</strong>: Claudeの整理は、判断の材料にとどめます。最終的な判断は、専門家や公式の窓口の案内も確かめたうえで、自分で行います。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="learn" data-features="chat files" data-text="長い文章を貼って、要点と疑問点を出してもらう 長い記事や資料を、全部読む前に「何が書いてあるか」「どこが怪しいか」をつかむ方法です。貼る・添付するの2通りと、読み違いを減らす聞き方をまとめました。 学ぶ 基本のチャット ファイルの読み込み"><a class="card-title" href="../tips/summarize-long-text.html">長い文章を貼って、要点と疑問点を出してもらう</a><p class="card-sum">長い記事や資料を、全部読む前に「何が書いてあるか」「どこが怪しいか」をつかむ方法です。貼る・添付するの2通りと、読み違いを減らす聞き方をまとめました。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約10分</span><span class="chip">学ぶ</span><span class="chip chip-f">基本のチャット</span><span class="chip chip-f">ファイルの読み込み</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/10684626-enable-and-use-web-search" rel="noopener" target="_blank">Claude ヘルプセンター「Enable and use web search」(Web検索のオン・オフ、出典の表示、使用量の上限、注意点の確認。2026年10月31日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
