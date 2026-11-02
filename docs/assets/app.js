@@ -22,6 +22,35 @@
     }
   });
 
+  // 共有ボタン
+  var box = document.querySelector('.share');
+  if (box) {
+    var surl = box.getAttribute('data-url'), stitle = box.getAttribute('data-title');
+    var st = box.querySelector('.share-status');
+    var say = function (m) { if (st) st.textContent = m; };
+    var cp = box.querySelector('.share-copy');
+    if (cp) cp.addEventListener('click', function () {
+      var fallback = function () {
+        var ta = document.createElement('textarea');
+        ta.value = surl; ta.setAttribute('readonly', ''); ta.style.position = 'fixed'; ta.style.opacity = '0';
+        document.body.appendChild(ta); ta.select();
+        var ok = false; try { ok = document.execCommand('copy'); } catch (err) {}
+        document.body.removeChild(ta);
+        say(ok ? 'リンクをコピーしました' : 'コピーできませんでした。アドレスバーから直接コピーしてください');
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(surl).then(function () { say('リンクをコピーしました'); }, fallback);
+      } else { fallback(); }
+    });
+    var nat = box.querySelector('.share-native');
+    if (nat && navigator.share) {
+      nat.hidden = false;
+      nat.querySelector('button').addEventListener('click', function () {
+        navigator.share({ title: stitle, url: surl }).catch(function () {});
+      });
+    }
+  }
+
   // 一覧の絞り込み
   var list = document.getElementById('tip-list');
   if (!list) return;

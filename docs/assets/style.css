@@ -156,3 +156,14 @@ li { margin: .25rem 0; }
   .cover h1 { font-size: 2.3rem; }
   .card-list { gap: 1rem; }
 }
+
+/* 共有ボタン */
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.share { margin-top: 2.5rem; padding: 1rem 1.125rem 1.125rem; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; }
+.doc .share h2, .share h2 { margin: 0; padding: 0; border: 0; font-size: 1.0625rem; }
+.doc .share-list, .share-list { display: flex; flex-wrap: wrap; gap: .5rem; margin: .75rem 0 0; padding: 0; list-style: none; }
+.doc .share-list li, .share-list li { margin: 0; }
+.share-list li[hidden] { display: none; }
+.share-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .4rem 1rem; font: inherit; font-size: .9375rem; font-weight: 700; line-height: 1.3; color: var(--ink); background: var(--bg); border: 1px solid var(--muted); border-radius: 8px; text-decoration: none; cursor: pointer; }
+.share-btn:hover { background: var(--accent-soft); border-color: var(--accent-ink); }
+.share-status { min-height: 1.5rem; margin: .5rem 0 0; font-size: .875rem; color: var(--beginner-ink); }

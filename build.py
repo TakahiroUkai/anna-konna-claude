@@ -11,6 +11,7 @@ import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parent
 TIPS_DIR = ROOT / "content" / "tips"
@@ -300,6 +301,30 @@ def news_card(n, root):
     )
 
 
+def share_block(title, path):
+    """SNS共有ボタン。外部の共有スクリプトは読み込まず、各サービスの共有URLへのリンクにする。"""
+    url = CONFIG["base_url"] + path
+    text = title if title == CONFIG["name"] else f"{title} | {CONFIG['name']}"
+    u, t = quote(url, safe=""), quote(text, safe="")
+    links = [
+        ("share-x", "X", f"https://x.com/intent/post?url={u}&amp;text={t}"),
+        ("share-line", "LINE", f"https://social-plugins.line.me/lineit/share?url={u}"),
+        ("share-fb", "Facebook", f"https://www.facebook.com/sharer/sharer.php?u={u}"),
+        ("share-hb", "はてなブックマーク", f"https://b.hatena.ne.jp/add?mode=confirm&amp;url={u}&amp;title={t}"),
+    ]
+    items = "".join(
+        f'<li><a class="share-btn {c}" href="{h}" target="_blank" rel="noopener noreferrer">{n}<span class="sr-only">で共有(新しいタブで開きます)</span></a></li>'
+        for c, n, h in links
+    )
+    return (
+        f'<aside class="share" aria-labelledby="share-h" data-url="{esc(url)}" data-title="{esc(text)}">'
+        f'<h2 id="share-h">このページを共有する</h2><ul class="share-list">{items}'
+        '<li><button type="button" class="share-btn share-copy">リンクをコピー</button></li>'
+        '<li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li>'
+        '</ul><p class="share-status" role="status" aria-live="polite"></p></aside>'
+    )
+
+
 def layout(title, desc, body, root, path):
     name = CONFIG["name"]
     full = name if title == name else f"{title} | {name}"
@@ -440,6 +465,7 @@ def render_tip(t, tips):
   {related_html(t, tips, root)}
   {books_html(t)}
   {sources_html(t)}
+  {share_block(t["title"], f"tips/{t['slug']}.html")}
   <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
 </div>"""
     return layout(t["title"], t["summary"], page, root, f"tips/{t['slug']}.html")
@@ -464,6 +490,7 @@ def render_news(n, tips):
   {related_html(n, tips, root)}
   {books_html(n)}
   {sources_html(n)}
+  {share_block(n["title"], f"news/{n['slug']}.html")}
   <p style="margin-top:2.5rem"><a href="./">最新情報の一覧にもどる</a></p>
 </div>"""
     return layout(n["title"], n["summary"], page, root, f"news/{n['slug']}.html")
@@ -521,6 +548,7 @@ def render_index(tips, news):
     <ul class="card-list" id="tip-list">{"".join(card(t, "") for t in tl)}</ul>
     <p class="f-empty" id="f-empty" hidden>条件に合うものがありません。条件をゆるめてみてください。</p>
   </section>
+  {share_block(CONFIG["name"], "")}
   {ad_slot()}
 </div>"""
     return layout(CONFIG["name"], CONFIG["description"], body, "", "")
@@ -535,6 +563,7 @@ def render_news_index(news):
     <p class="summary">Claudeの新しい機能やモデルの発表を、1つずつ取り上げます。何が変わったか、どう試せるか、注意点は何かを、公式の情報をもとにまとめます。</p>
   </div>
   <ul class="card-list">{"".join(news_card(n, "../") for n in nl)}</ul>
+  {share_block("Claude最新情報", "news/")}
   {ad_slot()}
 </div>"""
     return layout("Claude最新情報", "Claudeの新しい機能やモデルの発表を、公式の情報をもとに、活用方法つきでまとめます。", body, "../", "news/")
