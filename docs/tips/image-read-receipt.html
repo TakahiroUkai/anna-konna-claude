@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>写真を渡して、書かれている内容を表にする | あんなことこんなことClaude</title>
+<meta name="description" content="レシートや書類の写真をClaudeに渡し、日付・品目・金額の表にしてもらう方法です。表を信じる前に、合計が合うかを確かめる手順までを1セットにしています。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/image-read-receipt.html">
+<meta property="og:title" content="写真を渡して、書かれている内容を表にする | あんなことこんなことClaude">
+<meta property="og:description" content="レシートや書類の写真をClaudeに渡し、日付・品目・金額の表にしてもらう方法です。表を信じる前に、合計が合うかを確かめる手順までを1セットにしています。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/image-read-receipt.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>写真を渡して、書かれている内容を表にする</h1>
+    <p class="summary">レシートや書類の写真をClaudeに渡し、日付・品目・金額の表にしてもらう方法です。表を信じる前に、合計が合うかを確かめる手順までを1セットにしています。</p>
+    <p class="stamp">2026-11-02 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約10分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-organize.html">整理する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-files.html">ファイルの読み込み</a>、<a href="../tags/feature-chat.html">基本のチャット</a></td></tr><tr><th scope="row">作れるもの</th><td>レシートの写真から作った、日付・店名・品目・金額の表(合計の照合つき)</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">うまくいかないとき</a></li></ul>
+  </div>
+  <p>財布の中のレシートが、たまっていませんか。1枚ずつ打ち込むのは面倒です。ここでは、レシートを写真に撮ってClaudeに渡し、日付・店名・品目・金額の表にしてもらいます。大事なのは、そのあとです。表の金額を足して、レシートの合計と合うかを確かめます。合えば、読み取りの取りこぼしが少ないと判断できます。合わなければ、どの行がおかしいかを一緒に探します。</p><section id="s1"><h2>ねらい</h2><ul><li>レシートの写真から、あとで集計できる表をつくります。</li><li>「表の合計」と「レシートの合計」を突き合わせて、読み間違いに自分で気づけるようにします。</li><li>読み取れなかった所を、推測で埋めずに「読めない」と残してもらいます。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>レシートの写真。明るい所で、まっすぐ、文字が読める大きさで撮ります。公式のヘルプには、1000×1000ピクセル以上の画像を使い、小さい画像や解像度の低い画像はなるべく避けるよう書かれています。</li><li>画像の形式は、公式のヘルプでは JPEG、PNG、GIF、WebP が挙げられています。1回の会話に添付できるのは最大20ファイルで、1ファイルは500MBまで、画像の大きさは8000×8000ピクセルまで、と書かれています。</li><li>写真に写る個人情報(カード番号の一部、名前、会員番号など)は、貼る前に隠します。</li><li>手書きの文字や、かすれた感熱紙をどこまで読めるかは、公式のヘルプでは確認できませんでした。まず1枚で試して、結果を見て判断します。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: レシートの写真が、照合ずみの表になるまで</figcaption><ol class="flow"><li><strong>撮る</strong><span>平らな所に置き、文字全体が入るように撮る</span></li><li><strong>渡す</strong><span>会話の「+」から「Add files or photos」を選んで添付する(画面の表示は変わることがあります)</span></li><li><strong>表にする</strong><span>日付・店名・品目・数量・金額の表にしてもらう</span></li><li><strong>合計を照合する</strong><span>表の金額を足した値と、レシートの合計を比べてもらう</span></li><li><strong>読めない所を直す</strong><span>「要確認」の行だけ、自分でレシートを見て直す</span></li></ol></figure><p>公式のヘルプによると、スマートフォンから撮った写真を渡す操作は、このページでは説明されていませんでした。スマートフォンのアプリでは、画面の案内に従って、写真を選ぶ方法を探してください。パソコンでは、画像をクリップボードから貼り付ける方法もある、と公式のヘルプに書かれています。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>レシートを表にして、合計を照合する</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>添付したレシートの写真を読み取って、次の列の表にしてください。
+列: 日付、店名、品目、数量、単価、金額
+
+決まり:
+1. 読めない文字や、自信のない数字は、推測せずに「要確認」と書いてください。
+2. 表のあとに、金額の列を足した合計を出してください。
+3. レシートに書かれた合計(税込)と、足した合計を並べて、差があれば差額を書いてください。
+4. 差があるときは、どの行が怪しいかを、理由つきで1〜3行挙げてください。
+5. 品目の名前は、レシートの表記のまま写してください。言い換えないでください。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>経費や家計の用途で分けたいとき</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>上の表に、「用途」の列を足してください。候補は「食費」「日用品」「交通費」「その他」の4つです。迷うものは「その他」にして、理由を一言添えてください。</code></pre></div></figure><figure class="fig fig-compare"><figcaption>図: 写真を渡しっぱなしにしたときと、照合までしたとき</figcaption><table><thead><tr><th scope="col">渡しっぱなしにしたとき</th><th scope="col">合計を照合したとき</th></tr></thead><tbody><tr><td>読み間違いに気づけない</td><td>差額から、おかしい行を探せる</td></tr><tr><td>推測で埋められた数字が混ざることがある</td><td>「要確認」の行だけを自分で直せばよい</td></tr><tr><td>あとで集計するとき、不安が残る</td><td>合計が合った表は、そのまま集計に使いやすい</td></tr></tbody></table></figure></section><section id="s5" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>「要確認」が多すぎるとき</strong>: 写真が暗い、ななめ、小さいことが多いです。明るい所で撮り直し、レシートが画面いっぱいになるようにします。</li><li><strong>合計が合わないとき</strong>: 値引き、ポイント、割引の行が、表から抜けていることがあります。プロンプトに「値引きの行は、マイナスの金額で表に入れてください」と足します。</li><li><strong>レシートが長いとき</strong>: 上下に分けて撮り、2枚に分けて渡します。表は、あとで自分でつなげます。</li><li><strong>手書きの書類のとき</strong>: 手書きの読み取りの精度は、公式のヘルプでは確認できませんでした。大事な書類は、必ず原本と見比べます。</li><li><strong>確定申告や会計に使うとき</strong>: Claudeの表は、下書きにとどめます。最終的な金額は、原本のレシートと、税務署や会計の専門家の案内で確かめます。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="learn" data-features="chat files" data-text="長い文章を貼って、要点と疑問点を出してもらう 長い記事や資料を、全部読む前に「何が書いてあるか」「どこが怪しいか」をつかむ方法です。貼る・添付するの2通りと、読み違いを減らす聞き方をまとめました。 学ぶ 基本のチャット ファイルの読み込み"><a class="card-title" href="../tips/summarize-long-text.html">長い文章を貼って、要点と疑問点を出してもらう</a><p class="card-sum">長い記事や資料を、全部読む前に「何が書いてあるか」「どこが怪しいか」をつかむ方法です。貼る・添付するの2通りと、読み違いを減らす聞き方をまとめました。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約10分</span><span class="chip">学ぶ</span><span class="chip chip-f">基本のチャット</span><span class="chip chip-f">ファイルの読み込み</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/8241126-upload-files-to-claude" rel="noopener" target="_blank">Claude ヘルプセンター「Upload files to Claude」(画像の形式、サイズ、枚数、アップロードの操作の確認。ページの日付は2026年7月23日。2026年11月2日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/image-read-receipt.html" data-title="写真を渡して、書かれている内容を表にする | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fimage-read-receipt.html&amp;text=%E5%86%99%E7%9C%9F%E3%82%92%E6%B8%A1%E3%81%97%E3%81%A6%E3%80%81%E6%9B%B8%E3%81%8B%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E5%86%85%E5%AE%B9%E3%82%92%E8%A1%A8%E3%81%AB%E3%81%99%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fimage-read-receipt.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fimage-read-receipt.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fimage-read-receipt.html&amp;title=%E5%86%99%E7%9C%9F%E3%82%92%E6%B8%A1%E3%81%97%E3%81%A6%E3%80%81%E6%9B%B8%E3%81%8B%E3%82%8C%E3%81%A6%E3%81%84%E3%82%8B%E5%86%85%E5%AE%B9%E3%82%92%E8%A1%A8%E3%81%AB%E3%81%99%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
