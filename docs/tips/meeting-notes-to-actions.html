@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>メモから、やることリストを取り出す | あんなことこんなことClaude</title>
+<meta name="description" content="打ち合わせのメモや議事録を貼る(またはファイルで渡す)と、「誰が・何を・いつまでに」を表にして取り出してもらう方法です。メモに書かれていない担当や期限は、空欄のまま残してもらいます。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/meeting-notes-to-actions.html">
+<meta property="og:title" content="メモから、やることリストを取り出す | あんなことこんなことClaude">
+<meta property="og:description" content="打ち合わせのメモや議事録を貼る(またはファイルで渡す)と、「誰が・何を・いつまでに」を表にして取り出してもらう方法です。メモに書かれていない担当や期限は、空欄のまま残してもらいます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/meeting-notes-to-actions.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>メモから、やることリストを取り出す</h1>
+    <p class="summary">打ち合わせのメモや議事録を貼る(またはファイルで渡す)と、「誰が・何を・いつまでに」を表にして取り出してもらう方法です。メモに書かれていない担当や期限は、空欄のまま残してもらいます。</p>
+    <p class="stamp">2026-11-02 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約10分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-organize.html">整理する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a>、<a href="../tags/feature-files.html">ファイルの読み込み</a></td></tr><tr><th scope="row">作れるもの</th><td>担当・期限つきの「やることリスト」と、決まっていない点の一覧</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">うまくいかないとき</a></li></ul>
+  </div>
+  <p>打ち合わせが終わったあと、メモは残っているのに、「結局、誰が何をやるんだっけ」が分からなくなることがあります。この方法では、メモをClaudeに渡し、「誰が・何を・いつまでに」の表に直してもらいます。ポイントは、メモに書かれていないことを、Claudeに決めさせないことです。基本のチャットだけで試せます。</p><section id="s1"><h2>ねらい</h2><ul><li>メモの中から、やることだけを取り出して、担当と期限を並べます。</li><li>「担当が決まっていない」「期限が書かれていない」ものを、空欄のまま見える形にします。これが、次の打ち合わせで確認することの一覧になります。</li><li>表の内容が正しいかは、自分でメモと見比べて確かめます。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>打ち合わせのメモ、または議事録。貼れるテキストか、文書ファイルを用意します。</li><li>取引先の名前や個人名など、外に出せない情報は、「Aさん」「B社」のように置き換えるか、消してから渡します。</li><li>ファイルで渡す場合は、公式のヘルプによると、PDF、DOCX、TXT、CSVなどが使えます。チャットでは、1ファイル500MBまで、1つのチャットに20ファイルまでと書かれています。画面の「+」から「Add files or photos」を選んで添付します。DOCXなどのPDF以外の文書は、文字だけが読み取られ、中に埋め込まれた画像は読まれないと書かれています。プランごとの違いは、確認できませんでした。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: メモから、やることリストができるまで</figcaption><ol class="flow"><li><strong>メモを用意する</strong><span>貼れるなら貼る。ファイルなら「+」から添付する</span></li><li><strong>プロンプトを送る</strong><span>下のプロンプトを、メモの前後に貼って送る</span></li><li><strong>表を読む</strong><span>「誰が・何を・いつまでに」の表と、空欄の一覧が出る</span></li><li><strong>メモと見比べる</strong><span>担当や期限が、メモにあるとおりか確かめる</span></li><li><strong>空欄を埋める</strong><span>決まっていない点を、次の打ち合わせの確認事項にする</span></li></ol></figure><p>画面の表示は変わることがあります。</p><figure class="fig fig-compare"><figcaption>図: 取り出す前と、取り出したあと(例)</figcaption><table><thead><tr><th scope="col">メモのままの状態</th><th scope="col">やることリストにした状態</th></tr></thead><tbody><tr><td>「来週までに資料を見直す方向。Bさんが詳しい」</td><td>資料の見直し / 担当: 未定(Bさんが詳しい、とメモにあり) / 期限: 来週まで</td></tr><tr><td>「予算は次回決めたい」</td><td>予算の決定 / 担当: 未定 / 期限: 次回の打ち合わせ</td></tr><tr><td>「連絡しておく」</td><td>連絡 / 担当: 未定(誰が、がメモにない) / 期限: 空欄</td></tr></tbody></table></figure></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>やることを取り出す</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の打ち合わせのメモから、「やること」だけを取り出して、表にしてください。
+列は「やること / 担当 / 期限 / メモのどこに書いてあったか」です。
+条件:
+- 担当や期限が、メモに書かれていないときは、推測せず「未定」と書く。
+- メモに書かれていない、新しいやることは、足さない。
+- 「方向」「たぶん」など、決まっているか分からない言い方は、表とは別に「決まっていないこと」として、1行ずつ並べる。
+最後に、次の打ち合わせで確認したほうがよい点を、3つまで書いてください。
+--- ここからメモ ---
+(ここにメモを貼る)</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>表を直す</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>表の3行目の担当は、メモでは「Aさん」ではなく「Bさん」です。直してください。ほかの行は変えないでください。</code></pre></div></figure></section><section id="s5" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>担当や期限を、Claudeが勝手に埋めてしまうとき</strong>: 「推測せず『未定』と書く」という条件を、プロンプトの先頭に移して、もう一度送ります。表に出た内容は、必ずメモの該当部分と見比べます。</li><li><strong>やることが多すぎるとき</strong>: 「今週中のものだけ」「自分の担当だけ」のように、条件を足して、もう一度頼みます。</li><li><strong>メモが長くて抜けがあるとき</strong>: メモを前半と後半に分けて渡し、最後に「2つの表を1つにまとめて、重複は1行にして」と頼みます。</li><li><strong>ファイルが読めないとき</strong>: ファイルの種類が対応しているか、サイズや数が上限を超えていないかを確かめます。うまくいかなければ、文章をコピーして、チャットに貼る方法に切り替えます。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="learn" data-features="chat files" data-text="長い文章を貼って、要点と疑問点を出してもらう 長い記事や資料を、全部読む前に「何が書いてあるか」「どこが怪しいか」をつかむ方法です。貼る・添付するの2通りと、読み違いを減らす聞き方をまとめました。 学ぶ 基本のチャット ファイルの読み込み"><a class="card-title" href="../tips/summarize-long-text.html">長い文章を貼って、要点と疑問点を出してもらう</a><p class="card-sum">長い記事や資料を、全部読む前に「何が書いてあるか」「どこが怪しいか」をつかむ方法です。貼る・添付するの2通りと、読み違いを減らす聞き方をまとめました。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約10分</span><span class="chip">学ぶ</span><span class="chip chip-f">基本のチャット</span><span class="chip chip-f">ファイルの読み込み</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/8241126-upload-files-to-claude" rel="noopener" target="_blank">Claude ヘルプセンター「Upload files to Claude」(ファイルの種類、チャットで渡せる数と大きさ、「+」からの添付方法の確認。2026年11月2日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/meeting-notes-to-actions.html" data-title="メモから、やることリストを取り出す | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fmeeting-notes-to-actions.html&amp;text=%E3%83%A1%E3%83%A2%E3%81%8B%E3%82%89%E3%80%81%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E5%8F%96%E3%82%8A%E5%87%BA%E3%81%99%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fmeeting-notes-to-actions.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fmeeting-notes-to-actions.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fmeeting-notes-to-actions.html&amp;title=%E3%83%A1%E3%83%A2%E3%81%8B%E3%82%89%E3%80%81%E3%82%84%E3%82%8B%E3%81%93%E3%81%A8%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E5%8F%96%E3%82%8A%E5%87%BA%E3%81%99%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
