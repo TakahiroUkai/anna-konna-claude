@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>資料からクイズを作って、自分で練習する | あんなことこんなことClaude</title>
+<meta name="description" content="講義資料やテキストをClaudeに渡して、答え合わせつきのクイズを作り、間違えた所だけを復習する方法をまとめました。自分がどこで間違えるかが見えるので、読み返しの時間を絞れます。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/quiz-yourself.html">
+<meta property="og:title" content="資料からクイズを作って、自分で練習する | あんなことこんなことClaude">
+<meta property="og:description" content="講義資料やテキストをClaudeに渡して、答え合わせつきのクイズを作り、間違えた所だけを復習する方法をまとめました。自分がどこで間違えるかが見えるので、読み返しの時間を絞れます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/quiz-yourself.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>資料からクイズを作って、自分で練習する</h1>
+    <p class="summary">講義資料やテキストをClaudeに渡して、答え合わせつきのクイズを作り、間違えた所だけを復習する方法をまとめました。自分がどこで間違えるかが見えるので、読み返しの時間を絞れます。</p>
+    <p class="stamp">2026-11-03 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約15分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-learn.html">学ぶ</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a>、<a href="../tags/feature-files.html">ファイルの読み込み</a></td></tr><tr><th scope="row">作れるもの</th><td>資料の範囲から作った10問の4択クイズと、間違えた所だけを復習できる一覧</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">うまくいかないとき</a></li></ul>
+  </div>
+  <p>資格の勉強や、社内研修の資料。読んだはずなのに、いざ聞かれると答えられない。そんなときは、資料をClaudeに渡して、クイズを作ってもらいます。答えて、間違えた所だけを読み直せば、復習が短くなります。</p><section id="s1"><h2>ねらい</h2><ul><li>資料の範囲から、自分用のクイズを作ります。</li><li>答えは、自分が解答するまで見ない形にします。</li><li>間違えた問題だけを、一覧にして復習します。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>勉強したい資料(PDF、DOCX、TXTなど)。または、本文を貼った文章。</li><li>試験の範囲、問題の数、難しさ(例: 10問、基本レベル)。</li><li>個人情報や、社外に出せない情報が入っていない資料。</li></ul><p>公式のヘルプによると、1回の会話に添付できるのは最大20個、1ファイル500MBまでです。PDFは1,000ページまで添付できます。ただし、視覚要素(図やグラフ)まで読むのは100ページ以下のPDFで、101ページ以上はテキストだけです。DOCXなどは、テキストだけが読み取られ、埋め込まれた画像は読めません。無料プランで使えるかは、この記事では確認できませんでした。画面の表示は変わることがあります。</p></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 資料からクイズを作って、復習する</figcaption><ol class="flow"><li><strong>資料を渡す</strong><span>1回に渡すのは、1章ぶんくらいまで</span></li><li><strong>プロンプトを送る</strong><span>問題数と範囲を、下の空欄に書く</span></li><li><strong>1問ずつ答える</strong><span>答えは、解答の欄に書いて送る</span></li><li><strong>採点と解説を読む</strong><span>間違えた問題に印がつく</span></li><li><strong>復習表を作ってもらう</strong><span>間違えた所だけの一覧にする</span></li></ol></figure><figure class="fig fig-compare"><figcaption>図: 読み返すのと、クイズに答えるのの違い(例)</figcaption><table><thead><tr><th scope="col">やり方</th><th scope="col">起きやすいこと</th></tr></thead><tbody><tr><td>資料を最初から読み返す</td><td>「読んだ気」になる。どこが分かっていないか見えにくい</td></tr><tr><td>クイズに答える</td><td>間違えた問題が、自分の弱い所として見える</td></tr></tbody></table></figure></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>クイズを作ってもらう</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>添付した資料から、勉強用のクイズを作ってください。
+- 範囲: (例: 第2章「個人情報の取り扱い」)
+- 問題数: 10問
+- 形式: 4択。選択肢はA〜Dの4つ。
+- 難しさ: (例: 基本。用語の意味と、使い分けを中心に)
+条件:
+- 問題は資料に書かれている内容だけから作る。資料にないことは出さない。
+- 答えと解説は、私が10問すべてに答えるまで書かない。
+- 1問ずつ出して、私の答えを待つ。
+- 解説には、資料のどの見出しや章に書かれているかを添える。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>間違えた所の復習表を作ってもらう</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>10問の採点が終わったので、間違えた問題だけを表にしてください。
+- 列: 問題の要約 / 私の答え / 正しい答え / 資料の該当箇所 / 覚えるためのひとこと
+- 最後に、間違いに共通する弱点を、2文以内で書く。自信のない所は「要確認」と書く。</code></pre></div></figure></section><section id="s5" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>問題が簡単すぎるとき</strong>: 「記述式を2問混ぜる」「用語の暗記ではなく、使い分けを問う」と条件を足します。</li><li><strong>資料にないことが問題に入るとき</strong>: 「資料に書かれている内容だけから作る」と書いてあるか確認します。それでも入るときは、その問題の解説にある資料の該当箇所を、自分で資料と照らし合わせます。</li><li><strong>資料が長すぎるとき</strong>: 章ごとに分けて、別の会話で作ります。大きな資料は分けるよう、公式のヘルプも案内しています。</li><li><strong>正解が正しいか不安なとき</strong>: Claudeの解説は、勉強の助けです。試験や仕事で間違えると困る内容は、資料や公式の資料で、自分で確かめます。</li><li><strong>この記事のクイズの作り方は、公式の記述ではありません</strong>: 公式のヘルプが案内しているのは、ファイルを添付して読んでもらう方法です。クイズの形式や条件は、この記事の工夫です。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="learn" data-features="chat" data-text="分からない用語を、例え話で教えてもらう ニュースや会議で出てきた分からない用語は、検索しても説明が難しいことがあります。自分の立場と理由を伝えて、身近な例え話で教えてもらい、確認の1問で理解を試す方法をまとめました。 学ぶ 基本のチャット"><a class="card-title" href="../tips/explain-like-teacher.html">分からない用語を、例え話で教えてもらう</a><p class="card-sum">ニュースや会議で出てきた分からない用語は、検索しても説明が難しいことがあります。自分の立場と理由を伝えて、身近な例え話で教えてもらい、確認の1問で理解を試す方法をまとめました。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約10分</span><span class="chip">学ぶ</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/8241126-upload-files-to-claude" rel="noopener" target="_blank">Claude ヘルプセンター「Upload files to Claude」(添付できるファイルの数・サイズ・形式、PDFの扱いの確認。2026年11月3日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/quiz-yourself.html" data-title="資料からクイズを作って、自分で練習する | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fquiz-yourself.html&amp;text=%E8%B3%87%E6%96%99%E3%81%8B%E3%82%89%E3%82%AF%E3%82%A4%E3%82%BA%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%80%81%E8%87%AA%E5%88%86%E3%81%A7%E7%B7%B4%E7%BF%92%E3%81%99%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fquiz-yourself.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fquiz-yourself.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fquiz-yourself.html&amp;title=%E8%B3%87%E6%96%99%E3%81%8B%E3%82%89%E3%82%AF%E3%82%A4%E3%82%BA%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%80%81%E8%87%AA%E5%88%86%E3%81%A7%E7%B7%B4%E7%BF%92%E3%81%99%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
