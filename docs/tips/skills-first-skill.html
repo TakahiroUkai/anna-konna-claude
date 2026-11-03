@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>くり返す手順を、スキルにまとめて自動で呼び出す | あんなことこんなことClaude</title>
+<meta name="description" content="毎回プロンプトを貼り直している作業を、スキル(手順書のフォルダ)にまとめる方法です。書く項目、ZIPにする形、呼び出されないときの見直し方、信頼できないスキルを入れるときの注意を、公式のヘルプをもとに整理しました。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/skills-first-skill.html">
+<meta property="og:title" content="くり返す手順を、スキルにまとめて自動で呼び出す | あんなことこんなことClaude">
+<meta property="og:description" content="毎回プロンプトを貼り直している作業を、スキル(手順書のフォルダ)にまとめる方法です。書く項目、ZIPにする形、呼び出されないときの見直し方、信頼できないスキルを入れるときの注意を、公式のヘルプをもとに整理しました。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/skills-first-skill.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>くり返す手順を、スキルにまとめて自動で呼び出す</h1>
+    <p class="summary">毎回プロンプトを貼り直している作業を、スキル(手順書のフォルダ)にまとめる方法です。書く項目、ZIPにする形、呼び出されないときの見直し方、信頼できないスキルを入れるときの注意を、公式のヘルプをもとに整理しました。</p>
+    <p class="stamp">2026-11-03 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-intermediate.html"><span class="chip lv-intermediate">中級者向け</span></a> 設定や考え方の理解が少し要る。いくつかの機能を組み合わせる。</td></tr><tr><th scope="row">所要時間</th><td>約30分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-automate.html">自動化する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-skills.html">スキル</a>、<a href="../tags/feature-files.html">ファイルの読み込み</a></td></tr><tr><th scope="row">作れるもの</th><td>週報づくりの手順をまとめた、自分用のスキル(フォルダ1つをZIPにしたもの)と、呼び出されるかを確かめた記録</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">うまくいかないとき</a></li></ul>
+  </div>
+  <p>同じ作業のたびに、長いプロンプトを貼り直していませんか。その手順を「スキル」にまとめると、依頼の内容に合うとき、Claudeが自分で選んで読み込みます。スキルとは、手順や決まりを書いたファイルを入れた、フォルダのことです。ここでは、週報づくりを例に、最小のスキルを作って、呼び出されるかを確かめます。</p><section id="s1"><h2>ねらい</h2><ul><li>くり返す作業の手順と決まりを、1つのスキルにまとめます。</li><li>「いつ使うか」を説明文に書き、呼び出されるかを自分で確かめます。</li><li>信頼できない入手元のスキルを、入れる前に点検する癖をつけます。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>手順にしたい作業を1つ。「週報」「議事録の整形」など、毎回やり方が同じもの。</li><li>その作業の、よい出力の例を1つ。</li><li>スキルが使える環境。公式のヘルプによると、スキルを使うには「コード実行とファイル作成」を有効にする必要があります。</li><li>対象プランは、確認できませんでした。1つ目のヘルプは「Pro、Max、Team、Enterprise」と書き、2つ目のヘルプは「Free」も含めて書いていて、記事で食い違っていました。自分のプランでの可否は、画面で確かめてください。画面の表示は変わることがあります。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: スキルを作って、確かめる</figcaption><ol class="flow"><li><strong>作業と例を決める</strong><span>毎回同じやり方の作業を1つ選ぶ</span></li><li><strong>skill.mdを書く</strong><span>先頭に名前と、いつ使うかの説明を書く</span></li><li><strong>フォルダごとZIPにする</strong><span>フォルダ名は、スキルの名前と同じにする</span></li><li><strong>アップロードする</strong><span>「Upload skill」から、ZIPを選ぶ</span></li><li><strong>呼ばれるか試す</strong><span>使うはずの頼み方を、言い回しを変えて複数回</span></li></ol></figure><figure class="fig fig-compare"><figcaption>図: スキルの中身(公式のヘルプの説明から)</figcaption><table><thead><tr><th scope="col">項目</th><th scope="col">内容</th></tr></thead><tbody><tr><td>フォルダ</td><td>skill.mdを最低1つ入れる。参考資料やスクリプトも、同じフォルダに置ける</td></tr><tr><td>name</td><td>スキルの名前。64文字以内</td></tr><tr><td>description</td><td>何をするか、いつ使うか。200文字以内。呼ぶかどうかを決める、いちばん大事な項目</td></tr><tr><td>本文</td><td>手順、決まり、出力の例。必要になったときに読み込まれる</td></tr></tbody></table></figure><p>読み込みは段階的です。公式のヘルプによると、まず名前と説明だけを見て、関係がありそうなときに本文を読み、さらに必要なら参考のファイルを読みます。そのため、説明に「いつ使うか」を具体的に書くことが、いちばん効きます。</p><p>ZIPの形にも決まりがあります。公式のヘルプによると、ZIPを開くと、スキルのフォルダが1つあって、その中にskill.mdがある形にします。ZIPの直下にファイルを置くのは、正しくない形です。ファイル名の大文字と小文字は、記事によって「skill.md」と「Skill.md」で書き方が違いました。アップロード時の案内に合わせてください。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>スキルの下書きを作ってもらう</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>週報づくりの手順を、スキルのskill.mdにしたいです。次の条件で下書きを作ってください。
+- 先頭に、nameとdescriptionを書く。nameは英小文字とハイフンで、64文字以内。
+- descriptionは200文字以内。「何をするか」と「いつ使うか」を、両方入れる。
+- 本文は、「入力」「手順」「出力の形」「書いてはいけないこと」の4つの見出しにする。
+- 出力の形は、「決まったこと / 進行中 / 困りごと / 来週やること」の4項目、全体で300字以内。
+- メモにないことは書かず、「未記入」と書く、という決まりを入れる。
+- 最後に、このスキルが呼ばれるかを試す依頼文を、言い回しを変えて3つ書く。
+私が貼る週のメモは、次のとおりです。
+(ここに、直近の週のメモを貼る。個人情報は入れない)</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>呼ばれたかを確かめる</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次のメモから、週報を作ってください。(スキルの名前は書かない)
+(ここにメモを貼る)
+作る前に、使ったスキルの名前と、そのスキルの決まりのうち、守った点を2つ、教えてください。使っていなければ、「使っていません」と書いてください。</code></pre></div></figure></section><section id="s5" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>アップロードできないとき</strong>: 公式のヘルプが挙げる原因は、ZIPが大きすぎる、フォルダ名とスキルの名前が合っていない、skill.mdが無い、名前や説明に使えない文字がある、などです。サイズの上限の数字は、確認できませんでした。</li><li><strong>呼ばれないとき</strong>: スキルがオンになっているか確認します。次に、descriptionに「いつ使うか」を具体的に書き足します。それでも呼ばれないときは、依頼の中でスキルの名前を挙げて頼みます。</li><li><strong>スキルの項目が画面に出ないとき</strong>: コード実行が有効になっているか確認します。Team、Enterpriseでは、管理者の設定が必要になることがあります。</li><li><strong>画面の場所が分からないとき</strong>: 1つ目のヘルプは「Settings &gt; Capabilities」、2つ目のヘルプは「Customize &gt; Skills」と案内していて、書き方が違いました。実際の画面で確かめてください。</li></ul><aside class="note"><figcaption>他人が作ったスキルを入れる前に</figcaption><p>公式のヘルプは、スキルは信頼できる入手元のものだけを入れるよう、案内しています。信頼できない入手元のものは、同梱のファイルやスクリプトを読み、外部への接続を指示していないか点検してから使う、とも書かれています。自分で作るときも、APIキーやパスワードを書き込まないでください。</p></aside></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="intermediate" data-purpose="organize" data-features="projects files memory" data-text="projectに複数の資料を入れて、役割を分けて使わせる projectに資料を何でも入れると、答えの根拠が見えなくなります。資料に役割を決めて入れ、指示で使い分けさせ、根拠のファイル名を答えに付けさせる方法を、公式のヘルプをもとに整理しました。資料が増えたときの動きと、メモリの分け方も載せています。 整理する projects ファイルの読み込み メモリ"><a class="card-title" href="../tips/projects-multi-files.html">Projectに複数の資料を入れて、役割を分けて使わせる</a><p class="card-sum">Projectに資料を何でも入れると、答えの根拠が見えなくなります。資料に役割を決めて入れ、指示で使い分けさせ、根拠のファイル名を答えに付けさせる方法を、公式のヘルプをもとに整理しました。資料が増えたときの動きと、メモリの分け方も載せています。</p><p class="chips"><span class="chip lv-intermediate">中級者向け</span><span class="chip">約25分</span><span class="chip">整理する</span><span class="chip chip-f">Projects</span><span class="chip chip-f">ファイルの読み込み</span><span class="chip chip-f">メモリ</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/12512180-using-skills-in-claude" rel="noopener" target="_blank">Claude ヘルプセンター「Using Skills in Claude」(スキルの対象プラン、必要な設定、アップロード、安全面の注意の確認。2026年11月3日に確認)</a></li><li><a href="https://support.claude.com/en/articles/12512198-how-to-create-custom-skills" rel="noopener" target="_blank">Claude ヘルプセンター「How to create custom skills」(フォルダの構成、name・descriptionの文字数、ZIPの形、作るときの心得の確認。2026年11月3日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/skills-first-skill.html" data-title="くり返す手順を、スキルにまとめて自動で呼び出す | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fskills-first-skill.html&amp;text=%E3%81%8F%E3%82%8A%E8%BF%94%E3%81%99%E6%89%8B%E9%A0%86%E3%82%92%E3%80%81%E3%82%B9%E3%82%AD%E3%83%AB%E3%81%AB%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E8%87%AA%E5%8B%95%E3%81%A7%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%99%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fskills-first-skill.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fskills-first-skill.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fskills-first-skill.html&amp;title=%E3%81%8F%E3%82%8A%E8%BF%94%E3%81%99%E6%89%8B%E9%A0%86%E3%82%92%E3%80%81%E3%82%B9%E3%82%AD%E3%83%AB%E3%81%AB%E3%81%BE%E3%81%A8%E3%82%81%E3%81%A6%E8%87%AA%E5%8B%95%E3%81%A7%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%99%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
