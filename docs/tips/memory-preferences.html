@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>メモリに、答え方の好みを覚えてもらう | あんなことこんなことClaude</title>
+<meta name="description" content="毎回「結論から書いて」と頼むのをやめて、答え方の好みをClaudeのメモリに覚えてもらう方法をまとめました。覚えさせない設定と、覚えた内容の確認・削除の手順もあわせて載せています。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/memory-preferences.html">
+<meta property="og:title" content="メモリに、答え方の好みを覚えてもらう | あんなことこんなことClaude">
+<meta property="og:description" content="毎回「結論から書いて」と頼むのをやめて、答え方の好みをClaudeのメモリに覚えてもらう方法をまとめました。覚えさせない設定と、覚えた内容の確認・削除の手順もあわせて載せています。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/memory-preferences.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>メモリに、答え方の好みを覚えてもらう</h1>
+    <p class="summary">毎回「結論から書いて」と頼むのをやめて、答え方の好みをClaudeのメモリに覚えてもらう方法をまとめました。覚えさせない設定と、覚えた内容の確認・削除の手順もあわせて載せています。</p>
+    <p class="stamp">2026-11-03 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約10分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-organize.html">整理する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-memory.html">メモリ</a>、<a href="../tags/feature-chat.html">基本のチャット</a></td></tr><tr><th scope="row">作れるもの</th><td>「結論を先に」「用語は一言で説明」など、3つの答え方の好みを覚えさせて、覚えた内容を自分で確認・削除できる状態</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">うまくいかないとき</a></li></ul>
+  </div>
+  <p>毎回「結論から書いて」「難しい言葉は説明して」と頼んでいませんか。この頼みは、メモリ(会話をまたいでClaudeが覚えておく機能)に覚えてもらえます。ここでは、答え方の好みを3つ覚えてもらい、覚えた内容を自分で確認して、不要なら消すところまで進めます。</p><section id="s1"><h2>ねらい</h2><ul><li>答え方の好みを、一度伝えるだけで、次の会話からも反映してもらいます。</li><li>覚えさせたくない会話は、覚えさせない形で使い分けます。</li><li>覚えた内容を、設定画面で見て、直して、消せるようにします。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>Claudeのアプリ(Web、デスクトップ、モバイル)。</li><li>好みを3つ。例: 結論を先に書く、用語は一言で説明する、段落は短くする。</li><li>個人情報は、覚えさせる前提で入力しないこと。</li></ul><p>公式のヘルプによると、メモリはFree、Pro、Max、Ultraのプランで、初期状態でオンです。Team、Enterpriseでは、組織の管理者が使えるようにしたうえで、メンバーがそれぞれオンにするまでオフです。画面の表示は変わることがあります。</p></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 好みを覚えさせて、確認する</figcaption><ol class="flow"><li><strong>設定でメモリがオンか見る</strong><span>設定の「Your Claude」で「Generate memory from chats」を確認</span></li><li><strong>好みを3つ伝える</strong><span>下のプロンプトを送る。「覚えて」と書く</span></li><li><strong>新しい会話で試す</strong><span>次の会話から反映される、と公式に書かれている</span></li><li><strong>覚えた内容を見る</strong><span>「Your memory」の横の「Manage」で、トピックの一覧を開く</span></li><li><strong>直す・消す</strong><span>トピックを選び、編集するか「Delete」で削除する</span></li></ol></figure><figure class="fig fig-compare"><figcaption>図: 覚えさせる・覚えさせない、の使い分け(公式の説明から)</figcaption><table><thead><tr><th scope="col">やりたいこと</th><th scope="col">方法</th></tr></thead><tbody><tr><td>好みを覚えてほしい</td><td>チャットで「これを覚えて」と伝える</td></tr><tr><td>覚えた内容を直したい</td><td>「Manage」でトピックを開いて編集する</td></tr><tr><td>この会話だけメモリを使わない</td><td>新規チャットで「+」から「Memory」をオフにして、最初のメッセージを送る</td></tr><tr><td>履歴にも残したくない</td><td>新規チャットの右上のゴーストのアイコンで、シークレットチャットにする</td></tr><tr><td>一時的に止めたい</td><td>設定で「Pause memory」を選ぶ(既存のメモリは残る)</td></tr><tr><td>全部消したい</td><td>設定で「Reset memory」を選ぶ(元に戻せない)</td></tr></tbody></table></figure></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>好みを3つ覚えてもらう</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の3つを、これからの会話でも使う、私の答え方の好みとして覚えてください。
+1. 回答は、結論を先に1文で書く。そのあとに、理由を3つまで書く。
+2. 専門用語は、初めて出たときに、かっこで一言の説明をつける。
+3. 長い文章は、見出しをつけず、1段落を3文以内にする。
+覚えたら、どう覚えたかを3行で教えてください。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>覚えた内容を確認する</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>私について覚えている内容のうち、答え方の好みに関するものだけを、箇条書きで見せてください。
+覚えているか自信がないものは、「要確認」と書いてください。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>好みを1つ忘れてもらう</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>さきほどの好みの2つ目は、もう不要です。忘れてください。
+忘れたあとで、残っている好みを教えてください。</code></pre></div></figure></section><section id="s5" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>好みが反映されないとき</strong>: 設定でメモリがオンか確認します。公式のヘルプによると、メモリがオフのとき、または対象外のプランでは、「+」のメニューに「Memory」が出ません。</li><li><strong>覚えさせたくない内容があるとき</strong>: 公式のヘルプには、政府発行のID番号、犯罪歴、金融口座の番号、在留資格は、頼まれても保存されない、と書かれています。それ以外も、覚えさせたくない話題は、シークレットチャットで話します。</li><li><strong>会話を消したのに、覚えたことが残るとき</strong>: 公式のヘルプによると、会話を削除しても、その会話から作られたメモリは自動では消えません。「Manage」から、トピックを個別に消します。</li></ul><aside class="note"><figcaption>会話ごとのメモリオフは、履歴に残ります</figcaption><p>公式のヘルプによると、会話ごとにメモリをオフにしても、その会話はチャット履歴に残り、ほかの会話から過去チャットを検索したときに見つかることがあります。履歴にも残したくないときは、シークレットチャットを使います。</p></aside></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="organize" data-features="projects files" data-text="projectsに資料と指示を入れて、毎回の説明をなくす 同じ話題で何度もclaudeに相談するとき、背景の説明を毎回書き直さなくて済むように、資料と指示をprojectにまとめておく方法です。 整理する projects ファイルの読み込み"><a class="card-title" href="../tips/projects-knowledge.html">Projectsに資料と指示を入れて、毎回の説明をなくす</a><p class="card-sum">同じ話題で何度もClaudeに相談するとき、背景の説明を毎回書き直さなくて済むように、資料と指示をProjectにまとめておく方法です。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約15分</span><span class="chip">整理する</span><span class="chip chip-f">Projects</span><span class="chip chip-f">ファイルの読み込み</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/11817273-understanding-claude-s-memory" rel="noopener" target="_blank">Claude ヘルプセンター「Use Claude&#x27;s chat search and memory to build on previous context」(メモリの仕組み、対象プラン、設定の場所、保存されない情報の確認。2026年11月3日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/memory-preferences.html" data-title="メモリに、答え方の好みを覚えてもらう | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fmemory-preferences.html&amp;text=%E3%83%A1%E3%83%A2%E3%83%AA%E3%81%AB%E3%80%81%E7%AD%94%E3%81%88%E6%96%B9%E3%81%AE%E5%A5%BD%E3%81%BF%E3%82%92%E8%A6%9A%E3%81%88%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fmemory-preferences.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fmemory-preferences.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fmemory-preferences.html&amp;title=%E3%83%A1%E3%83%A2%E3%83%AA%E3%81%AB%E3%80%81%E7%AD%94%E3%81%88%E6%96%B9%E3%81%AE%E5%A5%BD%E3%81%BF%E3%82%92%E8%A6%9A%E3%81%88%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
