@@ -406,5 +406,16 @@
       "chat",
       "files"
     ]
+  },
+  {
+    "slug": "cowork-vs-claude-code",
+    "title": "CoworkとClaude Codeの使い分けを、表と図で整理する",
+    "level": "beginner",
+    "purpose": "learn",
+    "features": [
+      "cowork",
+      "claude-code",
+      "chat"
+    ]
   }
 ]
