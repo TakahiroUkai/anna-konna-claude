@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>自分の文体の見本を渡して、書き方をそろえる | あんなことこんなことClaude</title>
+<meta name="description" content="自分が書いた文章を見本として渡し、Claudeのカスタムスタイルを作る方法です。思ったように写らないときの切り分けと、見本に入れてはいけないものも整理します。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/custom-style-guide.html">
+<meta property="og:title" content="自分の文体の見本を渡して、書き方をそろえる | あんなことこんなことClaude">
+<meta property="og:description" content="自分が書いた文章を見本として渡し、Claudeのカスタムスタイルを作る方法です。思ったように写らないときの切り分けと、見本に入れてはいけないものも整理します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/custom-style-guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>自分の文体の見本を渡して、書き方をそろえる</h1>
+    <p class="summary">自分が書いた文章を見本として渡し、Claudeのカスタムスタイルを作る方法です。思ったように写らないときの切り分けと、見本に入れてはいけないものも整理します。</p>
+    <p class="stamp">2026-11-03 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-intermediate.html"><span class="chip lv-intermediate">中級者向け</span></a> 設定や考え方の理解が少し要る。いくつかの機能を組み合わせる。</td></tr><tr><th scope="row">所要時間</th><td>約25分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-write.html">書く</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a>、<a href="../tags/feature-files.html">ファイルの読み込み</a></td></tr><tr><th scope="row">作れるもの</th><td>自分の文体を写した「カスタムスタイル」と、使うたびの点検表</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">ずれの切り分け</a></li><li><a href="#s6">安全のために</a></li><li><a href="#s7">使うたびの点検表</a></li><li><a href="#s8">うまくいかないとき</a></li></ul>
+  </div>
+  <p>Claudeに書いてもらうと、文章が「自分らしくない」。そんなときは、自分の文章を見本にして、Claudeに文体を写させる方法があります。この機能を、<strong>スタイル</strong>と呼びます。結論は1つです。<strong>見本は、本物の自分の文章を、種類をそろえて渡す。</strong></p><section id="s1"><h2>ねらい</h2><ul><li>自分が書いた文章を見本にして、カスタムスタイルを作ります。</li><li>写り方を確かめて、ずれた所を切り分けて直します。</li><li>見本に入れてはいけないものを知り、安全に使います。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>自分が書いた文章を、2〜3本。種類をそろえます(例:社内メールだけ、ブログだけ)。</li><li>スタイルの作り方は、公式ヘルプで2通り説明されています。見本をアップロードする方法と、言葉で説明して作る方法です。この活用方法は、前者を使います。</li><li>見本に使えるファイル形式は、公式ヘルプにPDF、DOC、TXTと書かれています。文章を直接貼ることもできます。</li><li>対応するプランや、見本の数・大きさの上限は、確認できませんでした。画面の案内に従ってください。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 見本からスタイルを作って確かめるまで</figcaption><ol class="flow"><li><strong>見本を選ぶ</strong><span>種類のそろった文章を2〜3本選び、個人情報を消す</span></li><li><strong>スタイルを作る</strong><span>「Use style」のメニューから「Create &amp; edit styles」を開き、「Create custom style」で見本を追加する</span></li><li><strong>名前をつける</strong><span>用途が分かる名前にする(例:社内メール用)</span></li><li><strong>同じ依頼で試す</strong><span>スタイルあり・なしで、同じ依頼をして比べる</span></li><li><strong>ずれを直す</strong><span>下の切り分けで原因を探し、見本か指示を直す</span></li></ol></figure><p>スタイルを選ぶには、チャット画面の左下の「Search and tools」から「Use style」を開き、使うスタイルを選びます(公式ヘルプ)。選んだスタイルは、新しいメッセージ、メッセージの編集、やり直しに使われます。画面の表示は変わることがあります。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>比べるための依頼(スタイルありと、なしの両方で使う)</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>取引先に送る、お礼のメールを書いてください。
+- 背景: 先週の打ち合わせで、資料を直してもらった
+- 長さ: 5文以内
+- 最後に、次の連絡の予定を1文で書く</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>写り方の点検を頼む</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>いまのスタイルで書いた文章と、私の見本の文章を、比べてください。
+次の4点で、似ている所と違う所を挙げてください。
+1. 1文の長さ
+2. 文末(です・ます、だ・である)
+3. よく使う言い回し
+4. 改行と段落の切り方</code></pre></div></figure></section><section id="s5"><h2>ずれの切り分け</h2><figure class="fig fig-compare"><figcaption>図: 写らないときの原因と直し方</figcaption><table><thead><tr><th scope="col">こう感じたら</th><th scope="col">まず疑うこと</th></tr></thead><tbody><tr><td>文が長すぎる、または短すぎる</td><td>見本の文の長さが、そろっていない</td></tr><tr><td>文末が混ざる</td><td>見本に、です・ますと、だ・であるが混ざっている</td></tr><tr><td>いつもの言い回しが出ない</td><td>見本が少ない、または種類がちがう</td></tr><tr><td>内容が見本に引きずられる</td><td>見本の話題が強い。別の話題の見本を足す</td></tr></tbody></table></figure><p>見本を直しても写らないときは、言葉で説明する方法(「Describe style instead」)や、指示を自分で書く方法に切り替えます。公式ヘルプには、指示を自分で書くと、Claudeはそのとおりに従う、と書かれています。</p></section><section id="s6"><h2>安全のために</h2><ul><li>見本に、名前、住所、取引先の名前などを入れないでください。消したものを、見本に使います。</li><li>他の人が書いた文章は、使う許可があるものだけにします。</li><li>作ったスタイルは、あとで名前の変更、確認、削除ができます(公式ヘルプ)。使わなくなったものは消します。</li></ul></section><section id="s7"><h2>使うたびの点検表</h2><ul><li>事実や数字は、自分で確かめた。</li><li>自分なら言わない言い回しがないか、読んだ。</li><li>相手との関係に、トーンが合っている。</li></ul></section><section id="s8" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>写り方が毎回ちがうとき</strong>: 見本が少ないか、バラバラの可能性があります。種類をそろえた見本に絞ります。</li><li><strong>スタイルが選べないとき</strong>: 画面の表示や、対応するプランは変わることがあります。公式ヘルプで確認してください。確認できなかった点は、この文書では断定しません。</li><li><strong>まったく別の口調になるとき</strong>: スタイルの選択が外れていないか、画面で確かめます。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="write" data-features="chat projects" data-text="style.mdに、文体の決まりを書いて、文章の調子をそろえる 文の長さ、使わない言葉、見出しの型を、style.mdに書いて、claudeの文章の調子をそろえる方法です。 書く 基本のチャット projects"><a class="card-title" href="../tips/md-style.html">style.mdに、文体の決まりを書いて、文章の調子をそろえる</a><p class="card-sum">文の長さ、使わない言葉、見出しの型を、style.mdに書いて、Claudeの文章の調子をそろえる方法です。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約15分</span><span class="chip">書く</span><span class="chip chip-f">基本のチャット</span><span class="chip chip-f">Projects</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/10181068" rel="noopener" target="_blank">Claude ヘルプセンター「Configure and use styles」(カスタムスタイルの作り方、選び方、管理。2026年11月3日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/custom-style-guide.html" data-title="自分の文体の見本を渡して、書き方をそろえる | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcustom-style-guide.html&amp;text=%E8%87%AA%E5%88%86%E3%81%AE%E6%96%87%E4%BD%93%E3%81%AE%E8%A6%8B%E6%9C%AC%E3%82%92%E6%B8%A1%E3%81%97%E3%81%A6%E3%80%81%E6%9B%B8%E3%81%8D%E6%96%B9%E3%82%92%E3%81%9D%E3%82%8D%E3%81%88%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcustom-style-guide.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcustom-style-guide.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcustom-style-guide.html&amp;title=%E8%87%AA%E5%88%86%E3%81%AE%E6%96%87%E4%BD%93%E3%81%AE%E8%A6%8B%E6%9C%AC%E3%82%92%E6%B8%A1%E3%81%97%E3%81%A6%E3%80%81%E6%9B%B8%E3%81%8D%E6%96%B9%E3%82%92%E3%81%9D%E3%82%8D%E3%81%88%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
