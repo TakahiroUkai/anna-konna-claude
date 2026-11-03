@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>Claude APIに「メッセージスレッド」(ベータ)が追加されました | あんなことこんなことClaude</title>
+<meta name="description" content="2026年11月2日のAPIのリリースノートに、メッセージスレッド(ベータ)が載りました。長い会話のたびに、これまでのやりとりを全部送り直さなくても、新しい分だけを送れる仕組みです。チャット画面の機能ではなく、Claude APIを使う開発者向けです。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-02-message-threads.html">
+<meta property="og:title" content="Claude APIに「メッセージスレッド」(ベータ)が追加されました | あんなことこんなことClaude">
+<meta property="og:description" content="2026年11月2日のAPIのリリースノートに、メッセージスレッド(ベータ)が載りました。長い会話のたびに、これまでのやりとりを全部送り直さなくても、新しい分だけを送れる仕組みです。チャット画面の機能ではなく、Claude APIを使う開発者向けです。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-02-message-threads.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc doc-news">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a> / <a href="./">Claude最新情報</a></p>
+    <p class="news-date">2026-11-02 の発表</p>
+    <h1>Claude APIに「メッセージスレッド」(ベータ)が追加されました</h1>
+    <p class="summary">2026年11月2日のAPIのリリースノートに、メッセージスレッド(ベータ)が載りました。長い会話のたびに、これまでのやりとりを全部送り直さなくても、新しい分だけを送れる仕組みです。チャット画面の機能ではなく、Claude APIを使う開発者向けです。</p>
+    <p class="stamp">2026-11-03 時点の情報</p>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">何が発表されたか</a></li><li><a href="#s2">できるようになること</a></li><li><a href="#s3">活用方法</a></li><li><a href="#s4">注意すること</a></li></ul>
+  </div>
+  <section id="s1"><h2>何が発表されたか</h2><p>2026年11月2日、Claude Platformのリリースノートに「メッセージスレッド(Message threads)」がベータとして載りました。Claude APIのMessages API(プログラムからClaudeに文章を送る入口)に足された機能です。</p><p>公式の説明によると、サーバーが会話をしばらく預かります。2回目以降は、新しいメッセージと、直前の返答のIDだけを送ればよくなります。長い会話で、毎回すべてを送り直して処理し直す手間を減らすことが、ねらいとされています。主に、長く続くエージェント(自動で作業を進めるプログラム)の動きを想定した機能です。</p><p>これは、claude.aiのチャット画面に出る機能ではありません。APIを使って自分でプログラムを組む人が対象です。対象のプランや料金への影響は、公式の説明に書かれておらず、確認できませんでした。</p></section><section id="s2"><h2>できるようになること</h2><p>公式のページによる、基本の使い方です。</p><ul><li>1回目は、「スレッドを作る」指定をして、会話の全体、システムの指示、ツールを送ります。</li><li>2回目以降は、「続ける」指定と直前の返答のIDを付けて、新しいメッセージだけを送ります。システムの指示とツールは、続けるときは送りません。</li><li>ベータなので、リクエストごとに、決められたベータ用のヘッダー(message-threads-2026-08-12)を付けます。</li><li>公式のSDK(プログラムの部品)には、この流れを助ける機能も用意されている、と書かれています。</li></ul><p>期限と取り扱いについても、書かれています。</p><ul><li>スレッドは、最後のリクエストから5分で期限が切れます。返答が保存されるたびに、5分が数え直されます。</li><li>最後に使ってから1時間を超えて残ることはない、と書かれています。</li><li>預かりは「できる限り」の約束です。続けられないときはエラー(404)が返るので、自分の手元の会話の記録から、作り直して送ります。</li><li>ページの表には、「ZDR(データを保存しない契約)の対象外」「HIPAA(米国の医療情報の規則)の対象外」と書かれています。</li></ul></section><section id="s3"><h2>活用方法</h2><p>APIを使わない人にとっては、すぐ試せる機能ではありません。次のように知っておくと役に立ちます。</p><ul><li>自分で作ったツールが、長い会話のたびに遅くなるときの、手段のひとつになります。</li><li>使うときは、会話の記録を必ず自分の側にも残します。公式のページも、アプリ側が正本を持つよう求めています。</li><li>チャットで長い会話が重くなったときは、これまでと同じく、新しい会話に要点を貼って始め直す方法が使えます。</li></ul><p>APIを使う人が、まず試す形を示します。次の文章をClaudeに貼ると、自分のコードに合わせた手順の相談ができます。</p><figure class="fig fig-prompt"><figcaption>自分のコードに入れるときの相談</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>Claude APIのメッセージスレッド(ベータ)を、自分のプログラムに入れたいです。
+- 使っている言語: (例: Python)
+- 今の作り: (例: 毎回、会話の全体をmessagesに入れて送っている)
+- 困っていること: (例: 会話が長くなると返答が始まるまでが遅い)
+次のことを、順に答えてください。
+1. 今のコードのどこを、「作る」と「続ける」に分けるか
+2. 続けるときに送らないもの
+3. 期限が切れて404が返ったときの作り直しの流れ
+公式のページに書かれていないことは、「書かれていません」と書いてください。</code></pre></div></figure></section><section id="s4" class="warn"><h2>注意すること</h2><ul><li>ベータです。仕様が変わることがあります。使う前に、公式のページを見直します。</li><li>最後のリクエストから5分で期限が切れるため、間があく用途には向きません。</li><li>返答のIDは、1回しか「続ける」に使えません。やり直したいときや、途中から枝分かれさせたいときは、新しいスレッドを作ります。</li><li>ZDRとHIPAAの対象外です。機密性の高い内容を扱う場合は、公式のページと自分の契約を確かめてから使います。</li><li>続ける途中で、モデルなど一部の設定を変えるとエラーになる、と書かれています。細かい条件は公式のページを読みます。</li><li>この記事のコードの相談は、使い方の整理です。本番で使う前に、公式の手順どおりに動くか、小さな例で確かめます。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="build" data-features="artifacts chat" data-text="artifactで、割り勘の計算ツールを作る 作りたいツールを言葉で伝えるだけで、会話の横に動くツールができます。割り勘の計算ツールを例に、作り方と、直し方、共有する前の注意点を整理します。 作る artifacts 基本のチャット"><a class="card-title" href="../tips/artifact-mini-tool.html">Artifactで、割り勘の計算ツールを作る</a><p class="card-sum">作りたいツールを言葉で伝えるだけで、会話の横に動くツールができます。割り勘の計算ツールを例に、作り方と、直し方、共有する前の注意点を整理します。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約15分</span><span class="chip">作る</span><span class="chip chip-f">Artifacts</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener" target="_blank">Claude Platform Docs「Release notes」(2026年11月2日の「メッセージスレッド(ベータ)」の項目で、日付を確認。2026年11月3日に確認)</a></li><li><a href="https://platform.claude.com/docs/en/build-with-claude/message-threads" rel="noopener" target="_blank">Claude Platform Docs「Message threads」(仕組み、使い方、期限、制限の確認。2026年11月3日に確認)</a></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-02-message-threads.html" data-title="Claude APIに「メッセージスレッド」(ベータ)が追加されました | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-02-message-threads.html&amp;text=Claude%20API%E3%81%AB%E3%80%8C%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%B9%E3%83%AC%E3%83%83%E3%83%89%E3%80%8D%28%E3%83%99%E3%83%BC%E3%82%BF%29%E3%81%8C%E8%BF%BD%E5%8A%A0%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-02-message-threads.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-02-message-threads.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-02-message-threads.html&amp;title=Claude%20API%E3%81%AB%E3%80%8C%E3%83%A1%E3%83%83%E3%82%BB%E3%83%BC%E3%82%B8%E3%82%B9%E3%83%AC%E3%83%83%E3%83%89%E3%80%8D%28%E3%83%99%E3%83%BC%E3%82%BF%29%E3%81%8C%E8%BF%BD%E5%8A%A0%E3%81%95%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="./">最新情報の一覧にもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
