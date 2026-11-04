@@ -417,5 +417,14 @@
       "claude-code",
       "chat"
     ]
+  },
+  {
+    "slug": "cloud-environment-setup",
+    "title": "Claude Codeのクラウド環境を、初心者が失敗せずに設定する",
+    "level": "beginner",
+    "purpose": "learn",
+    "features": [
+      "claude-code"
+    ]
   }
 ]
