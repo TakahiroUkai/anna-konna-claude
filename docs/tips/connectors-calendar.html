@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>コネクタで、予定を見ながら1日の計画を立てる | あんなことこんなことClaude</title>
+<meta name="description" content="Googleカレンダーのコネクタをつないで、Claudeに予定を読ませ、空き時間に作業を割り当てた計画を作る方法です。読ませる範囲の決め方、結果の確かめ方、公式の説明が食い違う点も整理します。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/connectors-calendar.html">
+<meta property="og:title" content="コネクタで、予定を見ながら1日の計画を立てる | あんなことこんなことClaude">
+<meta property="og:description" content="Googleカレンダーのコネクタをつないで、Claudeに予定を読ませ、空き時間に作業を割り当てた計画を作る方法です。読ませる範囲の決め方、結果の確かめ方、公式の説明が食い違う点も整理します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/connectors-calendar.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>コネクタで、予定を見ながら1日の計画を立てる</h1>
+    <p class="summary">Googleカレンダーのコネクタをつないで、Claudeに予定を読ませ、空き時間に作業を割り当てた計画を作る方法です。読ませる範囲の決め方、結果の確かめ方、公式の説明が食い違う点も整理します。</p>
+    <p class="stamp">2026-11-05 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-intermediate.html"><span class="chip lv-intermediate">中級者向け</span></a> 設定や考え方の理解が少し要る。いくつかの機能を組み合わせる。</td></tr><tr><th scope="row">所要時間</th><td>約25分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-organize.html">整理する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-connectors.html">コネクタ</a></td></tr><tr><th scope="row">作れるもの</th><td>予定の空きに合わせた、時間つきの1日の計画</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">注意すること</a></li><li><a href="#s6">うまくいかないとき</a></li></ul>
+  </div>
+  <p>朝、予定表を開いて、空いている時間に何をするかを考える。この手間を、Claudeに任せられます。<a class="term" href="../glossary/#term-connector">コネクタ</a>(Claudeを他のアプリにつなぐ仕組み)でカレンダーを読ませると、予定の空きに合わせた、時間つきの計画ができます。</p><section id="s1"><h2>ねらい</h2><ul><li>予定の入った日に、作業をどの時間に置くかを、Claudeと決めます。</li><li>予定のかさなりや、移動や準備の時間が足りない所を、先に見つけます。</li><li>計画を、カレンダーに書き込ませずに、自分の手で反映します(理由は「注意すること」に書きます)。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>Googleカレンダーを使っているGoogleアカウント。</li><li>公式のDocsによると、Googleカレンダーのコネクタは、Pro、Max、Team、Enterpriseの各プランで使えます。一方、ヘルプセンターには「すべてのユーザー」と書かれていて、無料プランで使えるかは、2つのページで食い違っていました。自分のプランで使えるかは、画面で確かめてください。</li><li>Team・Enterpriseでは、組織のOwnerが先に有効にしないと、メンバーはつなげません。</li><li>その日にやりたい作業の一覧(作業名と、かかる時間の目安)。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: カレンダーをつないで、計画を作るまで</figcaption><ol class="flow"><li><strong>コネクタをつなぐ</strong><span>「Customize」の「Connectors」で、Google Calendarの「Connect」を押し、Googleにサインインして許可する</span></li><li><strong>チャットで有効にする</strong><span>メッセージ欄の「+」から「Connectors」を開き、Google Calendarをオンにする</span></li><li><strong>読む範囲を決める</strong><span>「明日の予定だけ」など、日付を区切って頼む</span></li><li><strong>まず予定を確認する</strong><span>計画の前に、Claudeが読んだ予定を一覧にさせて、実際の予定表と見比べる</span></li><li><strong>計画を作る</strong><span>作業の一覧を渡して、空きに割り当ててもらう</span></li><li><strong>自分で反映する</strong><span>気に入った所だけを、自分の手でカレンダーに入れる</span></li></ol></figure></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>1. まず、読んだ予定を確認する</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>Googleカレンダーから、(例: 明日)の予定を読んで、時刻順の一覧にしてください。
+- 列: 開始 / 終了 / 予定名 / 参加者の人数
+- 終日の予定は、別にして書く
+- 読めなかった予定があれば、「読めなかった」と書く</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>2. 空きに作業を割り当てる</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>上の予定の空き時間に、次の作業を割り当てて、1日の計画を作ってください。
+作業(所要の目安):
+- 企画書の見直し(60分)
+- 返信が必要なメールの整理(30分)
+- 来週の準備(45分)
+条件:
+- 予定の前後には、移動や準備のために、10分のあきを入れる
+- 12:00〜13:00は昼休みなので、何も入れない
+- 割り当てられない作業は、「入らなかった作業」として別に書く
+- カレンダーの予定は、変更しない(読むだけ)</code></pre></div></figure></section><section id="s5" class="warn"><h2>注意すること</h2><ul><li><strong>公式の説明が食い違っています</strong>: Docsには「予定の作成や変更はできず、招待も送れない」とあります。ヘルプセンターには、予定の作成・更新・削除ができるような書き方があります。どちらが今の動きか、日付がなく判断できませんでした。この記事では、読むだけで使います。</li><li>上の<a class="term" href="../glossary/#term-prompt">プロンプト</a>の「変更しない」は、念のための指定です。Claudeが勝手に書き換えない保証ではありません。計画は、自分の手でカレンダーに入れます。</li><li>公式のDocsによると、Claudeは、依頼に必要なときだけカレンダーを読み、見られるのは自分がアクセスできるカレンダーだけです。共有カレンダーや、他人の予定名が出る依頼は、避けます。</li><li>取り出された予定のデータは、そのチャットに結びついて保存され、チャットを消すと消える、と公式のDocsにあります。予定名に個人名や病院名などが入っているなら、読ませる範囲をせまくします。</li><li>組織(会社)のアカウントでは、Owner(管理者)が、コネクタを止めている場合があります。つなげないときは、まず管理者に聞きます。</li></ul></section><section id="s6" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>予定が足りない、多すぎるとき</strong>: 手順の「まず予定を確認する」で、実際の予定表と見比べます。原因は公式のページには書かれていないので、「どのカレンダーから、どの日付の範囲を読んだか」をClaudeに聞いて、日付の範囲と、カレンダーの数を順に切り分けます。</li><li><strong>コネクタが選べないとき</strong>: 「Customize」の「Connectors」に、Google Calendarが出ているかを見ます。出ていなければ、プランか、組織の設定の問題です。</li><li><strong>Googleの画面で「アクセスがブロックされました」と出るとき</strong>: Google Workspaceの管理者が、Claudeを許可する必要がある場合があります。公式のヘルプに手順がありますが、管理者の作業です。</li><li><strong>計画が詰まりすぎるとき</strong>: 「1日に入れる作業は3つまで」「作業のあいだに15分あける」と、条件を足します。</li><li>画面の表示は変わることがあります。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="intermediate" data-purpose="automate" data-features="scheduled cowork search" data-text="毎朝の情報まとめを、定期タスクで自動化する claude coworkの定期タスクで、決まった時間に情報まとめを作らせる方法です。条件が合わないと動かないので、動く条件と、最初の確認のしかたも整理します。 自動化する 定期タスク cowork web検索"><a class="card-title" href="../tips/cowork-scheduled-brief.html">毎朝の情報まとめを、定期タスクで自動化する</a><p class="card-sum">Claude Coworkの定期タスクで、決まった時間に情報まとめを作らせる方法です。条件が合わないと動かないので、動く条件と、最初の確認のしかたも整理します。</p><p class="chips"><span class="chip lv-intermediate">中級者向け</span><span class="chip">約30分</span><span class="chip">自動化する</span><span class="chip chip-f">定期タスク</span><span class="chip chip-f">Cowork</span><span class="chip chip-f">Web検索</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://claude.com/docs/connectors/google/calendar" rel="noopener" target="_blank">Claude Docs「Google Calendar connector」(つなぎ方、読める内容、プラン、データの扱い。2026年11月5日に確認)</a></li><li><a href="https://support.claude.com/en/articles/10166901-use-google-workspace-connectors" rel="noopener" target="_blank">Claude ヘルプセンター「Use Google Workspace connectors」(Gmail・Googleカレンダー・Driveのコネクタの共通の説明。2026年11月5日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/connectors-calendar.html" data-title="コネクタで、予定を見ながら1日の計画を立てる | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fconnectors-calendar.html&amp;text=%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E3%81%A7%E3%80%81%E4%BA%88%E5%AE%9A%E3%82%92%E8%A6%8B%E3%81%AA%E3%81%8C%E3%82%891%E6%97%A5%E3%81%AE%E8%A8%88%E7%94%BB%E3%82%92%E7%AB%8B%E3%81%A6%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fconnectors-calendar.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fconnectors-calendar.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fconnectors-calendar.html&amp;title=%E3%82%B3%E3%83%8D%E3%82%AF%E3%82%BF%E3%81%A7%E3%80%81%E4%BA%88%E5%AE%9A%E3%82%92%E8%A6%8B%E3%81%AA%E3%81%8C%E3%82%891%E6%97%A5%E3%81%AE%E8%A8%88%E7%94%BB%E3%82%92%E7%AB%8B%E3%81%A6%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>

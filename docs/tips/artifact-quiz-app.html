@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>Artifactで、自作のクイズアプリを作る | あんなことこんなことClaude</title>
+<meta name="description" content="覚えたい内容を渡して、Artifactで「答えると○×が出て、最後に点数が出る」クイズアプリを作る方法です。資料を読み返すより、答えるほうが弱い所が見えます。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/artifact-quiz-app.html">
+<meta property="og:title" content="Artifactで、自作のクイズアプリを作る | あんなことこんなことClaude">
+<meta property="og:description" content="覚えたい内容を渡して、Artifactで「答えると○×が出て、最後に点数が出る」クイズアプリを作る方法です。資料を読み返すより、答えるほうが弱い所が見えます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/artifact-quiz-app.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>Artifactで、自作のクイズアプリを作る</h1>
+    <p class="summary">覚えたい内容を渡して、Artifactで「答えると○×が出て、最後に点数が出る」クイズアプリを作る方法です。資料を読み返すより、答えるほうが弱い所が見えます。</p>
+    <p class="stamp">2026-11-05 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約15分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-build.html">作る</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-artifacts.html">Artifacts</a></td></tr><tr><th scope="row">作れるもの</th><td>会話の横で動く、10問の4択クイズアプリ(採点つき)</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">うまくいかないとき</a></li></ul>
+  </div>
+  <p>資格の勉強や、新しい業務の用語。読み返すだけでは、覚えたかどうか分かりません。そこで、覚えたい内容を渡して、答えると○×が出るクイズアプリを作ってもらいます。作ったアプリは、会話の横で動きます。</p><section id="s1"><h2>ねらい</h2><ul><li>覚えたい内容から、10問の4択クイズを作ります。</li><li>答えるたびに○×と解説が出て、最後に点数が出るアプリにします。</li><li>作ったあとで「間違えた問題だけ、もう一度」などの直しを、言葉で頼みます。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>覚えたい内容。箇条書きのメモでも、教科書の一部を貼った文章でもかまいません。</li><li>問題の数と難しさ(例: 10問、基本レベル)。</li><li>Claudeで、ファイルを作る設定が入っていること。公式のヘルプによると、<a class="term" href="../glossary/#term-artifact">Artifact</a>を使うには「設定 &gt; 機能」の中の、ファイルの作成と編集の項目がオンである必要があります。名前は画面の更新で変わることがあります(「Cloud code execution and file creation」、新しい画面では「Create and edit files」と書かれています)。</li><li>個人情報や、社外に出せない内容は貼らないでください。</li></ul><p>Artifact(アーティファクト)は、会話の横に作られる作品のことです。公式のヘルプでは、文書、スライド、ダッシュボード、小さな操作ツールなどが例に挙がっています。作ったものは、左のメニューの「Artifacts」タブに保存されます(確認日時点)。</p></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: クイズアプリを作って、直すまで</figcaption><ol class="flow"><li><strong>内容を渡す</strong><span>覚えたい内容を、会話に貼る</span></li><li><strong><a class="term" href="../glossary/#term-prompt">プロンプト</a>を送る</strong><span>下の文章の空欄を埋めて送る</span></li><li><strong>会話の横で動かす</strong><span>1問ずつ答えて、○×と解説を見る</span></li><li><strong>直しを頼む</strong><span>「次へ」ボタンの位置など、気になる所を言葉で頼む</span></li><li><strong>内容を確かめる</strong><span>解説が合っているか、元の内容と見比べる</span></li></ol></figure><figure class="fig fig-compare"><figcaption>図: 読み返すのと、クイズアプリに答えるのの違い(例)</figcaption><table><thead><tr><th scope="col">やり方</th><th scope="col">起きやすいこと</th></tr></thead><tbody><tr><td>内容を読み返す</td><td>「読んだ気」になる。分かっていない所が見えにくい</td></tr><tr><td>クイズアプリに答える</td><td>間違えた問題が、自分の弱い所として見える</td></tr></tbody></table></figure></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>クイズアプリを作ってもらう</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の内容から、4択のクイズアプリをArtifactで作ってください。
+- 内容: (ここに覚えたい内容を貼る)
+- 問題数: 10問
+- 難しさ: (例: 基本。用語の意味と、使い分けを中心に)
+作ってほしい動き:
+- 1問ずつ表示する。選択肢はA〜Dの4つ。
+- 選ぶと、すぐに○×と短い解説を出す。
+- 最後に「10問中◯問正解」と出して、間違えた問題の一覧を見せる。
+- スマホの画面でも押しやすい大きさにする。
+条件:
+- 問題と解説は、上の内容に書かれていることだけから作る。書かれていないことは出さない。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>直しを頼む</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>今のクイズアプリを、次のように直してください。
+- 間違えた問題だけを、もう一度出せるボタンを付ける。
+- 選択肢の並びを、毎回ランダムにする。
+- ほかの部分は、変えない。</code></pre></div></figure></section><section id="s5" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>画面にエラーが出たとき</strong>: 公式のヘルプによると、エラーの近くに「Try fixing with Claude」(Claudeに直してもらう)が出ます。直る保証はないと書かれています。直らなければ、出たエラーの文章を、そのまま貼って頼みます。</li><li><strong>解説がまちがっていそうなとき</strong>: 解説は、Claudeが作った文章です。試験や仕事で必要な内容は、元の資料と見比べて確かめます。</li><li><strong>問題が内容から外れるとき</strong>: 「書かれていることだけから作る」の条件が入っているか、確かめます。</li><li><strong>作り直したくなったとき</strong>: 気に入らない所だけを、言葉で直してもらいます。一度にたくさん頼むより、1つずつのほうが、結果を確かめやすくなります。画面の表示は変わることがあります。</li><li><strong>友だちにも使わせたいとき</strong>: 共有の方法は、公式のヘルプの別の記事にまとめられています。共有する前に、貼った内容に個人情報が入っていないかを見直します。この記事では、共有の手順は確認していません。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="learn" data-features="chat files" data-text="資料からクイズを作って、自分で練習する 講義資料やテキストをclaudeに渡して、答え合わせつきのクイズを作り、間違えた所だけを復習する方法をまとめました。自分がどこで間違えるかが見えるので、読み返しの時間を絞れます。 学ぶ 基本のチャット ファイルの読み込み"><a class="card-title" href="../tips/quiz-yourself.html">資料からクイズを作って、自分で練習する</a><p class="card-sum">講義資料やテキストをClaudeに渡して、答え合わせつきのクイズを作り、間違えた所だけを復習する方法をまとめました。自分がどこで間違えるかが見えるので、読み返しの時間を絞れます。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約15分</span><span class="chip">学ぶ</span><span class="chip chip-f">基本のチャット</span><span class="chip chip-f">ファイルの読み込み</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them" rel="noopener" target="_blank">Claude ヘルプセンター「What are artifacts and how do I use them?」(Artifactとは何か、作り方、直し方、必要な設定、プランごとの違い。2026年11月5日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/artifact-quiz-app.html" data-title="Artifactで、自作のクイズアプリを作る | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fartifact-quiz-app.html&amp;text=Artifact%E3%81%A7%E3%80%81%E8%87%AA%E4%BD%9C%E3%81%AE%E3%82%AF%E3%82%A4%E3%82%BA%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fartifact-quiz-app.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fartifact-quiz-app.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fartifact-quiz-app.html&amp;title=Artifact%E3%81%A7%E3%80%81%E8%87%AA%E4%BD%9C%E3%81%AE%E3%82%AF%E3%82%A4%E3%82%BA%E3%82%A2%E3%83%97%E3%83%AA%E3%82%92%E4%BD%9C%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
