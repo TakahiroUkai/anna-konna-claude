@@ -1,0 +1,494 @@
+[
+ {
+  "id": "prompt",
+  "term": "プロンプト",
+  "reading": "ぷろんぷと",
+  "category": "Claudeの機能",
+  "explain": "Claudeに伝える依頼の文章です。誰に向けて、何を、どんな形で欲しいかを書くほど、思ったとおりの答えが返りやすくなります。",
+  "link": [
+   "プロンプト"
+  ]
+ },
+ {
+  "id": "project",
+  "term": "Project(プロジェクト)",
+  "reading": "ぷろじぇくと",
+  "category": "Claudeの機能",
+  "explain": "資料と指示をまとめて置いておく、Claudeの作業場です。同じ話題で何度も相談するときに、背景の説明を毎回書き直さずに済みます。",
+  "link": [
+   "Projects",
+   "Project"
+  ]
+ },
+ {
+  "id": "artifact",
+  "term": "Artifact(アーティファクト)",
+  "reading": "あーてぃふぁくと",
+  "category": "Claudeの機能",
+  "explain": "会話の横に作られる、ツール、文書、ページなどの作品です。作ったものを、その場で動かしたり直したりできます。",
+  "link": [
+   "Artifacts",
+   "Artifact"
+  ]
+ },
+ {
+  "id": "memory",
+  "term": "メモリ(Claudeの機能)",
+  "reading": "めもり",
+  "category": "Claudeの機能",
+  "explain": "会話をまたいで、好みや前提を覚えておく機能です。覚えた内容は、設定で確認や削除ができます。なお、パソコンの部品としての「メモリ」は、別の用語(RAM)で説明しています。",
+  "link": [
+   "メモリ"
+  ]
+ },
+ {
+  "id": "skill",
+  "term": "スキル",
+  "reading": "すきる",
+  "category": "Claudeの機能",
+  "explain": "よく使う作業の手順をまとめた、手順書のフォルダです。Claudeが必要なときに呼び出して使います。",
+  "link": [
+   "スキル"
+  ]
+ },
+ {
+  "id": "connector",
+  "term": "コネクタ(MCPコネクタ)",
+  "reading": "こねくた",
+  "category": "Claudeの機能",
+  "explain": "Claudeを、外部のアプリやサービスとつなぐ仕組みです。つなぐと、Claudeがそのサービスの情報を読んだり操作したりできるようになります。「MCP」は、そのつなぎ方を決めた共通の約束の名前です。",
+  "link": [
+   "MCPコネクタ",
+   "コネクタ"
+  ]
+ },
+ {
+  "id": "cowork",
+  "term": "Cowork(コワーク)",
+  "reading": "こわーく",
+  "category": "Claudeの機能",
+  "explain": "パソコン上の作業を、Claudeに任せて進めてもらう機能です。ファイルの整理や、資料づくりなどを頼みます。",
+  "link": [
+   "Cowork"
+  ]
+ },
+ {
+  "id": "claude-code",
+  "term": "Claude Code(クロード コード)",
+  "reading": "くろーど こーど",
+  "category": "Claudeの機能",
+  "explain": "コードを書く、動かす、直す作業を、Claudeに任せる道具です。パソコンで使う方法と、クラウド上で使う方法があります。",
+  "link": [
+   "Claude Code"
+  ]
+ },
+ {
+  "id": "scheduled-task",
+  "term": "定期タスク",
+  "reading": "ていきたすく",
+  "category": "Claudeの機能",
+  "explain": "決まった時間に、自動で実行する作業です。一度説明しておくと、毎回頼まなくても動きます。",
+  "link": [
+   "定期タスク"
+  ]
+ },
+ {
+  "id": "custom-style",
+  "term": "スタイル(カスタムスタイル)",
+  "reading": "すたいる",
+  "category": "Claudeの機能",
+  "explain": "Claudeの書き方の調子を選ぶ機能です。自分の文章を見本に渡して、自分用のスタイルを作ることもできます。",
+  "link": [
+   "カスタムスタイル"
+  ]
+ },
+ {
+  "id": "usage-limit",
+  "term": "利用上限",
+  "reading": "りようじょうげん",
+  "category": "Claudeの機能",
+  "explain": "一定の期間に使える量の上限です。大きな依頼ほど、多く使います。上限に達すると、リセットされるまで待つことになります。",
+  "link": [
+   "利用上限"
+  ]
+ },
+ {
+  "id": "cloud-session",
+  "term": "クラウドセッション",
+  "reading": "くらうどせっしょん",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "自分のパソコンではなく、クラウド上のパソコンで、Claude Codeに作業させる使い方です。",
+  "link": [
+   "クラウドセッション"
+  ]
+ },
+ {
+  "id": "cloud-environment",
+  "term": "環境(クラウド環境)",
+  "reading": "かんきょう",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "クラウド上のパソコンが、どう始まるかを決める設定のまとまりです。接続先、設定値、入れる道具などを決めます。",
+  "link": [
+   "クラウド環境"
+  ]
+ },
+ {
+  "id": "vm",
+  "term": "仮想マシン(VM)",
+  "reading": "かそうましん",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "クラウド上に用意される、作業用のパソコンです。セッションごとに、新しいものが使われます。",
+  "link": [
+   "仮想マシン"
+  ]
+ },
+ {
+  "id": "session",
+  "term": "セッション",
+  "reading": "せっしょん",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "Claudeに作業を頼み始めてから終わるまでの、ひとまとまりのやりとりです。",
+  "link": []
+ },
+ {
+  "id": "repository",
+  "term": "リポジトリ",
+  "reading": "りぽじとり",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "プログラムや文書のファイルと、その変更の記録をまとめて置く場所です。",
+  "link": [
+   "リポジトリ"
+  ]
+ },
+ {
+  "id": "github",
+  "term": "GitHub(ギットハブ)",
+  "reading": "ぎっとはぶ",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "プログラムなどを保管し、共同で使うためのサービスです。",
+  "link": [
+   "GitHub"
+  ]
+ },
+ {
+  "id": "network-access",
+  "term": "ネットワークアクセス(None・Trusted・Full・Custom)",
+  "reading": "ねっとわーくあくせす",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "外のどこに接続してよいかの設定です。None=接続なし、Trusted=許可リストだけ、Full=どこでも、Custom=自分で決めたリスト、の4段階です。",
+  "link": [
+   "ネットワークアクセス"
+  ]
+ },
+ {
+  "id": "allowlist",
+  "term": "許可リスト",
+  "reading": "きょかりすと",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "接続してよい相手を並べた一覧です。一覧にない相手には、接続できません。",
+  "link": [
+   "許可リスト"
+  ]
+ },
+ {
+  "id": "domain",
+  "term": "ドメイン",
+  "reading": "どめいん",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "「example.com」のような、インターネット上の住所の名前です。",
+  "link": [
+   "ドメイン"
+  ]
+ },
+ {
+  "id": "subdomain",
+  "term": "サブドメイン",
+  "reading": "さぶどめいん",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "「api.example.com」の「api」のように、ドメインの前に付く名前です。「*.example.com」と書くと、すべてのサブドメインを指します。",
+  "link": [
+   "サブドメイン"
+  ]
+ },
+ {
+  "id": "host",
+  "term": "ホスト",
+  "reading": "ほすと",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "接続先のコンピューターの名前です。例:「api.example.com」。",
+  "link": []
+ },
+ {
+  "id": "package",
+  "term": "パッケージ",
+  "reading": "ぱっけーじ",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "他の人が作った、部品のようなプログラムです。取り込んで使います。npmはJavaScript用、PyPIはPython用の、配布先です。",
+  "link": [
+   "パッケージ"
+  ]
+ },
+ {
+  "id": "sdk",
+  "term": "SDK",
+  "reading": "えすでぃーけー",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "あるサービスを、自分のプログラムから使うための部品と道具のまとまりです。",
+  "link": [
+   "SDK"
+  ]
+ },
+ {
+  "id": "env-var",
+  "term": "環境変数",
+  "reading": "かんきょうへんすう",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "プログラムが読む、名前つきの設定値です。「LOG_LEVEL=debug」なら、名前が「LOG_LEVEL」、値が「debug」です。",
+  "link": [
+   "環境変数"
+  ]
+ },
+ {
+  "id": "quote",
+  "term": "引用符",
+  "reading": "いんようふ",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "文字列の両端を囲む「\"」や「'」です。値の途中の「#」が、コメントと誤解されるのを防ぎます。",
+  "link": [
+   "引用符"
+  ]
+ },
+ {
+  "id": "comment",
+  "term": "コメント",
+  "reading": "こめんと",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "プログラムが読み飛ばす、人間向けのメモの部分です。設定の書き方では、「#」から行の終わりまでが、これにあたります。",
+  "link": []
+ },
+ {
+  "id": "idle",
+  "term": "アイドル",
+  "reading": "あいどる",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "しばらく何も操作がなく、休んでいる状態です。",
+  "link": [
+   "アイドル"
+  ]
+ },
+ {
+  "id": "network-secret",
+  "term": "ネットワークシークレット",
+  "reading": "ねっとわーくしーくれっと",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "APIキーなどの鍵を、Claudeに見せずに使わせる仕組みです。指定した接続先への通信にだけ、鍵が付きます。",
+  "link": [
+   "ネットワークシークレット"
+  ]
+ },
+ {
+  "id": "api-key",
+  "term": "APIキー・トークン",
+  "reading": "えーぴーあいきー",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "サービスを使う権利を示す、合い言葉のような文字列です。他人に知られると、勝手に使われるおそれがあります。",
+  "link": [
+   "APIキー",
+   "トークン"
+  ]
+ },
+ {
+  "id": "header",
+  "term": "ヘッダー",
+  "reading": "へっだー",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "通信に付ける、追加情報の欄です。鍵は、ここに入れて送ります。",
+  "link": []
+ },
+ {
+  "id": "agent-proxy",
+  "term": "エージェントプロキシ",
+  "reading": "えーじぇんとぷろきし",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "通信を中継するAnthropicの仕組みです。指定した相手宛ての通信にだけ、鍵を付けます。",
+  "link": [
+   "エージェントプロキシ"
+  ]
+ },
+ {
+  "id": "bearer",
+  "term": "Bearer(ベアラー)",
+  "reading": "べあらー",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "「この鍵を持つ人」として扱ってほしい、という種類の鍵の送り方です。",
+  "link": [
+   "Bearer"
+  ]
+ },
+ {
+  "id": "setup-script",
+  "term": "セットアップスクリプト",
+  "reading": "せっとあっぷすくりぷと",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "作業の前に、一度だけ動かすスクリプトです。入っていない道具を入れるときに使います。",
+  "link": [
+   "セットアップスクリプト"
+  ]
+ },
+ {
+  "id": "bash",
+  "term": "Bash(バッシュ)",
+  "reading": "ばっしゅ",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "コマンドを順に実行するための、文字で操作する道具(シェル)です。",
+  "link": [
+   "Bash"
+  ]
+ },
+ {
+  "id": "root",
+  "term": "root(ルート)",
+  "reading": "るーと",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "パソコンのすべてを変更できる、最も強い権限です。",
+  "link": []
+ },
+ {
+  "id": "apt",
+  "term": "apt(エーピーティー)",
+  "reading": "えーぴーてぃー",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "Ubuntuというパソコンのソフトを入れる道具です。「apt install」で入れます。",
+  "link": []
+ },
+ {
+  "id": "exit-code",
+  "term": "終了コード",
+  "reading": "しゅうりょうこーど",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "コマンドが終わったときに返す数字です。0は成功、それ以外は失敗を表します。",
+  "link": [
+   "終了コード"
+  ]
+ },
+ {
+  "id": "or-true",
+  "term": "|| true(オア トゥルー)",
+  "reading": "",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "直前のコマンドが失敗しても、成功したことにして先へ進める書き方です。止まっては困らない命令に付けます。",
+  "link": []
+ },
+ {
+  "id": "cache",
+  "term": "キャッシュ",
+  "reading": "きゃっしゅ",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "作業後の状態を保存して、次回から使い回す仕組みです。次の開始が速くなります。",
+  "link": [
+   "キャッシュ"
+  ]
+ },
+ {
+  "id": "parallel",
+  "term": "並列",
+  "reading": "へいれつ",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "複数の作業を同時に走らせることです。全部終わるのを待ってから、次へ進みます。",
+  "link": []
+ },
+ {
+  "id": "docker-image",
+  "term": "Dockerイメージ",
+  "reading": "どっかーいめーじ",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "アプリをそのまま動かせる形にまとめた、ひな形のファイルです。",
+  "link": [
+   "Dockerイメージ"
+  ]
+ },
+ {
+  "id": "hook",
+  "term": "フック",
+  "reading": "ふっく",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "決まった場面で、自動で動かす小さな処理です。",
+  "link": [
+   "フック"
+  ]
+ },
+ {
+  "id": "claude-dir",
+  "term": "~/.claude/",
+  "reading": "",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "自分のパソコンの中にある、Claude Codeの個人用の設定を置く場所です。クラウドのパソコンには、ここは届きません。",
+  "link": []
+ },
+ {
+  "id": "vcpu",
+  "term": "vCPU",
+  "reading": "ぶいしーぴーゆー",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "仮想マシンが使える、計算をする部品の数です。多いほど、同時に多くの処理をこなせます。",
+  "link": [
+   "vCPU"
+  ]
+ },
+ {
+  "id": "ram",
+  "term": "メモリ(パソコンの部品)",
+  "reading": "めもり",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "作業中のデータを一時的に置く場所です。足りないと、重い作業が止まることがあります。Claudeの「メモリ」機能とは別のものです。",
+  "link": [
+   "16GBのメモリ"
+  ]
+ },
+ {
+  "id": "disk",
+  "term": "ディスク",
+  "reading": "でぃすく",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "ファイルを保存しておく場所です。",
+  "link": []
+ },
+ {
+  "id": "owner",
+  "term": "Owner(オーナー)",
+  "reading": "おーなー",
+  "category": "クラウドセッション(Claude Code)",
+  "explain": "組織の設定を管理できる役割です。Teamなどのプランで使われます。",
+  "link": []
+ },
+ {
+  "id": "markdown",
+  "term": "Markdown",
+  "reading": "まーくだうん",
+  "category": "ファイルと書き方",
+  "explain": "見出しや箇条書きを、記号で書く文章の形式です。拡張子は .md です。",
+  "link": [
+   "Markdown"
+  ]
+ },
+ {
+  "id": "claude-md",
+  "term": "CLAUDE.md",
+  "reading": "くろーど えむでぃー",
+  "category": "ファイルと書き方",
+  "explain": "Claude Codeが、作業のはじめに読む指示書です。リポジトリに置いておくと、毎回同じ約束を伝えられます。",
+  "link": [
+   "CLAUDE.md"
+  ]
+ },
+ {
+  "id": "readme",
+  "term": "README.md",
+  "reading": "りーどみー",
+  "category": "ファイルと書き方",
+  "explain": "フォルダやリポジトリの入口になる説明書です。目的、構成、手順などを書きます。",
+  "link": [
+   "README.md"
+  ]
+ }
+]

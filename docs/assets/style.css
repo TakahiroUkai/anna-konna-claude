@@ -167,3 +167,11 @@ li { margin: .25rem 0; }
 .share-btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .4rem 1rem; font: inherit; font-size: .9375rem; font-weight: 700; line-height: 1.3; color: var(--ink); background: var(--bg); border: 1px solid var(--muted); border-radius: 8px; text-decoration: none; cursor: pointer; }
 .share-btn:hover { background: var(--accent-soft); border-color: var(--accent-ink); }
 .share-status { min-height: 1.5rem; margin: .5rem 0 0; font-size: .875rem; color: var(--beginner-ink); }
+
+a.term { color: inherit; text-decoration: underline dotted; text-underline-offset: 3px; }
+.terms { margin: 0; }
+.term-item { padding: .7rem 0; border-bottom: 1px solid var(--line, #e3e0d6); scroll-margin-top: 1rem; }
+.term-item:target { background: var(--warn-bg); }
+.term-item dt { font-weight: 700; }
+.term-item .reading { font-weight: 400; font-size: .85em; color: #5e5d59; margin-left: .6em; }
+.term-item dd { margin: .2rem 0 0; }

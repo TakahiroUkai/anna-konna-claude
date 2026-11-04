@@ -34,6 +34,21 @@ for p in docs + tips + news:
         if w in t:
             err(f"非公開・別サイトに関わる語 {w!r}: {p.relative_to(ROOT)}")
 
+
+# 用語解説: 形式と、各ページのリンク先の確認
+glossary = json.loads((ROOT / "data/glossary.json").read_text(encoding="utf-8"))
+gids = [g["id"] for g in glossary]
+if len(gids) != len(set(gids)):
+    err("data/glossary.json: id が重複している")
+for g in glossary:
+    for k in ("id", "term", "category", "explain"):
+        if not g.get(k):
+            err(f"data/glossary.json: {g.get('id')} に {k} がない")
+for p in docs:
+    for m in re.finditer(r'href="(?:\.\./)?glossary/#term-([a-z0-9-]+)"', text_of(p)):
+        if m.group(1) not in gids:
+            err(f"用語解説にない用語へのリンク {m.group(1)}: {p.relative_to(ROOT)}")
+
 # 2. 表現
 hard_ban = [r"1日1[つ手]", r"毎日更新", r"毎日1[つ手]", r"毎朝8時に更新", r"1日1ページ"]
 soft_ban = [r"必ず(うまく|成功|稼)", r"絶対に?(うまく|成功|稼)", r"誰でも簡単に", r"完璧に", r"100%正確", r"ノーリスク"]

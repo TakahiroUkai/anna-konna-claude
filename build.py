@@ -24,6 +24,10 @@ GA_TAG = (
 )
 CONFIG = json.loads((ROOT / "config" / "site.json").read_text(encoding="utf-8"))
 QUEUE = json.loads((ROOT / "data" / "queue.json").read_text(encoding="utf-8"))
+GLOSSARY = json.loads((ROOT / "data" / "glossary.json").read_text(encoding="utf-8"))
+_TERM_ID = {w: g["id"] for g in GLOSSARY for w in g.get("link", [])}
+_TERM_RE = re.compile("|".join(re.escape(w) for w in sorted(_TERM_ID, key=len, reverse=True))) if _TERM_ID else None
+_LINKER = {"root": None, "seen": set()}
 
 LEVELS = {l["id"]: l for l in CONFIG["levels"]}
 PURPOSES = {p["id"]: p for p in CONFIG["purposes"]}
@@ -108,6 +112,35 @@ def inline(s):
     return re.sub(r"\[([^\]]+)\]\(([^)\s]+)\)", link, s)
 
 
+def lt(h):
+    """inline()後のHTML本文のうち、用語解説にある語の、ページ内の最初の1回だけをリンクにする。"""
+    root = _LINKER["root"]
+    if root is None or _TERM_RE is None:
+        return h
+    out, depth = [], 0
+    for part in re.split(r"(<[^>]+>)", h):
+        if part.startswith("<"):
+            if re.match(r"<(a|code)\b", part):
+                depth += 1
+            elif re.match(r"</(a|code)>", part):
+                depth -= 1
+            out.append(part)
+            continue
+        if depth > 0:
+            out.append(part)
+            continue
+
+        def rep(m):
+            gid = _TERM_ID[m.group(0)]
+            if gid in _LINKER["seen"]:
+                return m.group(0)
+            _LINKER["seen"].add(gid)
+            return f'<a class="term" href="{root}glossary/#term-{gid}">{m.group(0)}</a>'
+
+        out.append(_TERM_RE.sub(rep, part))
+    return "".join(out)
+
+
 def to_blocks(md):
     blocks, para, items, kind = [], [], [], None
 
@@ -172,14 +205,14 @@ def render_fig(head, lines):
     rows = [[c.strip() for c in l.split("|")] for l in lines if l.strip()]
     if kind == "flow":
         li = "".join(
-            f"<li><strong>{inline(r[0])}</strong>" + (f"<span>{inline(r[1])}</span>" if len(r) > 1 and r[1] else "") + "</li>"
+            f"<li><strong>{lt(inline(r[0]))}</strong>" + (f"<span>{lt(inline(r[1]))}</span>" if len(r) > 1 and r[1] else "") + "</li>"
             for r in rows
         )
         return f'<figure class="fig fig-flow">{cap}<ol class="flow">{li}</ol></figure>'
     if kind == "compare":
         head_row, body_rows = rows[0], rows[1:]
         th = "".join(f'<th scope="col">{inline(c)}</th>' for c in head_row)
-        tb = "".join("<tr>" + "".join(f"<td>{inline(c)}</td>" for c in r) + "</tr>" for r in body_rows)
+        tb = "".join("<tr>" + "".join(f"<td>{lt(inline(c))}</td>" for c in r) + "</tr>" for r in body_rows)
         return f'<figure class="fig fig-compare">{cap}<table><thead><tr>{th}</tr></thead><tbody>{tb}</tbody></table></figure>'
     if kind == "note":
         ps = "".join(f"<p>{inline(' | '.join(r))}</p>" for r in rows)
@@ -194,9 +227,9 @@ def block_html(b):
     if t == "h3":
         return f"<h3>{inline(c)}</h3>"
     if t == "p":
-        return f"<p>{inline(c)}</p>"
+        return f"<p>{lt(inline(c))}</p>"
     tag = "ul" if t == "ul" else "ol"
-    return f"<{tag}>" + "".join(f"<li>{inline(i)}</li>" for i in c) + f"</{tag}>"
+    return f"<{tag}>" + "".join(f"<li>{lt(inline(i))}</li>" for i in c) + f"</{tag}>"
 
 
 def section_class(title):
@@ -209,7 +242,9 @@ def section_class(title):
     return ""
 
 
-def render_body(md):
+def render_body(md, root=None):
+    _LINKER["root"] = root
+    _LINKER["seen"] = set()
     sections, cur = [], {"title": None, "blocks": []}
     for b in to_blocks(md):
         if b[0] == "h2":
@@ -362,7 +397,7 @@ def layout(title, desc, body, root, path):
   <div class="wrap">
     <a class="site-name" href="{root or './'}">{esc(name)}</a>
     <p class="site-tag">{esc(CONFIG["subtitle"])}</p>
-    <nav class="site-nav" aria-label="メニュー"><a href="{root or './'}">ホーム</a><a href="{root}news/">Claude最新情報</a><a href="{root}tags/">タグでさがす</a></nav>
+    <nav class="site-nav" aria-label="メニュー"><a href="{root or './'}">ホーム</a><a href="{root}news/">Claude最新情報</a><a href="{root}tags/">タグでさがす</a><a href="{root}glossary/">用語解説</a></nav>
   </div>
 </header>
 <main>
@@ -449,7 +484,7 @@ def related_html(m, tips, root):
 
 def render_tip(t, tips):
     root = "../"
-    body_html, nav = render_body(t["body"])
+    body_html, nav = render_body(t["body"], root)
     inpage = "".join(f'<li><a href="#{sid}">{esc(x)}</a></li>' for sid, x in nav)
     page = f"""<div class="wrap doc">
   <div class="doc-head">
@@ -627,9 +662,37 @@ def render_tags(tips, news):
     return pages
 
 
+def render_glossary():
+    cats = []
+    for g in GLOSSARY:
+        if g["category"] not in cats:
+            cats.append(g["category"])
+    jump = "".join(f'<li><a href="#cat{i}">{esc(c)}</a></li>' for i, c in enumerate(cats))
+    secs = []
+    for i, c in enumerate(cats):
+        items = "".join(
+            f'<div class="term-item" id="term-{g["id"]}"><dt>{esc(g["term"])}'
+            + (f'<span class="reading">{esc(g["reading"])}</span>' if g.get("reading") else "")
+            + f'</dt><dd>{inline(g["explain"])}</dd></div>'
+            for g in GLOSSARY if g["category"] == c
+        )
+        secs.append(f'<section id="cat{i}"><h2>{esc(c)}</h2><dl class="terms">{items}</dl></section>')
+    page = f"""<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>用語解説</h1>
+    <p class="summary">各ページに出てくる言葉を、やさしく説明します。各ページの言葉から、ここへ移れます。</p>
+    <ul class="inpage" aria-label="分類">{jump}</ul>
+  </div>
+  {"".join(secs)}
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>"""
+    return layout("用語解説", "Claudeの活用方法のページに出てくる言葉を、やさしく説明します。", page, "../", "glossary/")
+
+
 def render_sitemap(tips, news, tag_pages):
     base = CONFIG["base_url"]
-    urls = [base, base + "news/", base + "tags/"]
+    urls = [base, base + "news/", base + "tags/", base + "glossary/"]
     urls += [f"{base}tips/{s}.html" for s in tips]
     urls += [f"{base}news/{s}.html" for s in news]
     urls += [f"{base}tags/{p}" for p in tag_pages if p != "index.html"]
@@ -664,6 +727,7 @@ def build():
     write_dir(DOCS / "news", {"index.html": render_news_index(news), **{f"{s}.html": render_news(n, tips) for s, n in news.items()}})
     tag_pages = render_tags(tips, news)
     write_dir(DOCS / "tags", tag_pages)
+    write_dir(DOCS / "glossary", {"index.html": render_glossary()})
     (DOCS / "sitemap.xml").write_text(render_sitemap(tips, news, tag_pages), encoding="utf-8")
     (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {CONFIG['base_url']}sitemap.xml\n", encoding="utf-8")
     print(f"生成しました: 活用方法 {len(tips)}件 / 最新情報 {len(news)}件 / タグページ {len(tag_pages)}件")
