@@ -175,3 +175,53 @@ a.term { color: inherit; text-decoration: underline dotted; text-underline-offse
 .term-item dt { font-weight: 700; }
 .term-item .reading { font-weight: 400; font-size: .85em; color: #5e5d59; margin-left: .6em; }
 .term-item dd { margin: .2rem 0 0; }
+
+/* 解説ページ */
+.card-guide { border-left: 6px solid var(--inter-ink); }
+.chip-g { background: var(--inter-bg); color: var(--inter-ink); font-weight: 700; }
+.guides h2 { border-left: 6px solid var(--inter-ink); }
+
+/* 実際の出力例 */
+.output { border: 1px solid #cfdcec; border-radius: 10px; overflow: hidden; background: #fff; }
+.output-bar { padding: .35rem .8rem; background: var(--inter-bg); font-size: .8rem; color: var(--inter-ink); font-weight: 700; }
+.output pre { margin: 0; padding: .9rem 1rem; white-space: pre-wrap; overflow-wrap: anywhere; font-size: .92rem; line-height: 1.8; }
+.output pre code { background: none; padding: 0; font-family: var(--sans); font-size: inherit; }
+
+/* 図(SVG) */
+.fig-svg svg { display: block; width: 100%; max-width: 560px; height: auto; margin: 0 auto; }
+.fig-svg svg text { font-family: var(--sans); fill: var(--ink); }
+.fig-svg .t-muted { fill: var(--muted); }
+.fig-svg .t-b { font-weight: 700; }
+.fig-svg .t-cw { fill: var(--inter-ink); }
+.fig-svg .t-cc { fill: var(--accent-ink); }
+.fig-svg .t-ch { fill: var(--beginner-ink); }
+.fig-svg .t-w { fill: #fff; }
+.fig-svg .b-base { fill: #fff; stroke: #cfcdc2; stroke-width: 1.5; }
+.fig-svg .b-soft { fill: #f5f3ec; stroke: #cfcdc2; stroke-width: 1.5; }
+.fig-svg .b-cw { fill: var(--inter-bg); stroke: var(--inter-ink); stroke-width: 1.5; }
+.fig-svg .b-cc { fill: var(--accent-soft); stroke: var(--accent-ink); stroke-width: 1.5; }
+.fig-svg .b-ch { fill: var(--beginner-bg); stroke: var(--beginner-ink); stroke-width: 1.5; }
+.fig-svg .b-cw-solid { fill: var(--inter-ink); }
+.fig-svg .b-cc-solid { fill: var(--accent-ink); }
+.fig-svg .b-warn { fill: var(--warn-bg); stroke: #b9772f; stroke-width: 1.5; }
+.fig-svg .ln { stroke: #8a887f; stroke-width: 2; fill: none; }
+.fig-svg .ln-dash { stroke: #8a887f; stroke-width: 2; fill: none; stroke-dasharray: 5 4; }
+.fig-svg .ar { fill: #8a887f; }
+
+/* 比較表(3列以上) */
+.fig-table { overflow: hidden; }
+.fig-table table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+.fig-table th, .fig-table td { text-align: left; vertical-align: top; padding: .5rem .6rem; border: 1px solid var(--line); line-height: 1.7; }
+.fig-table thead th { background: #f5f3ec; }
+.fig-table thead th.c-cw, .fig-table td.c-cw::before { background: var(--inter-bg); color: var(--inter-ink); }
+.fig-table thead th.c-cc, .fig-table td.c-cc::before { background: var(--accent-soft); color: var(--accent-ink); }
+.fig-table thead th.c-ch, .fig-table td.c-ch::before { background: var(--beginner-bg); color: var(--beginner-ink); }
+.fig-table tbody th { background: #faf9f5; width: 7.5em; }
+@media (max-width: 599px) {
+  .fig-table table, .fig-table tbody, .fig-table tr, .fig-table th, .fig-table td { display: block; width: auto; }
+  .fig-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .fig-table tr { margin: 0 0 .8rem; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+  .fig-table tbody th { width: auto; border: 0; background: #f0eee6; font-weight: 700; }
+  .fig-table td { border: 0; border-top: 1px solid var(--line); padding: .5rem .7rem .6rem; }
+  .fig-table td::before { content: attr(data-label); display: block; width: fit-content; margin: 0 0 .25rem; padding: 0 .55rem; border-radius: 999px; background: var(--line); color: #3d3d3a; font-size: .8rem; font-weight: 700; line-height: 1.7; }
+}

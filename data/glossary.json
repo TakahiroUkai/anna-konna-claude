@@ -530,5 +530,143 @@
   "link": [
    "コンテキストウィンドウ"
   ]
+ },
+ {
+  "id": "agent",
+  "term": "エージェント",
+  "reading": "えーじぇんと",
+  "category": "Claudeの機能",
+  "explain": "自分で計画を立て、道具(ファイルの読み書き、検索、コマンドの実行など)を使い、結果を見て次の手を決めて進むAIの動き方です。CoworkもClaude Codeも、このしくみで動きます。",
+  "link": [
+   "エージェント"
+  ]
+ },
+ {
+  "id": "subagent",
+  "term": "サブエージェント",
+  "reading": "さぶえーじぇんと",
+  "category": "Claudeの機能",
+  "explain": "親のClaudeから仕事を分けてもらい、別の作業場で進めて、結果だけを返す小さなClaudeです。長い調べ物で会話がいっぱいになるのを防ぎ、仕事を並行して進められます。",
+  "link": [
+   "サブエージェント"
+  ]
+ },
+ {
+  "id": "mcp",
+  "term": "MCP",
+  "reading": "えむしーぴー",
+  "category": "Claudeの機能",
+  "explain": "外部のアプリやデータとClaudeをつなぐ、共通の規格です。Slackやデータベースなどに、Claude Codeからつなぐときに使います。",
+  "link": [
+   "MCP"
+  ]
+ },
+ {
+  "id": "terminal",
+  "term": "ターミナル",
+  "reading": "たーみなる",
+  "category": "開発まわりの言葉",
+  "explain": "文字で命令を打ってパソコンを操作する画面です。Claude Codeは、ここから使うのが基本の形のひとつです。Coworkでは使いません。",
+  "link": [
+   "ターミナル"
+  ]
+ },
+ {
+  "id": "git",
+  "term": "Git(ギット)",
+  "reading": "ぎっと",
+  "category": "開発まわりの言葉",
+  "explain": "ファイルの変更の記録を残す仕組みです。いつ、何を、どう変えたかをさかのぼれるので、AIに直してもらう前の状態を残しておくのにも役立ちます。",
+  "link": []
+ },
+ {
+  "id": "branch",
+  "term": "ブランチ",
+  "reading": "ぶらんち",
+  "category": "開発まわりの言葉",
+  "explain": "Gitで、本編に影響しない作業用の枝分かれです。Claude Codeのクラウドセッションは、変更をこの枝に保存して返します。",
+  "link": [
+   "ブランチ"
+  ]
+ },
+ {
+  "id": "pull-request",
+  "term": "プルリクエスト(PR)",
+  "reading": "ぷるりくえすと",
+  "category": "開発まわりの言葉",
+  "explain": "作業用のブランチの変更を、本編に取り込んでよいか確認してもらうための依頼です。変更の差分を見ながら、レビューして採用を決めます。",
+  "link": [
+   "プルリクエスト"
+  ]
+ },
+ {
+  "id": "ide",
+  "term": "IDE(アイディーイー)",
+  "reading": "あいでぃーいー",
+  "category": "開発まわりの言葉",
+  "explain": "プログラムを書くための専用ソフトです。VS CodeやJetBrains製のソフトが代表的で、Claude Codeを組み込んで使えます。",
+  "link": [
+   "IDE"
+  ]
+ },
+ {
+  "id": "ci-cd",
+  "term": "CI/CD",
+  "reading": "しーあい しーでぃー",
+  "category": "開発まわりの言葉",
+  "explain": "コードを変更するたびに、テストや公開を自動で行う仕組みです。GitHub ActionsやGitLab CI/CDが代表例で、Claude Codeを自動レビューなどに組み込めます。",
+  "link": [
+   "CI/CD"
+  ]
+ },
+ {
+  "id": "sandbox",
+  "term": "サンドボックス",
+  "reading": "さんどぼっくす",
+  "category": "開発まわりの言葉",
+  "explain": "外から切り離した安全な箱です。その中で動くプログラムは、箱の外のファイルや通信に触れにくくなります。",
+  "link": [
+   "サンドボックス"
+  ]
+ },
+ {
+  "id": "prompt-injection",
+  "term": "プロンプトインジェクション",
+  "reading": "ぷろんぷと いんじぇくしょん",
+  "category": "Claudeの機能",
+  "explain": "Webページやファイルの中に、AIへの悪意ある指示を紛れ込ませる攻撃です。AIが本来の依頼と取り違えて、危険な操作をするおそれがあります。",
+  "link": [
+   "プロンプトインジェクション"
+  ]
+ },
+ {
+  "id": "computer-use",
+  "term": "画面操作(computer use)",
+  "reading": "がめんそうさ",
+  "category": "Claudeの機能",
+  "explain": "Claudeが、画面を見ながらクリックや入力をして、パソコンのアプリを直接操作する機能です。ベータ版で、間にサンドボックスがないため、慎重に使います。",
+  "link": [
+   "computer use"
+  ]
+ },
+ {
+  "id": "usage-credits",
+  "term": "追加の使用量(usage credits)",
+  "reading": "ついかのしようりょう",
+  "category": "Claudeの機能",
+  "explain": "プランの上限に達したあとも、使った分だけ支払って使い続けるための仕組みです。標準のAPI料金で課金されます。",
+  "link": [
+   "usage credits"
+  ]
+ },
+ {
+  "id": "remote-control",
+  "term": "Remote Control(リモートコントロール)",
+  "reading": "りもーと こんとろーる",
+  "category": "Claudeの機能",
+  "explain": "手元のパソコンで動いているClaude Codeを、スマホやブラウザから操作する機能です。コードが動く場所は、手元のパソコンのままです。",
+  "link": [
+   "Remote Control"
+  ]
  }
 ]

@@ -24,25 +24,114 @@
     }
   ],
   "purposes": [
-    {"id": "research", "name": "調べる", "desc": "情報を集めて、まとめる"},
-    {"id": "write", "name": "書く", "desc": "文章を下書きして、直す"},
-    {"id": "build", "name": "作る", "desc": "ツール、ページ、資料などを作る"},
-    {"id": "automate", "name": "自動化する", "desc": "くり返しの作業を任せる"},
-    {"id": "organize", "name": "整理する", "desc": "資料やメモを整える、考えをまとめる"},
-    {"id": "learn", "name": "学ぶ", "desc": "理解を深める、練習する"}
+    {
+      "id": "research",
+      "name": "調べる",
+      "desc": "情報を集めて、まとめる"
+    },
+    {
+      "id": "write",
+      "name": "書く",
+      "desc": "文章を下書きして、直す"
+    },
+    {
+      "id": "build",
+      "name": "作る",
+      "desc": "ツール、ページ、資料などを作る"
+    },
+    {
+      "id": "automate",
+      "name": "自動化する",
+      "desc": "くり返しの作業を任せる"
+    },
+    {
+      "id": "organize",
+      "name": "整理する",
+      "desc": "資料やメモを整える、考えをまとめる"
+    },
+    {
+      "id": "learn",
+      "name": "学ぶ",
+      "desc": "理解を深める、練習する"
+    }
   ],
   "features": [
-    {"id": "chat", "name": "基本のチャット", "desc": "ふつうの会話だけで試せる"},
-    {"id": "files", "name": "ファイルの読み込み", "desc": "文書や画像を渡して読んでもらう"},
-    {"id": "search", "name": "Web検索", "desc": "最新の情報をWebから探してもらう"},
-    {"id": "projects", "name": "Projects", "desc": "資料と指示をまとめた作業場"},
-    {"id": "artifacts", "name": "Artifacts", "desc": "会話の横に作品(ツール・文書・ページ)を作る"},
-    {"id": "docs-slides", "name": "Docs・Slides・Design", "desc": "文書、スライド、デザインを作る"},
-    {"id": "memory", "name": "メモリ", "desc": "会話をまたいで覚えておいてもらう"},
-    {"id": "scheduled", "name": "定期タスク", "desc": "決まった時間に自動で実行する"},
-    {"id": "cowork", "name": "Cowork", "desc": "パソコン上で作業を任せる"},
-    {"id": "connectors", "name": "コネクタ", "desc": "他のアプリとつなぐ"},
-    {"id": "skills", "name": "スキル", "desc": "手順をまとめて呼び出す"},
-    {"id": "claude-code", "name": "Claude Code", "desc": "コードを書く・動かす作業を任せる"}
+    {
+      "id": "chat",
+      "name": "基本のチャット",
+      "desc": "ふつうの会話だけで試せる"
+    },
+    {
+      "id": "files",
+      "name": "ファイルの読み込み",
+      "desc": "文書や画像を渡して読んでもらう"
+    },
+    {
+      "id": "search",
+      "name": "Web検索",
+      "desc": "最新の情報をWebから探してもらう"
+    },
+    {
+      "id": "projects",
+      "name": "Projects",
+      "desc": "資料と指示をまとめた作業場"
+    },
+    {
+      "id": "artifacts",
+      "name": "Artifacts",
+      "desc": "会話の横に作品(ツール・文書・ページ)を作る"
+    },
+    {
+      "id": "docs-slides",
+      "name": "Docs・Slides・Design",
+      "desc": "文書、スライド、デザインを作る"
+    },
+    {
+      "id": "memory",
+      "name": "メモリ",
+      "desc": "会話をまたいで覚えておいてもらう"
+    },
+    {
+      "id": "scheduled",
+      "name": "定期タスク",
+      "desc": "決まった時間に自動で実行する"
+    },
+    {
+      "id": "cowork",
+      "name": "Cowork",
+      "desc": "パソコン上で作業を任せる"
+    },
+    {
+      "id": "connectors",
+      "name": "コネクタ",
+      "desc": "他のアプリとつなぐ"
+    },
+    {
+      "id": "skills",
+      "name": "スキル",
+      "desc": "手順をまとめて呼び出す"
+    },
+    {
+      "id": "claude-code",
+      "name": "Claude Code",
+      "desc": "コードを書く・動かす作業を任せる"
+    }
+  ],
+  "guide_topics": [
+    {
+      "id": "compare",
+      "name": "使い分け・比較",
+      "desc": "似た機能やツールの違いを、表と図で整理します。"
+    },
+    {
+      "id": "mechanism",
+      "name": "しくみ",
+      "desc": "機能が裏でどう動くかを、図で読み解きます。"
+    },
+    {
+      "id": "basics",
+      "name": "基礎知識",
+      "desc": "使い始める前に知っておきたい考え方をまとめます。"
+    }
   ]
 }

@@ -16,6 +16,7 @@ from urllib.parse import quote
 ROOT = Path(__file__).resolve().parent
 TIPS_DIR = ROOT / "content" / "tips"
 NEWS_DIR = ROOT / "content" / "news"
+GUIDES_DIR = ROOT / "content" / "guides"
 DOCS = ROOT / "docs"
 GA_TAG = (
     '<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script>'
@@ -32,10 +33,12 @@ _LINKER = {"root": None, "seen": set()}
 LEVELS = {l["id"]: l for l in CONFIG["levels"]}
 PURPOSES = {p["id"]: p for p in CONFIG["purposes"]}
 FEATURES = {f["id"]: f for f in CONFIG["features"]}
+GUIDE_TOPICS = {t["id"]: t for t in CONFIG.get("guide_topics", [])}
 
 LIST_KEYS = ("books", "sources")
 TIP_REQUIRED = ["title", "level", "minutes", "purpose", "features", "output", "summary", "added", "updated"]
 NEWS_REQUIRED = ["title", "date", "summary", "added", "updated"]
+GUIDE_REQUIRED = ["title", "summary", "topic", "minutes", "added", "updated"]
 DATE_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
 
 
@@ -72,6 +75,13 @@ def parse_front(text, name, required, kind):
     for f in meta["features"]:
         if f not in FEATURES:
             raise SystemExit(f"{name}: 不明な機能タグ {f}(config/site.json の features にありません)")
+    if kind == "guide":
+        if meta["topic"] not in GUIDE_TOPICS:
+            raise SystemExit(f"{name}: 不明な解説の分類 {meta['topic']}(config/site.json の guide_topics にありません)")
+        try:
+            meta["minutes"] = int(meta["minutes"])
+        except ValueError:
+            raise SystemExit(f"{name}: minutes は整数にしてください")
     if kind == "tip":
         if meta["level"] not in LEVELS:
             raise SystemExit(f"{name}: 不明な難易度 {meta['level']}")
@@ -202,7 +212,31 @@ def render_fig(head, lines):
                 f'<div class="prompt-bar"><span>そのまま貼って使えます</span>'
                 f'<button type="button" class="copy" data-copy>コピー</button></div>'
                 f'<pre><code>{esc(text)}</code></pre></div></figure>')
+    if kind == "svg":
+        return f'<figure class="fig fig-svg">{cap}{chr(10).join(lines).strip()}</figure>'
+    if kind == "output":
+        text = "\n".join(lines).strip("\n")
+        return (f'<figure class="fig fig-output">{cap}<div class="output">'
+                f'<div class="output-bar"><span>実際に出力された例(実行のたびに結果は変わります)</span></div>'
+                f'<pre><code>{esc(text)}</code></pre></div></figure>')
     rows = [[c.strip() for c in l.split("|")] for l in lines if l.strip()]
+    if kind == "table":
+        head_row, body_rows = rows[0], rows[1:]
+        col = {"Cowork": "cw", "Claude Code": "cc", "チャット": "ch"}
+        cls = [f' class="c-{col[h]}"' if h in col else "" for h in head_row]
+        th = "".join(f'<th scope="col"{cls[i]}>{inline(c)}</th>' for i, c in enumerate(head_row))
+        tb = ""
+        for r in body_rows:
+            cells = ""
+            for i, c in enumerate(r):
+                if i == 0:
+                    cells += f'<th scope="row">{lt(inline(c))}</th>'
+                else:
+                    label = head_row[i] if i < len(head_row) else ""
+                    c_cls = cls[i] if i < len(cls) else ""
+                    cells += f'<td{c_cls} data-label="{esc(label)}">{lt(inline(c))}</td>'
+            tb += f"<tr>{cells}</tr>"
+        return f'<figure class="fig fig-table">{cap}<table><thead><tr>{th}</tr></thead><tbody>{tb}</tbody></table></figure>'
     if kind == "flow":
         li = "".join(
             f"<li><strong>{lt(inline(r[0]))}</strong>" + (f"<span>{lt(inline(r[1]))}</span>" if len(r) > 1 and r[1] else "") + "</li>"
@@ -397,7 +431,7 @@ def layout(title, desc, body, root, path):
   <div class="wrap">
     <a class="site-name" href="{root or './'}">{esc(name)}</a>
     <p class="site-tag">{esc(CONFIG["subtitle"])}</p>
-    <nav class="site-nav" aria-label="メニュー"><a href="{root or './'}">ホーム</a><a href="{root}news/">Claude最新情報</a><a href="{root}tags/">タグでさがす</a><a href="{root}glossary/">用語解説</a></nav>
+    <nav class="site-nav" aria-label="メニュー"><a href="{root or './'}">ホーム</a><a href="{root}guides/">解説</a><a href="{root}news/">Claude最新情報</a><a href="{root}tags/">タグでさがす</a><a href="{root}glossary/">用語解説</a></nav>
   </div>
 </header>
 <main>
@@ -531,6 +565,74 @@ def render_news(n, tips):
     return layout(n["title"], n["summary"], page, root, f"news/{n['slug']}.html")
 
 
+def guide_card(g, root):
+    topic = GUIDE_TOPICS[g["topic"]]["name"]
+    chips = (f'<span class="chip chip-g">{esc(topic)}</span><span class="chip">読む目安 約{g["minutes"]}分</span>'
+             + "".join(f'<span class="chip chip-f">{esc(FEATURES[f]["name"])}</span>' for f in g["features"]))
+    return (
+        f'<li class="card card-guide"><p class="card-date">解説 / {esc(topic)}</p>'
+        f'<a class="card-title" href="{root}guides/{esc(g["slug"])}.html">{esc(g["title"])}</a>'
+        f'<p class="card-sum">{esc(g["summary"])}</p><p class="chips">{chips}</p></li>'
+    )
+
+
+def render_guide(g, tips):
+    root = "../"
+    body_html, nav = render_body(g["body"], root)
+    inpage = "".join(f'<li><a href="#{sid}">{esc(x)}</a></li>' for sid, x in nav)
+    feats = "、".join(f'<a href="{tag_url("feature", f, root)}">{esc(FEATURES[f]["name"])}</a>' for f in g["features"])
+    rows = [("分類", esc(GUIDE_TOPICS[g["topic"]]["name"])), ("読む目安", f'約{g["minutes"]}分')]
+    if feats:
+        rows.append(("関連する機能", feats))
+    spec = ('<table class="spec"><caption>この解説について</caption><tbody>'
+            + "".join(f'<tr><th scope="row">{k}</th><td>{v}</td></tr>' for k, v in rows) + "</tbody></table>")
+    page = f"""<div class="wrap doc doc-guide">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a> / <a href="./">解説</a></p>
+    <p class="news-date">解説</p>
+    <h1>{esc(g["title"])}</h1>
+    <p class="summary">{esc(g["summary"])}</p>
+    <p class="stamp">{esc(g["updated"])} 時点の情報</p>
+    {spec}
+    <ul class="inpage" aria-label="このページの内容">{inpage}</ul>
+  </div>
+  {body_html}
+  {ad_slot()}
+  {related_html(g, tips, root)}
+  {books_html(g)}
+  {sources_html(g)}
+  {share_block(g["title"], f"guides/{g['slug']}.html")}
+  <p style="margin-top:2.5rem"><a href="./">解説の一覧にもどる</a></p>
+</div>"""
+    return layout(g["title"], g["summary"], page, root, f"guides/{g['slug']}.html")
+
+
+def render_guides_index(guides):
+    gl = sorted_guides(guides)
+    secs = ""
+    for tid, t in GUIDE_TOPICS.items():
+        hit = [g for g in gl if g["topic"] == tid]
+        if not hit:
+            continue
+        secs += (f'<section class="tag-group"><h2>{esc(t["name"])}</h2><p>{esc(t["desc"])}</p>'
+                 f'<ul class="card-list">{"".join(guide_card(g, "../") for g in hit)}</ul></section>')
+    body = f"""<div class="wrap doc doc-guide">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>解説</h1>
+    <p class="summary">機能やツールの違い、しくみ、使い分けを、図と表でじっくり読めるページです。手を動かして試す「活用方法」とは別に、全体像をつかみたいときに使ってください。</p>
+  </div>
+  {secs}
+  {share_block("解説", "guides/")}
+  {ad_slot()}
+</div>"""
+    return layout("解説", "Claudeの機能やツールの違い、しくみ、使い分けを、図と表で詳しく解説します。", body, "../", "guides/")
+
+
+def sorted_guides(guides):
+    return sorted(guides.values(), key=lambda g: (g["added"], g["slug"]), reverse=True)
+
+
 def sorted_tips(tips):
     order = {q["slug"]: i for i, q in enumerate(QUEUE)}
     return sorted(tips.values(), key=lambda t: (t["added"], -order.get(t["slug"], 999)), reverse=True)
@@ -540,9 +642,16 @@ def sorted_news(news):
     return sorted(news.values(), key=lambda n: (n["date"], n["added"]), reverse=True)
 
 
-def render_index(tips, news):
+def render_index(tips, news, guides):
     tl = sorted_tips(tips)
     nl = sorted_news(news)
+    gl = sorted_guides(guides)
+    guide_block = ""
+    if gl:
+        guide_block = ('<section class="latest guides"><h2>解説</h2>'
+                       '<p>機能やツールの違いを、図と表でじっくり読めます。</p><ul class="card-list">'
+                       + "".join(guide_card(g, "") for g in gl[:3]) + "</ul>"
+                       '<p class="more"><a href="guides/">解説の一覧を見る</a></p></section>')
     latest = ""
     if nl:
         latest = ('<section class="latest"><h2>Claude最新情報</h2><ul class="card-list">' + news_card(nl[0], "") + "</ul>"
@@ -573,10 +682,12 @@ def render_index(tips, news):
         <dt>難易度</dt><dd>{level_chip("beginner")} 画面の操作だけで試せます。{level_chip("intermediate")} 設定や、複数の機能の組み合わせが要ります。</dd>
         <dt>目的</dt><dd>調べる、書く、作る、自動化する、整理する、学ぶ、のどれにあたるかです。</dd>
         <dt>使う機能</dt><dd>Projects、Artifacts、定期タスクなど、使う機能で絞れます。</dd>
+        <dt>解説</dt><dd>手を動かす前に、機能やツールの違いを図と表で読みたいときのページです。</dd>
       </dl>
     </div>
   </div>
   {latest}
+  {guide_block}
   <section class="toc">
     <h2>活用方法の一覧</h2>
     {finder}
@@ -618,19 +729,22 @@ def tag_defs():
 KIND_NAME = {"level": "難易度", "purpose": "目的", "feature": "使う機能"}
 
 
-def render_tags(tips, news):
+def render_tags(tips, news, guides):
     tl = sorted_tips(tips)
     nl = sorted_news(news)
+    gl = sorted_guides(guides)
     pages = {}
     groups = {"level": [], "purpose": [], "feature": []}
     for kind, tid, name, desc, pred in tag_defs():
         hit = [t for t in tl if pred(t)]
         news_hit = [n for n in nl if kind == "feature" and tid in n["features"]]
-        groups[kind].append((tid, name, desc, len(hit) + len(news_hit)))
-        if not hit and not news_hit:
+        guide_hit = [g for g in gl if kind == "feature" and tid in g["features"]]
+        groups[kind].append((tid, name, desc, len(hit) + len(news_hit) + len(guide_hit)))
+        if not hit and not news_hit and not guide_hit:
             continue
         lst = '<ul class="card-list">' + "".join(card(t, "../") for t in hit) + "</ul>" if hit else ""
         nws = ('<h2>関連する最新情報</h2><ul class="card-list">' + "".join(news_card(n, "../") for n in news_hit) + "</ul>") if news_hit else ""
+        gds = ('<h2>関連する解説</h2><ul class="card-list">' + "".join(guide_card(g, "../") for g in guide_hit) + "</ul>") if guide_hit else ""
         body = f"""<div class="wrap doc">
   <div class="doc-head">
     <p class="crumb"><a href="../">ホーム</a> / <a href="./">タグでさがす</a></p>
@@ -639,6 +753,7 @@ def render_tags(tips, news):
     <p class="summary">{esc(desc)}。{len(hit)}件の活用方法があります。</p>
   </div>
   {lst}
+  {gds}
   {nws}
   {ad_slot()}
 </div>"""
@@ -690,9 +805,10 @@ def render_glossary():
     return layout("用語解説", "Claudeの活用方法のページに出てくる言葉を、やさしく説明します。", page, "../", "glossary/")
 
 
-def render_sitemap(tips, news, tag_pages):
+def render_sitemap(tips, news, guides, tag_pages):
     base = CONFIG["base_url"]
-    urls = [base, base + "news/", base + "tags/", base + "glossary/"]
+    urls = [base, base + "guides/", base + "news/", base + "tags/", base + "glossary/"]
+    urls += [f"{base}guides/{s}.html" for s in guides]
     urls += [f"{base}tips/{s}.html" for s in tips]
     urls += [f"{base}news/{s}.html" for s in news]
     urls += [f"{base}tags/{p}" for p in tag_pages if p != "index.html"]
@@ -712,25 +828,27 @@ def write_dir(directory, files):
 def build():
     tips = load_dir(TIPS_DIR, TIP_REQUIRED, "tip")
     news = load_dir(NEWS_DIR, NEWS_REQUIRED, "news")
+    guides = load_dir(GUIDES_DIR, GUIDE_REQUIRED, "guide")
     known = {q["slug"] for q in QUEUE}
     for s in tips:
         if s not in known:
             print(f"注意: {s} は data/queue.json にありません(一覧には出ますが、掲載予定とは対応しません)")
-    for m in list(tips.values()) + list(news.values()):
+    for m in list(tips.values()) + list(news.values()) + list(guides.values()):
         for s in m["next"]:
             if s not in tips:
                 raise SystemExit(f"{m['slug']}: next に指定した {s} が content/tips/ にありません")
     DOCS.mkdir(exist_ok=True)
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
-    (DOCS / "index.html").write_text(render_index(tips, news), encoding="utf-8")
+    (DOCS / "index.html").write_text(render_index(tips, news, guides), encoding="utf-8")
     write_dir(DOCS / "tips", {f"{s}.html": render_tip(t, tips) for s, t in tips.items()})
     write_dir(DOCS / "news", {"index.html": render_news_index(news), **{f"{s}.html": render_news(n, tips) for s, n in news.items()}})
-    tag_pages = render_tags(tips, news)
+    write_dir(DOCS / "guides", {"index.html": render_guides_index(guides), **{f"{s}.html": render_guide(g, tips) for s, g in guides.items()}})
+    tag_pages = render_tags(tips, news, guides)
     write_dir(DOCS / "tags", tag_pages)
     write_dir(DOCS / "glossary", {"index.html": render_glossary()})
-    (DOCS / "sitemap.xml").write_text(render_sitemap(tips, news, tag_pages), encoding="utf-8")
+    (DOCS / "sitemap.xml").write_text(render_sitemap(tips, news, guides, tag_pages), encoding="utf-8")
     (DOCS / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {CONFIG['base_url']}sitemap.xml\n", encoding="utf-8")
-    print(f"生成しました: 活用方法 {len(tips)}件 / 最新情報 {len(news)}件 / タグページ {len(tag_pages)}件")
+    print(f"生成しました: 活用方法 {len(tips)}件 / 解説 {len(guides)}件 / 最新情報 {len(news)}件 / タグページ {len(tag_pages)}件")
 
 
 def first_prompt(body):
@@ -744,7 +862,13 @@ def archive_json():
     tips = load_dir(TIPS_DIR, TIP_REQUIRED, "tip")
     news = load_dir(NEWS_DIR, NEWS_REQUIRED, "news")
     base = CONFIG["base_url"]
-    out = {"site": {"name": CONFIG["name"], "url": base}, "tips": [], "news": []}
+    guides = load_dir(GUIDES_DIR, GUIDE_REQUIRED, "guide")
+    out = {"site": {"name": CONFIG["name"], "url": base}, "tips": [], "news": [], "guides": []}
+    for g in sorted_guides(guides):
+        out["guides"].append({
+            "slug": g["slug"], "title": g["title"], "summary": g["summary"], "topic": g["topic"],
+            "minutes": g["minutes"], "features": g["features"], "added": g["added"], "updated": g["updated"],
+            "url": f"{base}guides/{g['slug']}.html"})
     for t in sorted_tips(tips):
         out["tips"].append({
             "slug": t["slug"], "title": t["title"], "summary": t["summary"], "level": t["level"],
