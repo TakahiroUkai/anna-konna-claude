@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>Artifactを共有する前の、点検リストを作る | あんなことこんなことClaude</title>
+<meta name="description" content="作ったArtifactを人に見せる前に、誰が見られるか、何が一緒に見えるかを確かめる方法です。公式のヘルプで確認できた共有の仕組みをもとに、点検リストと、Claudeに下見を頼む文章を用意します。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/artifact-share-check.html">
+<meta property="og:title" content="Artifactを共有する前の、点検リストを作る | あんなことこんなことClaude">
+<meta property="og:description" content="作ったArtifactを人に見せる前に、誰が見られるか、何が一緒に見えるかを確かめる方法です。公式のヘルプで確認できた共有の仕組みをもとに、点検リストと、Claudeに下見を頼む文章を用意します。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/artifact-share-check.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>Artifactを共有する前の、点検リストを作る</h1>
+    <p class="summary">作ったArtifactを人に見せる前に、誰が見られるか、何が一緒に見えるかを確かめる方法です。公式のヘルプで確認できた共有の仕組みをもとに、点検リストと、Claudeに下見を頼む文章を用意します。</p>
+    <p class="stamp">2026-11-05 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-intermediate.html"><span class="chip lv-intermediate">中級者向け</span></a> 設定や考え方の理解が少し要る。いくつかの機能を組み合わせる。</td></tr><tr><th scope="row">所要時間</th><td>約20分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-build.html">作る</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-artifacts.html">Artifacts</a></td></tr><tr><th scope="row">作れるもの</th><td>共有前にチェックする項目リストと、Claudeによる下見の結果</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">点検リスト(印刷して使えます)</a></li><li><a href="#s6">うまくいかないとき</a></li></ul>
+  </div>
+  <p>便利な<a class="term" href="../glossary/#term-artifact">Artifact</a>ができると、同僚や家族に見せたくなります。そのとき、リンクを送る前に確かめることがあります。誰が見られるのか、一緒に何が見えてしまうのか。この活用方法では、共有前の点検リストを作り、Claudeに下見を頼みます。</p><section id="s1"><h2>ねらい</h2><ul><li>公式のヘルプで確認できた共有の仕組みを、点検リストにします。</li><li>Claudeに、Artifactの中身を下見してもらいます。個人情報や、貼ったままの秘密が残っていないかを探します。</li><li>最後の判断は、自分の目でします。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>共有したいArtifact。</li><li>見せる相手と、見せる理由。</li><li>Artifact(会話の横に作られる、ツールや文書などの作品)は、公式のヘルプによると、作った直後は自分だけが見られる状態です。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 共有する前の流れ</figcaption><ol class="flow"><li><strong>相手を決める</strong><span>誰に、何のために見せるかを書く</span></li><li><strong>中身を下見する</strong><span>Claudeに、残っている情報を探してもらう</span></li><li><strong>範囲を選ぶ</strong><span>共有の画面で、見られる人を選ぶ</span></li><li><strong>権限を選ぶ</strong><span>閲覧だけか、コメントや編集もか</span></li><li><strong>送ったあと</strong><span>止めたいときの手順を確かめておく</span></li></ol></figure><ol><li><strong>相手を決める。</strong> 「社内の3人に、見るだけ」のように、書き出します。</li><li><strong>下見を頼む。</strong> 下の<a class="term" href="../glossary/#term-prompt">プロンプト</a>で、Artifactの中身を点検させます。</li><li><strong>共有の画面を開く。</strong> 公式のヘルプによると、Artifactを開いて「Share」を押し、「Who has access」で範囲を選び、リンクをコピーします。個人のプランでは「Only you」か「Anyone with the link」を選びます。</li><li><strong>権限を選ぶ。</strong> ヘルプには、閲覧者の権限として「Can view」「Commenter」「Can edit」があると書かれています。見せるだけなら、閲覧にします。</li><li><strong>止め方を確かめる。</strong> 個人のプランでは、共有の画面で「Only you」に戻すと、自分だけの状態に戻る、と書かれています。</li></ol></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>共有前の下見を頼む</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>このArtifactを、人に見せる前に点検してください。
+- 見せる相手: (例: 社内の同じチームの3人)
+- 目的: (例: 売上の集計を、会議で見てもらう)
+次を、表で答えてください。
+1. 個人を特定できる情報(氏名、メールアドレス、電話番号、住所)が、画面や中身に残っていないか。見つけた場所を書く。
+2. 貼ったままのパスワード、鍵、社内の資料の文章が残っていないか。
+3. 相手に見せるべきでない項目。
+見つけたものは、削除案も出してください。見つからなかったときは、「見つかりませんでした」と書き、確認した範囲を書いてください。</code></pre></div></figure></section><section id="s5"><h2>点検リスト(印刷して使えます)</h2><figure class="fig fig-compare"><figcaption>図: 共有前の点検リスト</figcaption><table><thead><tr><th scope="col">確かめること</th><th scope="col">公式のヘルプで分かること</th></tr></thead><tbody><tr><td>誰が見られるか</td><td>「Anyone with the link」のリンクは、サインインしていない人でも多くの場合は開ける</td></tr><tr><td>プランで共有の方法が違う</td><td>リンクで誰でも共有は、Proなど有料のプランが対象で、Freeは対象外と書かれている</td></tr><tr><td>組織のプラン</td><td>Team・Enterpriseは、外部への共有をOwnerが決める</td></tr><tr><td>保存したデータ</td><td>共有ストレージの内容は、開いた全員に見える</td></tr><tr><td>添付ファイル</td><td>Team・Enterpriseで、チャット内のArtifactを共有すると、そのチャットの添付ファイルも見えると書かれている</td></tr><tr><td>相手が送ってきたもの</td><td>知らない人のArtifactは、知らない人から届いたファイルと同じに扱う</td></tr></tbody></table></figure></section><section id="s6" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>「Share」の表示が違うとき</strong>: プランや画面の更新で、表示が変わります。自分のプランで何が選べるかは、公式のヘルプの表で確かめます。</li><li><strong>下見で何も出なかったとき</strong>: 「問題なし」の保証にはなりません。Claudeが見落とすことはあります。自分でも、画面を最初から最後まで見ます。</li><li><strong>共有したあとに気づいたとき</strong>: 共有の画面で範囲を戻します。旧方式の「Publish」は、取り消すと再公開できず、保存されたデータも消える、とヘルプに書かれています。取り消す前に、必要なものを控えます。</li><li><strong>会社のArtifactのとき</strong>: 社外に出してよいかは、会社の決まりに従います。この記事で確認できたのは、公式のヘルプの範囲だけです。</li><li>画面の表示は変わることがあります。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="build" data-features="artifacts chat" data-text="artifactで、割り勘の計算ツールを作る 作りたいツールを言葉で伝えるだけで、会話の横に動くツールができます。割り勘の計算ツールを例に、作り方と、直し方、共有する前の注意点を整理します。 作る artifacts 基本のチャット"><a class="card-title" href="../tips/artifact-mini-tool.html">Artifactで、割り勘の計算ツールを作る</a><p class="card-sum">作りたいツールを言葉で伝えるだけで、会話の横に動くツールができます。割り勘の計算ツールを例に、作り方と、直し方、共有する前の注意点を整理します。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約15分</span><span class="chip">作る</span><span class="chip chip-f">Artifacts</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/9547008-publishing-remixing-and-sharing-artifacts" rel="noopener" target="_blank">Claude ヘルプセンター「Share artifacts」(共有の方法、アクセス範囲、プランごとの違い、共有前の注意、公開の止め方。2026年11月5日に確認)</a></li><li><a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" rel="noopener" target="_blank">Claude ヘルプセンター「What are artifacts and how do I use them?」(データ保存の制限、設定の場所。2026年11月5日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/artifact-share-check.html" data-title="Artifactを共有する前の、点検リストを作る | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fartifact-share-check.html&amp;text=Artifact%E3%82%92%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E5%89%8D%E3%81%AE%E3%80%81%E7%82%B9%E6%A4%9C%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E4%BD%9C%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fartifact-share-check.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fartifact-share-check.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fartifact-share-check.html&amp;title=Artifact%E3%82%92%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B%E5%89%8D%E3%81%AE%E3%80%81%E7%82%B9%E6%A4%9C%E3%83%AA%E3%82%B9%E3%83%88%E3%82%92%E4%BD%9C%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
