@@ -16,11 +16,12 @@ site = json.loads((ROOT / "config/site.json").read_text(encoding="utf-8"))
 docs = sorted((ROOT / "docs").rglob("*.html"))
 tips = sorted((ROOT / "content/tips").glob("*.md"))
 news = sorted((ROOT / "content/news").glob("*.md"))
+guides = sorted((ROOT / "content/guides").glob("*.md"))
 queue = json.loads((ROOT / "data/queue.json").read_text(encoding="utf-8"))
 def text_of(p): return p.read_text(encoding="utf-8")
 
 # 1. 個人情報・非公開情報
-targets = docs + tips + news + [ROOT / "README.md", ROOT / "config/site.json", ROOT / "data/queue.json"]
+targets = docs + tips + news + guides + [ROOT / "README.md", ROOT / "config/site.json", ROOT / "data/queue.json"]
 for p in targets:
     t = text_of(p)
     for m in re.finditer(r"[\w.+-]+@[\w-]+\.[\w.]+", t):
@@ -76,7 +77,8 @@ for p in docs:
         err(f"非公式である旨の表記がない: {p.relative_to(ROOT)}")
 
 # 4. 原稿ごとの必須項目
-for p in tips + news:
+old_tips_missing = []
+for p in tips + news + guides:
     t = text_of(p)
     m = re.match(r"---\n(.*?)\n---\n(.*)", t, re.S)
     if not m:
@@ -86,18 +88,31 @@ for p in tips + news:
     if len(urls) < 1:
         err(f"出典URLなし: {p.name}")
     is_tip = p.parent.name == "tips"
+    is_guide = p.parent.name == "guides"
+    if is_guide:
+        if re.search(r"<script|\bon[a-z]+=", body, re.I):
+            err(f"解説にscriptやon*属性がある: {p.name}")
+        if "RULES.md" in body or "style.md" in body:
+            err(f"規則ファイルの話が公開ページにある: {p.name}")
     heads = re.findall(r"^## (.+)$", body, re.M)
     if is_tip:
         for need in ("ねらい", "準備", "手順", "うまくいかない"):
             if not any(need in h for h in heads):
                 err(f"必須の見出し「{need}」なし: {p.name}")
+        am = re.search(r"^added:\s*(\S+)", fm, re.M)
+        if am and am.group(1) > "2026-11-05":
+            for need in ("実際の出力例", "使いどころと失敗例"):
+                if not any(need in h for h in heads):
+                    err(f"必須の見出し「{need}」なし(2026-11-06以降の追加分): {p.name}")
+        elif am:
+            old_tips_missing.append(p.name) if not all(any(n in h for h in heads) for n in ("実際の出力例", "使いどころと失敗例")) else None
         if ":::prompt" not in body:
             err(f"そのまま使えるプロンプト(:::prompt)なし: {p.name}")
         if ":::flow" not in body:
             warn(f"手順の図(:::flow)なし: {p.name}")
         if not re.search(r"^next:", fm, re.M):
             warn(f"次のステップ(next)なし: {p.name}")
-    else:
+    elif not is_guide:
         for need in ("何が", "活用方法", "注意"):
             if not any(need in h for h in heads):
                 err(f"最新情報の必須の見出し「{need}」なし: {p.name}")
@@ -112,6 +127,9 @@ for p in tips + news:
     nbooks = len(re.findall(r"^books:", fm, re.M)) and len(re.findall(r"\| *97[89][0-9-]{10,}$", fm, re.M))
     if nbooks and nbooks > 4:
         warn(f"紹介本が多い({nbooks}冊): {p.name}")
+
+if old_tips_missing:
+    warn(f"出力例・使いどころと失敗例が未追加の活用方法: {len(old_tips_missing)}件")
 
 # 5. queue
 slugs = [q["slug"] for q in queue]
