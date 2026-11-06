@@ -11,7 +11,7 @@ description: あんなことこんなことClaudeの「改善の1周」で、こ
 
 - 項目の接頭辞: `AK`(司令塔の `site` は `anna`)
 - 既定ブランチ: **`master`**。公開URL: https://takahiroukai.github.io/anna-konna-claude/
-- 改善の曜日: 火曜
+- 改善の順番: 2番目(稼ぎのトリセツ → あんなことこんなことClaude → 机タイム素材集 → 注目銘柄メモの順に、実行のたびに次へ進む)
 
 ## ユーザー役の読者像
 
