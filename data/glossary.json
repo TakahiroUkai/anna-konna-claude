@@ -688,5 +688,45 @@
   "link": [
    "Plaid"
   ]
+ },
+ {
+  "id": "permission-mode",
+  "term": "権限モード(パーミッションモード)",
+  "reading": "けんげんもーど",
+  "category": "Claudeの機能",
+  "explain": "Claude Codeが、ファイルの変更やコマンドの実行を、聞かずにやってよいかを決める設定です。画面の下の表示で、いまのモードが分かります。",
+  "link": [
+   "権限モード"
+  ]
+ },
+ {
+  "id": "plan-mode",
+  "term": "プランモード",
+  "reading": "ぷらんもーど",
+  "category": "Claudeの機能",
+  "explain": "Claude Codeが、ファイルを読んで計画を出すだけで、計画を承認するまでファイルを変えないモードです。作らせる前に、案を見たいときに使います。",
+  "link": [
+   "プランモード"
+  ]
+ },
+ {
+  "id": "git-tool",
+  "term": "git(ギット)",
+  "reading": "ぎっと",
+  "category": "道具",
+  "explain": "ファイルの変更の履歴を残す道具です。コミットという区切りを作っておくと、あとで変更を見比べたり、元に戻したりできます。",
+  "link": [
+   "gitで管理"
+  ]
+ },
+ {
+  "id": "text-watermark",
+  "term": "文章の透かし(text watermark)",
+  "reading": "ぶんしょうのすかし",
+  "category": "Claudeの機能",
+  "explain": "AIが生成した文章に付ける、目印の仕組みです。Anthropicの公式ページでは、見える文字や記号を足すものではない、と説明されています。",
+  "link": [
+   "文章の透かし"
+  ]
  }
 ]

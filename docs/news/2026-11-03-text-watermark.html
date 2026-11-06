@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>Claudeが書いた文章に「透かし」が付くモデルが、リリースノートに載りました | あんなことこんなことClaude</title>
+<meta name="description" content="2026年11月3日のAPIのリリースノートに、Claudeが生成した文章に、Anthropicの「文章の透かし」が付く、という項目が載りました。対象のモデルと、付かないことがある条件は確認できました。一方、チャット画面のClaudeに付くかどうかなど、確認できなかった点も多くあります。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-03-text-watermark.html">
+<meta property="og:title" content="Claudeが書いた文章に「透かし」が付くモデルが、リリースノートに載りました | あんなことこんなことClaude">
+<meta property="og:description" content="2026年11月3日のAPIのリリースノートに、Claudeが生成した文章に、Anthropicの「文章の透かし」が付く、という項目が載りました。対象のモデルと、付かないことがある条件は確認できました。一方、チャット画面のClaudeに付くかどうかなど、確認できなかった点も多くあります。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-03-text-watermark.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc doc-news">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a> / <a href="./">Claude最新情報</a></p>
+    <p class="news-date">2026-11-03 の発表</p>
+    <h1>Claudeが書いた文章に「透かし」が付くモデルが、リリースノートに載りました</h1>
+    <p class="summary">2026年11月3日のAPIのリリースノートに、Claudeが生成した文章に、Anthropicの「文章の透かし」が付く、という項目が載りました。対象のモデルと、付かないことがある条件は確認できました。一方、チャット画面のClaudeに付くかどうかなど、確認できなかった点も多くあります。</p>
+    <p class="stamp">2026-11-06 時点の情報</p>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">何が発表されたか</a></li><li><a href="#s2">できるようになること</a></li><li><a href="#s3">活用方法</a></li><li><a href="#s4">注意すること</a></li></ul>
+  </div>
+  <p>2026年11月3日、Claude Platform(開発者向けの案内)のリリースノートに、「文章の透かし」の項目が載りました。確認できたことは3つです。対象は3つのモデル。文章の意味や読みやすさは変えない、と書かれている。設定によっては付かないことがある。チャット画面のClaudeに付くかどうかは、確認できませんでした。</p><section id="s1"><h2>何が発表されたか</h2><p>公式のリリースノートによると、Claude Mythos 5、Claude Opus 4.7、Claude Sonnet 4.6が生成した文章には、Anthropicの文章の透かし(text watermark)が付きます。どのサービスで付くかは、ヘルプセンターの記事「How Claude marks AI-generated content」にある一覧によると書かれています。この記事のページは、今回は開けず、一覧の中身は確認できませんでした。</p><p>文章の透かしの説明ページには、次のように書かれています。透かしは、文章の意味、品質、読みやすさを変えない。トークン(Claudeが文章を数える単位)や、見えない文字を足すことはない。使っている人や組織の情報も含まない。</p></section><section id="s2"><h2>できるようになること</h2><p>この発表で、読者が新しくできるようになることは、公式のページからは確認できませんでした。見つけ方(検出の方法)、誰が検出できるのか、何のために付けるのか、といった点が、読んだページには書かれていません。</p><p>分かるのは、次のことです。</p><ul><li>3つのモデルの文章に、透かしが付く(対象のサービスは、一覧で確認が必要)。</li><li>見える文字や記号を足すものではない、と説明されている。</li><li>APIを使う人は、設定によって、透かしが付かない場合がある。</li></ul></section><section id="s3"><h2>活用方法</h2><p>APIを使うプログラムを書く人は、下の「注意すること」の設定を、自分のコードで使っていないかを確かめられます。コードを探す作業は、Claude(Claude Codeなど)に頼めますが、<strong>確かめるのは自分です。</strong></p><figure class="fig fig-prompt"><figcaption>設定を使っている場所を、探してもらう</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>添付したコードは、Claude APIを呼び出すプログラムです。次のことを、ファイルを変えずに、調べて報告してください。
+1. temperature、top_p、top_k のどれかを、明示的に指定している場所(ファイル名と行番号)
+2. 使っているライブラリや枠組みが、これらを自動で指定している可能性があるか。確認できないものは「確認できませんでした」と書く
+3. 指定していないもの、指定しているもの、を表にまとめる
+値そのものは変えず、提案もしないでください。報告だけにしてください。</code></pre></div></figure></section><section id="s4" class="warn"><h2>注意すること</h2><ul><li>公式の「Text watermark」のページによると、Sonnet 4.6では、temperature、top_p、top_k のどれかを標準以外の値にしたリクエストの文章には、透かしが付かないことがあります。透かしに頼る場合は、この3つを、リクエストから外します。ライブラリや枠組みが自動で付ける場合も含まれる、と書かれています。</li><li>透かしがあるかどうかを、読者が見分ける方法は、確認できませんでした。見分けられる前提で、文章を扱いません。</li><li>チャット画面のClaude、モバイルアプリ、Claude Codeで付くかどうかは、確認できませんでした。</li><li>対象のプラン、地域は、読んだページには書かれていません。確認できませんでした。</li><li>文章を書き換えたり、翻訳したり、短く切ったりしたときに、透かしがどうなるかは、確認できませんでした。</li><li>透かしは、文章が正しいことの保証ではありません。Claudeの文章を使うときは、事実を、出典で確かめます。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="intermediate" data-purpose="research" data-features="chat" data-text="同じ質問を2通りで聞いて、答えの食い違いを確かめる 同じことを、聞き方を変えて別々の会話で2回聞き、答えを比べる方法です。食い違った所は、確かめる優先度が高い所です。ただし、一致したから正しい、とは言えません。最後の確認は、出典で行います。 調べる 基本のチャット"><a class="card-title" href="../tips/cross-check-two-answers.html">同じ質問を2通りで聞いて、答えの食い違いを確かめる</a><p class="card-sum">同じことを、聞き方を変えて別々の会話で2回聞き、答えを比べる方法です。食い違った所は、確かめる優先度が高い所です。ただし、一致したから正しい、とは言えません。最後の確認は、出典で行います。</p><p class="chips"><span class="chip lv-intermediate">中級者向け</span><span class="chip">約25分</span><span class="chip">調べる</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener" target="_blank">Claude Platform Docs「Release notes」(2026年11月3日の項目で、日付、対象のモデル、付かないことがある条件を確認。2026年11月6日に確認)</a></li><li><a href="https://platform.claude.com/docs/en/build-with-claude/text-watermark" rel="noopener" target="_blank">Claude Platform Docs「Text watermark」(透かしの説明、追加される文字の有無、サンプリング設定の注意を確認。2026年11月6日に確認)</a></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-03-text-watermark.html" data-title="Claudeが書いた文章に「透かし」が付くモデルが、リリースノートに載りました | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-03-text-watermark.html&amp;text=Claude%E3%81%8C%E6%9B%B8%E3%81%84%E3%81%9F%E6%96%87%E7%AB%A0%E3%81%AB%E3%80%8C%E9%80%8F%E3%81%8B%E3%81%97%E3%80%8D%E3%81%8C%E4%BB%98%E3%81%8F%E3%83%A2%E3%83%87%E3%83%AB%E3%81%8C%E3%80%81%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%83%8E%E3%83%BC%E3%83%88%E3%81%AB%E8%BC%89%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-03-text-watermark.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-03-text-watermark.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-03-text-watermark.html&amp;title=Claude%E3%81%8C%E6%9B%B8%E3%81%84%E3%81%9F%E6%96%87%E7%AB%A0%E3%81%AB%E3%80%8C%E9%80%8F%E3%81%8B%E3%81%97%E3%80%8D%E3%81%8C%E4%BB%98%E3%81%8F%E3%83%A2%E3%83%87%E3%83%AB%E3%81%8C%E3%80%81%E3%83%AA%E3%83%AA%E3%83%BC%E3%82%B9%E3%83%8E%E3%83%BC%E3%83%88%E3%81%AB%E8%BC%89%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="./">最新情報の一覧にもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
