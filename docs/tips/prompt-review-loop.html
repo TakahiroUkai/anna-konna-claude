@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>プロンプトを、Claudeに添削してもらって改善する | あんなことこんなことClaude</title>
+<meta name="description" content="「なんとなく頼んだら、微妙な答えだった」を、添削、試す、比べる、の3段で直す方法です。直す前に「うまくいった」の基準を決めておくので、直した結果が良くなったのかを、自分で判断できます。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/prompt-review-loop.html">
+<meta property="og:title" content="プロンプトを、Claudeに添削してもらって改善する | あんなことこんなことClaude">
+<meta property="og:description" content="「なんとなく頼んだら、微妙な答えだった」を、添削、試す、比べる、の3段で直す方法です。直す前に「うまくいった」の基準を決めておくので、直した結果が良くなったのかを、自分で判断できます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/prompt-review-loop.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>プロンプトを、Claudeに添削してもらって改善する</h1>
+    <p class="summary">「なんとなく頼んだら、微妙な答えだった」を、添削、試す、比べる、の3段で直す方法です。直す前に「うまくいった」の基準を決めておくので、直した結果が良くなったのかを、自分で判断できます。</p>
+    <p class="stamp">2026-11-06 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-intermediate.html"><span class="chip lv-intermediate">中級者向け</span></a> 設定や考え方の理解が少し要る。いくつかの機能を組み合わせる。</td></tr><tr><th scope="row">所要時間</th><td>約25分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-learn.html">学ぶ</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a></td></tr><tr><th scope="row">作れるもの</th><td>改善前と改善後を見比べられる表と、同じ入力で試して選んだ、直したプロンプト</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">実際の出力例</a></li><li><a href="#s6">使いどころと失敗例</a></li><li><a href="#s7">うまくいかないとき</a></li></ul>
+  </div>
+  <p>結論から書きます。<a class="term" href="../glossary/#term-prompt">プロンプト</a>(Claudeへの依頼の文章)は、直す前に「何ができたら成功か」を決めます。そのうえで、Claudeに添削してもらい、同じ入力で試して、前と後を比べます。この順にすると、「なんとなく良くなった気がする」で終わりません。</p><p>「毎週、同じ頼み方をしているのに、答えがばらつく」。そんな同僚に、そのまま渡せる手順です。</p><section id="s1"><h2>ねらい</h2><ul><li>自分の依頼文の、足りない所を、Claudeに指摘してもらいます。</li><li>直した文章を、同じ入力で試して、前と後を比べます。</li><li>添削の結果を、そのまま信じません。試して決めます。</li></ul><p>公式の「Prompting best practices」には、Claudeは明確で、はっきりした指示によく応える、と書かれています。出力の形や条件は、具体的に書きます。同じページには、前提の少ない同僚にその依頼文を見せて、そのとおりに動けるかを試す方法も載っています。この活用方法は、その「同僚」の役を、Claudeに頼む形です。</p></section><section id="s2"><h2>準備するもの</h2><ul><li>直したい依頼文を1つ。毎週のように使うものが向いています。</li><li>試す入力を2〜3件。実物でなく、内容を作り変えた見本でかまいません。</li><li>「成功」の基準を3つ。公式の概要ページには、プロンプトを直し始める前に、成功の基準と、それを試す方法を決めておくこと、と書かれています。基準は具体的で、測れるものにします。例:「議事録の要約は、決定事項と担当者と期限がすべて入っている」「全体で300字以内」。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 添削して、試して、選ぶ流れ</figcaption><ol class="flow"><li><strong>基準を決める</strong><span>何ができたら成功かを、測れる形で3つ書く</span></li><li><strong>添削を頼む</strong><span>足りない点の一覧と、直した案を出してもらう</span></li><li><strong>同じ入力で試す</strong><span>前と後を、同じ見本で動かして並べる</span></li><li><strong>基準で採点する</strong><span>3つの基準を、自分の目で○×にする</span></li><li><strong>選ぶ</strong><span>良くなった点だけを残し、もう1周するか決める</span></li></ol></figure><ol><li><strong>基準を3つ書く。</strong> 先に書かないと、直したあとに、基準のほうを合わせてしまいます。</li><li><strong>添削を頼む。</strong> 下のプロンプトを使います。直した案だけでなく、「何が足りなかったか」の一覧も出してもらいます。</li><li><strong>前と後を、同じ見本で試す。</strong> 新しい会話を2つ開き、同じ見本を入れて、結果を並べます。前の会話の流れが影響しないように、会話は分けます。</li><li><strong>基準で採点する。</strong> ○×を付けます。Claudeに採点させるときは、採点の理由も出させ、自分で見直します。</li><li><strong>選ぶ。</strong> 後のほうが基準を満たすなら採用します。悪くなった点があれば、その部分だけ戻します。</li></ol></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>添削を頼む</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の「私の依頼文」を、添削してください。
+- 私の依頼文: (ここに、直したい依頼文を貼る)
+- 使う場面: (例: 週1回の会議のメモを、チームに共有する要約にする)
+- 読む人: (例: 会議に出ていない同僚)
+- 成功の基準: (ここに、測れる基準を3つ書く)
+次の順で答えてください。
+1. 足りない点の一覧(表。列は「足りない点」「そのままだと起こりそうなこと」)。次の観点で見てください: 目的、読む人、出力の形、字数などの条件、例の有無、情報が足りないときの扱い。
+2. 直した依頼文。直した所は、元の文章との違いが分かるようにしてください。
+3. 私が確かめるべき点を3つ。この直し方で、悪くなりそうな点も入れてください。
+書かれていない情報を、勝手に補わないでください。足りない情報は、質問として出してください。</code></pre></div></figure></section><section id="s5"><h2>実際の出力例</h2><p>見本の依頼文「この議事録をまとめてください。」で、上のプロンプトに答えた例です。見本の内容は、作った架空の会議です。毎回、同じ結果にはなりません。</p><figure class="fig fig-output"><figcaption>添削の出力(見本。一部を短くしてあります)</figcaption><div class="output"><div class="output-bar"><span>実際に出力された例(実行のたびに結果は変わります)</span></div><pre><code>1. 足りない点の一覧
+| 足りない点 | そのままだと起こりそうなこと |
+|---|---|
+| 目的がない | 何のための要約か分からず、細かい経過まで入る |
+| 読む人がいない | 会議に出ていない人には、分かりにくい省略が出る |
+| 出力の形がない | 長さや並びが、毎回変わる |
+| 条件がない | 300字以内などの制限が守られない |
+| 情報が足りないときの扱いがない | 担当者や期限が議事録に無いとき、推測で書く恐れがある |
+
+2. 直した依頼文
+次の議事録を、会議に出ていない同僚向けの共有文にしてください。
+- 形: 「決定事項」「未決事項」「担当者と期限」の3つの見出し。各見出しは箇条書き。
+- 長さ: 全体で300字以内。
+- 議事録に担当者や期限が書かれていないときは、推測せず「記載なし」と書く。
+(議事録)
+
+3. 確かめるべき点
+- 300字に収めるために、重要な未決事項が消えていないか。
+- 「記載なし」が多すぎないか(議事録の書き方の問題かもしれません)。
+- 見出しが固定なので、決定事項がない会議のときに、空欄が出ないか。</code></pre></div></figure></section><section id="s6"><h2>使いどころと失敗例</h2><p>向く場面は、同じ形の依頼を、くり返す仕事です。毎週の要約、定型のメール、問い合わせへの返信などです。一度直すと、あとで何度も使えます。</p><p>向かない場面は、1回きりの質問です。直す手間のほうが大きくなります。</p><p>よくある失敗と、その直し方です。</p><ul><li><strong>直した案を、試さずに採用する。</strong> 添削は、あくまで案です。同じ見本で動かして、基準で○×を付けてから採用します。</li><li><strong>見本が1件だけ。</strong> 1件では、たまたま上手くいったのかが分かりません。性質の違う見本を2〜3件にします。公式のページにも、例は実際の用途に近いものを、バリエーションをつけて入れるとよい、と書かれています。</li><li><strong>添削を重ねるほど長くなる。</strong> 条件が増えすぎると、守られない条件が出ます。1周ごとに、効いていない条件を1つ消せないか見ます。</li><li><strong>機密の内容を貼る。</strong> 見本は、固有名詞や数字を作り変えます。実物の議事録や顧客の情報は、貼る前に、会社の決まりを確かめます。</li></ul><figure class="fig fig-compare"><figcaption>図: 直す前と後の、見比べの表(自分用にコピーして使えます)</figcaption><table><thead><tr><th scope="col">見る点</th><th scope="col">前</th><th scope="col">後</th></tr></thead><tbody><tr><td>基準1: 決定事項、担当者、期限が入っている</td><td>○か×</td><td>○か×</td></tr><tr><td>基準2: 300字以内</td><td>○か×</td><td>○か×</td></tr><tr><td>基準3: 書かれていないことを推測していない</td><td>○か×</td><td>○か×</td></tr><tr><td>読んで、分かりにくかった所</td><td>一言</td><td>一言</td></tr></tbody></table></figure></section><section id="s7" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>添削が、当たり前の指摘ばかりのとき</strong>: 使う場面と読む人を、もっと具体的に書きます。「誰が、いつ、何のために読むか」を足します。</li><li><strong>直したら、別の点が悪くなったとき</strong>: 基準を1つずつ見て、悪くなった基準に関係する条件だけを戻します。</li><li><strong>見本ごとに、結果がばらつくとき</strong>: 出力の形(見出し、字数、並び)を固定します。それでもばらつくなら、例を1〜2個、依頼文に入れます。公式のページでは、例は3〜5個が目安とされています。</li><li><strong>基準が決められないとき</strong>: まず、最近の「いまいちだった答え」を1つ見て、何が嫌だったかを文にします。それを反対にしたものが、基準の候補です。</li><li>画面の表示は変わることがあります。この記事で確認できたのは、公式のドキュメントの範囲です。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="organize" data-features="chat" data-text="「質問してから答えて」と頼んで、条件を詰める 答えを頼む前に、「先にあなたから質問して」と頼む方法です。決まっていないことをclaudeに聞き出してもらい、条件が固まってから答えてもらいます。 整理する 基本のチャット"><a class="card-title" href="../tips/ask-claude-to-ask-you.html">「質問してから答えて」と頼んで、条件を詰める</a><p class="card-sum">答えを頼む前に、「先にあなたから質問して」と頼む方法です。決まっていないことをClaudeに聞き出してもらい、条件が固まってから答えてもらいます。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約10分</span><span class="chip">整理する</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" rel="noopener" target="_blank">Claude Platform Docs「Prompting best practices」(依頼を明確に書く、例を入れる、自分で確かめさせる、の確認。2026年11月6日に確認)</a></li><li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview" rel="noopener" target="_blank">Claude Platform Docs「Prompt engineering overview」(始める前に、成功の基準と、試す方法を決める、の確認。2026年11月6日に確認)</a></li><li><a href="https://platform.claude.com/docs/en/test-and-evaluate/develop-tests" rel="noopener" target="_blank">Claude Platform Docs「Define success and build evaluations」(基準は具体的で測れるものにする、の確認。2026年11月6日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/prompt-review-loop.html" data-title="プロンプトを、Claudeに添削してもらって改善する | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fprompt-review-loop.html&amp;text=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%82%92%E3%80%81Claude%E3%81%AB%E6%B7%BB%E5%89%8A%E3%81%97%E3%81%A6%E3%82%82%E3%82%89%E3%81%A3%E3%81%A6%E6%94%B9%E5%96%84%E3%81%99%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fprompt-review-loop.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fprompt-review-loop.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fprompt-review-loop.html&amp;title=%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%82%92%E3%80%81Claude%E3%81%AB%E6%B7%BB%E5%89%8A%E3%81%97%E3%81%A6%E3%82%82%E3%82%89%E3%81%A3%E3%81%A6%E6%94%B9%E5%96%84%E3%81%99%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>

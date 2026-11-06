@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>同じ質問を2通りで聞いて、答えの食い違いを確かめる | あんなことこんなことClaude</title>
+<meta name="description" content="同じことを、聞き方を変えて別々の会話で2回聞き、答えを比べる方法です。食い違った所は、確かめる優先度が高い所です。ただし、一致したから正しい、とは言えません。最後の確認は、出典で行います。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/cross-check-two-answers.html">
+<meta property="og:title" content="同じ質問を2通りで聞いて、答えの食い違いを確かめる | あんなことこんなことClaude">
+<meta property="og:description" content="同じことを、聞き方を変えて別々の会話で2回聞き、答えを比べる方法です。食い違った所は、確かめる優先度が高い所です。ただし、一致したから正しい、とは言えません。最後の確認は、出典で行います。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/cross-check-two-answers.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>同じ質問を2通りで聞いて、答えの食い違いを確かめる</h1>
+    <p class="summary">同じことを、聞き方を変えて別々の会話で2回聞き、答えを比べる方法です。食い違った所は、確かめる優先度が高い所です。ただし、一致したから正しい、とは言えません。最後の確認は、出典で行います。</p>
+    <p class="stamp">2026-11-06 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-intermediate.html"><span class="chip lv-intermediate">中級者向け</span></a> 設定や考え方の理解が少し要る。いくつかの機能を組み合わせる。</td></tr><tr><th scope="row">所要時間</th><td>約25分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-research.html">調べる</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a></td></tr><tr><th scope="row">作れるもの</th><td>2つの答えを並べた「一致・食い違い・片方だけ」の表と、自分で確かめる項目のリスト</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">実際の出力例</a></li><li><a href="#s6">使いどころと失敗例</a></li><li><a href="#s7">うまくいかないとき</a></li></ul>
+  </div>
+  <p>結論から書きます。同じ質問を、聞き方を変えて別々の会話で2回聞き、答えを比べます。食い違った所が、あなたが自分で確かめる所です。ただし、2つの答えが一致しても、正しいとは限りません。同じ間違いを、2回くり返すことがあるからです。</p><p>「調べ物をClaudeに頼んだが、どこまで信じてよいか分からない」。そんな同僚や、レポートを書いている友人に、そのまま見せられる方法です。</p><section id="s1"><h2>ねらい</h2><ul><li>答えの中で、特に確かめるべき所を、短い時間で見つけます。</li><li>「一致」は確かさの目安にとどめ、最後は出典で確かめます。</li><li>確かめた結果を、一覧に残します。</li></ul><p>この方法は、Claudeの答えを疑うためのものではなく、確かめる手間を、必要な所に絞るためのものです。</p><p>なお、公式のドキュメントで確認できたのは、依頼を明確に書くこと、答える前に自分で確かめさせる指示を入れること、基準を具体的で測れるものにすることです。「2回聞いて比べる」方法そのものが公式に書かれているかは、確認できませんでした。この記事の方法は、公式のページに書かれた考え方を使った、1つの進め方として紹介します。</p></section><section id="s2"><h2>準備するもの</h2><ul><li>確かめたい質問を1つ。数字、日付、決まりごと、手順など、正解がある質問が向いています。</li><li>会話を開ける状態。2つの会話を、別々に開きます。</li><li>出典を調べる時間。公式のページや、元の資料で確かめます。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 2通りで聞いて、比べる流れ</figcaption><ol class="flow"><li><strong>2通りで聞く</strong><span>別々の会話で、聞き方を変えて質問する</span></li><li><strong>並べて比べる</strong><span>一致、食い違い、片方だけ、に分ける</span></li><li><strong>食い違いを確かめる</strong><span>公式のページや元の資料で、自分で確かめる</span></li><li><strong>一致も確かめる</strong><span>重要なものは、一致していても出典を見る</span></li><li><strong>一覧に残す</strong><span>確かめた結果と、確かめた日を書く</span></li></ol></figure><ol><li><strong>2通りの聞き方を作る。</strong> 聞き方Aは、ふつうに質問します。聞き方Bは、「根拠」や「例外」を先に求めます。下の<a class="term" href="../glossary/#term-prompt">プロンプト</a>を使います。</li><li><strong>別々の会話で聞く。</strong> 同じ会話で続けて聞くと、前の答えに引っ張られます。必ず、新しい会話にします。</li><li><strong>並べて比べる。</strong> 3つ目の新しい会話で、2つの答えを貼り、比較を頼みます。</li><li><strong>食い違いを、自分で確かめる。</strong> 公式のページや、元の資料を見ます。</li><li><strong>重要な所は、一致していても確かめる。</strong> お金、健康、法律、契約に関わることは、特に確かめます。</li></ol></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>聞き方A(ふつうに聞く)</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の質問に答えてください。
+質問: (ここに、確かめたい質問を書く。例: 〇〇の上限は、いくつですか)
+前提: (例: 個人で使う場合。日本での話)
+答えが分からないときや、確信がないときは、そう書いてください。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>聞き方B(根拠と例外を先に求める)</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の質問について、まず、答えの根拠になるもの(どの種類の資料に書かれているはずか)を挙げてください。そのうえで答え、最後に、例外や、変わりやすい点を挙げてください。
+質問: (Aと同じ質問)
+前提: (Aと同じ前提)
+答えを出す前に、自分の答えを、前提と照らし合わせて確かめてください。確信がない点は、「確信がない」と書いてください。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>3つ目の会話で、比べる</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>下に、同じ質問への、2つの答えがあります。比べて、表にしてください。
+列は「項目」「Aの答え」「Bの答え」「判定(一致・食い違い・片方だけ)」。
+そのあと、次を答えてください。
+1. 食い違いのうち、確かめる優先度が高い順に並べてください。理由も一言ずつ。
+2. 「一致」している項目のうち、2つとも間違っている可能性がありそうなものはありますか。ある場合は、理由を書いてください。
+3. 確かめるときに見る資料(公式のページ、法令、規約など)の、種類の候補。
+あなたの知識で、どちらが正しいかを決めないでください。決められないものは「決められない」と書いてください。
+【Aの答え】
+(貼る)
+【Bの答え】
+(貼る)</code></pre></div></figure></section><section id="s5"><h2>実際の出力例</h2><p>見本の質問「Pythonのリストとタプルの違いは何ですか」で、聞き方AとBの答えとして、2つの短い答えを作り、比較のプロンプトに答えた例です。2つの答えは、食い違いが出る様子を見せるために、わざと一部に誤りを入れた作り物です。実際のClaudeの答えではありません。比較の出力は、その作り物に対して答えたものです。毎回、同じ結果にはなりません。</p><figure class="fig fig-output"><figcaption>比較の出力(見本。一部を短くしてあります)</figcaption><div class="output"><div class="output-bar"><span>実際に出力された例(実行のたびに結果は変わります)</span></div><pre><code>| 項目 | Aの答え | Bの答え | 判定 |
+|---|---|---|---|
+| 中身を変えられるか | リストは変えられる。タプルは変えられない | リストは変えられる。タプルは変えられない | 一致 |
+| 書き方 | リストは[ ]、タプルは( ) | リストは[ ]、タプルは( ) | 一致 |
+| メモリの使い方 | タプルのほうが、一般に少ない | タプルのほうが、多く使う | 食い違い |
+| 辞書のキーにできるか | タプルはできる場合がある | 記載なし | 片方だけ |
+
+1. 確かめる優先度
+- メモリの使い方(高)。AとBが逆です。数値の話なので、公式の資料や、自分の環境での計測で確かめます。
+- 辞書のキー(中)。「場合がある」という条件が、何かが分かりません。タプルの中身に条件があるかを、公式の説明で確かめます。
+
+2. 一致していても、確かめたほうがよい点
+- 「タプルは変えられない」。一致していますが、タプルの中に入っているものが変えられるときの扱いは、どちらにも書かれていません。例外を確かめます。
+
+3. 見る資料の候補
+- Python公式のドキュメント(データ構造、辞書の説明)</code></pre></div></figure></section><section id="s6"><h2>使いどころと失敗例</h2><p>向く場面は、正解のある質問で、間違えると困るときです。数字、日付、手順、決まりごとなどです。レポートや社内資料に、Claudeの答えを入れる前に使います。</p><p>向かない場面は、好みや意見を聞く質問です。食い違いが出ても、どちらが正しいとは決められません。また、最新の情報は、2回聞くより、公式のページを直接見るほうが確かです。</p><p>よくある失敗と、その直し方です。</p><ul><li><strong>同じ会話で続けて聞く。</strong> 前の答えに引っ張られて、比べる意味が薄れます。新しい会話を開きます。</li><li><strong>一致したから、安心してしまう。</strong> 一致は、確かさの目安にすぎません。大事な項目は、一致していても、出典で確かめます。</li><li><strong>Claudeに、どちらが正しいかを決めさせる。</strong> 比較のプロンプトで、決めさせないようにしています。決めるのは、出典を見た、あなたです。</li><li><strong>確かめた結果を残さない。</strong> あとで同じ質問をしたとき、同じ所で迷います。下の表に、確かめた日つきで残します。</li></ul><figure class="fig fig-compare"><figcaption>図: 確かめた結果の一覧(自分用にコピーして使えます)</figcaption><table><thead><tr><th scope="col">項目</th><th scope="col">確かめた資料と日付</th><th scope="col">結果</th></tr></thead><tbody><tr><td>(例: 上限の数値)</td><td>(公式のページ名・確認日)</td><td>(正しい・違った・確認できなかった)</td></tr><tr><td>(例: 例外の有無)</td><td>(資料名・確認日)</td><td>(結果)</td></tr></tbody></table></figure></section><section id="s7" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>2つの答えが、まったく同じ言い回しのとき</strong>: 聞き方の違いが小さい可能性があります。Bで、「根拠」と「例外」を先に求める部分を、はっきり書きます。</li><li><strong>食い違いが多すぎるとき</strong>: 質問が広すぎます。質問を、1つのことに絞って、聞き直します。</li><li><strong>確かめる資料が見つからないとき</strong>: 「確認できなかった」と、一覧に書きます。確認できないことは、レポートなどには、断定して書きません。</li><li><strong>答えが、毎回変わるとき</strong>: それ自体が、確かめるべき合図です。前提(地域、期間、対象)を、質問に書き足します。</li><li><strong>機密の内容を貼るとき</strong>: 質問は、固有名詞や数字を作り変えます。実際の資料や顧客の情報は、貼る前に、会社の決まりを確かめます。</li><li>画面の表示は変わることがあります。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="research" data-features="search chat" data-text="web検索で、気になる情報の裏付けを取る 「本当かな?」と思った話を、そのまま信じも捨てもせずに、出典つきで確かめる方法です。主張を分けて、1つずつ出典をつけてもらい、最後は自分で出典を開いて確かめます。 調べる web検索 基本のチャット"><a class="card-title" href="../tips/web-search-fact-check.html">Web検索で、気になる情報の裏付けを取る</a><p class="card-sum">「本当かな?」と思った話を、そのまま信じも捨てもせずに、出典つきで確かめる方法です。主張を分けて、1つずつ出典をつけてもらい、最後は自分で出典を開いて確かめます。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約10分</span><span class="chip">調べる</span><span class="chip chip-f">Web検索</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" rel="noopener" target="_blank">Claude Platform Docs「Prompting best practices」(依頼を明確に書く、答える前に自分で確かめさせる、の確認。2026年11月6日に確認)</a></li><li><a href="https://platform.claude.com/docs/en/test-and-evaluate/develop-tests" rel="noopener" target="_blank">Claude Platform Docs「Define success and build evaluations」(基準は具体的で測れるものにする、の確認。2026年11月6日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/cross-check-two-answers.html" data-title="同じ質問を2通りで聞いて、答えの食い違いを確かめる | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcross-check-two-answers.html&amp;text=%E5%90%8C%E3%81%98%E8%B3%AA%E5%95%8F%E3%82%922%E9%80%9A%E3%82%8A%E3%81%A7%E8%81%9E%E3%81%84%E3%81%A6%E3%80%81%E7%AD%94%E3%81%88%E3%81%AE%E9%A3%9F%E3%81%84%E9%81%95%E3%81%84%E3%82%92%E7%A2%BA%E3%81%8B%E3%82%81%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcross-check-two-answers.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcross-check-two-answers.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcross-check-two-answers.html&amp;title=%E5%90%8C%E3%81%98%E8%B3%AA%E5%95%8F%E3%82%922%E9%80%9A%E3%82%8A%E3%81%A7%E8%81%9E%E3%81%84%E3%81%A6%E3%80%81%E7%AD%94%E3%81%88%E3%81%AE%E9%A3%9F%E3%81%84%E9%81%95%E3%81%84%E3%82%92%E7%A2%BA%E3%81%8B%E3%82%81%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
