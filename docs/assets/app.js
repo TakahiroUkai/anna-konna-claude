@@ -87,15 +87,24 @@
     count.textContent = shown < n ? n + '件のうち、最初の' + shown + '件を表示中' : n + '件を表示中(全' + cards.length + '件)';
     empty.hidden = n !== 0;
   }
+  // 絞り込みを変えたとき、件数の表示が画面の外にあれば、そこまで移動する
+  function reveal() {
+    var r = count.getBoundingClientRect();
+    if (r.top < 0 || r.top > window.innerHeight * 0.6) {
+      var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      count.scrollIntoView({ behavior: calm ? 'auto' : 'smooth', block: 'start' });
+    }
+  }
   segBtns.forEach(function (b) {
     b.addEventListener('click', function () {
       level = b.getAttribute('data-level');
       segBtns.forEach(function (x) { x.classList.toggle('is-on', x === b); x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
       apply();
+      reveal();
     });
     b.setAttribute('aria-pressed', b.classList.contains('is-on') ? 'true' : 'false');
   });
-  [selPurpose, selFeature].forEach(function (s) { s.addEventListener('change', apply); });
+  [selPurpose, selFeature].forEach(function (s) { s.addEventListener('change', function () { apply(); reveal(); }); });
   inpQ.addEventListener('input', apply);
   apply();
 })();
