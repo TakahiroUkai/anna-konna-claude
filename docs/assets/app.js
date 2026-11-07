@@ -62,19 +62,29 @@
   var count = document.getElementById('f-count');
   var empty = document.getElementById('f-empty');
   var level = '';
+  var LIMIT = 12, expanded = false;
+  var more = document.createElement('button');
+  more.type = 'button'; more.className = 'more-btn'; more.hidden = true;
+  list.parentNode.insertBefore(more, list.nextSibling);
+  more.addEventListener('click', function () { expanded = true; apply(); });
 
   function apply() {
     var p = selPurpose.value, f = selFeature.value, q = inpQ.value.trim().toLowerCase();
-    var n = 0;
+    var n = 0, shown = 0;
+    var plain = !level && !p && !f && !q;
     cards.forEach(function (c) {
       var ok = (!level || c.getAttribute('data-level') === level) &&
         (!p || c.getAttribute('data-purpose') === p) &&
         (!f || (' ' + c.getAttribute('data-features') + ' ').indexOf(' ' + f + ' ') >= 0) &&
         (!q || c.getAttribute('data-text').indexOf(q) >= 0);
-      c.hidden = !ok;
       if (ok) n++;
+      var show = ok && (!plain || expanded || shown < LIMIT);
+      if (show) shown++;
+      c.hidden = !show;
     });
-    count.textContent = n + '件を表示中(全' + cards.length + '件)';
+    more.hidden = shown >= n;
+    more.textContent = '残りの' + (n - shown) + '件も表示する';
+    count.textContent = shown < n ? n + '件のうち、最初の' + shown + '件を表示中' : n + '件を表示中(全' + cards.length + '件)';
     empty.hidden = n !== 0;
   }
   segBtns.forEach(function (b) {

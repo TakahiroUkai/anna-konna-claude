@@ -225,3 +225,6 @@ a.term { color: inherit; text-decoration: underline dotted; text-underline-offse
   .fig-table td { border: 0; border-top: 1px solid var(--line); padding: .5rem .7rem .6rem; }
   .fig-table td::before { content: attr(data-label); display: block; width: fit-content; margin: 0 0 .25rem; padding: 0 .55rem; border-radius: 999px; background: var(--line); color: #3d3d3a; font-size: .8rem; font-weight: 700; line-height: 1.7; }
 }
+
+.more-btn { display: block; width: 100%; font: inherit; font-size: .95rem; min-height: 48px; margin: 0 0 1rem; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); cursor: pointer; }
+.more-btn[hidden] { display: none; }
