@@ -394,7 +394,7 @@ def share_block(title, path):
     )
 
 
-def layout(title, desc, body, root, path):
+def layout(title, desc, body, root, path, article=None):
     name = CONFIG["name"]
     full = name if title == name else f"{title} | {name}"
     canon = CONFIG["base_url"] + path
@@ -404,6 +404,16 @@ def layout(title, desc, body, root, path):
         parts.append(f"Amazonのアソシエイトとして、{name}は適格販売により収入を得ています。")
     if CONFIG.get("ads", {}).get("enabled"):
         parts.append("広告枠を設けています。")
+    og_type = "article" if article else "website"
+    meta_extra = ""
+    if article:
+        ld = {"@context": "https://schema.org", "@type": "Article", "headline": title, "description": desc,
+              "datePublished": article["published"], "dateModified": article["modified"], "inLanguage": "ja",
+              "mainEntityOfPage": canon, "author": {"@type": "Person", "name": "運営者"},
+              "publisher": {"@type": "Organization", "name": name}}
+        meta_extra = ('<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False).replace("</", "<\\/") + "</script>\n"
+                      f'<meta property="article:published_time" content="{esc(article["published"])}">\n'
+                      f'<meta property="article:modified_time" content="{esc(article["modified"])}">\n')
     disclosure = f'<p><strong>広告について</strong> {"".join(parts)}</p>' if parts else ""
     return f"""<!doctype html>
 <html lang="ja">
@@ -418,8 +428,12 @@ def layout(title, desc, body, root, path):
 <link rel="canonical" href="{esc(canon)}">
 <meta property="og:title" content="{esc(full)}">
 <meta property="og:description" content="{esc(desc)}">
-<meta property="og:type" content="website">
+<meta property="og:type" content="{og_type}">
 <meta property="og:url" content="{esc(canon)}">
+<meta property="og:site_name" content="{esc(name)}">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+{meta_extra}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
@@ -537,7 +551,7 @@ def render_tip(t, tips):
   {share_block(t["title"], f"tips/{t['slug']}.html")}
   <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
 </div>"""
-    return layout(t["title"], t["summary"], page, root, f"tips/{t['slug']}.html")
+    return layout(t["title"], t["summary"], page, root, f"tips/{t['slug']}.html", {"published": t["added"], "modified": t["updated"]})
 
 
 def render_news(n, tips):
@@ -562,7 +576,7 @@ def render_news(n, tips):
   {share_block(n["title"], f"news/{n['slug']}.html")}
   <p style="margin-top:2.5rem"><a href="./">最新情報の一覧にもどる</a></p>
 </div>"""
-    return layout(n["title"], n["summary"], page, root, f"news/{n['slug']}.html")
+    return layout(n["title"], n["summary"], page, root, f"news/{n['slug']}.html", {"published": n["date"], "modified": n["updated"]})
 
 
 def guide_card(g, root):
@@ -604,7 +618,7 @@ def render_guide(g, tips):
   {share_block(g["title"], f"guides/{g['slug']}.html")}
   <p style="margin-top:2.5rem"><a href="./">解説の一覧にもどる</a></p>
 </div>"""
-    return layout(g["title"], g["summary"], page, root, f"guides/{g['slug']}.html")
+    return layout(g["title"], g["summary"], page, root, f"guides/{g['slug']}.html", {"published": g["added"], "modified": g["updated"]})
 
 
 def render_guides_index(guides):
