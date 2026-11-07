@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>大きな作業を、チェックリストに分けて進める | あんなことこんなことClaude</title>
+<meta name="description" content="一度では終わらない大きな作業を、段階に分け、各段階に「終わりの条件」をつけて進める方法です。最後に進捗メモを作らせ、会話が変わっても続きから始められます。確かめるのは自分です。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/long-task-checklist.html">
+<meta property="og:title" content="大きな作業を、チェックリストに分けて進める | あんなことこんなことClaude">
+<meta property="og:description" content="一度では終わらない大きな作業を、段階に分け、各段階に「終わりの条件」をつけて進める方法です。最後に進捗メモを作らせ、会話が変わっても続きから始められます。確かめるのは自分です。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/long-task-checklist.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "大きな作業を、チェックリストに分けて進める", "description": "一度では終わらない大きな作業を、段階に分け、各段階に「終わりの条件」をつけて進める方法です。最後に進捗メモを作らせ、会話が変わっても続きから始められます。確かめるのは自分です。", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/tips/long-task-checklist.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-07">
+<meta property="article:modified_time" content="2026-11-07">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>大きな作業を、チェックリストに分けて進める</h1>
+    <p class="summary">一度では終わらない大きな作業を、段階に分け、各段階に「終わりの条件」をつけて進める方法です。最後に進捗メモを作らせ、会話が変わっても続きから始められます。確かめるのは自分です。</p>
+    <p class="stamp">2026-11-07 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-intermediate.html"><span class="chip lv-intermediate">中級者向け</span></a> 設定や考え方の理解が少し要る。いくつかの機能を組み合わせる。</td></tr><tr><th scope="row">所要時間</th><td>約25分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-organize.html">整理する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a></td></tr><tr><th scope="row">作れるもの</th><td>段階ごとに「終わりの条件」がついたチェックリストと、会話をまたいでも続けられる進捗メモ</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">実際の出力例</a></li><li><a href="#s6">使いどころと失敗例</a></li><li><a href="#s7">うまくいかないとき</a></li></ul>
+  </div>
+  <p>結論から書きます。大きな作業は、「何をするか」の一覧より先に、段階ごとの「終わりの条件」を決めます。終わりの条件があると、段階を終えたかどうかを、あなたが確かめられます。</p><p>「社内の勉強会を任されたが、何から手をつけるか分からない」。そんな同僚に、そのまま見せられる方法です。基本のチャットだけで試せます。</p><section id="s1"><h2>ねらい</h2><ul><li>大きな作業を、4〜6の段階に分けます。</li><li>各段階に、「終わりの条件」と「自分で確かめる方法」をつけます。</li><li>一度に全部をやらせず、1段階ずつ進めます。</li><li>会話が長くなっても、「進捗メモ」で続きから始められるようにします。</li></ul><p>公式のドキュメントには、順序が大事なときは番号つきの手順で頼むこと、答えを出す前に確かめさせること、理由や背景を添えることが書かれています。この記事の方法は、それらの考え方を、作業の進め方に当てはめた1つの例です。長い作業を、複数の会話にまたがって進める際の公式の説明は、主にコードを書く作業向けです。この記事の「進捗メモ」は、その考え方を、ふつうの作業に当てはめたものです。</p></section><section id="s2"><h2>準備するもの</h2><ul><li>大きな作業を1つ(例: 社内勉強会を開く、引っ越しの手続きを進める、レポートを書き上げる)。</li><li>締め切りと、使える時間。</li><li>個人名、住所、社外秘の内容は入れず、「Aさん」「会場」のように置き換えます。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 段階に分けて、1つずつ終わらせる</figcaption><ol class="flow"><li><strong>作業を伝える</strong><span>目的、締め切り、使える時間を書く</span></li><li><strong>段階に分ける</strong><span>4〜6段階と、各段階の終わりの条件を出してもらう</span></li><li><strong>自分で見直す</strong><span>順番、抜け、条件の甘さを直す</span></li><li><strong>1段階ずつ進める</strong><span>1段階が終わるたびに、条件を確かめる</span></li><li><strong>進捗メモを作る</strong><span>区切りごとに、メモを作ってもらって保存する</span></li></ol></figure><ol><li>最初の<a class="term" href="../glossary/#term-prompt">プロンプト</a>で、段階と終わりの条件を出してもらいます。</li><li>出てきた一覧を、そのまま信じず、順番と抜けを見直します。</li><li>1段階ずつ、作業を頼みます。終わるたびに、終わりの条件を満たしたかを、自分で確かめます。</li><li>区切りで、進捗メモを作ってもらいます。メモは、手元のメモ帳などに保存します。</li><li>新しい会話では、進捗メモを貼って、続きから頼みます。</li></ol><p>画面の表示は変わることがあります。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>段階とチェックリストを作る</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の作業を、4〜6の段階に分けて、チェックリストにしてください。
+- 作業: (例: 社内勉強会を開く。参加は10人、60分)
+- 締め切り: (例: 3週間後の金曜)
+- 使える時間: (例: 平日の昼休みに15分ずつ)
+- 理由と背景: (例: 新しい人が増えるので、業務の流れを共有したい)
+条件:
+- 各段階に、「終わりの条件」(何ができていれば終わりか)と、「自分で確かめる方法」を書く。
+- 段階の順番の理由を、1行で書く。
+- 分からないことは補わず、「(要確認)」と書く。
+- 作業にかかる時間は、書かない。
+- 最初の段階だけ、次の一歩を具体的に示す。ほかの段階は、まだ進めないでください。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>1段階が終わったときに、確かめる</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>段階2が終わったので、確かめたいです。次のことをしてください。
+1. 「段階2の終わりの条件」を、私が貼った成果物と照らして、満たしているかどうかを、項目ごとに書いてください。
+2. 満たしていない項目があれば、直す案を書いてください。
+3. 判断できない項目は、「判断できない」と書いてください。
+終える前に、自分の判断を見直してください。
+【成果物】
+(貼る)</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>進捗メモを作る</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>ここまでの進み具合を、新しい会話に貼れる「進捗メモ」にまとめてください。
+- 作業の目的と締め切り
+- 終わった段階と、確認した内容
+- 次の段階と、次の一歩
+- 決めたこと(理由つき)
+- まだ決まっていないこと
+箇条書きで、300字以内にしてください。</code></pre></div></figure></section><section id="s5"><h2>実際の出力例</h2><p>見本の作業「社内勉強会を開く」で、最初のプロンプトを使って得た出力の一部です。画面で実際に操作した結果ではなく、プロンプトの内容にそって、Claudeが作った例です。毎回、同じ結果にはなりません。</p><figure class="fig fig-output"><figcaption>チェックリスト(見本。一部を短くしてあります)</figcaption><div class="output"><div class="output-bar"><span>実際に出力された例(実行のたびに結果は変わります)</span></div><pre><code>段階1: 目的と参加者を決める
+- 終わりの条件: 勉強会で持ち帰ってほしいことが、1文で書けている。参加予定の10人の、前提知識の差が分かっている。
+- 自分で確かめる方法: 1文を、同僚1人に読んでもらい、伝わるか聞く。
+- 順番の理由: 内容や資料は、目的が決まらないと作れないため。
+
+段階2: 話す内容を決める
+- 終わりの条件: 話す項目が5つ以内で、各項目に10分以内の時間が割り当てられている。
+- 自分で確かめる方法: 項目を声に出して読み、60分に収まるか数える。
+
+段階3: 資料を作る(要確認: 使う道具)
+段階4: 会場と日程を決める(要確認: 会議室の予約方法)
+段階5: 練習と見直し
+
+次の一歩(段階1): 「持ち帰ってほしいこと」を、思いつくまま3つ書き出す。</code></pre></div></figure></section><section id="s6"><h2>使いどころと失敗例</h2><p>向く場面は、数日から数週間かかる作業で、手順が頭の中に収まらないときです。作業の抜けと、順番の間違いを、早めに見つけたいときにも向きます。</p><p>向かない場面は、30分で終わる作業です。段階に分ける手間のほうが大きくなります。また、締め切りの日付、契約、お金に関わる判断は、チェックリストが完成しても、自分で確かめます。</p><p>よくある失敗と、その直し方です。</p><ul><li><strong>終わりの条件が甘い。</strong> 「資料ができている」では確かめられません。「項目が5つ以内で、各項目に時間が割り当てられている」のように、数えられる形に直します。</li><li><strong>一度に全部をやらせる。</strong> 途中の間違いに気づけません。「最初の段階だけ進める」と、プロンプトに入れます。</li><li><strong>Claudeの「終わりました」を、そのまま信じる。</strong> 確かめるのは、あなたです。成果物を貼って、条件と照らし合わせます。</li><li><strong>進捗メモを保存しない。</strong> 会話が変わると、続きが分からなくなります。メモは、手元のメモ帳などに残します。</li></ul></section><section id="s7" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>段階が多すぎるとき</strong>: 「段階は6つまで」と書いて、頼み直します。</li><li><strong>段階の順番がおかしいとき</strong>: 「段階3は、段階2より先にできないか」のように、理由つきで聞きます。</li><li><strong>会話をまたぐと、決めたことが変わるとき</strong>: 進捗メモの「決めたこと」に、理由を書いて貼ります。</li><li><strong>安全面</strong>: 進捗メモには、個人名、住所、社外秘の内容を入れません。入れる場合は、会社の決まりを確かめてから、貼ります。</li><li><strong>時間の見積もりが当たらないとき</strong>: 見積もりは目安です。1段階を実際にやった時間を伝えて、残りを見直してもらいます。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="organize" data-features="chat" data-text="「質問してから答えて」と頼んで、条件を詰める 答えを頼む前に、「先にあなたから質問して」と頼む方法です。決まっていないことをclaudeに聞き出してもらい、条件が固まってから答えてもらいます。 整理する 基本のチャット"><a class="card-title" href="../tips/ask-claude-to-ask-you.html">「質問してから答えて」と頼んで、条件を詰める</a><p class="card-sum">答えを頼む前に、「先にあなたから質問して」と頼む方法です。決まっていないことをClaudeに聞き出してもらい、条件が固まってから答えてもらいます。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約10分</span><span class="chip">整理する</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" rel="noopener" target="_blank">Claude Platform Docs「Prompting best practices」(順序が大事なときは番号つきの手順で頼む、答えを出す前に確かめさせる、理由や背景を添える、の確認。2026年11月7日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/long-task-checklist.html" data-title="大きな作業を、チェックリストに分けて進める | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Flong-task-checklist.html&amp;text=%E5%A4%A7%E3%81%8D%E3%81%AA%E4%BD%9C%E6%A5%AD%E3%82%92%E3%80%81%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AB%E5%88%86%E3%81%91%E3%81%A6%E9%80%B2%E3%82%81%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Flong-task-checklist.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Flong-task-checklist.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Flong-task-checklist.html&amp;title=%E5%A4%A7%E3%81%8D%E3%81%AA%E4%BD%9C%E6%A5%AD%E3%82%92%E3%80%81%E3%83%81%E3%82%A7%E3%83%83%E3%82%AF%E3%83%AA%E3%82%B9%E3%83%88%E3%81%AB%E5%88%86%E3%81%91%E3%81%A6%E9%80%B2%E3%82%81%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>

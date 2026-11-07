@@ -426,5 +426,14 @@
     "features": [
       "claude-code"
     ]
+  },
+  {
+    "slug": "trip-plan-by-day",
+    "title": "旅行の予定を、1日ごとの表にして、雨の日の案も作る",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "chat"
+    ]
   }
 ]

@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>Claude Enterpriseに、プロジェクトのタグごとに利用額を見られる機能(ベータ) | あんなことこんなことClaude</title>
+<meta name="description" content="2026年11月6日のリリースノートに、Enterprise向けの「プロジェクトタグ」(ベータ)が載りました。プロジェクトに、すでに使っているコードを付けて、利用額をタグごとに見られます。対象はEnterpriseだけで、個人のプランでは使えません。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-06-project-tags.html">
+<meta property="og:title" content="Claude Enterpriseに、プロジェクトのタグごとに利用額を見られる機能(ベータ) | あんなことこんなことClaude">
+<meta property="og:description" content="2026年11月6日のリリースノートに、Enterprise向けの「プロジェクトタグ」(ベータ)が載りました。プロジェクトに、すでに使っているコードを付けて、利用額をタグごとに見られます。対象はEnterpriseだけで、個人のプランでは使えません。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-06-project-tags.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Claude Enterpriseに、プロジェクトのタグごとに利用額を見られる機能(ベータ)", "description": "2026年11月6日のリリースノートに、Enterprise向けの「プロジェクトタグ」(ベータ)が載りました。プロジェクトに、すでに使っているコードを付けて、利用額をタグごとに見られます。対象はEnterpriseだけで、個人のプランでは使えません。", "datePublished": "2026-11-06", "dateModified": "2026-11-07", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/news/2026-11-06-project-tags.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-06">
+<meta property="article:modified_time" content="2026-11-07">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc doc-news">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a> / <a href="./">Claude最新情報</a></p>
+    <p class="news-date">2026-11-06 の発表</p>
+    <h1>Claude Enterpriseに、プロジェクトのタグごとに利用額を見られる機能(ベータ)</h1>
+    <p class="summary">2026年11月6日のリリースノートに、Enterprise向けの「プロジェクトタグ」(ベータ)が載りました。プロジェクトに、すでに使っているコードを付けて、利用額をタグごとに見られます。対象はEnterpriseだけで、個人のプランでは使えません。</p>
+    <p class="stamp">2026-11-07 時点の情報 / 関連する機能: <a href="../tags/feature-projects.html">Projects</a></p>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">何が発表されたか</a></li><li><a href="#s2">できるようになること</a></li><li><a href="#s3">活用方法</a></li><li><a href="#s4">注意すること</a></li></ul>
+  </div>
+  <p>2026年11月6日、Claudeのリリースノートに「プロジェクトタグ」が載りました。要点は3つです。対象はClaude Enterpriseだけ。ベータ(正式版の前の、試しの段階)です。個人のプランでは使えません。個人の読者は、今回は「こういう機能が出た」と知っておく内容です。</p><section id="s1"><h2>何が発表されたか</h2><p>公式のリリースノートによると、対象の条件を満たすEnterpriseの組織は、プロジェクトに、すでに使っているコードを付けられます。たとえば、費用の管理番号や、案件の番号です。付けたあと、プロジェクトでの利用額を、タグごとにまとめて見られます。</p><p>公式のヘルプによると、タグは「名前」と「値」の組です。たとえば、名前が「cost_code」、値が「CC-1042」です。利用額は、組織の設定画面か、APIで見られます。</p><p>公式のヘルプには、使えない組織の条件も書かれています。たとえば、HIPAA(米国の医療情報の決まり)の設定、顧客管理の暗号鍵、データを保存しない設定、米国外へのデータ保存などです。対象かどうかは、自分の組織の管理者に確かめます。</p></section><section id="s2"><h2>できるようになること</h2><p>公式のヘルプに書かれている、基本の流れです。</p><ul><li>組織のOwner(管理者)が、組織の設定でタグを作る。値は「決めた値だけ」か「自由」かを選べ、必須にもできる。</li><li>「編集できる」権限のある人が、プロジェクトにタグを付ける。</li><li>利用額は、組織の設定の「Spend by project」で、タグごとにまとめて見られ、CSV(表のファイル)に書き出せる。</li></ul><figure class="fig fig-compare"><figcaption>図: 公式のヘルプで分かる、主な制限</figcaption><table><thead><tr><th scope="col">確かめること</th><th scope="col">公式の説明</th></tr></thead><tbody><tr><td>対象</td><td>Claude Enterpriseのベータ。個人のプランは対象外</td></tr><tr><td>タグの数</td><td>1つのプロジェクトに最大16個。タグごとに値は1つ</td></tr><tr><td>反映</td><td>付けてから約2時間後。それ以前の利用額には反映されない</td></tr><tr><td>見える人</td><td>タグの名前と値は、組織の全員に見える。機密は入れない</td></tr><tr><td>変更できる人</td><td>「編集できる」権限があれば、変更や削除ができる。固定はできない</td></tr><tr><td>金額</td><td>割引のあと、クレジットを引く前の額。請求書と一致しないことがある</td></tr><tr><td>対象外の利用</td><td>プロジェクトの外の利用は「Not in a project」と表示される</td></tr></tbody></table></figure></section><section id="s3"><h2>活用方法</h2><p>個人のプランでは使えないため、ここでは、管理者が試す前に確かめることと、個人が今できることを分けて書きます。</p><p>管理者が、試す前に確かめること:</p><ul><li>自分の組織が対象かどうか(上の条件と、アカウントの担当者への確認)。</li><li>タグの名前と値に、機密や個人名を入れないこと。組織の全員に見えます。</li><li>反映まで約2時間かかり、過去の利用額には反映されないこと。</li><li>数字は、請求書と一致しないことがあるため、経理の確認の代わりにはならないこと。</li></ul><p>個人が、今できること:</p><ul><li>自分のProjectsに、作業ごとの名前を付けて、整理する練習ができます。活用方法「Projectsに資料と指示を入れて、毎回の説明をなくす」で、手順を紹介しています。</li></ul><p>タグの名前と値の決め方を、先に整理しておく試しの文章です。個人の情報は入れずに、作り話の例で試せます。</p><figure class="fig fig-prompt"><figcaption>タグの名前と値の決め方を、整理する</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>会社で、プロジェクトごとの利用額を、費用の管理番号でまとめたいと考えています。次のことをしてください。
+1. タグの名前の案を、3つ挙げてください(例: cost_code)。
+2. 値の決め方の案を、「決めた値だけ」と「自由」の2つの場合で、良い点と困る点を、1行ずつ書いてください。
+3. 値に入れてはいけないものを、5つ挙げてください(組織の全員に見えるため)。
+公式のヘルプで確認していない仕様は、書かないでください。書けないときは、「確認できない」と書いてください。</code></pre></div></figure></section><section id="s4" class="warn"><h2>注意すること</h2><ul><li>対象はEnterpriseのベータです。公式のヘルプには、ベータのAPIの名前や経路が変わることがある、と書かれています。</li><li>タグは、1つのチャットやセッションには付けられず、プロジェクトの中の作業にだけ使えます。</li><li>公式のヘルプで、この機能を止める方法は「アカウントの担当者に連絡する」とだけ書かれています。</li><li>個人が試せる機能ではないため、日本での提供や料金への影響は、確認できませんでした。</li><li>画面や名前は変わることがあります。導入の前に、公式のヘルプを見直します。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="organize" data-features="projects files" data-text="projectsに資料と指示を入れて、毎回の説明をなくす 同じ話題で何度もclaudeに相談するとき、背景の説明を毎回書き直さなくて済むように、資料と指示をprojectにまとめておく方法です。 整理する projects ファイルの読み込み"><a class="card-title" href="../tips/projects-knowledge.html">Projectsに資料と指示を入れて、毎回の説明をなくす</a><p class="card-sum">同じ話題で何度もClaudeに相談するとき、背景の説明を毎回書き直さなくて済むように、資料と指示をProjectにまとめておく方法です。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約15分</span><span class="chip">整理する</span><span class="chip chip-f">Projects</span><span class="chip chip-f">ファイルの読み込み</span></p></li></ul></section>
+  
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/12138966-release-notes" rel="noopener" target="_blank">Claude ヘルプセンター「Release notes」(2026年11月6日の「Track spend by cost code with project tags (beta)」の項目で、発表日、対象がEnterpriseであること、ベータであることを確認。2026年11月7日に確認)</a></li><li><a href="https://support.claude.com/en/articles/18251257-track-spend-by-project-with-tags" rel="noopener" target="_blank">Claude ヘルプセンター「Track spend by project with tags」(仕組み、設定の手順、制限を確認。2026年11月7日に確認)</a></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-06-project-tags.html" data-title="Claude Enterpriseに、プロジェクトのタグごとに利用額を見られる機能(ベータ) | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-06-project-tags.html&amp;text=Claude%20Enterprise%E3%81%AB%E3%80%81%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E3%82%BF%E3%82%B0%E3%81%94%E3%81%A8%E3%81%AB%E5%88%A9%E7%94%A8%E9%A1%8D%E3%82%92%E8%A6%8B%E3%82%89%E3%82%8C%E3%82%8B%E6%A9%9F%E8%83%BD%28%E3%83%99%E3%83%BC%E3%82%BF%29%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-06-project-tags.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-06-project-tags.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-06-project-tags.html&amp;title=Claude%20Enterprise%E3%81%AB%E3%80%81%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%81%AE%E3%82%BF%E3%82%B0%E3%81%94%E3%81%A8%E3%81%AB%E5%88%A9%E7%94%A8%E9%A1%8D%E3%82%92%E8%A6%8B%E3%82%89%E3%82%8C%E3%82%8B%E6%A9%9F%E8%83%BD%28%E3%83%99%E3%83%BC%E3%82%BF%29%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="./">最新情報の一覧にもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>

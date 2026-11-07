@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>旅行の予定を、1日ごとの表にして、雨の日の案も作る | あんなことこんなことClaude</title>
+<meta name="description" content="行きたい場所と条件を伝えて、1日ごとの予定表にしてもらう方法です。余白の時間と、雨の日の代わりの案も、同じ表に入れます。営業時間や料金は、出発前に自分で確かめます。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/trip-plan-by-day.html">
+<meta property="og:title" content="旅行の予定を、1日ごとの表にして、雨の日の案も作る | あんなことこんなことClaude">
+<meta property="og:description" content="行きたい場所と条件を伝えて、1日ごとの予定表にしてもらう方法です。余白の時間と、雨の日の代わりの案も、同じ表に入れます。営業時間や料金は、出発前に自分で確かめます。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/trip-plan-by-day.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "旅行の予定を、1日ごとの表にして、雨の日の案も作る", "description": "行きたい場所と条件を伝えて、1日ごとの予定表にしてもらう方法です。余白の時間と、雨の日の代わりの案も、同じ表に入れます。営業時間や料金は、出発前に自分で確かめます。", "datePublished": "2026-11-07", "dateModified": "2026-11-07", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/tips/trip-plan-by-day.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-07">
+<meta property="article:modified_time" content="2026-11-07">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>旅行の予定を、1日ごとの表にして、雨の日の案も作る</h1>
+    <p class="summary">行きたい場所と条件を伝えて、1日ごとの予定表にしてもらう方法です。余白の時間と、雨の日の代わりの案も、同じ表に入れます。営業時間や料金は、出発前に自分で確かめます。</p>
+    <p class="stamp">2026-11-07 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約15分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-organize.html">整理する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a></td></tr><tr><th scope="row">作れるもの</th><td>1日ごとの時間割の表と、雨の日の代わりの案、出発前に自分で確かめる項目のリスト</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">実際の出力例</a></li><li><a href="#s6">使いどころと失敗例</a></li><li><a href="#s7">うまくいかないとき</a></li></ul>
+  </div>
+  <p>結論から書きます。旅行の予定は、行く場所を並べる前に、「余白の時間」と「雨の日の代わりの案」を決めると、崩れにくくなります。そのための頼み方を、そのまま使える文章にしました。</p><p>「次の連休に友だちと旅行するけれど、予定を立てるのが苦手」。そんな人に、そのまま見せられます。基本のチャットだけで試せます。</p><section id="s1"><h2>ねらい</h2><ul><li>行きたい場所を、移動の順に並べた、1日ごとの時間割にします。</li><li>予定の間に余白を入れ、遅れても崩れないようにします。</li><li>雨の日の代わりの案を、同じ表に入れます。</li><li>営業時間、料金、予約の要否は、自分で確かめる項目として分けます。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>行き先、日数、人数、出発と帰りのおおよその時間。</li><li>行きたい場所(決まっていなくても大丈夫です)と、苦手なこと(長く歩く、早起き、など)。</li><li>予算の目安。</li><li>個人名や、泊まる場所の住所は入れなくて大丈夫です。地名や駅名で足ります。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 条件を伝えて、表にして、確かめる</figcaption><ol class="flow"><li><strong>条件を書く</strong><span>行き先、日数、人数、苦手なこと、予算を書く</span></li><li><strong>表にしてもらう</strong><span>1日ごとの時間割と、雨の日の案を頼む</span></li><li><strong>詰め込みを直す</strong><span>余白が足りない日は、場所を減らしてもらう</span></li><li><strong>確かめる項目を集める</strong><span>営業時間、料金、予約を、リストにしてもらう</span></li><li><strong>公式のページで確かめる</strong><span>施設や交通の公式の情報を見て、表を直す</span></li></ol></figure><ol><li>下の<a class="term" href="../glossary/#term-prompt">プロンプト</a>の空欄を埋めて送ります。</li><li>返ってきた表を見て、きついと感じる日を探します。</li><li>「この日は場所を1つ減らして」と、直しを頼みます。</li><li>最後に、「自分で確かめる項目」のリストを持って、公式のページを見ます。</li></ol><p>画面の表示は変わることがあります。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>1日ごとの時間割を作る</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の条件で、旅行の予定を、1日ごとの表にしてください。
+- 行き先: (例: 近場の温泉町)
+- 日数と人数: (例: 1泊2日、大人3人)
+- 出発と帰り: (例: 1日目の朝9時ごろ出発、2日目の夕方5時ごろ帰宅)
+- 行きたい場所: (例: 景色のよい場所、地元の食事、温泉)
+- 苦手なこと: (例: 長く歩きたくない、早起きは避けたい)
+- 予算の目安: (例: 1人あたり3万円まで)
+条件:
+- 表の列は「時間」「すること」「移動」「余白(分)」にする。
+- 予定の間に、15〜30分の余白を入れる。
+- 1日に入れる場所は、3つまで。
+- 営業時間、料金、予約の要否は、分からないので書かず、表のあとに「自分で確かめる項目」として、場所ごとにまとめる。
+- 最後に、雨の日の代わりの案を、1日ごとに1つずつ書く。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>詰め込みを直す</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>2日目が、予定が多くてきついです。場所を1つ減らして、余白を長くした表に直してください。減らす場所は、あなたの案を、理由つきで1つ選んでください。ほかの日は変えないでください。</code></pre></div></figure></section><section id="s5"><h2>実際の出力例</h2><p>見本の条件で、上のプロンプトを使って得た出力の一部です。画面で実際に操作した結果ではなく、プロンプトの内容にそって、Claudeが作った例です。場所の名前は、実在の施設を避けて「(景色のよい場所)」のように置いてあります。毎回、同じ結果にはなりません。</p><figure class="fig fig-output"><figcaption>1日目の表と、確かめる項目(見本。一部を短くしてあります)</figcaption><div class="output"><div class="output-bar"><span>実際に出力された例(実行のたびに結果は変わります)</span></div><pre><code>| 時間 | すること | 移動 | 余白(分) |
+|---|---|---|---|
+| 9:00 | 出発 | 車、約2時間 | 20 |
+| 11:30 | (景色のよい場所)を歩く | 徒歩 | 30 |
+| 13:00 | (地元の食事)で昼食 | 徒歩 | 30 |
+| 15:00 | 宿に荷物を預けて、町を散歩 | 徒歩 | 30 |
+| 17:00 | 宿にチェックイン、温泉 | - | - |
+
+自分で確かめる項目
+- (地元の食事): 営業時間、定休日、予約が要るか
+- 宿: チェックインの時間、荷物を預けられるか
+- 駐車場: 場所、料金
+
+雨の日の代わりの案(1日目)
+- (景色のよい場所)の代わりに、屋内の展示施設を1つ入れる。移動が少ないので、ほかの時間は変えない。</code></pre></div></figure></section><section id="s6"><h2>使いどころと失敗例</h2><p>向く場面は、行き先と日数が決まっていて、並べ方に迷っているときです。友だちや家族と、予定の案を比べたいときにも向きます。</p><p>向かない場面は、営業時間、料金、運行の時刻を、そのまま信じたいときです。これらは変わることがあり、Claudeの答えだけでは確認できません。</p><p>よくある失敗と、その直し方です。</p><ul><li><strong>場所を詰め込みすぎる。</strong> 「1日に入れる場所は3つまで」と、数で指定します。</li><li><strong>営業時間を、そのまま信じてしまう。</strong> 表に書かれていても、公式のページで確かめます。</li><li><strong>雨の日の案を頼み忘れる。</strong> 最初のプロンプトに入れておくと、あとで慌てません。</li><li><strong>全員の希望を聞かずに作る。</strong> 同行者の「苦手なこと」を、先に集めてから送ります。</li></ul></section><section id="s7" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>表の列がそろわないとき</strong>: 「列は『時間』『すること』『移動』『余白(分)』の4つだけ」と、書き足します。</li><li><strong>知らない場所を、あるかのように書くとき</strong>: 行きたい場所を自分で書き、「ここに書いた場所以外は、入れないで」と頼みます。</li><li><strong>移動時間が現実と合わないとき</strong>: 移動の時間は、地図のアプリで調べた数字を渡して、表を直してもらいます。</li><li><strong>個人情報を入れたくないとき</strong>: 宿の名前や住所は書かず、「宿(住所は伏せます)」と書けば足ります。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="organize" data-features="chat" data-text="「質問してから答えて」と頼んで、条件を詰める 答えを頼む前に、「先にあなたから質問して」と頼む方法です。決まっていないことをclaudeに聞き出してもらい、条件が固まってから答えてもらいます。 整理する 基本のチャット"><a class="card-title" href="../tips/ask-claude-to-ask-you.html">「質問してから答えて」と頼んで、条件を詰める</a><p class="card-sum">答えを頼む前に、「先にあなたから質問して」と頼む方法です。決まっていないことをClaudeに聞き出してもらい、条件が固まってから答えてもらいます。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約10分</span><span class="chip">整理する</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices" rel="noopener" target="_blank">Claude Platform Docs「Prompting best practices」(はっきり具体的に頼む、理由や背景を添える、順序が大事なときは番号つきの手順で頼む、の確認。2026年11月7日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/trip-plan-by-day.html" data-title="旅行の予定を、1日ごとの表にして、雨の日の案も作る | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Ftrip-plan-by-day.html&amp;text=%E6%97%85%E8%A1%8C%E3%81%AE%E4%BA%88%E5%AE%9A%E3%82%92%E3%80%811%E6%97%A5%E3%81%94%E3%81%A8%E3%81%AE%E8%A1%A8%E3%81%AB%E3%81%97%E3%81%A6%E3%80%81%E9%9B%A8%E3%81%AE%E6%97%A5%E3%81%AE%E6%A1%88%E3%82%82%E4%BD%9C%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Ftrip-plan-by-day.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Ftrip-plan-by-day.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Ftrip-plan-by-day.html&amp;title=%E6%97%85%E8%A1%8C%E3%81%AE%E4%BA%88%E5%AE%9A%E3%82%92%E3%80%811%E6%97%A5%E3%81%94%E3%81%A8%E3%81%AE%E8%A1%A8%E3%81%AB%E3%81%97%E3%81%A6%E3%80%81%E9%9B%A8%E3%81%AE%E6%97%A5%E3%81%AE%E6%A1%88%E3%82%82%E4%BD%9C%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
