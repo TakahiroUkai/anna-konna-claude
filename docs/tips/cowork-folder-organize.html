@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>Coworkで、フォルダの整理案を作ってもらう | あんなことこんなことClaude</title>
+<meta name="description" content="Coworkに、散らかったフォルダの整理案を先に作らせ、確かめてから実行させる方法です。削除はさせず、移動の記録を残し、件数で結果を確かめます。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/cowork-folder-organize.html">
+<meta property="og:title" content="Coworkで、フォルダの整理案を作ってもらう | あんなことこんなことClaude">
+<meta property="og:description" content="Coworkに、散らかったフォルダの整理案を先に作らせ、確かめてから実行させる方法です。削除はさせず、移動の記録を残し、件数で結果を確かめます。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/cowork-folder-organize.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Coworkで、フォルダの整理案を作ってもらう", "description": "Coworkに、散らかったフォルダの整理案を先に作らせ、確かめてから実行させる方法です。削除はさせず、移動の記録を残し、件数で結果を確かめます。", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/tips/cowork-folder-organize.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-09">
+<meta property="article:modified_time" content="2026-11-09">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>Coworkで、フォルダの整理案を作ってもらう</h1>
+    <p class="summary">Coworkに、散らかったフォルダの整理案を先に作らせ、確かめてから実行させる方法です。削除はさせず、移動の記録を残し、件数で結果を確かめます。</p>
+    <p class="stamp">2026-11-09 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-intermediate.html"><span class="chip lv-intermediate">中級者向け</span></a> 設定や考え方の理解が少し要る。いくつかの機能を組み合わせる。</td></tr><tr><th scope="row">所要時間</th><td>約25分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-automate.html">自動化する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-cowork.html">Cowork</a></td></tr><tr><th scope="row">作れるもの</th><td>動かす前に確かめられる「整理案の表」と、実行したあとの「移動の記録」、元に戻すための手順</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">実際の出力例</a></li><li><a href="#s6">使いどころと失敗例</a></li><li><a href="#s7">うまくいかないとき</a></li></ul>
+  </div>
+  <p>結論から書きます。フォルダの整理は、「実行させる」前に「整理案の表を作らせる」と、失敗がほとんど防げます。移動の記録を残せば、あとから元に戻せます。</p><p>「ダウンロードフォルダが、いつの何か分からないファイルだらけ」。そんな人に、そのまま見せられます。Claudeに任せる範囲を、1つのフォルダに絞って試します。</p><section id="s1"><h2>ねらい</h2><ul><li>散らかったフォルダの中身を読んで、整理案を表にしてもらいます。</li><li>案を自分で確かめてから、移動だけを実行してもらいます。</li><li>移動の記録を残し、結果を件数で確かめます。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>有料プランと、Claudeのデスクトップアプリ。公式ヘルプには、<a class="term" href="../glossary/#term-cowork">Cowork</a>は有料プラン(Pro、Max、Ultra、Team、Enterprise)で使えると書かれています(2026年11月9日に確認)。</li><li>試すためのフォルダ1つ。<strong>最初は、デスクトップ全体ではなく、ダウンロードなどの1フォルダ</strong>に絞ります。Claudeの公式の使い方ページにも、全体が不安なら1フォルダから始める案内があります。</li><li>試す前に、そのフォルダの<strong>コピー</strong>を別の場所に取っておきます。</li><li>用語の説明: <strong>Cowork</strong>は、パソコン上のファイルなどを使って、複数の手順の作業を任せる機能です。<strong><a class="term" href="../glossary/#term-permission-mode">権限モード</a></strong>は、Claudeが、聞かずに動いてよい範囲を決める設定です。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 案を作ってから、移動して、確かめるまで</figcaption><ol class="flow"><li><strong>フォルダをコピーする</strong><span>試すフォルダの控えを、別の場所に取る</span></li><li><strong>読み取りだけで案を作る</strong><span>何も動かさず、整理案の表だけを作らせる</span></li><li><strong>案を直す</strong><span>移動先、名前、迷うファイルの扱いを、言葉で直す</span></li><li><strong>移動だけ実行する</strong><span>削除はさせず、移動の記録を残させる</span></li><li><strong>件数で確かめる</strong><span>前後のファイル数と、記録の件数を合わせる</span></li></ol></figure><ol><li>Coworkで、試すフォルダを選びます。公式ヘルプによると、Claudeが読み書きできるのは、自分が接続したフォルダだけです。</li><li>1つ目の<a class="term" href="../glossary/#term-prompt">プロンプト</a>で、整理案の表だけを作らせます。</li><li>表を読み、「迷う」と書かれたファイルや、移動先が合わないものを直します。</li><li>2つ目のプロンプトで、移動を実行させます。</li><li>3つ目のプロンプトで、件数を合わせます。</li></ol><p>権限モードは、チャット欄のモードの選択から変えられます(公式ヘルプ)。最初は、聞いてから動くManualにします。Skip(確認なしで動く)は、関わるものをすべて信頼できるときだけ、とヘルプにあります。画面の表示は変わることがあります。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>1. 整理案の表だけを作る(何も動かさない)</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>このフォルダのファイルを読んで、整理案を表にしてください。まだ、何も移動・変更・削除しないでください。
+- 列は「いまの場所」「ファイル名」「種類」「移動先の案」「迷う理由(なければ空)」にする。
+- 移動先は、種類別(書類、画像、動画、その他)の4つまでにする。サブフォルダは、作らない。
+- 名前だけでは中身が分からないファイルは、開いて中身を見て判断し、判断できなければ「迷う」と書く。
+- 重複して見えるファイルは、消さずに、表の別の欄に並べて挙げる。
+- 最後に、ファイルの総数を書く。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>2. 移動だけを実行して、記録を残す</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>表の「移動先の案」のとおりに、ファイルを移動してください。
+- 削除は、しない。「迷う」のファイルは、「確認待ち」という名前のフォルダに移す。
+- ファイル名は、変えない。
+- 移動のたびに、「元の場所 → 移動先」を、「移動の記録.csv」に1行ずつ書く。
+- 同じ名前のファイルが移動先にあるときは、上書きせず、そのファイルは動かさずに記録に「保留」と書く。
+- 終わったら、移動した数、保留の数、動かしていない数を報告する。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>3. 件数で確かめる</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>整理のあとのフォルダ全体のファイル数を数えて、整理前の総数と合っているか確かめてください。「移動の記録.csv」の行数、「確認待ち」の数、保留の数も合わせて、合わないところがあれば、そのファイル名を挙げてください。</code></pre></div></figure></section><section id="s5"><h2>実際の出力例</h2><p>この記事のプロンプトは、この文章を書いた環境では実際に動かせていません(Coworkの画面と、手元のフォルダが必要なためです)。そのため、出力は載せません。自分で動かしたときは、次のように確かめます。</p><ul><li>1つ目のあとで、表の行数が、フォルダのファイル数(OSの表示)と合っているか。</li><li>2つ目のあとで、「移動の記録.csv」の行数が、移動した数と合っているか。</li><li>3つ目のあとで、整理前の総数と、整理後の総数が同じか。ちがう場合は、ちがう数と該当のファイル名が出ます。</li><li>気になる移動は、記録の「元の場所」を見て、手で戻します。コピーを取ってあれば、見比べられます。</li></ul></section><section id="s6"><h2>使いどころと失敗例</h2><p>向く場面は、種類で分けられる程度の散らかりで、ファイルの数が多くて手作業が重いときです。向かない場面は、仕事の書類のように、置き場所に意味や決まりがあるときです。意味は、Claudeには分からないことがあります。</p><p>よくある失敗と、その直し方です。</p><ul><li><strong>一度に広い範囲を渡す。</strong> 1フォルダに絞り、うまくいってから広げます。</li><li><strong>案を見ずに実行させる。</strong> 1つ目で必ず表を作らせ、「迷う」が多いなら、先に分け方を決め直します。</li><li><strong>「いらないものは消して」と頼む。</strong> 公式ヘルプには、完全に削除する前にはClaudeが許可を求めるとあります。それでも、削除は頼まず、「確認待ち」に移して、自分で消します。</li><li><strong>記録を残さない。</strong> 記録がないと、元の場所が分からなくなります。2つ目の条件を消さないでください。</li></ul></section><section id="s7" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>表が長すぎて読めないとき</strong>: 「種類ごとに、先頭の10件だけ」と頼み、傾向を見てから広げます。</li><li><strong>移動先が合わないとき</strong>: 移動先の名前を、自分で3〜4個決めて渡し、「この中から選ぶ」と条件を足します。</li><li><strong>途中で止まったとき</strong>: 画面で承認を待っていないかを見ます(サイドバーのしるしで、確認を待つ作業が分かるとの案内が、Claudeの使い方ページにあります)。再開は、「移動の記録.csv にあるものは動かさず、残りだけ続けて」と頼みます。</li><li><strong>機密のファイルが混ざっているとき</strong>: そのファイルは、別のフォルダに移してから試します。Coworkの安全についての注意は、公式ヘルプの「Use Cowork safely」にあるので、事前に読んでください(この記事では、その本文は確認していません)。</li><li><strong>ファイルの保存先について</strong>: 公式の資料によって、ファイルがどこで処理されるかの説明が異なって見えました。個人情報や機密のファイルは、このフォルダに入れないでください。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="intermediate" data-purpose="organize" data-features="chat" data-text="大きな作業を、チェックリストに分けて進める 一度では終わらない大きな作業を、段階に分け、各段階に「終わりの条件」をつけて進める方法です。最後に進捗メモを作らせ、会話が変わっても続きから始められます。確かめるのは自分です。 整理する 基本のチャット"><a class="card-title" href="../tips/long-task-checklist.html">大きな作業を、チェックリストに分けて進める</a><p class="card-sum">一度では終わらない大きな作業を、段階に分け、各段階に「終わりの条件」をつけて進める方法です。最後に進捗メモを作らせ、会話が変わっても続きから始められます。確かめるのは自分です。</p><p class="chips"><span class="chip lv-intermediate">中級者向け</span><span class="chip">約25分</span><span class="chip">整理する</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/13345190-get-started-with-cowork" rel="noopener" target="_blank">Claude ヘルプセンター「Get started with Claude Cowork」(接続したフォルダだけ読み書きできること、削除前の許可、権限モード、安全の注意。2026年11月9日に確認)</a></li><li><a href="https://claude.com/resources/use-cases/organize-files-by-whats-in-them" rel="noopener" target="_blank">Claude「Organize files across your desktop」(整理の頼み方の例と、フォルダを限って始める案内。2026年11月9日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/cowork-folder-organize.html" data-title="Coworkで、フォルダの整理案を作ってもらう | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcowork-folder-organize.html&amp;text=Cowork%E3%81%A7%E3%80%81%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AE%E6%95%B4%E7%90%86%E6%A1%88%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcowork-folder-organize.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcowork-folder-organize.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcowork-folder-organize.html&amp;title=Cowork%E3%81%A7%E3%80%81%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AE%E6%95%B4%E7%90%86%E6%A1%88%E3%82%92%E4%BD%9C%E3%81%A3%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>

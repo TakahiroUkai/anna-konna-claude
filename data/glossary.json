@@ -738,5 +738,15 @@
   "link": [
    "プロジェクトタグ"
   ]
+ },
+ {
+  "id": "messages-api",
+  "term": "Messages API",
+  "reading": "めっせーじえーぴーあい",
+  "category": "API",
+  "explain": "自分のプログラムから、Claudeに文章を送って答えを受け取るための窓口です。送る内容のまとまりを、リクエストと呼びます。",
+  "link": [
+   "Messages API"
+  ]
  }
 ]

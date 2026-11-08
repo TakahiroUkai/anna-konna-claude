@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>定期タスクで、週1回の振り返りを作る | あんなことこんなことClaude</title>
+<meta name="description" content="1週間のメモを置いたフォルダから、決まった曜日に振り返りを作らせる方法です。まず手動で1回試し、読み取りだけに絞り、動かない原因を切り分ける手順まで整理します。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/scheduled-weekly-review.html">
+<meta property="og:title" content="定期タスクで、週1回の振り返りを作る | あんなことこんなことClaude">
+<meta property="og:description" content="1週間のメモを置いたフォルダから、決まった曜日に振り返りを作らせる方法です。まず手動で1回試し、読み取りだけに絞り、動かない原因を切り分ける手順まで整理します。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/scheduled-weekly-review.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "定期タスクで、週1回の振り返りを作る", "description": "1週間のメモを置いたフォルダから、決まった曜日に振り返りを作らせる方法です。まず手動で1回試し、読み取りだけに絞り、動かない原因を切り分ける手順まで整理します。", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/tips/scheduled-weekly-review.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-09">
+<meta property="article:modified_time" content="2026-11-09">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>定期タスクで、週1回の振り返りを作る</h1>
+    <p class="summary">1週間のメモを置いたフォルダから、決まった曜日に振り返りを作らせる方法です。まず手動で1回試し、読み取りだけに絞り、動かない原因を切り分ける手順まで整理します。</p>
+    <p class="stamp">2026-11-09 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-intermediate.html"><span class="chip lv-intermediate">中級者向け</span></a> 設定や考え方の理解が少し要る。いくつかの機能を組み合わせる。</td></tr><tr><th scope="row">所要時間</th><td>約25分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-automate.html">自動化する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-scheduled.html">定期タスク</a>、<a href="../tags/feature-cowork.html">Cowork</a></td></tr><tr><th scope="row">作れるもの</th><td>週に1回、メモのファイルから作られる「できたこと・止まっていること・来週の3つ」の振り返りと、事実の確かめ方つきの運用メモ</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">実際の出力例</a></li><li><a href="#s6">使いどころと失敗例</a></li><li><a href="#s7">うまくいかないとき</a></li></ul>
+  </div>
+  <p>結論から書きます。週1回の振り返りは、「毎週メモを1か所に足す」と「読み取り専用で振り返りを作らせる」の2つだけで、ほぼ自動にできます。大事なのは、いきなり自動にせず、手動で1回試して、結果を自分で確かめてからにすることです。</p><p>「毎週、何をやったか思い出せない」「週末に振り返ろうと思って、結局やらない」。そんな人に、そのまま見せられる内容です。</p><section id="s1"><h2>ねらい</h2><ul><li>1週間のメモから、「できたこと」「止まっていること」「来週の3つ」をまとめた振り返りを作ります。</li><li>振り返りは、元のメモを変えずに、新しいファイルとして作らせます。</li><li>動かなかったときに、どこを見ればよいか(原因の切り分け)を決めておきます。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>有料プラン。公式ヘルプには、<a class="term" href="../glossary/#term-scheduled-task">定期タスク</a>は<a class="term" href="../glossary/#term-cowork">Cowork</a>の有料プラン(Pro、Max、Ultra、Team、Enterprise)で使えると書かれています(2026年11月9日に確認)。</li><li>Claudeのデスクトップアプリ。ローカルのファイルを使うタスクで必要です。</li><li>週のメモを足していくファイル(例: 「週のメモ.md」)を入れた、専用のフォルダ。<strong>個人情報や取引先の名前は書かない</strong>か、伏せ字にします。</li><li>用語の説明: <strong>定期タスク</strong>は、決まった時間に自動で実行される作業です。<strong>Cowork</strong>は、パソコン上のファイルなどを使って、複数の手順の作業を任せる機能です。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: メモから振り返りができるまで</figcaption><ol class="flow"><li><strong>メモを足す</strong><span>週のあいだ、1行ずつ「日付 - やったこと / 止まっていること」をメモに足す</span></li><li><strong>手動で1回試す</strong><span>下の<a class="term" href="../glossary/#term-prompt">プロンプト</a>を、Coworkのタスクとして1回実行して、結果を読む</span></li><li><strong>直す</strong><span>件数、長さ、言い方を言葉で直す。読み取り専用の条件はそのまま残す</span></li><li><strong>定期タスクにする</strong><span>左のメニューの「Scheduled」から新しいタスクを作り、頻度を「週1回」にする</span></li><li><strong>翌週に確かめる</strong><span>実行されたか、元のメモが変わっていないか、内容が合っているかを見る</span></li></ol></figure><ol><li>フォルダに「週のメモ.md」を置き、数日分を書きます。</li><li>Coworkで、そのフォルダを選んで、下のプロンプトを1回実行します。</li><li>できた振り返りを、元のメモと見比べます(次の「確かめ方」を使います)。</li><li>納得できたら、左のメニューの「Scheduled」を開き、「New task」から作ります。公式ヘルプには、「Create with Claude」(Claudeに質問されながら作る)と「Set up manually」(自分で入力する)の2つの作り方が書かれています。</li><li>手動で作る場合は、名前、プロンプト、承認のモード、頻度、モデル(任意)、フォルダ(任意)を入れて保存します。頻度の選択肢は、公式ヘルプでは「毎時、毎日、毎週、平日、手動」と案内されています。曜日や時刻の細かい指定ができるかは、確認できませんでした。</li></ol><p>画面の表示は変わることがあります。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>週のメモから、振り返りを作る(読み取り専用)</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>このフォルダの「週のメモ.md」を読んで、今週の振り返りを作ってください。
+- 元のメモは、書き換えない。削除もしない。
+- 結果は、新しいファイル「振り返り_(今日の日付).md」として、同じフォルダに作る。同じ名前があれば、作らずに知らせる。
+- 構成は、次の4つの見出しだけにする。
+  1. できたこと(メモに書いてあるものだけ。最大5つ)
+  2. 止まっていること(理由がメモにあれば添える。なければ「理由の記載なし」)
+  3. 来週の3つ(優先順位の理由を1行ずつ)
+  4. メモから読み取れなかったこと(足りない情報を、質問の形で3つまで)
+- メモに書かれていないことは、補って書かない。推測するときは「推測」と書く。
+- メールの送信、予定の登録、ほかのアプリの操作は、しない。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>振り返りが、メモと合っているか確かめる</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>さっき作った振り返りの「できたこと」と「止まっていること」の各項目について、根拠になったメモの行(日付つき)を、表にしてください。根拠が見つからない項目は、「根拠なし」と書いてください。</code></pre></div></figure></section><section id="s5"><h2>実際の出力例</h2><p>この記事のプロンプトは、この文章を書いた環境では実際に動かせていません(Coworkの画面と、手元のフォルダが必要なためです)。そのため、出力は載せません。代わりに、自分で動かしたときの確かめ方を書きます。</p><ul><li>動かしたあと、フォルダに「振り返り_(日付).md」ができているかを見ます。</li><li>「週のメモ.md」の更新日時が、動かす前と同じかを見ます(読み取り専用の条件が守られたかの確認です)。</li><li>2つ目のプロンプトで出る表の「根拠なし」の数を数えます。0でなければ、その項目はメモにない内容を含んでいます。直してもらうか、消します。</li></ul></section><section id="s6"><h2>使いどころと失敗例</h2><p>向く場面は、メモが1つのフォルダにたまっていて、週末にまとめ直す時間が取れないときです。結果を読む人が自分だけなので、少しくらい粗くても困りません。</p><p>向かない場面は、振り返りの結果を、そのまま誰かに送ったり、評価に使ったりするときです。まとめは、メモに書いていないことを補ってしまうことがあります。人に見せる前には、必ず自分で読み直します。</p><p>よくある失敗と、その直し方です。</p><ul><li><strong>メモを書き忘れて、空の振り返りができる。</strong> 「メモに、今週の日付の行が3つ未満なら、作らずに知らせて」と足します。</li><li><strong>元のメモを書き換えてしまう。</strong> プロンプトの条件を確認し、承認のモードを慎重なほうにします(下の「うまくいかないとき」)。</li><li><strong>自動にしたのに、結果を一度も読まなくなる。</strong> 週に1回、2つ目のプロンプトで根拠を確かめる日を決めます。</li><li><strong>取り消せない作業を足してしまう。</strong> 送信や削除は、定期タスクに入れません。</li></ul></section><section id="s7" class="trouble"><h2>うまくいかないとき</h2><p>動かないときは、次の順で切り分けます。</p><ol><li><strong>まず手動で動くか。</strong> 「Scheduled」のページから、そのタスクをオンデマンドで実行します。手動でも動かないなら、プロンプトやフォルダの指定が原因です。</li><li><strong>動く場所はどこか。</strong> 公式ヘルプによると、定期タスクはクラウドで動き、パソコンがスリープでもデスクトップアプリが閉じていても実行されます。ただし、ローカルのファイルやアプリが必要なタスクは、ローカルでだけ動きます。この記事の使い方はフォルダのファイルを読むため、動かす時間にパソコンが使える状態かを確かめます。</li><li><strong>実行の記録はあるか。</strong> 「Scheduled」のページで、過去の実行を見られます。各回の実行は、ふつうのCoworkのタスクと同じように、あとから開いて読めます。</li><li><strong>承認で止まっていないか。</strong> タスクの設定には「承認モード」の項目があります。モードごとの違いは、このヘルプには説明がなく、確認できませんでした。Coworkのヘルプには、Manual(聞いてから動く)、Auto、Skip(確認なし)の3つの<a class="term" href="../glossary/#term-permission-mode">権限モード</a>が書かれています。迷ったら、Manualのように、聞いてから動くモードにします。</li><li><strong>対象外の情報を使っていないか。</strong> 公式ヘルプには、Personal Financeでつないだ口座は、定期タスクで使えないと書かれています。</li></ol><p>公式ヘルプが確認できなかった点(曜日・時刻の細かい指定、承認モードの意味、実行を逃したときの扱い)は、この記事では決めつけません。必要な場合は、自分の画面で確かめてください。</p></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="intermediate" data-purpose="automate" data-features="scheduled cowork search" data-text="毎朝の情報まとめを、定期タスクで自動化する claude coworkの定期タスクで、決まった時間に情報まとめを作らせる方法です。条件が合わないと動かないので、動く条件と、最初の確認のしかたも整理します。 自動化する 定期タスク cowork web検索"><a class="card-title" href="../tips/cowork-scheduled-brief.html">毎朝の情報まとめを、定期タスクで自動化する</a><p class="card-sum">Claude Coworkの定期タスクで、決まった時間に情報まとめを作らせる方法です。条件が合わないと動かないので、動く条件と、最初の確認のしかたも整理します。</p><p class="chips"><span class="chip lv-intermediate">中級者向け</span><span class="chip">約30分</span><span class="chip">自動化する</span><span class="chip chip-f">定期タスク</span><span class="chip chip-f">Cowork</span><span class="chip chip-f">Web検索</span></p></li></ul></section>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork" rel="noopener" target="_blank">Claude ヘルプセンター「Schedule recurring tasks in Claude Cowork」(作り方、頻度の選択肢、対象プラン、動く場所、一時停止などの管理。2026年11月9日に確認)</a></li><li><a href="https://support.claude.com/en/articles/13345190-get-started-with-cowork" rel="noopener" target="_blank">Claude ヘルプセンター「Get started with Claude Cowork」(接続したフォルダだけ読み書きできること、権限モード、削除前の許可。2026年11月9日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/scheduled-weekly-review.html" data-title="定期タスクで、週1回の振り返りを作る | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fscheduled-weekly-review.html&amp;text=%E5%AE%9A%E6%9C%9F%E3%82%BF%E3%82%B9%E3%82%AF%E3%81%A7%E3%80%81%E9%80%B11%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A%E3%82%92%E4%BD%9C%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fscheduled-weekly-review.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fscheduled-weekly-review.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fscheduled-weekly-review.html&amp;title=%E5%AE%9A%E6%9C%9F%E3%82%BF%E3%82%B9%E3%82%AF%E3%81%A7%E3%80%81%E9%80%B11%E5%9B%9E%E3%81%AE%E6%8C%AF%E3%82%8A%E8%BF%94%E3%82%8A%E3%82%92%E4%BD%9C%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
