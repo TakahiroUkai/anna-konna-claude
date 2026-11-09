@@ -748,5 +748,29 @@
   "link": [
    "Messages API"
   ]
+ },
+ {
+  "id": "docs",
+  "term": "Docs(ドキュメント)",
+  "reading": "どきゅめんと",
+  "category": "Claudeの機能",
+  "explain": "Claudeの中で、会話から作る文書です。自分で直したり、Claudeに直してもらったり、コメントで相談したりできます。",
+  "link": []
+ },
+ {
+  "id": "claude-design",
+  "term": "Design(デザイン)",
+  "reading": "でざいん",
+  "category": "Claudeの機能",
+  "explain": "Claudeの中で、画面やチラシなどの見た目を作る機能です。作ったものは、PDFなどに書き出せます。",
+  "link": []
+ },
+ {
+  "id": "fable-mythos",
+  "term": "Fable・Mythos(フェイブル・ミトス)",
+  "reading": "ふぇいぶる・みとす",
+  "category": "モデル",
+  "explain": "Anthropicのモデルの名前です。同じ基盤で、Fableは全ユーザー向け、Mythosは審査を受けた組織向けと、公式発表で説明されています。",
+  "link": []
  }
 ]
