@@ -29,8 +29,16 @@ for p in targets:
             continue
         err(f"メールアドレスらしき文字列 {m.group(0)!r}: {p.relative_to(ROOT)}")
 private_words = ["運営メモ", "自分への応用", "hiragana-town", "注目銘柄", "稼ぎのトリセツ", "kasegi"]
+# 持ち主が許可した導線: あんなことこんなことClaude → 稼ぎのトリセツ だけ。<aside class="sister"> の中の1か所に限る。
+SISTER_URL = "https://takahiroukai.github.io/kasegi-torisetsu/"
+sister_re = re.compile(r'<aside class="sister".*?</aside>', re.S)
+for p in docs:
+    for blk in sister_re.findall(text_of(p)):
+        for h in re.findall(r'href="([^"]+)"', blk):
+            if h != SISTER_URL:
+                err(f"許可されていない別サイトへの導線 {h!r}: {p.relative_to(ROOT)}")
 for p in docs + tips + news:
-    t = text_of(p)
+    t = sister_re.sub("", text_of(p)) if p in docs else text_of(p)
     for w in private_words:
         if w in t:
             err(f"非公開・別サイトに関わる語 {w!r}: {p.relative_to(ROOT)}")

@@ -530,6 +530,15 @@ def related_html(m, tips, root):
     return '<section class="related"><h2>つぎに試すなら</h2><ul class="card-list">' + "".join(card(t, root) for t in items) + "</ul></section>"
 
 
+SISTER_URL = "https://takahiroukai.github.io/kasegi-torisetsu/"
+
+
+def sister_html():
+    """関連の深い別サイト(稼ぎのトリセツ)への案内。許可された組み合わせはこの1か所だけ。"""
+    return ('<aside class="sister" aria-labelledby="sister-h"><h2 id="sister-h">あわせて読みたい</h2>'
+            f'<p>Claudeで作業を速くしたあとは、副業・個人事業で稼ぐ方法を整理した<a href="{SISTER_URL}" rel="noopener">稼ぎのトリセツ</a>も、読み物として役に立つかもしれません。</p></aside>')
+
+
 def render_tip(t, tips):
     root = "../"
     body_html, nav = render_body(t["body"], root)
@@ -546,6 +555,7 @@ def render_tip(t, tips):
   {body_html}
   {ad_slot()}
   {related_html(t, tips, root)}
+  {sister_html()}
   {books_html(t)}
   {sources_html(t)}
   {share_block(t["title"], f"tips/{t['slug']}.html")}
@@ -571,6 +581,7 @@ def render_news(n, tips):
   {body_html}
   {ad_slot()}
   {related_html(n, tips, root)}
+  {sister_html()}
   {books_html(n)}
   {sources_html(n)}
   {share_block(n["title"], f"news/{n['slug']}.html")}
@@ -613,6 +624,7 @@ def render_guide(g, tips):
   {body_html}
   {ad_slot()}
   {related_html(g, tips, root)}
+  {sister_html()}
   {books_html(g)}
   {sources_html(g)}
   {share_block(g["title"], f"guides/{g['slug']}.html")}
