@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>Artifactで、毎日の記録つきの習慣トラッカーを作る | あんなことこんなことClaude</title>
+<meta name="description" content="Artifactの保存機能を使って、閉じても記録が残る習慣トラッカーを作る方法です。個人用の保存と共有の保存の違い、記録が本当に残るかの確かめ方、共有する前に消すものまで整理します。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/habit-tracker-artifact.html">
+<meta property="og:title" content="Artifactで、毎日の記録つきの習慣トラッカーを作る | あんなことこんなことClaude">
+<meta property="og:description" content="Artifactの保存機能を使って、閉じても記録が残る習慣トラッカーを作る方法です。個人用の保存と共有の保存の違い、記録が本当に残るかの確かめ方、共有する前に消すものまで整理します。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/habit-tracker-artifact.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Artifactで、毎日の記録つきの習慣トラッカーを作る", "description": "Artifactの保存機能を使って、閉じても記録が残る習慣トラッカーを作る方法です。個人用の保存と共有の保存の違い、記録が本当に残るかの確かめ方、共有する前に消すものまで整理します。", "datePublished": "2026-11-11", "dateModified": "2026-11-11", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/tips/habit-tracker-artifact.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-11">
+<meta property="article:modified_time" content="2026-11-11">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>Artifactで、毎日の記録つきの習慣トラッカーを作る</h1>
+    <p class="summary">Artifactの保存機能を使って、閉じても記録が残る習慣トラッカーを作る方法です。個人用の保存と共有の保存の違い、記録が本当に残るかの確かめ方、共有する前に消すものまで整理します。</p>
+    <p class="stamp">2026-11-11 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-intermediate.html"><span class="chip lv-intermediate">中級者向け</span></a> 設定や考え方の理解が少し要る。いくつかの機能を組み合わせる。</td></tr><tr><th scope="row">所要時間</th><td>約25分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-build.html">作る</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-artifacts.html">Artifacts</a></td></tr><tr><th scope="row">作れるもの</th><td>開き直しても記録が残る、毎日チェックする習慣トラッカー(保存の確かめ方と、共有前の点検つき)</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">実際の出力例</a></li><li><a href="#s6">使いどころと失敗例</a></li><li><a href="#s7">うまくいかないとき</a></li></ul>
+  </div>
+  <p>結論から書きます。<a class="term" href="../glossary/#term-artifact">Artifact</a>で作った習慣トラッカーは、記録を保存できます。ただし、作った直後に「閉じて開き直しても残るか」を必ず確かめます。残ると思い込んで毎日つけ、数週間分が消えていた、が一番つらい失敗だからです。</p><p>「三日坊主になりがちで、紙の表にも手帳にも続かなかった」という友人に、そのまま見せられる使い方です。</p><section id="s1"><h2>ねらい</h2><ul><li>Artifact(会話の横に作る、ツールやページ)で、毎日チェックできる習慣トラッカーを作ります。</li><li>記録が残ることを、自分の手で確かめます。</li><li>人に見せる前に、見られて困る記録が入っていないかを点検します。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>公式のヘルプには、Artifactがセッションをまたいでデータを保存できる、と書かれています(2026年11月11日に確認)。この保存の機能の対象は、Pro、Max、Ultra、Team、Enterpriseで、claude.aiのWebとClaude Desktopと書かれています。Freeは、対象の一覧に入っていませんでした。自分のプランで使えるかは、画面で確かめます。</li><li>Artifactを作るための設定。公式のヘルプには、「Settings &gt; Capabilities」の「Cloud code execution and file creation」をオンにする、と書かれています。</li><li>続けたい習慣を、1つか2つ。最初は「水を飲む」「5分歩く」のような、小さなものにします。</li><li>練習のあいだは、体調や健康の細かい記録、他人の個人情報は入れません。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: トラッカーを作って、残ることを確かめるまで</figcaption><ol class="flow"><li><strong>習慣と形を決める</strong><span>習慣は1〜2つ。見たい期間(今月)を決める</span></li><li><strong>Artifactを頼む</strong><span>下の<a class="term" href="../glossary/#term-prompt">プロンプト</a>で、保存の方式も書いて頼む</span></li><li><strong>今日の分をつける</strong><span>チェックを入れて、数字や表示が変わるか見る</span></li><li><strong>閉じて開き直す</strong><span>会話を離れ、別の日に開いて、記録が残るか見る</span></li><li><strong>保存の範囲を確かめる</strong><span>自分だけの保存か、共有の保存かを、Claudeに答えさせる</span></li></ol></figure><ol><li><strong>習慣と形を決めます。</strong> 「毎日チェックを入れる」「今月の達成日数を出す」くらいの、小さな形にします。</li><li><strong>保存の方式を指定して頼みます。</strong> 公式のヘルプには、保存には2種類あると書かれています。個人用の保存は、記録がその人だけに見えます。共有の保存は、開いた全員が同じデータを見て、書き込めます。自分の記録は、個人用の保存を指定します。</li><li><strong>今日の分をつけます。</strong> チェックを入れて、達成日数が変わることを見ます。</li><li><strong>閉じて開き直します。</strong> 画面を閉じて、少し時間を置いて、同じArtifactを開きます。チェックが残っていれば、保存は効いています。</li><li><strong>保存の範囲を、Claudeに確かめます。</strong> 下の「確かめ」のプロンプトで、個人用と共有のどちらを使っているかを答えさせます。</li></ol><p>画面の表示は変わることがあります。</p><figure class="fig fig-compare"><figcaption>図: 保存の2種類(公式のヘルプの説明)</figcaption><table><thead><tr><th scope="col">種類</th><th scope="col">見える人と使いどころ</th></tr></thead><tbody><tr><td>個人用の保存</td><td>記録は、その人だけに見える。自分の習慣、日記、メモ向き</td></tr><tr><td>共有の保存</td><td>開いた全員が、同じデータを見て使う。みんなで使う得点表など。初めて使うときは、データが他の人に見える、という確認が出る</td></tr></tbody></table></figure></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>トラッカーを作る</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>Artifactで、習慣トラッカーを作ってください。
+- 習慣: 「水を2リットル飲む」「5分歩く」の2つ。
+- 画面: 今月のカレンダー形式で、日ごとに、習慣ごとのチェックを入れられる。
+- 集計: 今月の達成日数を、習慣ごとに表示する。今日の日付に印をつける。
+- 保存: チェックの記録は、保存して、閉じて開き直しても残るようにする。保存は、自分だけに見える個人用の保存にする。
+- 見た目: スマホで見やすく、ボタンは押しやすい大きさにする。
+- 入力できるのは、チェックの入り切りだけにする(自由な文章の欄は作らない)。
+作り終えたら、保存の方式(個人用か共有か)と、保存されるデータの中身を、3行で説明してください。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>保存と共有を確かめる</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>今のArtifactについて、次の4点に答えてください。
+1. 記録は、個人用の保存と共有の保存のどちらに入りますか。
+2. 保存されるデータの項目を、すべて挙げてください。
+3. このArtifactを他の人に共有すると、その人から、私の記録は見えますか。
+4. 分からないことは、「分かりません」と書いて、私が自分の画面で確かめる手順を教えてください。</code></pre></div></figure></section><section id="s5"><h2>実際の出力例</h2><p>この記事のプロンプトは、この文章を書いた環境では実際に動かせていません(保存を確かめるには、Claudeの画面でArtifactを作り、閉じて開き直す操作が必要なためです)。そのため、出力は載せません。自分で動かしたときの確かめ方を書きます。</p><ul><li>チェックを入れた直後に、達成日数が増えるかを見ます。</li><li>画面を閉じて、少し時間を置いて開き直し、チェックが残っているかを見ます。残らなければ、保存が効いていません。作り直す前に、「保存が効いていないようです。保存の方式を直してください」と頼みます。</li><li>「保存と共有を確かめる」への答えが、画面での見え方と合っているかを見ます。たとえば、自分用のつもりが「共有の保存」と答えたら、作り直しを頼みます。</li></ul></section><section id="s6"><h2>使いどころと失敗例</h2><p>向く場面は、毎日、数秒でつける記録です。習慣、気分の一言、飲んだ水の量などです。公式のヘルプには、ジャーナルやトラッカーのようなものを作れる、と書かれています。</p><p>向かない場面は、消えると困る大事な記録です。保存の容量の上限は、公式のヘルプでは、1つのArtifactあたり20MBで、テキストだけです。写真やファイルは入れられません。大事な記録は、定期的に、別の場所に写して残します。</p><p>よくある失敗と、その直し方です。</p><ul><li><strong>保存の指定を書かずに頼み、開き直したら空になる。</strong> 「閉じて開き直しても残る保存にする」と、頼み直します。</li><li><strong>自分の記録のつもりが、共有の保存になっている。</strong> 公式のヘルプには、どのデータを個人用にし、どれを共有にするかは、作る人が決める、と書かれています。共有の保存だと、開いた人に記録が見えます。「個人用の保存に直してください」と頼みます。</li><li><strong>古い方式のArtifactを、公開をやめて消してしまう。</strong> 公式の「Share artifacts」には、2026年9月16日より前の会話で作った古い方式のArtifactは、公開をやめると、保存した個人用と共有のデータが完全に消える、と書かれています。公開をやめる前に、記録を写して残します。</li><li><strong>共有してから、記録が見られていたと気づく。</strong> 公式の「Share artifacts」には、保存した情報が、開いた全員に見える場合がある、と書かれています。共有の前に、次の点検をします。</li></ul><aside class="note"><figcaption>共有する前の点検</figcaption><p>- 保存されているデータの中身を、Claudeに全部挙げさせる。</p><p>- 見られて困る記録(体調、場所、他人の名前)が入っていたら、消すか、練習用の別のArtifactを作って渡す。</p><p>- 共有の範囲を確認する。公式には、初めは自分だけに見えると書かれています。リンクを知っている人全員に見える設定にしていないかを見る。</p></aside></section><section id="s7" class="trouble"><h2>うまくいかないとき</h2><ol><li><strong>保存の機能が見つからない、または保存されない。</strong> 自分のプランが、保存の対象に入っているかを、公式のヘルプで見ます。Freeは、対象の一覧にありませんでした。</li><li><strong>設定が出ない。</strong> 「Settings &gt; Capabilities」で、「Cloud code execution and file creation」がオンか見ます。名前や場所は、画面の更新で変わることがあります。</li><li><strong>開き直したら、一部のチェックだけ消えている。</strong> 「どの操作で保存されるか」と「保存のタイミング」を、Claudeに説明させます。保存を押す操作が要る作りなら、「チェックを入れるたびに保存する」に直してもらいます。</li><li><strong>他の人から見たら、自分の記録が見えた。</strong> 共有の保存を使っています。個人用の保存に直してもらい、共有をいったんやめます。</li><li><strong>他の人のArtifactを開くとき。</strong> 公式のヘルプには、信頼できる人から共有されたものだけを開く、と書かれています。</li></ol><p>確認できなかったこと(保存の仕組みの細かい動き、保存データの書き出し方法)は、この記事では決めつけません。必要な場合は、自分の画面と、公式のヘルプで確かめてください。</p></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="intermediate" data-purpose="build" data-features="artifacts" data-text="artifactを共有する前の、点検リストを作る 作ったartifactを人に見せる前に、誰が見られるか、何が一緒に見えるかを確かめる方法です。公式のヘルプで確認できた共有の仕組みをもとに、点検リストと、claudeに下見を頼む文章を用意します。 作る artifacts"><a class="card-title" href="../tips/artifact-share-check.html">Artifactを共有する前の、点検リストを作る</a><p class="card-sum">作ったArtifactを人に見せる前に、誰が見られるか、何が一緒に見えるかを確かめる方法です。公式のヘルプで確認できた共有の仕組みをもとに、点検リストと、Claudeに下見を頼む文章を用意します。</p><p class="chips"><span class="chip lv-intermediate">中級者向け</span><span class="chip">約20分</span><span class="chip">作る</span><span class="chip chip-f">Artifacts</span></p></li></ul></section>
+  <aside class="sister" aria-labelledby="sister-h"><h2 id="sister-h">あわせて読みたい</h2><p>Claudeで作業を速くしたあとは、副業・個人事業で稼ぐ方法を整理した<a href="https://takahiroukai.github.io/kasegi-torisetsu/" rel="noopener">稼ぎのトリセツ</a>も、読み物として役に立つかもしれません。</p></aside>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them" rel="noopener" target="_blank">Claude ヘルプセンター「What are artifacts and how do I use them?」(Artifactがセッションをまたいでデータを保存できること、対象プランと画面、個人用の保存と共有の保存、容量の上限、設定の場所。2026年11月11日に確認)</a></li><li><a href="https://support.claude.com/en/articles/9547008-share-artifacts" rel="noopener" target="_blank">Claude ヘルプセンター「Share artifacts」(Artifactは初めは自分だけに見えること、共有の範囲、保存したデータが共有で見えること、注意書き。2026年11月11日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/habit-tracker-artifact.html" data-title="Artifactで、毎日の記録つきの習慣トラッカーを作る | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fhabit-tracker-artifact.html&amp;text=Artifact%E3%81%A7%E3%80%81%E6%AF%8E%E6%97%A5%E3%81%AE%E8%A8%98%E9%8C%B2%E3%81%A4%E3%81%8D%E3%81%AE%E7%BF%92%E6%85%A3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AB%E3%83%BC%E3%82%92%E4%BD%9C%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fhabit-tracker-artifact.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fhabit-tracker-artifact.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fhabit-tracker-artifact.html&amp;title=Artifact%E3%81%A7%E3%80%81%E6%AF%8E%E6%97%A5%E3%81%AE%E8%A8%98%E9%8C%B2%E3%81%A4%E3%81%8D%E3%81%AE%E7%BF%92%E6%85%A3%E3%83%88%E3%83%A9%E3%83%83%E3%82%AB%E3%83%BC%E3%82%92%E4%BD%9C%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
