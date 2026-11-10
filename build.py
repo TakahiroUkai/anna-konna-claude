@@ -394,9 +394,9 @@ def share_block(title, path):
     )
 
 
-def layout(title, desc, body, root, path, article=None):
+def layout(title, desc, body, root, path, article=None, full_title=None):
     name = CONFIG["name"]
-    full = name if title == name else f"{title} | {name}"
+    full = full_title or (name if title == name else f"{title} | {name}")
     canon = CONFIG["base_url"] + path
     parts = []
     if affiliate_on():
@@ -723,7 +723,7 @@ def render_index(tips, news, guides):
   {share_block(CONFIG["name"], "")}
   {ad_slot()}
 </div>"""
-    return layout(CONFIG["name"], CONFIG["description"], body, "", "")
+    return layout(CONFIG["name"], CONFIG["description"], body, "", "", full_title=CONFIG.get("home_title"))
 
 
 def render_news_index(news):
