@@ -782,5 +782,36 @@
   "link": [
    "ファストモード"
   ]
+ },
+ {
+  "id": "chat-search",
+  "term": "チャット検索(過去のチャットの検索)",
+  "reading": "ちゃっとけんさく",
+  "category": "Claudeの機能",
+  "explain": "過去の会話の中から、話した内容をClaudeに探してもらう機能です。「前に話した○○を探して」のように、ふつうの言葉で頼みます。対象のプランと設定は、公式のヘルプで確かめます。",
+  "link": [
+   "チャット検索"
+  ]
+ },
+ {
+  "id": "incognito-chat",
+  "term": "インコグニートチャット",
+  "reading": "いんこぐにーとちゃっと",
+  "category": "Claudeの機能",
+  "explain": "過去のチャット検索の対象にならず、メモリにも保存されない会話です。履歴にも残りません。ただし、安全のため一定期間は保持されると、公式のヘルプに書かれています。",
+  "link": [
+   "インコグニートチャット"
+  ]
+ },
+ {
+  "id": "sheets-whiteboards",
+  "term": "Claude Sheets・Claude Whiteboards",
+  "reading": "くろーど しーつ・ほわいとぼーず",
+  "category": "Claudeの機能",
+  "explain": "Sheetsは、数式や複数のタブをもつ表を、Claudeと作る機能です。Whiteboardsは、共有のボードで、Claudeと発想を出し合う機能です。どちらもベータで、機能は変わることがあります。",
+  "link": [
+   "Claude Sheets",
+   "Claude Whiteboards"
+  ]
  }
 ]

@@ -435,5 +435,103 @@
     "features": [
       "chat"
     ]
+  },
+  {
+    "slug": "chat-search-continue",
+    "title": "過去のチャットを探して、前回の続きから始める",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "memory",
+      "chat"
+    ]
+  },
+  {
+    "slug": "memory-scope-audit",
+    "title": "メモリと過去チャット検索の範囲を点検して、残すものを決める",
+    "level": "intermediate",
+    "purpose": "organize",
+    "features": [
+      "memory",
+      "projects"
+    ]
+  },
+  {
+    "slug": "sheets-budget-table",
+    "title": "Claude Sheetsで、小さな予算表を作る",
+    "level": "beginner",
+    "purpose": "build",
+    "features": [
+      "artifacts",
+      "docs-slides"
+    ]
+  },
+  {
+    "slug": "whiteboard-retro-board",
+    "title": "Whiteboardsで、ふりかえりの付箋をテーマ別に整理する",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "artifacts",
+      "docs-slides"
+    ]
+  },
+  {
+    "slug": "sheets-formula-check",
+    "title": "Sheetsの数式を、検算して直してもらう",
+    "level": "intermediate",
+    "purpose": "build",
+    "features": [
+      "artifacts",
+      "docs-slides"
+    ]
+  },
+  {
+    "slug": "whiteboard-to-tasks",
+    "title": "Whiteboardsの発想を、担当と期限つきの計画にする",
+    "level": "intermediate",
+    "purpose": "organize",
+    "features": [
+      "artifacts",
+      "docs-slides"
+    ]
+  },
+  {
+    "slug": "incognito-private-chat",
+    "title": "インコグニートチャットで、残したくない相談をする",
+    "level": "beginner",
+    "purpose": "learn",
+    "features": [
+      "chat",
+      "memory"
+    ]
+  },
+  {
+    "slug": "project-memory-separate",
+    "title": "プロジェクトごとにメモリを分けて、混ざりを防ぐ",
+    "level": "intermediate",
+    "purpose": "organize",
+    "features": [
+      "projects",
+      "memory"
+    ]
+  },
+  {
+    "slug": "compare-two-prompts",
+    "title": "同じ依頼を2通りの書き方で試して、差を比べる",
+    "level": "beginner",
+    "purpose": "learn",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "connector-permission-review",
+    "title": "コネクタの権限を見直して、渡す範囲を絞る",
+    "level": "intermediate",
+    "purpose": "automate",
+    "features": [
+      "connectors"
+    ]
   }
 ]
