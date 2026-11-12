@@ -86,6 +86,25 @@
     more.textContent = '残りの' + (n - shown) + '件も表示する';
     count.textContent = shown < n ? n + '件のうち、最初の' + shown + '件を表示中' : n + '件を表示中(全' + cards.length + '件)';
     empty.hidden = n !== 0;
+    if (n === 0) { empty.textContent = hint(level, p, f, q); }
+  }
+  // 0件のとき、どの条件を外せば何件になるかを案内する
+  function hint(lv, p, f, q) {
+    function matches(l, pp, ff, qq) {
+      var k = 0;
+      cards.forEach(function (c) {
+        if ((!l || c.getAttribute('data-level') === l) && (!pp || c.getAttribute('data-purpose') === pp) &&
+          (!ff || (' ' + c.getAttribute('data-features') + ' ').indexOf(' ' + ff + ' ') >= 0) &&
+          (!qq || c.getAttribute('data-text').indexOf(qq) >= 0)) k++;
+      });
+      return k;
+    }
+    var parts = [];
+    if (lv) { var a = matches('', p, f, q); if (a) parts.push('難易度を「すべて」にすると' + a + '件'); }
+    if (p) { var b = matches(lv, '', f, q); if (b) parts.push('目的を「すべて」にすると' + b + '件'); }
+    if (f) { var d = matches(lv, p, '', q); if (d) parts.push('機能を「すべて」にすると' + d + '件'); }
+    if (q) { var e = matches(lv, p, f, ''); if (e) parts.push('検索のことばを消すと' + e + '件'); }
+    return '条件に合うものがありません。' + (parts.length ? parts.join('、') + '見つかります。' : '条件をゆるめてみてください。');
   }
   // 絞り込みを変えたとき、件数の表示が画面の外にあれば、そこまで移動する
   function reveal() {

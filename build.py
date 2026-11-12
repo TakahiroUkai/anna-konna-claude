@@ -833,13 +833,24 @@ def render_glossary():
 
 def render_sitemap(tips, news, guides, tag_pages):
     base = CONFIG["base_url"]
-    urls = [base, base + "guides/", base + "news/", base + "tags/", base + "glossary/"]
-    urls += [f"{base}guides/{s}.html" for s in guides]
-    urls += [f"{base}tips/{s}.html" for s in tips]
-    urls += [f"{base}news/{s}.html" for s in news]
-    urls += [f"{base}tags/{p}" for p in tag_pages if p != "index.html"]
-    body = "".join(f"<url><loc>{esc(u)}</loc></url>" for u in urls)
+    def items_of(coll):
+        return coll.values() if isinstance(coll, dict) else coll
+    def mod(coll, slug):
+        it = coll[slug] if isinstance(coll, dict) else next((x for x in coll if x.get("slug") == slug), None)
+        return str(it.get("updated", "")) if it else ""
+    dates = [str(x.get("updated", "")) for c in (tips, news, guides) for x in items_of(c) if isinstance(x, dict)]
+    latest = max([d for d in dates if d] or [""])
+    urls = [(base, latest), (base + "guides/", latest), (base + "news/", latest), (base + "tags/", latest), (base + "glossary/", latest)]
+    urls += [(f"{base}guides/{s}.html", mod(guides, s)) for s in guides_slugs(guides)]
+    urls += [(f"{base}tips/{s}.html", mod(tips, s)) for s in guides_slugs(tips)]
+    urls += [(f"{base}news/{s}.html", mod(news, s)) for s in guides_slugs(news)]
+    urls += [(f"{base}tags/{p}", latest) for p in tag_pages if p != "index.html"]
+    body = "".join(f"<url><loc>{esc(u)}</loc>" + (f"<lastmod>{esc(d)}</lastmod>" if d else "") + "</url>" for u, d in urls)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{body}</urlset>\n'
+
+
+def guides_slugs(coll):
+    return list(coll) if isinstance(coll, dict) else [x["slug"] for x in coll]
 
 
 def write_dir(directory, files):
