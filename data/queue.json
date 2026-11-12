@@ -533,5 +533,14 @@
     "features": [
       "connectors"
     ]
+  },
+  {
+    "slug": "check-training-setting",
+    "title": "入力内容がAIの改善に使われるかの設定を、確かめて切り替える",
+    "level": "beginner",
+    "purpose": "learn",
+    "features": [
+      "chat"
+    ]
   }
 ]
