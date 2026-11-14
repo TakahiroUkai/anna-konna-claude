@@ -245,3 +245,4 @@ details.howto summary { cursor: pointer; font-weight: 700; font-size: .95rem; }
   body:has(.cheatsheet) .site-head, body:has(.cheatsheet) .site-foot, .cheatsheet .noprint, .cheatsheet .copy, .cheatsheet .more { display: none !important; }
   .cheatsheet .prompt pre { font-size: .82rem; line-height: 1.6; padding: .5rem .7rem; }
 }
+.prompt-bar .copy { white-space: nowrap; flex-shrink: 0; }
