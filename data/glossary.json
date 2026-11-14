@@ -813,5 +813,25 @@
    "Claude Sheets",
    "Claude Whiteboards"
   ]
+ },
+ {
+  "id": "claude-meetings",
+  "term": "Claude Meetings",
+  "reading": "くろーど みーてぃんぐず",
+  "category": "Claudeの機能",
+  "explain": "Google Meetの通話にClaudeが参加して、ノートを取ったり、質問に答えたり、資料を作ったりする機能です。ベータで、TeamとEnterpriseのプランが対象と、公式のヘルプに書かれています。",
+  "link": [
+   "Claude Meetings"
+  ]
+ },
+ {
+  "id": "zdr-cmek",
+  "term": "ZDR・CMEK",
+  "reading": "ぜっとでぃーあーる・しーめっく",
+  "category": "セキュリティ",
+  "explain": "ZDRは、入力したデータを、事業者の側に残さない契約のことです。CMEKは、利用者の側が管理する暗号鍵で、データを守る仕組みです。使える機能が限られることがあるため、公式のヘルプで確かめます。",
+  "link": [
+   "ZDR"
+  ]
  }
 ]

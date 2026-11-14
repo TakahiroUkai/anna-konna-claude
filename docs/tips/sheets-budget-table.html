@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>(function(){try{var m=location.search.match(/[?&]noga=([01])/),k="noga",id="G-MS9416YMMM";if(m){if(m[1]=="1")localStorage.setItem(k,"1");else localStorage.removeItem(k);var f=function(){var d=document.createElement("div");d.setAttribute("role","status");d.style.cssText="position:fixed;left:8px;right:8px;bottom:8px;z-index:99;padding:10px 14px;background:#222;color:#fff;border-radius:8px;font:14px sans-serif;text-align:center";d.textContent=m[1]=="1"?"この端末のブラウザを、アクセス解析から除外しました":"この端末のブラウザの、アクセス解析の除外をやめました";document.body.appendChild(d);setTimeout(function(){d.remove()},4000)};if(document.body)f();else addEventListener("DOMContentLoaded",f)}if(localStorage.getItem(k)=="1")window["ga-disable-"+id]=true}catch(e){}})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>Claude Sheetsで、小さな予算表を作る | あんなことこんなことClaude</title>
+<meta name="description" content="Claude Sheets(Claudeの中で、表を作って直せる機能。ベータ)で、行事や買い物の小さな予算表を作ります。依頼文の型、数字の入れ方、合計の検算、.xlsxやCSVで書き出す方法までまとめました。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/sheets-budget-table.html">
+<meta property="og:title" content="Claude Sheetsで、小さな予算表を作る | あんなことこんなことClaude">
+<meta property="og:description" content="Claude Sheets(Claudeの中で、表を作って直せる機能。ベータ)で、行事や買い物の小さな予算表を作ります。依頼文の型、数字の入れ方、合計の検算、.xlsxやCSVで書き出す方法までまとめました。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/sheets-budget-table.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Claude Sheetsで、小さな予算表を作る", "description": "Claude Sheets(Claudeの中で、表を作って直せる機能。ベータ)で、行事や買い物の小さな予算表を作ります。依頼文の型、数字の入れ方、合計の検算、.xlsxやCSVで書き出す方法までまとめました。", "datePublished": "2026-11-15", "dateModified": "2026-11-15", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/tips/sheets-budget-table.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-15">
+<meta property="article:modified_time" content="2026-11-15">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>Claude Sheetsで、小さな予算表を作る</h1>
+    <p class="summary">Claude Sheets(Claudeの中で、表を作って直せる機能。ベータ)で、行事や買い物の小さな予算表を作ります。依頼文の型、数字の入れ方、合計の検算、.xlsxやCSVで書き出す方法までまとめました。</p>
+    <p class="stamp">2026-11-15 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約15分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-build.html">作る</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-artifacts.html">Artifacts</a>、<a href="../tags/feature-docs-slides.html">Docs・Slides・Design</a></td></tr><tr><th scope="row">作れるもの</th><td>項目・単価・個数・小計・合計が数式でつながった、10行ほどの予算表</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">実際の出力例</a></li><li><a href="#s6">使いどころと失敗例</a></li><li><a href="#s7">うまくいかないとき</a></li></ul>
+  </div>
+  <p>結論から書きます。依頼文に「何のための表か」「どの列がほしいか」「数字は私が入れる」の3つを書けば、予算表の枠は1回で作れます。合計の数式も、Claudeが入れてくれます。</p><p>「サークルの会計を、毎回、電卓で足している」という友人に、そのまま渡せる手順です。</p><section id="s1"><h2>ねらい</h2><ul><li><a class="term" href="../glossary/#term-sheets-whiteboards">Claude Sheets</a>(Claudeの中で表を作り、一緒に直せる機能。<a class="term" href="../glossary/#term-beta">ベータ</a>)を、小さな予算表で試します。</li><li>項目・単価・個数・小計・合計がつながった表を、10行ほどで作ります。</li><li>合計が合っているかを、自分で確かめるところまでやります。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>公式のヘルプ(2026年11月15日に確認)によると、Claude Sheetsは、Pro、Max、Ultra、Team、Enterpriseのベータで使えます。無料プランについては、確認できませんでした。TeamとEnterpriseでは、組織の設定で使えるかが決まります。</li><li>表にしたい内容(買うものの名前と、だいたいの単価、個数)。</li><li>個人情報や、他人の口座番号などは、入れません。まずは、練習用の内容で試します。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 依頼から、書き出しまで</figcaption><ol class="flow"><li><strong>目的を決める</strong><span>何のための表かを、1行で書く</span></li><li><strong>依頼する</strong><span>列と、数式で出したいものを伝える</span></li><li><strong>数字を入れる</strong><span>自分の数字を入れて、小計と合計を見る</span></li><li><strong>検算する</strong><span>電卓や別の表で、合計を確かめる</span></li><li><strong>書き出す</strong><span>必要なら .xlsx か <a class="term" href="../glossary/#term-csv">CSV</a> にする</span></li></ol></figure><ol><li><strong>目的を決めます。</strong> 「学園祭のクラス出店の予算」のように、場面を1行で書きます。</li><li><strong>依頼します。</strong> 公式のヘルプには、普通のチャットで頼む方法と、<a class="term" href="../glossary/#term-artifact">Artifacts</a>タブの「Sheets」から始める方法が書かれています。下の<a class="term" href="../glossary/#term-prompt">プロンプト</a>を貼ります。</li><li><strong>数字を入れます。</strong> 公式のヘルプには、セルに直接入力することも、Claudeに頼むこともできると書かれています。数字は、自分で入れるほうが、間違いに気づきやすいです。</li><li><strong>検算します。</strong> 合計が、電卓の答えと合うかを見ます。</li><li><strong>書き出します。</strong> 公式のヘルプには、.xlsxとCSVでダウンロードできると書かれています。</li></ol><p>画面の表示は変わることがあります。</p></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>予算表の枠を作る</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>Claude Sheetsで、「学園祭のクラス出店の予算表」を作ってください。
+- 列は、項目、単価(円)、個数、小計(円)、メモ。
+- 行は、材料費、袋代、ポスター代、その他、の4行と、合計の行。
+- 単価と個数は空欄にして、仮の数字は入れない。
+- 小計は「単価×個数」、合計は小計の足し算にする。数式は、セルに見える形で入れる。
+- 金額は、3桁ごとにカンマを付ける。
+作ったあとで、数式が入っているセルを一覧にして、何を計算しているかを1行ずつ書いてください。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>数字を入れたあとの点検</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>この表に、次の数字を入れました。
+材料費: 単価 120円 × 30個
+袋代: 単価 15円 × 100個
+ポスター代: 単価 300円 × 2個
+合計が、いくらになるはずかを、表とは別に計算して教えてください。そのうえで、表の合計と同じかを確かめてください。違うときは、どのセルが原因かを書いてください。</code></pre></div></figure></section><section id="s5"><h2>実際の出力例</h2><p>このサイトの記事を書いた環境では、Claude Sheetsの画面を操作できませんでした。そのため、実際の出力は載せません。自分で動かしたときの確かめ方を書きます。</p><ul><li>点検のプロンプトの答えは、手で計算できます。材料費は3,600円、袋代は1,500円、ポスター代は600円で、合計は5,700円です。表の合計がこれと同じなら、数式はつながっています。</li><li>「数式が入っているセルの一覧」の説明が、画面の数式と合っているかを、2〜3か所だけ見ます。</li><li>小計の列に、数式でなく、数字が直接入っていないかを見ます。</li></ul></section><section id="s6"><h2>使いどころと失敗例</h2><p>向く場面は、10〜20行ほどの小さな表を、すばやく作りたいときです。行事の予算、買い物リスト、小さな家計の下書きなどです。</p><p>向かない場面もあります。公式のヘルプには、現時点では、ピボットテーブル、保護された範囲、検索と置換、複数列での並べ替えなどが、まだ使えないと書かれています。大きな表(上限は10万セルと書かれています)や、マクロが必要な作業は、Excelなどで行います。</p><p>よくある失敗と、その直し方です。</p><ul><li><strong>仮の数字が入っている。</strong> 依頼に「仮の数字は入れない」と書くと防げます。入っていたら、「入れた数字を空欄に戻して」と頼みます。</li><li><strong>合計が合わない。</strong> 小計の列に数式でなく数字が入っていることがあります。「小計の列をすべて数式にして」と頼みます。</li><li><strong>Claudeの直しが、思っていたものと違う。</strong> 公式のヘルプには、直した場所が枠で示され、バージョン履歴から前の版に戻せると書かれています。戻すと、その後の直しも消えます。</li><li><strong>個人情報を入れてしまった。</strong> 共有する前に、見せてよい内容かを確かめます。共有は、表を開いて「Share」から行うと書かれています。</li></ul><aside class="note"><figcaption>数式と数字の確かめ方</figcaption><p>Claudeが入れた数式は、見た目がもっともらしくても、間違っていることがあります。お金に関わる表は、公開や提出の前に、電卓か別の表で、合計を確かめてください。</p></aside></section><section id="s7" class="trouble"><h2>うまくいかないとき</h2><ol><li><strong>Sheetsの項目が見つからない。</strong> 公式のヘルプには、ベータで、プランによって使えるかが違うと書かれています。TeamやEnterpriseでは、管理者の設定が必要です。</li><li><strong>スマホで編集できない。</strong> 公式のヘルプには、モバイルは、基本的な閲覧だけと書かれています。編集はWebかデスクトップで行います。</li><li><strong>Excelで開いたら、見た目が変わった。</strong> 書き出した表は、元の表と完全に同じとは限りません。必要な数式と、数字だけを確かめます。</li><li><strong>もっと複雑な表にしたい。</strong> 公式のヘルプには、すでにExcelやGoogleスプレッドシートにある表や、全機能が必要な作業には、Claude for ExcelやClaude for Google Workspaceが向くと書かれています。</li></ol><p>確認できなかったこと(無料プランでの利用可否、ベータが続く期間)は、この記事では決めつけません。公式のヘルプで確かめてください。</p></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="build" data-features="docs-slides chat" data-text="メモからスライドを作って、powerpointで書き出す 箇条書きのメモをclaudeに渡して、スライドの下書きを作り、powerpointやpdfで書き出す方法です。直し方のコツと、書き出す前の点検リストもまとめました。 作る docs・slides・design 基本のチャット"><a class="card-title" href="../tips/slides-from-notes.html">メモからスライドを作って、PowerPointで書き出す</a><p class="card-sum">箇条書きのメモをClaudeに渡して、スライドの下書きを作り、PowerPointやPDFで書き出す方法です。直し方のコツと、書き出す前の点検リストもまとめました。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約15分</span><span class="chip">作る</span><span class="chip chip-f">Docs・Slides・Design</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  <aside class="sister" aria-labelledby="sister-h"><h2 id="sister-h">あわせて読みたい</h2><p>Claudeで作業を速くしたあとは、副業・個人事業で稼ぐ方法を整理した<a href="https://takahiroukai.github.io/kasegi-torisetsu/" rel="noopener">稼ぎのトリセツ</a>も、読み物として役に立つかもしれません。</p></aside>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/18324300-get-started-with-claude-sheets" rel="noopener" target="_blank">Claude ヘルプセンター「Get started with Claude Sheets」(Sheetsの始め方、対象プラン、直し方、バージョン履歴、書き出し、現時点の制限。2026年11月15日に確認)</a></li><li><a href="https://claude.com/resources/articles/sheets-whiteboards-data" rel="noopener" target="_blank">Claude「Introducing Claude Whiteboards, Claude Sheets, and Claude Data」(2026年11月10日の発表。Sheetsがベータで始まったこと。2026年11月15日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/sheets-budget-table.html" data-title="Claude Sheetsで、小さな予算表を作る | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fsheets-budget-table.html&amp;text=Claude%20Sheets%E3%81%A7%E3%80%81%E5%B0%8F%E3%81%95%E3%81%AA%E4%BA%88%E7%AE%97%E8%A1%A8%E3%82%92%E4%BD%9C%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fsheets-budget-table.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fsheets-budget-table.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fsheets-budget-table.html&amp;title=Claude%20Sheets%E3%81%A7%E3%80%81%E5%B0%8F%E3%81%95%E3%81%AA%E4%BA%88%E7%AE%97%E8%A1%A8%E3%82%92%E4%BD%9C%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
