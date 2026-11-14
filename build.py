@@ -208,6 +208,28 @@ def to_blocks(md):
     return blocks
 
 
+PH_LINE = re.compile(r"^\s*[（(].*[）)]\s*$")
+PH_INLINE = re.compile(r"[（(](?:例[::]|ここに)[^（）()\n]*[）)]")
+
+
+def mark_placeholders(text):
+    """プロンプトの中の、書き換える部分(括弧つき)に目印を付ける。戻り値は (HTML, 箇所の数)。"""
+    out, n = [], 0
+    for line in text.split("\n"):
+        if PH_LINE.match(line):
+            lead = line[:len(line) - len(line.lstrip())]
+            out.append(esc(lead) + '<mark class="ph">' + esc(line.strip()) + "</mark>")
+            n += 1
+            continue
+        pos, buf = 0, ""
+        for m in PH_INLINE.finditer(line):
+            buf += esc(line[pos:m.start()]) + '<mark class="ph">' + esc(m.group(0)) + "</mark>"
+            pos = m.end()
+            n += 1
+        out.append(buf + esc(line[pos:]))
+    return "\n".join(out), n
+
+
 def render_fig(head, lines):
     """図・部品ブロック。
     :::flow 見出し      行: 見出し | 補足            (手順の流れ)
@@ -219,10 +241,12 @@ def render_fig(head, lines):
     cap = f"<figcaption>{inline(title)}</figcaption>" if title else ""
     if kind == "prompt":
         text = "\n".join(lines).strip("\n")
+        code, n = mark_placeholders(text)
+        bar = f"色のついた{n}か所を書き換えてから使います" if n else "そのまま貼って使えます"
         return (f'<figure class="fig fig-prompt">{cap}<div class="prompt">'
-                f'<div class="prompt-bar"><span>そのまま貼って使えます</span>'
+                f'<div class="prompt-bar"><span>{bar}</span>'
                 f'<button type="button" class="copy" data-copy>コピー</button></div>'
-                f'<pre><code>{esc(text)}</code></pre></div></figure>')
+                f'<pre><code>{code}</code></pre></div></figure>')
     if kind == "svg":
         return f'<figure class="fig fig-svg">{cap}{chr(10).join(lines).strip()}</figure>'
     if kind == "output":
@@ -713,28 +737,57 @@ def render_index(tips, news, guides):
     <h1>{esc(CONFIG["name"])}</h1>
     <p class="sub">{esc(CONFIG["subtitle"])}</p>
     <p class="lead">Claudeには、使い始めたときには気づきにくい使い方がたくさんあります。ここでは、1つの使い方を、手順、そのまま貼って使えるプロンプト、つまずきやすい点まで、同じ形式で整理します。まず1つ、手を動かして試してみてください。</p>
-    <div class="howto">
-      <h2>探し方</h2>
+    <p class="quick"><a href="cheatsheet.html">プロンプト10個の早見表</a><a href="news/">Claude最新情報</a><a href="guides/">解説</a></p>
+  </div>
+  <section class="toc">
+    <h2>活用方法の一覧</h2>
+    <details class="howto">
+      <summary>探し方の説明を見る</summary>
       <dl>
         <dt>難易度</dt><dd>{level_chip("beginner")} 画面の操作だけで試せます。{level_chip("intermediate")} 設定や、複数の機能の組み合わせが要ります。</dd>
         <dt>目的</dt><dd>調べる、書く、作る、自動化する、整理する、学ぶ、のどれにあたるかです。</dd>
         <dt>使う機能</dt><dd>Projects、Artifacts、定期タスクなど、使う機能で絞れます。</dd>
         <dt>解説</dt><dd>手を動かす前に、機能やツールの違いを図と表で読みたいときのページです。</dd>
       </dl>
-    </div>
-  </div>
-  {latest}
-  {guide_block}
-  <section class="toc">
-    <h2>活用方法の一覧</h2>
+    </details>
     {finder}
     <ul class="card-list" id="tip-list">{"".join(card(t, "") for t in tl)}</ul>
     <p class="f-empty" id="f-empty" hidden>条件に合うものがありません。条件をゆるめてみてください。</p>
   </section>
+  {latest}
+  {guide_block}
   {share_block(CONFIG["name"], "")}
   {ad_slot()}
 </div>"""
     return layout(CONFIG["name"], CONFIG["description"], body, "", "", full_title=CONFIG.get("home_title"))
+
+
+CHEAT = ["summarize-long-text", "email-draft-with-purpose", "tone-rewrite", "meeting-notes-to-actions", "ask-claude-to-ask-you",
+         "explain-like-teacher", "web-search-fact-check", "quiz-yourself", "trip-plan-by-day", "image-read-receipt"]
+
+
+def render_cheatsheet(tips):
+    items = []
+    for i, slug in enumerate([c for c in CHEAT if c in tips], 1):
+        t = tips[slug]
+        text = first_prompt(t["body"])
+        if not text:
+            continue
+        code, _ = mark_placeholders(text)
+        items.append(f'<section class="cheat"><h2>{i}. {esc(t["title"])}</h2>'
+                     f'<div class="prompt"><div class="prompt-bar"><span>色のついた部分を書き換えてから使います</span>'
+                     f'<button type="button" class="copy" data-copy>コピー</button></div><pre><code>{code}</code></pre></div>'
+                     f'<p class="more"><a href="tips/{esc(slug)}.html">手順とつまずきやすい点を読む</a></p></section>')
+    title = f"すぐ試せるプロンプト{len(items)}個の早見表"
+    desc = f"Claudeにそのまま貼って試せるプロンプトを{len(items)}個、1ページにまとめました。要約、メール、言い換え、やることの整理、調べものなど。印刷や保存にも使えます。"
+    page = f"""<div class="wrap article cheatsheet">
+  <div class="cover"><h1>{title}</h1>
+  <p class="summary">初心者向けの活用方法から、プロンプトだけを1ページにまとめました。色のついた部分を、自分の内容に書き換えて使います。</p>
+  <p class="noprint"><button type="button" class="copy" onclick="window.print()">このページを印刷する</button></p></div>
+  {"".join(items)}
+  <p class="noprint" style="margin-top:2.5rem"><a href="./">ホームにもどる</a></p>
+</div>"""
+    return layout(title, desc, page, "", "cheatsheet.html")
 
 
 def render_news_index(news):
@@ -851,7 +904,7 @@ def render_sitemap(tips, news, guides, tag_pages):
         return str(it.get("updated", "")) if it else ""
     dates = [str(x.get("updated", "")) for c in (tips, news, guides) for x in items_of(c) if isinstance(x, dict)]
     latest = max([d for d in dates if d] or [""])
-    urls = [(base, latest), (base + "guides/", latest), (base + "news/", latest), (base + "tags/", latest), (base + "glossary/", latest)]
+    urls = [(base, latest), (base + "guides/", latest), (base + "news/", latest), (base + "tags/", latest), (base + "glossary/", latest), (base + "cheatsheet.html", latest)]
     urls += [(f"{base}guides/{s}.html", mod(guides, s)) for s in guides_slugs(guides)]
     urls += [(f"{base}tips/{s}.html", mod(tips, s)) for s in guides_slugs(tips)]
     urls += [(f"{base}news/{s}.html", mod(news, s)) for s in guides_slugs(news)]
@@ -888,6 +941,7 @@ def build():
     DOCS.mkdir(exist_ok=True)
     (DOCS / ".nojekyll").write_text("", encoding="utf-8")
     (DOCS / "index.html").write_text(render_index(tips, news, guides), encoding="utf-8")
+    (DOCS / "cheatsheet.html").write_text(render_cheatsheet(tips), encoding="utf-8")
     write_dir(DOCS / "tips", {f"{s}.html": render_tip(t, tips) for s, t in tips.items()})
     write_dir(DOCS / "news", {"index.html": render_news_index(news), **{f"{s}.html": render_news(n, tips) for s, n in news.items()}})
     write_dir(DOCS / "guides", {"index.html": render_guides_index(guides), **{f"{s}.html": render_guide(g, tips) for s, g in guides.items()}})

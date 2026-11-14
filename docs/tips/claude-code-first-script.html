@@ -51,7 +51,7 @@
 1. python3 -m pytest -q
 2. python3 summarize_expenses.py expenses.csv
 3. python3 summarize_expenses.py(引数なし)
-テストが失敗したら、原因を説明してから直し、もう一度実行してください。実行していないことを「確認しました」と書かないでください。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>3. 手で確かめたあとの、見直し</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>手で計算したところ、(ここに、合わない数字を書く)でした。出力は(ここに、出力を貼る)です。
+テストが失敗したら、原因を説明してから直し、もう一度実行してください。実行していないことを「確認しました」と書かないでください。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>3. 手で確かめたあとの、見直し</figcaption><div class="prompt"><div class="prompt-bar"><span>色のついた2か所を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>手で計算したところ、<mark class="ph">(ここに、合わない数字を書く)</mark>でした。出力は<mark class="ph">(ここに、出力を貼る)</mark>です。
 どこが違うかを調べて、原因を説明してください。直す前に、その原因を確かめるテストを先に追加してください。</code></pre></div></figure></section><section id="s5"><h2>実際の出力例</h2><p>このプロンプトの1と2と同じ内容で、スクリプトとテストを作り、実行した結果です。作った環境は、Claude Codeの画面ではなく、クラウド上の作業場所で、Claudeが書いて、そのまま実行したものです。画面や、Claudeの説明の言い回しは、Claude Codeとは違います。コードは毎回同じにはなりません。CSVは、本文の4列の形で、6行の作り物です。</p><figure class="fig fig-output"><figcaption>python3 -m pytest -q と、スクリプトの実行</figcaption><div class="output"><div class="output-bar"><span>実際に出力された例(実行のたびに結果は変わります)</span></div><pre><code>.                                                                        [100%]
 1 passed in 0.01s
 

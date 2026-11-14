@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>(function(){try{var m=location.search.match(/[?&]noga=([01])/),k="noga",id="G-MS9416YMMM";if(m){if(m[1]=="1")localStorage.setItem(k,"1");else localStorage.removeItem(k);var f=function(){var d=document.createElement("div");d.setAttribute("role","status");d.style.cssText="position:fixed;left:8px;right:8px;bottom:8px;z-index:99;padding:10px 14px;background:#222;color:#fff;border-radius:8px;font:14px sans-serif;text-align:center";d.textContent=m[1]=="1"?"この端末のブラウザを、アクセス解析から除外しました":"この端末のブラウザの、アクセス解析の除外をやめました";document.body.appendChild(d);setTimeout(function(){d.remove()},4000)};if(document.body)f();else addEventListener("DOMContentLoaded",f)}if(localStorage.getItem(k)=="1")window["ga-disable-"+id]=true}catch(e){}})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>すぐ試せるプロンプト10個の早見表 | あんなことこんなことClaude</title>
+<meta name="description" content="Claudeにそのまま貼って試せるプロンプトを10個、1ページにまとめました。要約、メール、言い換え、やることの整理、調べものなど。印刷や保存にも使えます。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/cheatsheet.html">
+<meta property="og:title" content="すぐ試せるプロンプト10個の早見表 | あんなことこんなことClaude">
+<meta property="og:description" content="Claudeにそのまま貼って試せるプロンプトを10個、1ページにまとめました。要約、メール、言い換え、やることの整理、調べものなど。印刷や保存にも使えます。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/cheatsheet.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<script src="assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="./">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="./">ホーム</a><a href="guides/">解説</a><a href="news/">Claude最新情報</a><a href="tags/">タグでさがす</a><a href="glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap article cheatsheet">
+  <div class="cover"><h1>すぐ試せるプロンプト10個の早見表</h1>
+  <p class="summary">初心者向けの活用方法から、プロンプトだけを1ページにまとめました。色のついた部分を、自分の内容に書き換えて使います。</p>
+  <p class="noprint"><button type="button" class="copy" onclick="window.print()">このページを印刷する</button></p></div>
+  <section class="cheat"><h2>1. 長い文章を貼って、要点と疑問点を出してもらう</h2><div class="prompt"><div class="prompt-bar"><span>色のついた部分を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の文章を読んで、答えてください。
+1. 要点を3つ。それぞれ、文章のどの部分(見出しや段落の冒頭)に書いてあるかも添えてください。
+2. 文章の中で、根拠が書かれていない主張や、数字の出どころが分からない部分を、疑問点として3つ以内で挙げてください。
+3. 私が最初に読み返すべき場所を1つ選び、理由を1文で書いてください。
+文章に書かれていないことは補わず、「書かれていません」と答えてください。
+
+<mark class="ph">(ここに文章を貼る。ファイルの場合は「添付したファイルを対象にしてください」と書く)</mark></code></pre></div><p class="more"><a href="tips/summarize-long-text.html">手順とつまずきやすい点を読む</a></p></section><section class="cheat"><h2>2. 相手と目的を伝えて、メールの下書きを作る</h2><div class="prompt"><div class="prompt-bar"><span>色のついた部分を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>メールの下書きを作ってください。
+- 相手: <mark class="ph">(例: 取引先の担当者。2回やりとりしたことがある)</mark>
+- 目的: <mark class="ph">(例: 来週の打ち合わせの日程を決めたい)</mark>
+- 伝えたい事実: <mark class="ph">(例: 候補は火曜午後と木曜午前。所要は1時間)</mark>
+- 避けたいこと: <mark class="ph">(例: 堅すぎる言い回し、長い前置き)</mark>
+- 長さ: 本文は5文以内
+- 文体: 丁寧だが、親しみのある文面
+書かれていない事実(日付、金額など)は補わず、「<mark class="ph">(ここに記入)</mark>」と空けてください。件名の案も2つ付けてください。</code></pre></div><p class="more"><a href="tips/email-draft-with-purpose.html">手順とつまずきやすい点を読む</a></p></section><section class="cheat"><h2>3. 同じ文章を、3つの言い方に書き分ける</h2><div class="prompt"><div class="prompt-bar"><span>色のついた部分を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の連絡を、3人の相手向けに書き分けてください。
+- 伝えたい内容: <mark class="ph">(例: 来週火曜の打ち合わせを、水曜の同じ時間に変えたい。理由は、私の資料の確認が間に合わないため)</mark>
+- 相手1: <mark class="ph">(例: 直属の上司)</mark>
+- 相手2: <mark class="ph">(例: 同じチームの同僚)</mark>
+- 相手3: <mark class="ph">(例: 取引先の担当者。2回やりとりしたことがある)</mark>
+条件:
+- 事実(日付、理由、お願い)は3つとも同じにして、言い方だけを変える。
+- 書かれていない事実は補わず、「<mark class="ph">(ここに記入)</mark>」と空ける。
+- 各文面は5文以内。
+最後に、3つの文面で、言い方をどう変えたかを1行ずつ書いてください。</code></pre></div><p class="more"><a href="tips/tone-rewrite.html">手順とつまずきやすい点を読む</a></p></section><section class="cheat"><h2>4. メモから、やることリストを取り出す</h2><div class="prompt"><div class="prompt-bar"><span>色のついた部分を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の打ち合わせのメモから、「やること」だけを取り出して、表にしてください。
+列は「やること / 担当 / 期限 / メモのどこに書いてあったか」です。
+条件:
+- 担当や期限が、メモに書かれていないときは、推測せず「未定」と書く。
+- メモに書かれていない、新しいやることは、足さない。
+- 「方向」「たぶん」など、決まっているか分からない言い方は、表とは別に「決まっていないこと」として、1行ずつ並べる。
+最後に、次の打ち合わせで確認したほうがよい点を、3つまで書いてください。
+--- ここからメモ ---
+<mark class="ph">(ここにメモを貼る)</mark></code></pre></div><p class="more"><a href="tips/meeting-notes-to-actions.html">手順とつまずきやすい点を読む</a></p></section><section class="cheat"><h2>5. 「質問してから答えて」と頼んで、条件を詰める</h2><div class="prompt"><div class="prompt-bar"><span>色のついた部分を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次のことをお願いしたいです。
+<mark class="ph">(ここに、やりたいことを一文で書く)</mark>
+
+すぐに答えず、まず私に質問してください。
+- 質問は5つまでにしてください。
+- 私がまだ決めていないこと、答えが大きく変わることを優先してください。
+- 1つの質問には、選べる例を2〜3個添えてください。
+- 私が答え終わるまで、案は出さないでください。</code></pre></div><p class="more"><a href="tips/ask-claude-to-ask-you.html">手順とつまずきやすい点を読む</a></p></section><section class="cheat"><h2>6. 分からない用語を、例え話で教えてもらう</h2><div class="prompt"><div class="prompt-bar"><span>色のついた部分を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の用語を教えてください。
+- 用語: <mark class="ph">(例: インフレ)</mark>
+- 私の立場: <mark class="ph">(例: 事務職。経済は学んでいない)</mark>
+- 知りたい理由: <mark class="ph">(例: ニュースの話題についていきたい)</mark>
+条件:
+- 最初に、3文以内の要約を書く。
+- 次に、私の立場に近い身近な例え話を1つ書く。
+- 例え話が当てはまらない点も、1つ書く。
+- 最後に、理解を確かめる問題を1問出す。答えは、私が答えるまで書かない。
+- 難しい言葉を使うときは、その場で一言で説明する。
+- 自信のないことは「確実ではありません」と書く。</code></pre></div><p class="more"><a href="tips/explain-like-teacher.html">手順とつまずきやすい点を読む</a></p></section><section class="cheat"><h2>7. Web検索で、気になる情報の裏付けを取る</h2><div class="prompt"><div class="prompt-bar"><span>色のついた部分を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の話が本当かどうか、Web検索を使って確かめてください。
+<mark class="ph">(ここに確かめたい話を貼る)</mark>
+
+進め方:
+1. まず、この話を「確かめられる主張」に1行ずつ分けてください。
+2. 主張ごとに、出典を2つ以上、URLつきで挙げてください。できれば公的機関や当事者の公式ページを優先してください。
+3. 主張ごとに、「確認できた」「確認できなかった」「出典どうしで食い違う」のどれかを付け、その理由を1文で書いてください。
+4. 確認できなかったことは、推測で埋めずに「確認できませんでした」と書いてください。
+5. 最後に、私が自分で出典を開くとき、いちばん先に見るべきページを1つ教えてください。</code></pre></div><p class="more"><a href="tips/web-search-fact-check.html">手順とつまずきやすい点を読む</a></p></section><section class="cheat"><h2>8. 資料からクイズを作って、自分で練習する</h2><div class="prompt"><div class="prompt-bar"><span>色のついた部分を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>添付した資料から、勉強用のクイズを作ってください。
+- 範囲: <mark class="ph">(例: 第2章「個人情報の取り扱い」)</mark>
+- 問題数: 10問
+- 形式: 4択。選択肢はA〜Dの4つ。
+- 難しさ: <mark class="ph">(例: 基本。用語の意味と、使い分けを中心に)</mark>
+条件:
+- 問題は資料に書かれている内容だけから作る。資料にないことは出さない。
+- 答えと解説は、私が10問すべてに答えるまで書かない。
+- 1問ずつ出して、私の答えを待つ。
+- 解説には、資料のどの見出しや章に書かれているかを添える。</code></pre></div><p class="more"><a href="tips/quiz-yourself.html">手順とつまずきやすい点を読む</a></p></section><section class="cheat"><h2>9. 旅行の予定を、1日ごとの表にして、雨の日の案も作る</h2><div class="prompt"><div class="prompt-bar"><span>色のついた部分を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の条件で、旅行の予定を、1日ごとの表にしてください。
+- 行き先: <mark class="ph">(例: 近場の温泉町)</mark>
+- 日数と人数: <mark class="ph">(例: 1泊2日、大人3人)</mark>
+- 出発と帰り: <mark class="ph">(例: 1日目の朝9時ごろ出発、2日目の夕方5時ごろ帰宅)</mark>
+- 行きたい場所: <mark class="ph">(例: 景色のよい場所、地元の食事、温泉)</mark>
+- 苦手なこと: <mark class="ph">(例: 長く歩きたくない、早起きは避けたい)</mark>
+- 予算の目安: <mark class="ph">(例: 1人あたり3万円まで)</mark>
+条件:
+- 表の列は「時間」「すること」「移動」「余白(分)」にする。
+- 予定の間に、15〜30分の余白を入れる。
+- 1日に入れる場所は、3つまで。
+- 営業時間、料金、予約の要否は、分からないので書かず、表のあとに「自分で確かめる項目」として、場所ごとにまとめる。
+- 最後に、雨の日の代わりの案を、1日ごとに1つずつ書く。</code></pre></div><p class="more"><a href="tips/trip-plan-by-day.html">手順とつまずきやすい点を読む</a></p></section><section class="cheat"><h2>10. 写真を渡して、書かれている内容を表にする</h2><div class="prompt"><div class="prompt-bar"><span>色のついた部分を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>添付したレシートの写真を読み取って、次の列の表にしてください。
+列: 日付、店名、品目、数量、単価、金額
+
+決まり:
+1. 読めない文字や、自信のない数字は、推測せずに「要確認」と書いてください。
+2. 表のあとに、金額の列を足した合計を出してください。
+3. レシートに書かれた合計(税込)と、足した合計を並べて、差があれば差額を書いてください。
+4. 差があるときは、どの行が怪しいかを、理由つきで1〜3行挙げてください。
+5. 品目の名前は、レシートの表記のまま写してください。言い換えないでください。</code></pre></div><p class="more"><a href="tips/image-read-receipt.html">手順とつまずきやすい点を読む</a></p></section>
+  <p class="noprint" style="margin-top:2.5rem"><a href="./">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
