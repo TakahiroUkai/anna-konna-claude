@@ -208,8 +208,13 @@ def to_blocks(md):
     return blocks
 
 
-PH_LINE = re.compile(r"^\s*[（(].*[）)]\s*$")
-PH_INLINE = re.compile(r"[（(](?:例[::]|ここに)[^（）()\n]*[）)]")
+PH_LINE = re.compile(r"^\s*[（(](?!\d+[）)]).*[）)]\s*$")
+PH_INLINE = re.compile(
+    r"(?<!「)[（(](?:例[::]|ここに)[^（）()\n]*[）)]"      # (例: …)(ここに…)
+    r"|[（(][^（）()\n]*(?:を|ここに)貼る[）)]"           # (…を貼る)
+    r"|(?<=[::])\s*[（(][^（）()\n]*[）)]\s*$"          # 「項目: (…)」で行が終わる
+    r"|[（(]例[）)][^\n]*$"                              # (例)… 行末まで
+    r"|[（(](?:話題の名前|テーマ)[）)]")                   # 「(話題の名前)」のような、かぎ括弧の中の差し替え
 
 
 def mark_placeholders(text):
@@ -223,7 +228,11 @@ def mark_placeholders(text):
             continue
         pos, buf = 0, ""
         for m in PH_INLINE.finditer(line):
-            buf += esc(line[pos:m.start()]) + '<mark class="ph">' + esc(m.group(0)) + "</mark>"
+            g = m.group(0)
+            pad = g[:len(g) - len(g.lstrip())]
+            buf += esc(line[pos:m.start()]) + esc(pad) + '<mark class="ph">' + esc(g.strip()) + "</mark>"
+            tail = g[len(g.rstrip()):]
+            buf += esc(tail)
             pos = m.end()
             n += 1
         out.append(buf + esc(line[pos:]))
@@ -773,16 +782,17 @@ def render_cheatsheet(tips):
         text = first_prompt(t["body"])
         if not text:
             continue
-        code, _ = mark_placeholders(text)
+        code, n = mark_placeholders(text)
+        bar = f"色のついた{n}か所を書き換えてから使います" if n else "そのまま貼って使えます"
         items.append(f'<section class="cheat"><h2>{i}. {esc(t["title"])}</h2>'
-                     f'<div class="prompt"><div class="prompt-bar"><span>色のついた部分を書き換えてから使います</span>'
+                     f'<div class="prompt"><div class="prompt-bar"><span>{bar}</span>'
                      f'<button type="button" class="copy" data-copy>コピー</button></div><pre><code>{code}</code></pre></div>'
                      f'<p class="more"><a href="tips/{esc(slug)}.html">手順とつまずきやすい点を読む</a></p></section>')
     title = f"すぐ試せるプロンプト{len(items)}個の早見表"
     desc = f"Claudeにそのまま貼って試せるプロンプトを{len(items)}個、1ページにまとめました。要約、メール、言い換え、やることの整理、調べものなど。印刷や保存にも使えます。"
     page = f"""<div class="wrap article cheatsheet">
   <div class="cover"><h1>{title}</h1>
-  <p class="summary">初心者向けの活用方法から、プロンプトだけを1ページにまとめました。色のついた部分を、自分の内容に書き換えて使います。</p>
+  <p class="summary">初心者向けの活用方法から、プロンプトだけを1ページにまとめました。色のついた部分があるときは、自分の内容に書き換えて使います。</p>
   <p class="noprint"><button type="button" class="copy" onclick="window.print()">このページを印刷する</button></p></div>
   {"".join(items)}
   <p class="noprint" style="margin-top:2.5rem"><a href="./">ホームにもどる</a></p>
