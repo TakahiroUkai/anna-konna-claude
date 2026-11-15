@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>(function(){try{var m=location.search.match(/[?&]noga=([01])/),k="noga",id="G-MS9416YMMM";if(m){if(m[1]=="1")localStorage.setItem(k,"1");else localStorage.removeItem(k);var f=function(){var d=document.createElement("div");d.setAttribute("role","status");d.style.cssText="position:fixed;left:8px;right:8px;bottom:8px;z-index:99;padding:10px 14px;background:#222;color:#fff;border-radius:8px;font:14px sans-serif;text-align:center";d.textContent=m[1]=="1"?"この端末のブラウザを、アクセス解析から除外しました":"この端末のブラウザの、アクセス解析の除外をやめました";document.body.appendChild(d);setTimeout(function(){d.remove()},4000)};if(document.body)f();else addEventListener("DOMContentLoaded",f)}if(localStorage.getItem(k)=="1")window["ga-disable-"+id]=true}catch(e){}})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>Claude Managed Agentsを、自社の環境で動かせる「セルフホスト版」が登場(申請制・開発者や組織向け) | あんなことこんなことClaude</title>
+<meta name="description" content="2026年11月12日付のAPIリリースノートで、Claude Managed Agentsを自社のインフラで動かせるセルフホスト版が案内されました。会話の履歴を自社のデータベースに置けます。利用はAnthropicの担当窓口への申請制で、個人の利用者が試す機能ではありません。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-12-self-hosted-managed-agents.html">
+<meta property="og:title" content="Claude Managed Agentsを、自社の環境で動かせる「セルフホスト版」が登場(申請制・開発者や組織向け) | あんなことこんなことClaude">
+<meta property="og:description" content="2026年11月12日付のAPIリリースノートで、Claude Managed Agentsを自社のインフラで動かせるセルフホスト版が案内されました。会話の履歴を自社のデータベースに置けます。利用はAnthropicの担当窓口への申請制で、個人の利用者が試す機能ではありません。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-12-self-hosted-managed-agents.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Claude Managed Agentsを、自社の環境で動かせる「セルフホスト版」が登場(申請制・開発者や組織向け)", "description": "2026年11月12日付のAPIリリースノートで、Claude Managed Agentsを自社のインフラで動かせるセルフホスト版が案内されました。会話の履歴を自社のデータベースに置けます。利用はAnthropicの担当窓口への申請制で、個人の利用者が試す機能ではありません。", "datePublished": "2026-11-12", "dateModified": "2026-11-15", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/news/2026-11-12-self-hosted-managed-agents.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-12">
+<meta property="article:modified_time" content="2026-11-15">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc doc-news">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a> / <a href="./">Claude最新情報</a></p>
+    <p class="news-date">2026-11-12 の発表</p>
+    <h1>Claude Managed Agentsを、自社の環境で動かせる「セルフホスト版」が登場(申請制・開発者や組織向け)</h1>
+    <p class="summary">2026年11月12日付のAPIリリースノートで、Claude Managed Agentsを自社のインフラで動かせるセルフホスト版が案内されました。会話の履歴を自社のデータベースに置けます。利用はAnthropicの担当窓口への申請制で、個人の利用者が試す機能ではありません。</p>
+    <p class="stamp">2026-11-15 時点の情報 / 関連する機能: <a href="../tags/feature-claude-code.html">Claude Code</a></p>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">何が発表されたか</a></li><li><a href="#s2">できるようになること</a></li><li><a href="#s3">活用方法</a></li><li><a href="#s4">注意すること</a></li></ul>
+  </div>
+  <p>要点は3つです。Claudeに作業を任せる仕組み「Managed Agents」を、自社のサーバーで動かせるようになりました。会話の履歴などは、自社のデータベースに置けます。利用は、Anthropicの担当窓口への申請制です。</p><p>「AIに任せた作業の記録を、社外に置けない」と悩んでいる、情報システムの担当者に、そのまま見せられる内容です。個人の利用者が、すぐ試せる機能ではありません。</p><section id="s1"><h2>何が発表されたか</h2><p>公式のAPIリリースノートには、2026年11月12日付で、セルフホスト版のClaude Managed Agentsが始まったと書かれています。サービス全体を、自社のインフラで動かします。エージェント、セッション(1回の作業のまとまり)、その履歴は、自社で保存します。モデルへの依頼は、自社で選んだ提供元に送られます。初めの設定の送り先は、Anthropicです。</p><p>利用するには、Anthropicの担当窓口(アカウントチーム)に申し込みます。ベータや研究プレビューといった表示は、確認した公式のページには見つかりませんでした。料金も、確認できませんでした。</p></section><section id="s2"><h2>できるようになること</h2><p>公式のドキュメント(2026年11月15日に確認)には、置き場所の違いが、次のように整理されています。</p><figure class="fig fig-compare"><figcaption>図: 3つの動かし方(公式のドキュメントの整理)</figcaption><table><thead><tr><th scope="col">動かし方</th><th scope="col">作業の場所 / サービス / モデル</th></tr></thead><tbody><tr><td>クラウド版(初めの設定)</td><td>Anthropic / Anthropic / Anthropic</td></tr><tr><td>セルフホストのサンドボックス</td><td>自社 / Anthropic / Anthropic</td></tr><tr><td>セルフホスト版Managed Agents</td><td>自社 / 自社 / Anthropic、または自社で選んだ提供元</td></tr></tbody></table></figure><ul><li>自社で用意するもの: サーバー、データベース(PostgreSQL 16以降。無いと、再起動で記録が消える)、作業を実行する「ワーカー」、管理用の画面。</li><li>モデルの送り先: Anthropicのほか、Amazon Bedrock、Google Cloud上のClaude、Microsoft Foundry、自社のゲートウェイを選べると、公式のドキュメントに書かれています。</li><li>同じAPIで使えるため、公式のSDKとコマンドラインツールが、自社のサーバーに対しても使えます。</li></ul></section><section id="s3"><h2>活用方法</h2><p>個人の方は、使えません。ただ、組織で検討する人は、申し込む前に、次の4点を、社内で整理しておくと進めやすくなります。</p><figure class="fig fig-prompt"><figcaption>申し込み前の確認リストを作る</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の条件で、社内の情報システム担当に出す、確認リストを作ってください。
+条件: AIに任せた作業の履歴を、社外のサーバーに置けない部署がある。
+聞くこと(各1行で、理由を添える):
+(1)履歴を、自社のどこに、何日置くか。
+(2)モデルへの依頼に、何が含まれるか。
+(3)誰が、サーバーとデータベースを守るか。
+(4)問題が起きたとき、誰が止めるか。
+「公式の情報で確かめること」と「社内で決めること」を、分けて書いてください。分からないことは、「確認できません」と書いてください。</code></pre></div></figure></section><section id="s4" class="warn"><h2>注意すること</h2><ul><li>対象: 申請制です。公式のページには、審査の条件が書かれていません。</li><li>守る責任: 公式のドキュメントには、サーバー、データベース、ワーカー、ログの管理は、自社の担当になると書かれています。Anthropicは、サーバーやそのログに、遠隔でアクセスできない、とも書かれています。</li><li>送られるデータ: モデルの提供元がAnthropicのとき、1回ごとに、それまでの会話(依頼、道具への入力、結果)が送られます。送る内容を止める設定は、公式のドキュメントには書かれていませんでした。</li><li>履歴の保存: 履歴は、自社のデータベースに、削除するまで残ります。期間での自動削除は、書かれていませんでした。</li><li>作業の隔離: 公式のドキュメントには、ワーカーは、使い捨ての環境で動かす必要があると書かれています。</li><li>分けて運用する: 公式のドキュメントには、利用者や信頼の度合いごとに、別の環境を用意する、と書かれています。</li><li>確認できなかったこと: 料金、ベータかどうか、サポートの条件、クラウド版との機能の違い(「Differences from hosted」のページは、確認していません)。</li><li>機能や画面は変わることがあります。申し込み前に、公式のドキュメントで、最新の内容を確かめてください。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="learn" data-features="cowork claude-code chat" data-text="coworkとclaude codeの使い分けを、表と図で整理する coworkとclaude codeは、どちらも「作業を任せる」道具ですが、得意な仕事も、動く場所も、確認の出し方も違います。公式のヘルプとドキュメントをもとに、動き方、使い分け、メリットとデメリット、費用、安全面を、表と図で整理しました。 学ぶ cowork claude code 基本のチャット"><a class="card-title" href="../tips/cowork-vs-claude-code.html">CoworkとClaude Codeの使い分けを、表と図で整理する</a><p class="card-sum">CoworkとClaude Codeは、どちらも「作業を任せる」道具ですが、得意な仕事も、動く場所も、確認の出し方も違います。公式のヘルプとドキュメントをもとに、動き方、使い分け、メリットとデメリット、費用、安全面を、表と図で整理しました。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約20分</span><span class="chip">学ぶ</span><span class="chip chip-f">Cowork</span><span class="chip chip-f">Claude Code</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  <aside class="sister" aria-labelledby="sister-h"><h2 id="sister-h">あわせて読みたい</h2><p>Claudeで作業を速くしたあとは、副業・個人事業で稼ぐ方法を整理した<a href="https://takahiroukai.github.io/kasegi-torisetsu/" rel="noopener">稼ぎのトリセツ</a>も、読み物として役に立つかもしれません。</p></aside>
+  
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener" target="_blank">Claude Platform Docs「Release notes」(2026年11月12日の項目。セルフホスト版Managed Agentsの提供開始、申請の方法。2026年11月15日に確認)</a></li><li><a href="https://platform.claude.com/docs/en/managed-agents/self-hosted" rel="noopener" target="_blank">Claude Platform Docs「Self-hosted Managed Agents」(仕組み、置き場所の違い、必要なもの、外部への接続先。2026年11月15日に確認)</a></li><li><a href="https://platform.claude.com/docs/en/managed-agents/self-hosted-data-and-access" rel="noopener" target="_blank">Claude Platform Docs「Self-hosted Managed Agents: data and access」(送られるデータ、保存と削除、ZDRとの関係。2026年11月15日に確認)</a></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-12-self-hosted-managed-agents.html" data-title="Claude Managed Agentsを、自社の環境で動かせる「セルフホスト版」が登場(申請制・開発者や組織向け) | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-12-self-hosted-managed-agents.html&amp;text=Claude%20Managed%20Agents%E3%82%92%E3%80%81%E8%87%AA%E7%A4%BE%E3%81%AE%E7%92%B0%E5%A2%83%E3%81%A7%E5%8B%95%E3%81%8B%E3%81%9B%E3%82%8B%E3%80%8C%E3%82%BB%E3%83%AB%E3%83%95%E3%83%9B%E3%82%B9%E3%83%88%E7%89%88%E3%80%8D%E3%81%8C%E7%99%BB%E5%A0%B4%28%E7%94%B3%E8%AB%8B%E5%88%B6%E3%83%BB%E9%96%8B%E7%99%BA%E8%80%85%E3%82%84%E7%B5%84%E7%B9%94%E5%90%91%E3%81%91%29%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-12-self-hosted-managed-agents.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-12-self-hosted-managed-agents.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-12-self-hosted-managed-agents.html&amp;title=Claude%20Managed%20Agents%E3%82%92%E3%80%81%E8%87%AA%E7%A4%BE%E3%81%AE%E7%92%B0%E5%A2%83%E3%81%A7%E5%8B%95%E3%81%8B%E3%81%9B%E3%82%8B%E3%80%8C%E3%82%BB%E3%83%AB%E3%83%95%E3%83%9B%E3%82%B9%E3%83%88%E7%89%88%E3%80%8D%E3%81%8C%E7%99%BB%E5%A0%B4%28%E7%94%B3%E8%AB%8B%E5%88%B6%E3%83%BB%E9%96%8B%E7%99%BA%E8%80%85%E3%82%84%E7%B5%84%E7%B9%94%E5%90%91%E3%81%91%29%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="./">最新情報の一覧にもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>

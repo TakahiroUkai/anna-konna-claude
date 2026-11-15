@@ -833,5 +833,25 @@
   "link": [
    "ZDR"
   ]
+ },
+ {
+  "id": "managed-agents",
+  "term": "Managed Agents(マネージド エージェンツ)",
+  "reading": "まねーじど えーじぇんつ",
+  "category": "Claudeの機能",
+  "explain": "Claudeに作業を任せる仕組みを、APIで使えるようにしたものです。通常はAnthropicの側で動きますが、自社のサーバーで動かすセルフホスト版もあると、公式のドキュメントに書かれています。",
+  "link": [
+   "Managed Agents"
+  ]
+ },
+ {
+  "id": "self-hosted",
+  "term": "セルフホスト",
+  "reading": "せるふほすと",
+  "category": "セキュリティ",
+  "explain": "サービスを、事業者の側ではなく、自分たちの用意したサーバーで動かすことです。データの置き場所を自分で決められる一方、守る責任も自分たちが持ちます。",
+  "link": [
+   "セルフホスト"
+  ]
  }
 ]
