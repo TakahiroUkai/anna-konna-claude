@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>(function(){try{var m=location.search.match(/[?&]noga=([01])/),k="noga",id="G-MS9416YMMM";if(m){if(m[1]=="1")localStorage.setItem(k,"1");else localStorage.removeItem(k);var f=function(){var d=document.createElement("div");d.setAttribute("role","status");d.style.cssText="position:fixed;left:8px;right:8px;bottom:8px;z-index:99;padding:10px 14px;background:#222;color:#fff;border-radius:8px;font:14px sans-serif;text-align:center";d.textContent=m[1]=="1"?"この端末のブラウザを、アクセス解析から除外しました":"この端末のブラウザの、アクセス解析の除外をやめました";document.body.appendChild(d);setTimeout(function(){d.remove()},4000)};if(document.body)f();else addEventListener("DOMContentLoaded",f)}if(localStorage.getItem(k)=="1")window["ga-disable-"+id]=true}catch(e){}})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>文章の透かしの対象に、Opus 4.6、Opus 4.5、Sonnet 4.5、Haiku 4.5が挙げられました(2026年11月16日、API) | あんなことこんなことClaude</title>
+<meta name="description" content="2026年11月16日のClaude Platformのリリースノートに、Claude Opus 4.6、Opus 4.5、Sonnet 4.5、Haiku 4.5の文章にも、Anthropicの透かしが付くと載りました。透かしを付けたいときは、temperature、top_p、top_kを外す点も確認できました。チャット画面に付くかなどは、確認できませんでした。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-16-text-watermark-more-models.html">
+<meta property="og:title" content="文章の透かしの対象に、Opus 4.6、Opus 4.5、Sonnet 4.5、Haiku 4.5が挙げられました(2026年11月16日、API) | あんなことこんなことClaude">
+<meta property="og:description" content="2026年11月16日のClaude Platformのリリースノートに、Claude Opus 4.6、Opus 4.5、Sonnet 4.5、Haiku 4.5の文章にも、Anthropicの透かしが付くと載りました。透かしを付けたいときは、temperature、top_p、top_kを外す点も確認できました。チャット画面に付くかなどは、確認できませんでした。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-16-text-watermark-more-models.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "文章の透かしの対象に、Opus 4.6、Opus 4.5、Sonnet 4.5、Haiku 4.5が挙げられました(2026年11月16日、API)", "description": "2026年11月16日のClaude Platformのリリースノートに、Claude Opus 4.6、Opus 4.5、Sonnet 4.5、Haiku 4.5の文章にも、Anthropicの透かしが付くと載りました。透かしを付けたいときは、temperature、top_p、top_kを外す点も確認できました。チャット画面に付くかなどは、確認できませんでした。", "datePublished": "2026-11-16", "dateModified": "2026-11-17", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/news/2026-11-16-text-watermark-more-models.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-16">
+<meta property="article:modified_time" content="2026-11-17">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc doc-news">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a> / <a href="./">Claude最新情報</a></p>
+    <p class="news-date">2026-11-16 の発表</p>
+    <h1>文章の透かしの対象に、Opus 4.6、Opus 4.5、Sonnet 4.5、Haiku 4.5が挙げられました(2026年11月16日、API)</h1>
+    <p class="summary">2026年11月16日のClaude Platformのリリースノートに、Claude Opus 4.6、Opus 4.5、Sonnet 4.5、Haiku 4.5の文章にも、Anthropicの透かしが付くと載りました。透かしを付けたいときは、temperature、top_p、top_kを外す点も確認できました。チャット画面に付くかなどは、確認できませんでした。</p>
+    <p class="stamp">2026-11-17 時点の情報</p>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">何が発表されたか</a></li><li><a href="#s2">できるようになること</a></li><li><a href="#s3">活用方法</a></li><li><a href="#s4">注意すること</a></li></ul>
+  </div>
+  <p>要点は3つです。対象のモデルが4つ挙げられました。透かしは、文章の意味や読みやすさを変えない、と説明されています。付けたいときは、temperature、top_p、top_kを、リクエストから外します。</p><p>「自社のアプリで、古めのモデルを使い続けている」という開発者の人に、そのまま見せられる確認です。</p><section id="s1"><h2>何が発表されたか</h2><p>公式のリリースノートによると、2026年11月16日の項目に、Claude Opus 4.6、Opus 4.5、Sonnet 4.5、Haiku 4.5の文章に、Anthropicの文章の透かし(text watermark)が付く、と載りました。どのサービスで付くかは、ヘルプセンターの記事「How Claude marks AI-generated content」にあると、リリースノートに書かれています。</p><p>2026年11月3日の項目(別の記事で紹介)には、別のモデルが並んでいました。今回の項目は、それに続く、対象のモデルの追加として読めますが、「追加された」と公式が書いているかは、確認できませんでした。</p><p>公式の「Text watermark」のページには、透かしは、文章の意味、品質、読みやすさを変えず、トークン(Claudeが文章を数える単位)や、見えない文字を足さず、使っている人や組織の情報も含まない、と書かれています。リクエストの書き方や、返事の扱い方を変える必要はない、とも書かれています。</p></section><section id="s2"><h2>できるようになること</h2><p>この発表で、読者が新しくできることは、公式のページからは確認できませんでした。透かしを見つける方法や、誰が見つけられるのかは、読んだページに書かれていません。</p><p>分かるのは、次のことです。</p><ul><li>4つのモデルの文章にも、透かしが付く(対象のサービスは、ヘルプセンターの記事で確認が必要)。</li><li>見える文字や記号を足すものではない、と説明されている。</li><li>設定によっては、付かないことがある。</li></ul></section><section id="s3"><h2>活用方法</h2><p>APIでこれらのモデルを使っている人は、自分のコードが、次の設定を使っていないかを確かめられます。コードを探す作業は、Claude(Claude Codeなど)に頼めますが、<strong>変えるかどうかを決めるのは自分です。</strong></p><figure class="fig fig-compare"><figcaption>図: 確かめる設定と、確かめ方</figcaption><table><thead><tr><th scope="col">確かめること</th><th scope="col">確かめ方</th></tr></thead><tbody><tr><td>temperature、top_p、top_kを、自分で指定しているか</td><td>コードを検索して、ファイル名と行番号を出す</td></tr><tr><td>使っている枠組みが、自動で指定していないか</td><td>枠組みの設定と、実際に送られるリクエストの中身を見る</td></tr><tr><td>モデルの名前</td><td>リクエストの model の値を見る</td></tr></tbody></table></figure><figure class="fig fig-prompt"><figcaption>設定を使っている場所を、探してもらう</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>添付したコードは、Claude APIを呼び出すプログラムです。ファイルは変えずに、次のことを調べて報告してください。
+1. model に指定しているモデル名(ファイル名と行番号)
+2. temperature、top_p、top_k のどれかを、明示的に指定している場所(ファイル名と行番号)
+3. 使っているライブラリや枠組みが、これらを自動で指定している可能性があるか。確認できないものは「確認できませんでした」と書く
+4. 1〜3を、表にまとめる
+値は変えず、提案もしないでください。報告だけにしてください。</code></pre></div></figure></section><section id="s4" class="warn"><h2>注意すること</h2><ul><li>公式の「Text watermark」のページには、透かしを付けたいときは、temperature、top_p、top_kをリクエストから外す、と書かれています。どれかを標準以外の値にすると、付かないことがある、とも書かれています。枠組みが自動で付ける場合も含まれます。</li><li>設定を外すと、文章の雰囲気が変わることがあります。変えるときは、小さく試して、結果を見比べます。</li><li>透かしがあるかどうかを、読者が見分ける方法は、確認できませんでした。見分けられる前提で、文章を扱いません。</li><li>チャット画面のClaude、モバイルアプリ、Claude Codeで付くかどうかは、確認できませんでした。ヘルプセンターの記事は、今回も開けませんでした。</li><li>対象のプラン、地域、文章を書き換えたり翻訳したりしたときの扱いは、確認できませんでした。</li><li>透かしは、文章が正しいことの保証ではありません。事実は、出典で確かめます。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="research" data-features="search chat" data-text="web検索で、気になる情報の裏付けを取る 「本当かな?」と思った話を、そのまま信じも捨てもせずに、出典つきで確かめる方法です。主張を分けて、1つずつ出典をつけてもらい、最後は自分で出典を開いて確かめます。 調べる web検索 基本のチャット"><a class="card-title" href="../tips/web-search-fact-check.html">Web検索で、気になる情報の裏付けを取る</a><p class="card-sum">「本当かな?」と思った話を、そのまま信じも捨てもせずに、出典つきで確かめる方法です。主張を分けて、1つずつ出典をつけてもらい、最後は自分で出典を開いて確かめます。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約10分</span><span class="chip">調べる</span><span class="chip chip-f">Web検索</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  <aside class="sister" aria-labelledby="sister-h"><h2 id="sister-h">あわせて読みたい</h2><p>Claudeで作業を速くしたあとは、副業・個人事業で稼ぐ方法を整理した<a href="https://takahiroukai.github.io/kasegi-torisetsu/" rel="noopener">稼ぎのトリセツ</a>も、読み物として役に立つかもしれません。</p></aside>
+  
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://platform.claude.com/docs/en/release-notes/overview" rel="noopener" target="_blank">Claude Platform Docs「Release notes」(2026年11月16日の項目で、日付と対象のモデル、標準以外の設定で付かないことがある点を確認。2026年11月17日に確認)</a></li><li><a href="https://platform.claude.com/docs/en/build-with-claude/text-watermark" rel="noopener" target="_blank">Claude Platform Docs「Text watermark」(透かしの説明、トークンや見えない文字を足さないこと、temperature、top_p、top_kの注意を確認。2026年11月17日に確認)</a></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-16-text-watermark-more-models.html" data-title="文章の透かしの対象に、Opus 4.6、Opus 4.5、Sonnet 4.5、Haiku 4.5が挙げられました(2026年11月16日、API) | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-16-text-watermark-more-models.html&amp;text=%E6%96%87%E7%AB%A0%E3%81%AE%E9%80%8F%E3%81%8B%E3%81%97%E3%81%AE%E5%AF%BE%E8%B1%A1%E3%81%AB%E3%80%81Opus%204.6%E3%80%81Opus%204.5%E3%80%81Sonnet%204.5%E3%80%81Haiku%204.5%E3%81%8C%E6%8C%99%E3%81%92%E3%82%89%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F%282026%E5%B9%B411%E6%9C%8816%E6%97%A5%E3%80%81API%29%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-16-text-watermark-more-models.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-16-text-watermark-more-models.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-16-text-watermark-more-models.html&amp;title=%E6%96%87%E7%AB%A0%E3%81%AE%E9%80%8F%E3%81%8B%E3%81%97%E3%81%AE%E5%AF%BE%E8%B1%A1%E3%81%AB%E3%80%81Opus%204.6%E3%80%81Opus%204.5%E3%80%81Sonnet%204.5%E3%80%81Haiku%204.5%E3%81%8C%E6%8C%99%E3%81%92%E3%82%89%E3%82%8C%E3%81%BE%E3%81%97%E3%81%9F%282026%E5%B9%B411%E6%9C%8816%E6%97%A5%E3%80%81API%29%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="./">最新情報の一覧にもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
