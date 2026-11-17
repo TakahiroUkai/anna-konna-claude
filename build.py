@@ -850,7 +850,7 @@ def render_tags(tips, news, guides):
     <p class="crumb"><a href="../">ホーム</a> / <a href="./">タグでさがす</a></p>
     <p class="news-date">{KIND_NAME[kind]}</p>
     <h1>{esc(name)}</h1>
-    <p class="summary">{esc(desc)}。{len(hit)}件の活用方法があります。</p>
+    <p class="summary">{esc(desc.rstrip("。"))}。{len(hit)}件の活用方法があります。</p>
   </div>
   {lst}
   {gds}
