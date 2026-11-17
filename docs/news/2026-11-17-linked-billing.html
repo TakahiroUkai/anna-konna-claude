@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>(function(){try{var m=location.search.match(/[?&]noga=([01])/),k="noga",id="G-MS9416YMMM";if(m){if(m[1]=="1")localStorage.setItem(k,"1");else localStorage.removeItem(k);var f=function(){var d=document.createElement("div");d.setAttribute("role","status");d.style.cssText="position:fixed;left:8px;right:8px;bottom:8px;z-index:99;padding:10px 14px;background:#222;color:#fff;border-radius:8px;font:14px sans-serif;text-align:center";d.textContent=m[1]=="1"?"この端末のブラウザを、アクセス解析から除外しました":"この端末のブラウザの、アクセス解析の除外をやめました";document.body.appendChild(d);setTimeout(function(){d.remove()},4000)};if(document.body)f();else addEventListener("DOMContentLoaded",f)}if(localStorage.getItem(k)=="1")window["ga-disable-"+id]=true}catch(e){}})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>自分のアプリの利用料を、お客さん自身のClaude組織に払ってもらえる「リンクド・ビリング」がベータで始まりました(2026年11月17日、API) | あんなことこんなことClaude</title>
+<meta name="description" content="2026年11月17日のClaude Platformのリリースノートに、リンクド・ビリング(linked billing)のベータが載りました。開発者のアプリでClaudeのAPIを使った分の料金を、お客さんが自分のClaude組織経由で払える仕組みです。対象は、Anthropicに直接APIの料金を払っている組織です。ふつうのチャット利用者向けの機能ではありません。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-17-linked-billing.html">
+<meta property="og:title" content="自分のアプリの利用料を、お客さん自身のClaude組織に払ってもらえる「リンクド・ビリング」がベータで始まりました(2026年11月17日、API) | あんなことこんなことClaude">
+<meta property="og:description" content="2026年11月17日のClaude Platformのリリースノートに、リンクド・ビリング(linked billing)のベータが載りました。開発者のアプリでClaudeのAPIを使った分の料金を、お客さんが自分のClaude組織経由で払える仕組みです。対象は、Anthropicに直接APIの料金を払っている組織です。ふつうのチャット利用者向けの機能ではありません。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-17-linked-billing.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "自分のアプリの利用料を、お客さん自身のClaude組織に払ってもらえる「リンクド・ビリング」がベータで始まりました(2026年11月17日、API)", "description": "2026年11月17日のClaude Platformのリリースノートに、リンクド・ビリング(linked billing)のベータが載りました。開発者のアプリでClaudeのAPIを使った分の料金を、お客さんが自分のClaude組織経由で払える仕組みです。対象は、Anthropicに直接APIの料金を払っている組織です。ふつうのチャット利用者向けの機能ではありません。", "datePublished": "2026-11-17", "dateModified": "2026-11-18", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/news/2026-11-17-linked-billing.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-17">
+<meta property="article:modified_time" content="2026-11-18">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc doc-news">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a> / <a href="./">Claude最新情報</a></p>
+    <p class="news-date">2026-11-17 の発表</p>
+    <h1>自分のアプリの利用料を、お客さん自身のClaude組織に払ってもらえる「リンクド・ビリング」がベータで始まりました(2026年11月17日、API)</h1>
+    <p class="summary">2026年11月17日のClaude Platformのリリースノートに、リンクド・ビリング(linked billing)のベータが載りました。開発者のアプリでClaudeのAPIを使った分の料金を、お客さんが自分のClaude組織経由で払える仕組みです。対象は、Anthropicに直接APIの料金を払っている組織です。ふつうのチャット利用者向けの機能ではありません。</p>
+    <p class="stamp">2026-11-18 時点の情報</p>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">何が発表されたか</a></li><li><a href="#s2">できるようになること</a></li><li><a href="#s3">活用方法</a></li><li><a href="#s4">注意すること</a></li></ul>
+  </div>
+  <p>要点は3つです。開発者のアプリが使うClaudeの料金を、お客さん側のClaude組織に付けられるようになりました(ベータ)。お客さんは、月の上限額を決めて、いつでも連携を解除できます。対象は、Anthropicに直接APIの料金を払っている組織で、Claudeの個人向けプランだけの人は対象外です。</p><p>「自分で作ったAIアプリを配りたいが、利用料を全部自分で払うのは不安だ」という開発者の人に、そのまま見せられる発表です。</p><section id="s1"><h2>何が発表されたか</h2><p>公式のリリースノートによると、2026年11月17日に、リンクド・ビリング(linked billing)がベータで始まりました。公式のドキュメントには、お客さんが、自分のClaude組織を、開発者のアプリに1回つなぐ(連携する)と、アプリが使ったAPIの料金を、お客さんの組織が払えるようになる、と書かれています。</p><p>どちらが払うかは、アプリが、リクエストごとに指定します。ベータであるため、公式のドキュメントには、仕様が変わることがあり、本番の利用には向かない場合がある、と書かれています。</p></section><section id="s2"><h2>できるようになること</h2><p>公式のドキュメントから確かめられた内容です。</p><ul><li>アプリに「Claude組織を連携する」ボタンを置き、お客さんがClaudeにサインインして、アプリを承認する流れで連携します。</li><li>お客さんは、承認の画面で、アプリごとの月の上限額(米ドル)を決めます。いつでも、連携を解除できます。</li><li>お客さんが払う指定のリクエストが、お客さんに請求できないときは、開発者に請求せず、リクエストが拒否される、と書かれています。</li><li>連携を承認するのは、お客さんの組織の管理者(AdminまたはBilling)の人です。</li></ul></section><section id="s3"><h2>活用方法</h2><p>個人の利用者が、この機能を試せる場面は、確認できませんでした。対象は、APIでアプリを作る開発者と、そのお客さん(Claude Platformの組織)です。</p><p>試す前に、「自分のアプリのお客さんが、対象になるか」を確かめられます。</p><figure class="fig fig-compare"><figcaption>図: 対象になる・ならないの目安(公式の記載)</figcaption><table><thead><tr><th scope="col">対象になる</th><th scope="col">対象外</th></tr></thead><tbody><tr><td>Anthropicに直接APIの料金を払っている組織(前払いのクレジット、請求書払い)</td><td>AWS、Google Cloud、Azureのマーケットプレイス経由で払っている組織</td></tr><tr><td>お客さんがコンソールで買ったクレジットがある</td><td>Claudeの個人向けプラン(サブスクリプション)だけの組織</td></tr><tr><td></td><td>Max、Ultra、Teamのプランに付く月ごとのAPIクレジットだけで払うケース</td></tr></tbody></table></figure><figure class="fig fig-prompt"><figcaption>お客さんが対象になるかを確かめる</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次のお客さんが、Claudeのリンクド・ビリング(ベータ)の対象になるかを、整理してください。
+(1)お客さんの組織が、Anthropicに直接APIの料金を払っているか(前払い・請求書払い)。
+(2)AWS、Google Cloud、Azureのマーケットプレイス経由で払っていないか。
+(3)Claudeの個人向けプランだけで、APIの料金を払っていないか。
+私が書いていない情報は、推測で埋めず、「未確認」と書いてください。最後に、お客さんに確かめる質問を3つまで書いてください。
+【ここにお客さんの状況を貼る(社名や個人名は仮のものにする)】</code></pre></div></figure></section><section id="s4" class="warn"><h2>注意すること</h2><ul><li>ベータです。公式のドキュメントに、変わることがあると書かれています。</li><li>公式のドキュメントには、お客さんの側のデータ保持の設定(ゼロデータ保持など)や契約(BAA)、暗号化鍵の設定(CMEK)は、この方式のリクエストには適用されない、と書かれています。HIPAAやFERPAなどが必要なお客さんは、連携しないよう書かれています。</li><li>「お客さんが指示したリクエストだけをお客さん払いにする」判断は、APIでは確かめられず、開発者の責任だと書かれています。</li><li>成功した返事には、誰に請求されたかは書かれない、とされます。開発者の側で、記録を残す必要があります。</li><li>Message Batches(まとめて処理する機能)では、お客さんに請求できません。</li><li>お客さんが払うリクエストは、課金されるコード実行を使えません。</li><li>対象のプランや、日本での提供、料金の計算方法の細かい点は、確認できませんでした。実際に使う前に、公式のドキュメントで確かめてください。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="intermediate" data-purpose="build" data-features="claude-code" data-text="claude codeで、小さなスクリプトを作る claude codeに、小さなスクリプトを作らせる手順です。先に計画だけを出させ、テストで合否を確かめ、実行結果を見せてもらいます。ファイルを変える許可の出し方と、元に戻す方法まで書きました。 作る claude code"><a class="card-title" href="../tips/claude-code-first-script.html">Claude Codeで、小さなスクリプトを作る</a><p class="card-sum">Claude Codeに、小さなスクリプトを作らせる手順です。先に計画だけを出させ、テストで合否を確かめ、実行結果を見せてもらいます。ファイルを変える許可の出し方と、元に戻す方法まで書きました。</p><p class="chips"><span class="chip lv-intermediate">中級者向け</span><span class="chip">約25分</span><span class="chip">作る</span><span class="chip chip-f">Claude Code</span></p></li></ul></section>
+  <aside class="sister" aria-labelledby="sister-h"><h2 id="sister-h">あわせて読みたい</h2><p>Claudeで作業を速くしたあとは、副業・個人事業で稼ぐ方法を整理した<a href="https://takahiroukai.github.io/kasegi-torisetsu/" rel="noopener">稼ぎのトリセツ</a>も、読み物として役に立つかもしれません。</p></aside>
+  
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://platform.claude.com/docs/en/release-notes/overview.md" rel="noopener" target="_blank">Claude Platform Docs「Release notes」(2026年11月17日の項目で、ベータであること、課金の切り替えの指定、対象を直接払いの組織に限ることを確認。2026年11月18日に確認)</a></li><li><a href="https://platform.claude.com/docs/en/manage-claude/oauth-apps/organization-billing-connections" rel="noopener" target="_blank">Claude Platform Docs「Organization billing connections」(しくみ、対象、お客さん側の操作、上限額、制限、ベータの注意。2026年11月18日に確認)</a></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/news/2026-11-17-linked-billing.html" data-title="自分のアプリの利用料を、お客さん自身のClaude組織に払ってもらえる「リンクド・ビリング」がベータで始まりました(2026年11月17日、API) | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-17-linked-billing.html&amp;text=%E8%87%AA%E5%88%86%E3%81%AE%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%99%E3%82%92%E3%80%81%E3%81%8A%E5%AE%A2%E3%81%95%E3%82%93%E8%87%AA%E8%BA%AB%E3%81%AEClaude%E7%B5%84%E7%B9%94%E3%81%AB%E6%89%95%E3%81%A3%E3%81%A6%E3%82%82%E3%82%89%E3%81%88%E3%82%8B%E3%80%8C%E3%83%AA%E3%83%B3%E3%82%AF%E3%83%89%E3%83%BB%E3%83%93%E3%83%AA%E3%83%B3%E3%82%B0%E3%80%8D%E3%81%8C%E3%83%99%E3%83%BC%E3%82%BF%E3%81%A7%E5%A7%8B%E3%81%BE%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%282026%E5%B9%B411%E6%9C%8817%E6%97%A5%E3%80%81API%29%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-17-linked-billing.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-17-linked-billing.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Fnews%2F2026-11-17-linked-billing.html&amp;title=%E8%87%AA%E5%88%86%E3%81%AE%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%99%E3%82%92%E3%80%81%E3%81%8A%E5%AE%A2%E3%81%95%E3%82%93%E8%87%AA%E8%BA%AB%E3%81%AEClaude%E7%B5%84%E7%B9%94%E3%81%AB%E6%89%95%E3%81%A3%E3%81%A6%E3%82%82%E3%82%89%E3%81%88%E3%82%8B%E3%80%8C%E3%83%AA%E3%83%B3%E3%82%AF%E3%83%89%E3%83%BB%E3%83%93%E3%83%AA%E3%83%B3%E3%82%B0%E3%80%8D%E3%81%8C%E3%83%99%E3%83%BC%E3%82%BF%E3%81%A7%E5%A7%8B%E3%81%BE%E3%82%8A%E3%81%BE%E3%81%97%E3%81%9F%282026%E5%B9%B411%E6%9C%8817%E6%97%A5%E3%80%81API%29%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="./">最新情報の一覧にもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
