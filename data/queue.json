@@ -542,5 +542,24 @@
     "features": [
       "chat"
     ]
+  },
+  {
+    "slug": "desktop-app-first-run",
+    "title": "パソコン版Claudeを入れて、最初の1回を試す",
+    "level": "beginner",
+    "purpose": "learn",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "long-task-approval-and-report",
+    "title": "長い作業を任せる前に、「確認してほしい操作」と「最後の報告の形」を決める",
+    "level": "intermediate",
+    "purpose": "organize",
+    "features": [
+      "chat",
+      "cowork"
+    ]
   }
 ]
