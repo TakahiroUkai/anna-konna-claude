@@ -561,5 +561,97 @@
       "chat",
       "cowork"
     ]
+  },
+  {
+    "slug": "export-claude-data",
+    "title": "Claudeのデータを書き出して、手元に控えを残す",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "upload-limits-split-files",
+    "title": "大きな資料を、上限に合わせて分けて渡し、抜けを確かめる",
+    "level": "intermediate",
+    "purpose": "organize",
+    "features": [
+      "files",
+      "projects"
+    ]
+  },
+  {
+    "slug": "pdf-page-citation-check",
+    "title": "PDFの該当ページを、ページ番号つきで答えてもらい、自分で確かめる",
+    "level": "beginner",
+    "purpose": "research",
+    "features": [
+      "files"
+    ]
+  },
+  {
+    "slug": "chat-share-link-check",
+    "title": "チャットの共有リンクを作る前に、中身を点検する",
+    "level": "beginner",
+    "purpose": "learn",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "usage-limit-long-chat",
+    "title": "使用量の上限に当たる前に、長い会話を区切って引き継ぐ",
+    "level": "intermediate",
+    "purpose": "organize",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "connector-doc-search",
+    "title": "コネクタで、自分の文書から答えを探す前に、検索範囲を決める",
+    "level": "intermediate",
+    "purpose": "research",
+    "features": [
+      "connectors",
+      "search"
+    ]
+  },
+  {
+    "slug": "project-instructions-rewrite",
+    "title": "Projectの指示文を、動きを見ながら書き直す",
+    "level": "intermediate",
+    "purpose": "build",
+    "features": [
+      "projects"
+    ]
+  },
+  {
+    "slug": "artifact-update-and-check",
+    "title": "Artifactを更新して、前の版と見比べる",
+    "level": "intermediate",
+    "purpose": "build",
+    "features": [
+      "artifacts"
+    ]
+  },
+  {
+    "slug": "scheduled-task-failure-check",
+    "title": "定期タスクが失敗したときの、切り分けの順番",
+    "level": "intermediate",
+    "purpose": "automate",
+    "features": [
+      "scheduled"
+    ]
+  },
+  {
+    "slug": "skill-description-tune",
+    "title": "スキルの説明文を直して、呼ばれ方を確かめる",
+    "level": "intermediate",
+    "purpose": "automate",
+    "features": [
+      "skills"
+    ]
   }
 ]

@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>(function(){try{var m=location.search.match(/[?&]noga=([01])/),k="noga",id="G-MS9416YMMM";if(m){if(m[1]=="1")localStorage.setItem(k,"1");else localStorage.removeItem(k);var f=function(){var d=document.createElement("div");d.setAttribute("role","status");d.style.cssText="position:fixed;left:8px;right:8px;bottom:8px;z-index:99;padding:10px 14px;background:#222;color:#fff;border-radius:8px;font:14px sans-serif;text-align:center";d.textContent=m[1]=="1"?"この端末のブラウザを、アクセス解析から除外しました":"この端末のブラウザの、アクセス解析の除外をやめました";document.body.appendChild(d);setTimeout(function(){d.remove()},4000)};if(document.body)f();else addEventListener("DOMContentLoaded",f)}if(localStorage.getItem(k)=="1")window["ga-disable-"+id]=true}catch(e){}})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>Claudeのデータを書き出して、手元に控えを残す | あんなことこんなことClaude</title>
+<meta name="description" content="Claudeの会話などのデータを書き出す(エクスポートする)手順と、公式のヘルプで確かめられた注意点を整理します。スマホのアプリからはできないこと、リンクの期限、含まれないものも書きます。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/export-claude-data.html">
+<meta property="og:title" content="Claudeのデータを書き出して、手元に控えを残す | あんなことこんなことClaude">
+<meta property="og:description" content="Claudeの会話などのデータを書き出す(エクスポートする)手順と、公式のヘルプで確かめられた注意点を整理します。スマホのアプリからはできないこと、リンクの期限、含まれないものも書きます。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/export-claude-data.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Claudeのデータを書き出して、手元に控えを残す", "description": "Claudeの会話などのデータを書き出す(エクスポートする)手順と、公式のヘルプで確かめられた注意点を整理します。スマホのアプリからはできないこと、リンクの期限、含まれないものも書きます。", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/tips/export-claude-data.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-20">
+<meta property="article:modified_time" content="2026-11-20">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>Claudeのデータを書き出して、手元に控えを残す</h1>
+    <p class="summary">Claudeの会話などのデータを書き出す(エクスポートする)手順と、公式のヘルプで確かめられた注意点を整理します。スマホのアプリからはできないこと、リンクの期限、含まれないものも書きます。</p>
+    <p class="stamp">2026-11-20 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約15分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-organize.html">整理する</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a></td></tr><tr><th scope="row">作れるもの</th><td>書き出しの手順と、届いたあとの確認項目をまとめた「控えを取るチェックリスト」</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">実際の出力例</a></li><li><a href="#s6">使いどころと失敗例</a></li><li><a href="#s7">うまくいかないとき</a></li></ul>
+  </div>
+  <p>要点は4つです。書き出しは、パソコン(ブラウザかパソコン版)から行います。スマホのアプリからはできません。ダウンロードのリンクは、メールで届き、24時間で切れます。元のアップロードファイルは含まれません。書き出したデータは、別のClaudeの個人アカウントには移せません。</p><p>「ふだんはスマホでしかClaudeを使っていない」という人が、いざというときに困らないための15分の手順です。</p><section id="s1"><h2>ねらい</h2><ul><li>書き出しの場所と手順を、一度やって覚えます。</li><li>届くものと、届かないものを知って、控えの取り方を決めます。</li><li>リンクの期限で慌てないよう、受け取る流れを決めます。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>パソコン。ブラウザか、パソコン版Claude(Claude Desktop。ブラウザの代わりに使えるアプリ)で、サインインしておきます。</li><li>Claudeに登録したメールアドレスを受け取れる環境。</li><li>控えを置く場所(自分のパソコンの、人に見られないフォルダ)。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 書き出しから、控えを置くまで</figcaption><ol class="flow"><li><strong>パソコンで開く</strong><span>ブラウザかパソコン版にサインイン</span></li><li><strong>設定を開く</strong><span>Settings &gt; Privacy</span></li><li><strong>書き出す</strong><span>「Export data」を押す</span></li><li><strong>メールを待つ</strong><span>少し遅れることがある</span></li><li><strong>すぐ保存する</strong><span>リンクは24時間で切れる</span></li></ol></figure><ol><li><strong>パソコンでClaudeを開きます。</strong> 公式のヘルプには、iOSやAndroidのアプリからは書き出せない、と書かれています。</li><li><strong>設定の「Privacy」を開き、「Export data」を押します。</strong> 場所は、公式のヘルプでは Settings &gt; Privacy と書かれています。</li><li><strong>メールを待ちます。</strong> 処理が終わると、アカウントのメールアドレスにダウンロードのリンクが届きます。少し遅れることがある、と書かれています。</li><li><strong>届いたら、すぐ保存します。</strong> リンクを開くにはサインインが要ります。リンクは作成から24時間で切れ、1回しか使えないことがある、と書かれています。</li><li><strong>保存したファイルを、人に見られない場所に置きます。</strong> 会話には、仕事や家のことが含まれることがあります。</li></ol><p>画面の表示は変わることがあります。</p><figure class="fig fig-compare"><figcaption>図: 書き出しに含まれるもの・含まれないもの(公式のヘルプをもとにした整理)</figcaption><table><thead><tr><th scope="col">項目</th><th scope="col">公式のヘルプの記載</th></tr></thead><tbody><tr><td>会話のデータ、アカウントのユーザーデータ</td><td>含まれる</td></tr><tr><td>共有したことのある音声の録音</td><td>含まれる</td></tr><tr><td>アップロードした元のファイル</td><td>含まれない</td></tr><tr><td>保存したPersonal Financeのダッシュボード</td><td>まだ含まれない</td></tr><tr><td><a class="term" href="../glossary/#term-project">Projects</a>、<a class="term" href="../glossary/#term-artifact">Artifacts</a>、<a class="term" href="../glossary/#term-memory">メモリ</a></td><td>記載がなく、確認できませんでした</td></tr></tbody></table></figure><aside class="note"><figcaption>用語の説明</figcaption><p><strong>エクスポート</strong>は、サービスの中にあるデータを、ファイルとして外に取り出すことです。この記事では、Claudeの会話などを、ダウンロードできる形にすることを指します。</p></aside></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>控えを取るチェックリストを作る</figcaption><div class="prompt"><div class="prompt-bar"><span>色のついた1か所を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の情報をもとに、「Claudeのデータを書き出す前後の、チェックリスト」を作ってください。
+・書き出しは、パソコンのブラウザかパソコン版から、Settings &gt; Privacy の「Export data」で行う。スマホのアプリからはできない。
+・ダウンロードのリンクは、メールで届く。サインインが要り、24時間で切れる。1回しか使えないことがある。
+・元のアップロードファイルは、含まれない。
+・書き出したデータは、別の個人アカウントには移せない。
+私の状況: 【ここに書く<mark class="ph">(例:スマホでしか使っていない。仕事の相談が多い。控えは年に1回取りたい)</mark>】
+条件: 「書き出す前」「届いたとき」「保存したあと」の3つに分け、各3項目以内にしてください。上に書いていないこと(ファイルの形式、含まれる範囲の細かい内容)は、推測で書かず、「確認できていません」と書いてください。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>保存した控えの置き場所を決める</figcaption><div class="prompt"><div class="prompt-bar"><span>色のついた1か所を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>書き出したデータを保存する場所を、決めたいです。次の条件で、置き場所の案を3つ、長所と短所つきで出してください。
+条件: 【ここに書く<mark class="ph">(例:家族と共有しているパソコンである。クラウドの保存先は使いたくない)</mark>】
+会話には、仕事や家のことが含まれる可能性があります。人に見られないための工夫も、1つずつ添えてください。</code></pre></div></figure></section><section id="s5"><h2>実際の出力例</h2><p>次は、1つ目の<a class="term" href="../glossary/#term-prompt">プロンプト</a>を、この記事を書いた環境のClaudeで実際に動かした結果です。状況は、記事のために作った架空のもので、「スマホでしか使っていない。仕事の相談が多い。控えは年に1回取りたい」としました。</p><figure class="fig fig-output"><figcaption>架空の状況での結果(出力されたチェックリスト)</figcaption><div class="output"><div class="output-bar"><span>実際に出力された例(実行のたびに結果は変わります)</span></div><pre><code>書き出す前
+・パソコンを用意し、ブラウザかパソコン版でサインインする(スマホのアプリからはできません)。
+・メールを受け取れるか確認する(リンクは、アカウントのメールに届きます)。
+・保存先のフォルダを決めておく(リンクは24時間で切れるため、届いたらすぐ保存します)。
+
+届いたとき
+・サインインした状態でリンクを開く(サインインが要ります)。
+・開けなかったら、同じ手順でもう一度書き出す(リンクは1回しか使えないことがあります)。
+・ダウンロードが終わったら、ファイルが開けるかを確かめる(ファイルの形式は確認できていません)。
+
+保存したあと
+・仕事の相談が含まれるため、人に見られない場所に置く。
+・アップロードしたファイルは含まれないので、必要なら元のファイルを別に残す。
+・次の書き出しの時期を、1年後の同じ時期に、カレンダーへ入れる。</code></pre></div></figure><p>この結果で、確かめた点です。入力に書いた事実だけが使われていること。「ファイルの形式」が、推測されずに「確認できていません」と書かれていること。各項目が3つ以内に収まっていること。</p></section><section id="s6"><h2>使いどころと失敗例</h2><p>向く場面は、いまの会話の内容を、手元に残しておきたいときや、アカウントの整理の前に控えを取りたいときです。</p><p>向かない場面は、別のClaudeの個人アカウントに、会話を移したいときです。公式のヘルプには、書き出したデータを別の個人アカウントに取り込むことはできない、と書かれています。</p><p>よくある失敗と、その直し方です。</p><ul><li><strong>スマホのアプリで探してしまう。</strong> 見つからないのは、正しい動きです。パソコンで開きます。</li><li><strong>リンクの期限が切れる。</strong> 届いたメールを、翌日に開くと、切れていることがあります。もう一度書き出せば、新しいリンクが作られます。</li><li><strong>元のファイルまで入っていると思う。</strong> アップロードした元のファイルは含まれません。大事な資料は、元のファイルを別に残します。</li><li><strong>Teamなどの組織のプランで、ボタンが見えない。</strong> 公式のヘルプでは、組織のオーナーが「Allow members to export their own data」を有効にしたときに、メンバーが自分のデータを書き出せる、と書かれています。ボタンが無いときは、オーナーに聞きます。</li></ul><aside class="note"><figcaption>確認できなかったこと</figcaption><p>公式のページには、ファイルの形式、大きさ、処理にかかる時間の目安が書かれていませんでした。また、Projects、Artifacts、メモリが含まれるかも、書かれていませんでした。届いたファイルを開いて、自分で確かめてください。</p></aside></section><section id="s7" class="trouble"><h2>うまくいかないとき</h2><ol><li><strong>「Export data」のボタンが見つからない。</strong> パソコンのブラウザかパソコン版で、Settings &gt; Privacy を開いているか確かめます。組織のプランの人は、オーナーの設定を確かめます。</li><li><strong>メールが届かない。</strong> 少し遅れることがある、と公式のヘルプに書かれています。迷惑メールのフォルダも見ます。それでも届かないときは、公式のヘルプセンターから、サポートに問い合わせます。</li><li><strong>リンクが開けない。</strong> サインインしているか、24時間以内か、すでに1回開いていないかを見ます。直らなければ、もう一度書き出します。</li><li><strong>届いたファイルで、探したい会話が見つからない。</strong> 含まれる範囲は、ヘルプに詳しく書かれていません。ファイルの形式も確認できていないため、ファイルの中身を、自分で見て確かめます。</li><li><strong>アカウントを閉じたために届いたリンクが、切れた。</strong> 公式のヘルプには、この場合は、書き出しをやり直せない、と書かれています。アカウントのデータが削除されると、再送もできなくなるため、早めにサポートへ連絡するよう書かれています。</li></ol></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="learn" data-features="chat" data-text="入力内容がaiの改善に使われるかの設定を、確かめて切り替える claudeの個人向けプランで、入力内容がモデルの改善に使われるかを切り替える設定の場所と、変えたあとの確かめ方をまとめます。 学ぶ 基本のチャット"><a class="card-title" href="../tips/check-training-setting.html">入力内容がAIの改善に使われるかの設定を、確かめて切り替える</a><p class="card-sum">Claudeの個人向けプランで、入力内容がモデルの改善に使われるかを切り替える設定の場所と、変えたあとの確かめ方をまとめます。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約10分</span><span class="chip">学ぶ</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  <aside class="sister" aria-labelledby="sister-h"><h2 id="sister-h">あわせて読みたい</h2><p>Claudeで作業を速くしたあとは、副業・個人事業で稼ぐ方法を整理した<a href="https://takahiroukai.github.io/kasegi-torisetsu/" rel="noopener">稼ぎのトリセツ</a>も、読み物として役に立つかもしれません。</p></aside>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/9450526-export-your-claude-data" rel="noopener" target="_blank">Claude ヘルプセンター「Export your Claude data」(書き出しの手順、対象のプラン、含まれるものと含まれないもの、ダウンロードリンクの期限、スマホからはできないこと、個人アカウント間の移行ができないことを確認。2026年11月20日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/export-claude-data.html" data-title="Claudeのデータを書き出して、手元に控えを残す | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fexport-claude-data.html&amp;text=Claude%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%9B%B8%E3%81%8D%E5%87%BA%E3%81%97%E3%81%A6%E3%80%81%E6%89%8B%E5%85%83%E3%81%AB%E6%8E%A7%E3%81%88%E3%82%92%E6%AE%8B%E3%81%99%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fexport-claude-data.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fexport-claude-data.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fexport-claude-data.html&amp;title=Claude%E3%81%AE%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%9B%B8%E3%81%8D%E5%87%BA%E3%81%97%E3%81%A6%E3%80%81%E6%89%8B%E5%85%83%E3%81%AB%E6%8E%A7%E3%81%88%E3%82%92%E6%AE%8B%E3%81%99%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
