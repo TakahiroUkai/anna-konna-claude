@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>(function(){try{var m=location.search.match(/[?&]noga=([01])/),k="noga",id="G-MS9416YMMM";if(m){if(m[1]=="1")localStorage.setItem(k,"1");else localStorage.removeItem(k);var f=function(){var d=document.createElement("div");d.setAttribute("role","status");d.style.cssText="position:fixed;left:8px;right:8px;bottom:8px;z-index:99;padding:10px 14px;background:#222;color:#fff;border-radius:8px;font:14px sans-serif;text-align:center";d.textContent=m[1]=="1"?"この端末のブラウザを、アクセス解析から除外しました":"この端末のブラウザの、アクセス解析の除外をやめました";document.body.appendChild(d);setTimeout(function(){d.remove()},4000)};if(document.body)f();else addEventListener("DOMContentLoaded",f)}if(localStorage.getItem(k)=="1")window["ga-disable-"+id]=true}catch(e){}})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>Projectの指示文を、動きを見ながら書き直す | あんなことこんなことClaude</title>
+<meta name="description" content="Projectの指示文(Claudeに毎回読ませる前提)を、書きっぱなしにせず、決まった質問で動きを見て直す方法です。指示文に書くべきこと、Claudeからは見えないもの、共有したときに人から見えるものを、公式のヘルプで確かめた範囲で整理します。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/project-instructions-rewrite.html">
+<meta property="og:title" content="Projectの指示文を、動きを見ながら書き直す | あんなことこんなことClaude">
+<meta property="og:description" content="Projectの指示文(Claudeに毎回読ませる前提)を、書きっぱなしにせず、決まった質問で動きを見て直す方法です。指示文に書くべきこと、Claudeからは見えないもの、共有したときに人から見えるものを、公式のヘルプで確かめた範囲で整理します。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/project-instructions-rewrite.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Projectの指示文を、動きを見ながら書き直す", "description": "Projectの指示文(Claudeに毎回読ませる前提)を、書きっぱなしにせず、決まった質問で動きを見て直す方法です。指示文に書くべきこと、Claudeからは見えないもの、共有したときに人から見えるものを、公式のヘルプで確かめた範囲で整理します。", "datePublished": "2026-11-22", "dateModified": "2026-11-22", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/tips/project-instructions-rewrite.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-22">
+<meta property="article:modified_time" content="2026-11-22">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>Projectの指示文を、動きを見ながら書き直す</h1>
+    <p class="summary">Projectの指示文(Claudeに毎回読ませる前提)を、書きっぱなしにせず、決まった質問で動きを見て直す方法です。指示文に書くべきこと、Claudeからは見えないもの、共有したときに人から見えるものを、公式のヘルプで確かめた範囲で整理します。</p>
+    <p class="stamp">2026-11-22 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-intermediate.html"><span class="chip lv-intermediate">中級者向け</span></a> 設定や考え方の理解が少し要る。いくつかの機能を組み合わせる。</td></tr><tr><th scope="row">所要時間</th><td>約25分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-build.html">作る</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-projects.html">Projects</a></td></tr><tr><th scope="row">作れるもの</th><td>同じ3つの質問で前後を見比べた「指示文の改訂メモ」と、直した指示文</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">実際の出力例</a></li><li><a href="#s6">使いどころと失敗例</a></li><li><a href="#s7">うまくいかないとき</a></li></ul>
+  </div>
+  <p>要点は3つです。指示文は、決まった3つの質問で、前と後を見比べて直します。名前と説明の欄は、Claudeから見えないので、必要な前提は指示文に書きます。共有する<a class="term" href="../glossary/#term-project">Project</a>の指示文には、人に見せられないことを書きません。</p><p>Projectを作ったものの、「指示を書いたはずなのに、毎回の答えがばらつく」と感じている人向けです。たとえば、チームの問い合わせ返信を、Projectで下書きしている人です。直すたびに「良くなった気がする」で終わると、いつの間にか悪くなっていても気づけません。</p><section id="s1"><h2>ねらい</h2><ul><li>指示文を、感覚ではなく、同じ質問での前後の比較で直します。</li><li>指示文に入れるものと、資料に入れるものを分けます。</li><li>共有や<a class="term" href="../glossary/#term-memory">メモリ</a>で起こりうる、情報の漏れを防ぎます。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>指示文を設定済みのProject(まず、今の指示文をそのままコピーして保存します)。</li><li>そのProjectで、答えを見たい質問を3つ。「よくある質問」「少し難しい質問」「資料に書かれていない質問」の3種類にします。</li><li>指示文を直したあとに、新しいチャットで試す時間。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 直しては試す、1周の流れ</figcaption><ol class="flow"><li><strong>今の指示文を保存する</strong><span>直す前の版を、別のメモにコピーする</span></li><li><strong>3つの質問を決める</strong><span>よくある・難しい・資料にない、の3種類</span></li><li><strong>新しいチャットで質問する</strong><span>3つとも、同じ文面で聞く</span></li><li><strong>答えを表にまとめる</strong><span>良かった点と困った点を、1行ずつ書く</span></li><li><strong>指示文を1か所だけ直す</strong><span>直す所を1つにして、また新しいチャットで試す</span></li></ol></figure><ol><li><strong>今の指示文を、別のメモに保存します。</strong> 公式のヘルプでは、指示は、Projectの画面で「Set project instructions」から書いて「Save instructions」で保存する、と書かれています。直したあとに、元に戻せるようにします。</li><li><strong>3つの質問を決め、メモに書きます。</strong> 毎回、同じ文面で聞きます。</li><li><strong>Projectの中で、新しいチャットを始めて、3つの質問をします。</strong> 公式のヘルプには、指示はProject内のチャットに使われる、と書かれています。すでにあるチャットに、直した指示がすぐ反映されるかは、確認できませんでした。必ず新しいチャットで試します。</li><li><strong>答えを、下の「見比べの表」に書きます。</strong> 良かった点と困った点を、1行ずつです。</li><li><strong>指示文を、1か所だけ直します。</strong> 一度に複数を直すと、どの直しが効いたか分かりません。</li><li><strong>新しいチャットで、同じ3つの質問をします。</strong> 前の表と見比べます。悪くなった質問があれば、直しを元に戻します。</li></ol><p>画面の表示は変わることがあります。</p><figure class="fig fig-compare"><figcaption>図: 見比べの表(自分用にコピーして使えます)</figcaption><table><thead><tr><th scope="col">質問の種類</th><th scope="col">直す前</th><th scope="col">直した後</th></tr></thead><tbody><tr><td>よくある質問</td><td>(答えの良かった点・困った点)</td><td>(同じ観点で)</td></tr><tr><td>少し難しい質問</td><td>(同じ観点で)</td><td>(同じ観点で)</td></tr><tr><td>資料に書かれていない質問</td><td>推測で答えていないか</td><td>推測で答えていないか</td></tr></tbody></table></figure><aside class="note"><figcaption>指示文に入れるもの、入れないもの</figcaption><p>指示文には、毎回守ってほしいこと(役割、答え方、分からないときの扱い)を書きます。長い資料や、よく変わる情報は、Projectの資料(ナレッジ)に入れます。公式のヘルプでは、Projectの名前と説明の欄について「Claudeはこれらの内容にアクセスできない」と書かれています。説明の欄にだけ書いた前提は、Claudeに伝わりません。</p></aside></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>指示文の弱点を見つけてもらう</figcaption><div class="prompt"><div class="prompt-bar"><span>色のついた1か所を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次は、私のProjectの指示文です。
+<mark class="ph">(指示文をここに貼る)</mark>
+このProjectでよくする質問は、次の3つです。
+1. 【よくある質問】
+2. 【少し難しい質問】
+3. 【資料に書かれていないはずの質問】
+条件:
+- 指示文の中で、あいまいな所、守られにくそうな所、矛盾している所を、それぞれ最大3つまで挙げてください。
+- 直し案は、1か所につき1つだけ書いてください。
+- 指示文に書いていないことを、推測で足さないでください。足したいときは「提案」と分けて書いてください。</code></pre></div></figure><figure class="fig fig-prompt"><figcaption>直した指示文を、3つの質問で確かめる</figcaption><div class="prompt"><div class="prompt-bar"><span>色のついた1か所を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の指示文があるものとして、3つの質問に、1つずつ答えてください。
+<mark class="ph">(直した指示文をここに貼る)</mark>
+質問1: 【よくある質問】
+質問2: 【少し難しい質問】
+質問3: 【資料に書かれていないはずの質問】
+最後に、指示文のどの行に従って答えたかを、質問ごとに1行で書いてください。</code></pre></div></figure></section><section id="s5"><h2>実際の出力例</h2><p>この記事を書いた環境では、読者のProjectと同じ条件で動かすことができませんでした。そのため、出力は載せません。作り話の出力を載せないためです。</p><p>自分のProjectで試すときの確かめ方です。</p><ul><li>「資料に書かれていない質問」で、推測せずに「資料にありません」と答えているかを見ます。推測で答えていたら、指示文に「資料にないことは、そう書く」の1行を足して、もう一度試します。</li><li>「指示文のどの行に従ったか」の答えが、実際の指示文の行と合っているかを見ます。合っていないときは、その指示が守られていない可能性があります。</li><li>直したあとに、元の指示文でうまくいっていた質問が悪くならなかったかを見ます。</li></ul></section><section id="s6"><h2>使いどころと失敗例</h2><p>向く場面は、同じProjectを何度も使い、答えの方向をそろえたいときです。たとえば、問い合わせの返信、議事録の整理、学習の相談です。</p><p>向かない場面は、1回きりの相談です。指示文を直す手間のほうが大きくなります。</p><p>安全面で気をつけることです。</p><ul><li><strong>共有するProjectには、人に見せられないことを書きません。</strong> 公式のヘルプでは、共有はTeamとEnterpriseの説明に書かれています。「閲覧可」の権限でも、中身、資料、指示、チャットが見えると書かれています。Free、Pro、Max、Ultraでの共有については、確認できませんでした。</li><li><strong>個人情報や、社外に出せない情報を、指示文に直接書きません。</strong> 必要なら、「個人名は伏せる」のような扱いのルールだけを書きます。</li><li><strong>メモリの影響に気づきにくい。</strong> 公式のヘルプには、Projectごとにメモリがあり、Projectの外のアカウントのメモリも使われる、と書かれています。ほかのProjectのメモリは使われません。ほかのProjectの影響を切り分けたいときは、Projectの画面で「Use account memory」を切ると書かれています。</li></ul><p>よくある失敗と、その直し方です。</p><ul><li><strong>指示が長くなりすぎて、守られない。</strong> 1つの指示を1行にして、優先度の低いものを削ります。</li><li><strong>直した所が複数で、何が効いたか分からない。</strong> 1周に1か所だけ直します。</li><li><strong>資料に書いてあるはずの内容を使わない。</strong> 質問に、資料の名前を入れて聞きます。</li></ul></section><section id="s7" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>指示が反映されないとき</strong>: 新しいチャットで試しているかを確かめます。すでにあるチャットに反映されるかは、確認できませんでした。</li><li><strong>前のチャットの内容を覚えていないとき</strong>: 公式のヘルプには、Project内でも、チャットの間で文脈は共有されず、共有したい情報はProjectの資料に入れる、と書かれています。</li><li><strong>資料が増えて、答えの質が落ちたとき</strong>: 公式のヘルプには、有料プランでは、資料が上限に近づくと、自動で容量を広げる仕組みが働く、と書かれています。上限の数字は、確認できませんでした。使わない資料は外します。</li><li><strong>指示文を、直前の版に戻したいとき</strong>: 手順1で保存した元の版を、貼り直します。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="organize" data-features="projects files" data-text="projectsに資料と指示を入れて、毎回の説明をなくす 同じ話題で何度もclaudeに相談するとき、背景の説明を毎回書き直さなくて済むように、資料と指示をprojectにまとめておく方法です。 整理する projects ファイルの読み込み"><a class="card-title" href="../tips/projects-knowledge.html">Projectsに資料と指示を入れて、毎回の説明をなくす</a><p class="card-sum">同じ話題で何度もClaudeに相談するとき、背景の説明を毎回書き直さなくて済むように、資料と指示をProjectにまとめておく方法です。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約15分</span><span class="chip">整理する</span><span class="chip chip-f">Projects</span><span class="chip chip-f">ファイルの読み込み</span></p></li></ul></section>
+  <aside class="sister" aria-labelledby="sister-h"><h2 id="sister-h">あわせて読みたい</h2><p>Claudeで作業を速くしたあとは、副業・個人事業で稼ぐ方法を整理した<a href="https://takahiroukai.github.io/kasegi-torisetsu/" rel="noopener">稼ぎのトリセツ</a>も、読み物として役に立つかもしれません。</p></aside>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/9519177-how-can-i-create-and-manage-projects" rel="noopener" target="_blank">Claude ヘルプセンター「How can I create and manage projects?」(指示の設定と保存の手順、指示がProject内のチャットに使われること、名前と説明はClaudeから見えないこと、チャット間で文脈が共有されないこと、Projectごとのメモリ、共有時の権限を確認。ページ上の日付は「2週間以上前に更新」という相対表記。2026年11月22日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/project-instructions-rewrite.html" data-title="Projectの指示文を、動きを見ながら書き直す | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fproject-instructions-rewrite.html&amp;text=Project%E3%81%AE%E6%8C%87%E7%A4%BA%E6%96%87%E3%82%92%E3%80%81%E5%8B%95%E3%81%8D%E3%82%92%E8%A6%8B%E3%81%AA%E3%81%8C%E3%82%89%E6%9B%B8%E3%81%8D%E7%9B%B4%E3%81%99%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fproject-instructions-rewrite.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fproject-instructions-rewrite.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fproject-instructions-rewrite.html&amp;title=Project%E3%81%AE%E6%8C%87%E7%A4%BA%E6%96%87%E3%82%92%E3%80%81%E5%8B%95%E3%81%8D%E3%82%92%E8%A6%8B%E3%81%AA%E3%81%8C%E3%82%89%E6%9B%B8%E3%81%8D%E7%9B%B4%E3%81%99%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
