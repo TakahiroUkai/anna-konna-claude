@@ -60,7 +60,7 @@ li { margin: .25rem 0; }
 .howto dl { margin: 0; }
 .howto dt { font-weight: 700; margin-top: .6rem; }
 .howto dd { margin: .15rem 0 0; color: var(--muted); font-size: .94rem; }
-.latest h2, .toc h2 { border-left: 6px solid var(--accent); padding-left: .6rem; }
+.first h2, .latest h2, .toc h2 { border-left: 6px solid var(--accent); padding-left: .6rem; }
 .more { margin-top: .4rem; font-size: .94rem; }
 
 /* チップ */

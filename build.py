@@ -741,6 +741,12 @@ def render_index(tips, news, guides):
     <label class="search">キーワード <input type="search" id="f-q" placeholder="例: スライド"></label>
     <p id="f-count" class="f-count" aria-live="polite"></p>
   </section>"""
+    first = [tips[x] for x in FIRST3 if x in tips]
+    first_block = ""
+    if first:
+        first_block = ('<section class="first"><h2>最初に試す3つ</h2>'
+                       '<p>どれから始めるか迷ったら、画面の操作だけで10分ほどで試せる、この3つからどうぞ。</p>'
+                       '<ul class="card-list">' + "".join(card(t, "") for t in first) + "</ul></section>")
     body = f"""<div class="wrap">
   <div class="cover">
     <h1>{esc(CONFIG["name"])}</h1>
@@ -748,6 +754,7 @@ def render_index(tips, news, guides):
     <p class="lead">Claudeには、使い始めたときには気づきにくい使い方がたくさんあります。ここでは、1つの使い方を、手順、そのまま貼って使えるプロンプト、つまずきやすい点まで、同じ形式で整理します。まず1つ、手を動かして試してみてください。</p>
     <p class="quick"><a href="cheatsheet.html">プロンプト10個の早見表</a><a href="news/">Claude最新情報</a><a href="guides/">解説</a></p>
   </div>
+  {first_block}
   <section class="toc">
     <h2>活用方法の一覧</h2>
     <details class="howto">
@@ -771,6 +778,7 @@ def render_index(tips, news, guides):
     return layout(CONFIG["name"], CONFIG["description"], body, "", "", full_title=CONFIG.get("home_title"))
 
 
+FIRST3 = ["summarize-long-text", "email-draft-with-purpose", "ask-claude-to-ask-you"]
 CHEAT = ["summarize-long-text", "email-draft-with-purpose", "tone-rewrite", "meeting-notes-to-actions", "ask-claude-to-ask-you",
          "explain-like-teacher", "web-search-fact-check", "quiz-yourself", "trip-plan-by-day", "image-read-receipt"]
 
