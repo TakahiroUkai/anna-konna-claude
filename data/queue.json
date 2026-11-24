@@ -653,5 +653,95 @@
     "features": [
       "skills"
     ]
+  },
+  {
+    "slug": "rewrite-for-reader",
+    "title": "読む人に合わせて、同じ文章を書き分ける",
+    "level": "beginner",
+    "purpose": "write",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "compare-two-options-table",
+    "title": "2つの選択肢を、表にして比べる",
+    "level": "beginner",
+    "purpose": "research",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "daily-plan-from-todo",
+    "title": "やることの山から、今日の予定を組む",
+    "level": "beginner",
+    "purpose": "organize",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "read-contract-points",
+    "title": "長い規約から、確認する点を拾う",
+    "level": "beginner",
+    "purpose": "research",
+    "features": [
+      "files"
+    ]
+  },
+  {
+    "slug": "meeting-prep-questions",
+    "title": "会議の前に、聞かれそうな質問を出しておく",
+    "level": "beginner",
+    "purpose": "write",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "connector-search-scope-check",
+    "title": "コネクタで探した結果が、範囲内かを確かめる",
+    "level": "intermediate",
+    "purpose": "research",
+    "features": [
+      "connectors"
+    ]
+  },
+  {
+    "slug": "project-instructions-test-set",
+    "title": "Projectの指示文を、試す依頼の表で確かめる",
+    "level": "intermediate",
+    "purpose": "organize",
+    "features": [
+      "projects"
+    ]
+  },
+  {
+    "slug": "artifact-data-storage-check",
+    "title": "Artifactの保存先(個人用・共有)を確かめてから使う",
+    "level": "intermediate",
+    "purpose": "build",
+    "features": [
+      "artifacts"
+    ]
+  },
+  {
+    "slug": "long-task-handoff-note",
+    "title": "長い作業を、次の会話に引き継ぐメモを作る",
+    "level": "intermediate",
+    "purpose": "organize",
+    "features": [
+      "chat"
+    ]
+  },
+  {
+    "slug": "skill-safety-review",
+    "title": "もらったスキルを、使う前に点検する",
+    "level": "intermediate",
+    "purpose": "automate",
+    "features": [
+      "skills"
+    ]
   }
 ]
