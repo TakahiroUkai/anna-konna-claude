@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>(function(){try{var m=location.search.match(/[?&]noga=([01])/),k="noga",id="G-MS9416YMMM";if(m){if(m[1]=="1")localStorage.setItem(k,"1");else localStorage.removeItem(k);var f=function(){var d=document.createElement("div");d.setAttribute("role","status");d.style.cssText="position:fixed;left:8px;right:8px;bottom:8px;z-index:99;padding:10px 14px;background:#222;color:#fff;border-radius:8px;font:14px sans-serif;text-align:center";d.textContent=m[1]=="1"?"この端末のブラウザを、アクセス解析から除外しました":"この端末のブラウザの、アクセス解析の除外をやめました";document.body.appendChild(d);setTimeout(function(){d.remove()},4000)};if(document.body)f();else addEventListener("DOMContentLoaded",f)}if(localStorage.getItem(k)=="1")window["ga-disable-"+id]=true}catch(e){}})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>読む人に合わせて、同じ文章を書き分ける | あんなことこんなことClaude</title>
+<meta name="description" content="同じ内容でも、読む人が変わると、伝わる書き方は変わります。「誰が」「どんな場面で」読むかをClaudeに伝えて、書き分けてもらう方法です。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/rewrite-for-reader.html">
+<meta property="og:title" content="読む人に合わせて、同じ文章を書き分ける | あんなことこんなことClaude">
+<meta property="og:description" content="同じ内容でも、読む人が変わると、伝わる書き方は変わります。「誰が」「どんな場面で」読むかをClaudeに伝えて、書き分けてもらう方法です。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/rewrite-for-reader.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "読む人に合わせて、同じ文章を書き分ける", "description": "同じ内容でも、読む人が変わると、伝わる書き方は変わります。「誰が」「どんな場面で」読むかをClaudeに伝えて、書き分けてもらう方法です。", "datePublished": "2026-11-26", "dateModified": "2026-11-26", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/tips/rewrite-for-reader.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-26">
+<meta property="article:modified_time" content="2026-11-26">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>読む人に合わせて、同じ文章を書き分ける</h1>
+    <p class="summary">同じ内容でも、読む人が変わると、伝わる書き方は変わります。「誰が」「どんな場面で」読むかをClaudeに伝えて、書き分けてもらう方法です。</p>
+    <p class="stamp">2026-11-26 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約15分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-write.html">書く</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a></td></tr><tr><th scope="row">作れるもの</th><td>同じお知らせ文を、「読む人」ごとに言葉と順番を変えて書き分けた文章</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">実際の出力例</a></li><li><a href="#s6">使いどころと失敗例</a></li><li><a href="#s7">うまくいかないとき</a></li></ul>
+  </div>
+  <p>結論から書きます。文章を頼むときは、「誰が、どんな場面で読むか」を1行足します。それだけで、同じ内容が、読む人に合った言葉と順番で返ってきます。</p><p>「同じお知らせを、新人にも、パソコンが苦手な親にも送りたい」という人に、この手順を渡せます。</p><section id="s1"><h2>ねらい</h2><ul><li>同じ内容の文章を、読む人ごとに書き分けます。</li><li>「読む人」の伝え方を、<a class="term" href="../glossary/#term-prompt">プロンプト</a>(Claudeへの依頼の文章)の型にします。</li><li>書き分けた文章が、元の内容を変えていないかを、自分で確かめます。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>書き分けたい文章が1つ(お知らせ、連絡、案内など)。</li><li>読む人を2種類。例:「初めて参加する人」と「パソコンが苦手な人」。</li><li>15分ほどの時間。ふつうのチャットだけで試せます。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 書き分ける流れ</figcaption><ol class="flow"><li><strong>元の文章を貼る</strong><span>内容は変えない前提で渡す</span></li><li><strong>読む人を書く</strong><span>誰が、どんな場面で読むか</span></li><li><strong>形を決める</strong><span>長さ、並べ方、口調</span></li><li><strong>返答を確かめる</strong><span>日付・場所・数字が元と同じか</span></li></ol></figure><ol><li><strong>元の文章を用意します。</strong> 日付、場所、数字、締め切りが入ったものが向きます。確かめやすいからです。</li><li><strong>読む人を、2種類決めます。</strong> 「新人」のような肩書きだけでなく、「社内の言葉をまだ知らない」のように、知っていることと知らないことも書きます。</li><li><strong>下のプロンプトを貼ります。</strong> 公式のヘルプには、背景を知らない人に頼むつもりで、文脈をできるだけ書くとよいと書かれています。読む人の情報は、その文脈にあたります。</li><li><strong>日付・場所・数字を、元の文章と見比べます。</strong> ここだけは、書き分けても変わってはいけません。</li><li><strong>足りなければ、続けて頼みます。</strong> 公式のヘルプには、返答を見て、追加で頼むとよいと書かれています。「もう少し短く」「専門用語を減らして」のように、1つずつ頼みます。</li></ol><figure class="fig fig-compare"><figcaption>図: 読む人の書き方の違い</figcaption><table><thead><tr><th scope="col"></th><th scope="col">弱い書き方</th><th scope="col">強い書き方</th></tr></thead><tbody><tr><td>読む人</td><td>新人向けに</td><td>入社1週間で、社内の略語を知らない人</td></tr><tr><td>場面</td><td>(書かない)</td><td>通勤中にスマホで読む</td></tr><tr><td>形</td><td>分かりやすく</td><td>3文以内。日付を最初に書く</td></tr></tbody></table></figure></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>同じお知らせを、2人の読む人向けに書き分ける</figcaption><div class="prompt"><div class="prompt-bar"><span>そのまま貼って使えます</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次のお知らせ文を、2人の読む人向けに、書き分けてください。
+【元の文章】
+【ここに、元のお知らせ文を貼る】
+読む人A:【例:今回が初参加で、社内の言葉をまだ知らない人。スマホで読む】
+読む人B:【例:パソコンが苦手で、手順を1つずつ知りたい人】
+条件:
+- 日付、時間、場所、数字、締め切りは、元の文章と同じにしてください。
+- どちらも、日付と「何をしてほしいか」を最初の1文に書いてください。
+- Aは3文以内、Bは手順を番号つきで書いてください。
+- 元の文章に無い情報は、足さないでください。足したくなったら、足さずに、聞いてください。
+最後に、元の文章と変えていない点を、日付・時間・場所・数字ごとに、表にしてください。</code></pre></div></figure></section><section id="s5"><h2>実際の出力例</h2><p>次は、上のプロンプトに、下の元の文章と読む人を入れて、Claudeに出してもらった結果です。画面や言い回しは、実行のたびに変わります。</p><p>元の文章:「11月30日(月)の定例会は、会議室の改修のため、オンライン開催に変更します。参加URLは前日までにメールします。資料は事前に共有フォルダへ入れてください。」</p><figure class="fig fig-output"><figcaption>読む人Aに向けた文章(初参加・スマホで読む)</figcaption><div class="output"><div class="output-bar"><span>実際に出力された例(実行のたびに結果は変わります)</span></div><pre><code>11月30日(月)の定例会は、オンラインで開きます。会議室が改修中のためです。
+参加用のURLは、前日までにメールで届きます。
+会議で使う資料は、「共有フォルダ」(チームの書類置き場)に、前もって入れておいてください。</code></pre></div></figure><figure class="fig fig-output"><figcaption>読む人Bに向けた文章(パソコンが苦手)</figcaption><div class="output"><div class="output-bar"><span>実際に出力された例(実行のたびに結果は変わります)</span></div><pre><code>11月30日(月)の定例会は、集まらずに、パソコンで参加する形に変わります。会議室を直す工事があるためです。
+やることは3つです。
+1. 前日までに、メールで「参加用のURL」が届きます。
+2. 当日、そのメールを開き、URLを押します。
+3. 会議で見せたい資料がある人は、前もって「共有フォルダ」に入れておきます。</code></pre></div></figure><p>見るところは、日付(11月30日・月曜)と、「前日まで」「前もって」が、元の文章と合っているかです。この例では、合っていることを確かめました。</p></section><section id="s6"><h2>使いどころと失敗例</h2><p>向く場面は、同じ連絡を、知っていることが違う人に送るときです。お知らせ、依頼、説明に向きます。</p><p>向かない場面は、法的な文書や、お金の条件のように、一字の違いが問題になる文章です。この場合は、書き分けず、元の文章を人が確かめて送ります。</p><p>よくある失敗と、その直し方です。</p><ul><li><strong>読む人を「初心者向け」とだけ書く。</strong> どこまで知っているかが伝わりません。「知っていること」と「知らないこと」を1つずつ書きます。</li><li><strong>書き分けたら、日付が変わっていた。</strong> プロンプトに「日付は元と同じに」と書き、最後に表で確かめさせます。それでも自分の目で見比べます。</li><li><strong>元の文章に無い情報が足されていた。</strong> 「足さないで、聞いてください」と書き足します。</li><li><strong>やさしくしすぎて、失礼な口調になった。</strong> 「丁寧で、子ども扱いしない口調で」と、口調を足して頼み直します。</li></ul></section><section id="s7" class="trouble"><h2>うまくいかないとき</h2><ul><li><strong>2つの文章が、ほとんど同じになるとき</strong>: 読む人の違いが小さいのかもしれません。「Aは3文以内、Bは番号つきの手順」のように、形の違いも指定します。</li><li><strong>長くなりすぎるとき</strong>: 文字数や文の数を、数字で指定します。「Aは3文以内」のようにです。</li><li><strong>自分の口調に合わないとき</strong>: 自分が前に書いた文章を2〜3個貼り、「この口調に合わせて」と頼みます。公式のドキュメントには、例を添えると口調や形がそろいやすいと書かれています。</li><li><strong>画面の表示は変わることがあります。</strong> この記事は、ふつうのチャットだけで使える方法です。特別な機能の設定は要りません。</li></ul></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="beginner" data-purpose="write" data-features="chat" data-text="同じ文章を、3つの言い方に書き分ける 伝える内容は同じでも、相手によって言い方は変わります。1つの連絡文を、相手別に3つの文面へ書き分けてもらい、違いを比べて選ぶ方法をまとめました。 書く 基本のチャット"><a class="card-title" href="../tips/tone-rewrite.html">同じ文章を、3つの言い方に書き分ける</a><p class="card-sum">伝える内容は同じでも、相手によって言い方は変わります。1つの連絡文を、相手別に3つの文面へ書き分けてもらい、違いを比べて選ぶ方法をまとめました。</p><p class="chips"><span class="chip lv-beginner">初心者向け</span><span class="chip">約10分</span><span class="chip">書く</span><span class="chip chip-f">基本のチャット</span></p></li></ul></section>
+  <aside class="sister" aria-labelledby="sister-h"><h2 id="sister-h">あわせて読みたい</h2><p>Claudeで作業を速くしたあとは、副業・個人事業で稼ぐ方法を整理した<a href="https://takahiroukai.github.io/kasegi-torisetsu/" rel="noopener">稼ぎのトリセツ</a>も、読み物として役に立つかもしれません。</p></aside>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://support.claude.com/en/articles/7996857-my-prompt-isn-t-giving-a-helpful-answer" rel="noopener" target="_blank">Claude ヘルプセンター「My prompt isn&#x27;t giving a helpful answer」(背景を知らない人に頼むつもりで、文脈をできるだけ書くこと、複雑な頼みを小分けにすること、返答を見て追加で頼むことを確認。ページ上の日付は2026年3月16日。2026年11月26日に確認)</a></li><li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/be-clear-and-direct" rel="noopener" target="_blank">Claude Platform Docs「Prompting best practices」(頼みの背景や理由を書くと、Claudeが狙いを汲みやすいこと、出力の形を具体的に指定すること、例を添えると形や口調がそろいやすいことを確認。ページ上の更新日は確認できなかった。2026年11月26日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/rewrite-for-reader.html" data-title="読む人に合わせて、同じ文章を書き分ける | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Frewrite-for-reader.html&amp;text=%E8%AA%AD%E3%82%80%E4%BA%BA%E3%81%AB%E5%90%88%E3%82%8F%E3%81%9B%E3%81%A6%E3%80%81%E5%90%8C%E3%81%98%E6%96%87%E7%AB%A0%E3%82%92%E6%9B%B8%E3%81%8D%E5%88%86%E3%81%91%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Frewrite-for-reader.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Frewrite-for-reader.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Frewrite-for-reader.html&amp;title=%E8%AA%AD%E3%82%80%E4%BA%BA%E3%81%AB%E5%90%88%E3%82%8F%E3%81%9B%E3%81%A6%E3%80%81%E5%90%8C%E3%81%98%E6%96%87%E7%AB%A0%E3%82%92%E6%9B%B8%E3%81%8D%E5%88%86%E3%81%91%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>

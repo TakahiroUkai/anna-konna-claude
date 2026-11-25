@@ -903,5 +903,15 @@
   "link": [
    "説明文(description)"
   ]
+ },
+ {
+  "id": "install-as-app",
+  "term": "Install as app(アプリとして入れる)",
+  "reading": "いんすとーる あず あっぷ",
+  "category": "Claudeの機能",
+  "explain": "作ったArtifactを、MacやWindowsのパソコンに、専用の窓で開くアプリとして入れる機能です。2026年11月時点ではベータです。権限は段階で決まり、公式の案内を確かめてから使います。",
+  "link": [
+   "Install as app"
+  ]
  }
 ]
