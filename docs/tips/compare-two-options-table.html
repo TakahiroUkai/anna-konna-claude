@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<script>(function(){try{var m=location.search.match(/[?&]noga=([01])/),k="noga",id="G-MS9416YMMM";if(m){if(m[1]=="1")localStorage.setItem(k,"1");else localStorage.removeItem(k);var f=function(){var d=document.createElement("div");d.setAttribute("role","status");d.style.cssText="position:fixed;left:8px;right:8px;bottom:8px;z-index:99;padding:10px 14px;background:#222;color:#fff;border-radius:8px;font:14px sans-serif;text-align:center";d.textContent=m[1]=="1"?"この端末のブラウザを、アクセス解析から除外しました":"この端末のブラウザの、アクセス解析の除外をやめました";document.body.appendChild(d);setTimeout(function(){d.remove()},4000)};if(document.body)f();else addEventListener("DOMContentLoaded",f)}if(localStorage.getItem(k)=="1")window["ga-disable-"+id]=true}catch(e){}})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-MS9416YMMM"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-MS9416YMMM');</script>
+<script>document.documentElement.className+=' js';</script>
+<title>2つの選択肢を、表にして比べる | あんなことこんなことClaude</title>
+<meta name="description" content="迷っている2つ(プラン、商品、進め方など)を、観点をそろえた表にして比べます。Claudeに表を作らせる前に、自分で決める観点を3つ書く、という手順です。">
+<link rel="canonical" href="https://takahiroukai.github.io/anna-konna-claude/tips/compare-two-options-table.html">
+<meta property="og:title" content="2つの選択肢を、表にして比べる | あんなことこんなことClaude">
+<meta property="og:description" content="迷っている2つ(プラン、商品、進め方など)を、観点をそろえた表にして比べます。Claudeに表を作らせる前に、自分で決める観点を3つ書く、という手順です。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://takahiroukai.github.io/anna-konna-claude/tips/compare-two-options-table.html">
+<meta property="og:site_name" content="あんなことこんなことClaude">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "2つの選択肢を、表にして比べる", "description": "迷っている2つ(プラン、商品、進め方など)を、観点をそろえた表にして比べます。Claudeに表を作らせる前に、自分で決める観点を3つ書く、という手順です。", "datePublished": "2026-11-27", "dateModified": "2026-11-27", "inLanguage": "ja", "mainEntityOfPage": "https://takahiroukai.github.io/anna-konna-claude/tips/compare-two-options-table.html", "author": {"@type": "Person", "name": "運営者"}, "publisher": {"@type": "Organization", "name": "あんなことこんなことClaude"}}</script>
+<meta property="article:published_time" content="2026-11-27">
+<meta property="article:modified_time" content="2026-11-27">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&amp;family=Noto+Serif+JP:wght@500;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<script src="../assets/app.js" defer></script>
+</head>
+<body>
+<header class="site-head">
+  <div class="wrap">
+    <a class="site-name" href="../">あんなことこんなことClaude</a>
+    <p class="site-tag">Claudeでできることを、1つずつ試す</p>
+    <nav class="site-nav" aria-label="メニュー"><a href="../">ホーム</a><a href="../guides/">解説</a><a href="../news/">Claude最新情報</a><a href="../tags/">タグでさがす</a><a href="../glossary/">用語解説</a></nav>
+  </div>
+</header>
+<main>
+<div class="wrap doc">
+  <div class="doc-head">
+    <p class="crumb"><a href="../">ホーム</a></p>
+    <h1>2つの選択肢を、表にして比べる</h1>
+    <p class="summary">迷っている2つ(プラン、商品、進め方など)を、観点をそろえた表にして比べます。Claudeに表を作らせる前に、自分で決める観点を3つ書く、という手順です。</p>
+    <p class="stamp">2026-11-27 時点の情報</p>
+    <table class="spec"><caption>仕様</caption><tbody><tr><th scope="row">難易度</th><td><a href="../tags/level-beginner.html"><span class="chip lv-beginner">初心者向け</span></a> Claudeを使い始めた人でも、画面の操作だけで試せる。</td></tr><tr><th scope="row">所要時間</th><td>約15分</td></tr><tr><th scope="row">目的</th><td><a href="../tags/purpose-research.html">調べる</a></td></tr><tr><th scope="row">使う機能</th><td><a href="../tags/feature-chat.html">基本のチャット</a></td></tr><tr><th scope="row">作れるもの</th><td>「比べる観点」と「決めるのは誰か」が見える、2つの選択肢の比較表</td></tr></tbody></table>
+    <ul class="inpage" aria-label="このページの内容"><li><a href="#s1">ねらい</a></li><li><a href="#s2">準備するもの</a></li><li><a href="#s3">手順</a></li><li><a href="#s4">そのまま使えるプロンプト</a></li><li><a href="#s5">実際の出力例</a></li><li><a href="#s6">使いどころと失敗例</a></li><li><a href="#s7">うまくいかないとき</a></li></ul>
+  </div>
+  <p>結論から書きます。2つを比べるときは、「比べる観点」を先に自分で3つ決めて、Claudeに渡します。観点を決めずに「比べて」と頼むと、表の行がClaudeの思いつきになり、自分が迷っている点に答えが届きません。</p><p>「どちらのプランにするか、家族や同僚に説明しなければいけない」という人に、そのまま見せられる手順です。</p><section id="s1"><h2>ねらい</h2><ul><li>迷っている2つを、同じ観点で並べた表にします。</li><li>「分かっていること」と「分からないこと」を、表の中で分けます。</li><li>最後に決めるのは自分、という線を残します。</li></ul></section><section id="s2"><h2>準備するもの</h2><ul><li>比べたい2つの名前(例: 2つの料金プラン、2つの習い事)。</li><li>自分にとって大事な観点を3つ(例: 月の費用、始めるまでの手間、やめやすさ)。</li><li>公式ページや説明書など、確かな情報の文章(あれば)。貼れば、それをもとに表を作らせられます。</li><li>個人情報や、社外に出せない情報は貼りません。</li></ul></section><section id="s3" class="steps"><h2>手順</h2><figure class="fig fig-flow"><figcaption>図: 比べる表ができるまで</figcaption><ol class="flow"><li><strong>2つと観点を決める</strong><span>比べたい2つと、大事な観点3つを書く</span></li><li><strong>情報を渡す</strong><span>公式の説明などの文章があれば貼る</span></li><li><strong>表にしてもらう</strong><span>観点を列にして、2つを並べさせる</span></li><li><strong>空欄を確かめる</strong><span>「不明」の行は、自分で調べる</span></li><li><strong>自分で決める</strong><span>表を見て、決める観点の順位をつける</span></li></ol></figure><ol><li><strong>観点を3つ書きます。</strong> 順番も決めます。迷ったとき、いちばん上の観点が決め手になります。</li><li><strong>情報を貼ります。</strong> 貼った文章に無いことは、「不明」と書かせます。この指定が、表の信頼度を左右します。</li><li><strong>表にしてもらいます。</strong> 下の<a class="term" href="../glossary/#term-prompt">プロンプト</a>を使います。</li><li><strong>「不明」を埋めます。</strong> Claudeの記憶で埋めた数字は、使いません。公式のページで確かめます。</li><li><strong>決めます。</strong> Claudeに「どちらがおすすめ」と聞く前に、自分の観点の順番で表を読み直します。</li></ol><p>画面の表示は変わることがあります。</p><figure class="fig fig-compare"><figcaption>図: 表にする前と後で、変わること</figcaption><table><thead><tr><th scope="col">頼み方</th><th scope="col">返ってきやすい表</th></tr></thead><tbody><tr><td>「AとBを比べて」とだけ頼む</td><td>行がClaudeの選んだ観点になり、自分の決め手が入らないことがある</td></tr><tr><td>観点3つと「不明と書く」を指定する</td><td>自分の観点で並び、分からない点が見える</td></tr></tbody></table></figure></section><section id="s4"><h2>そのまま使えるプロンプト</h2><figure class="fig fig-prompt"><figcaption>2つを、観点をそろえた表にする</figcaption><div class="prompt"><div class="prompt-bar"><span>色のついた2か所を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>次の2つを、表で比べてください。
+
+比べる2つ: <mark class="ph">(ここに、AとBの名前)</mark>
+大事な観点(この順番): (1)(観点1) (2)(観点2) (3)(観点3)
+使う情報: 下に貼った文章だけ。(貼らないときは「一般的に言えること」だけ)
+
+条件:
+- 表の列は「観点 / A / B / 根拠(どの文のどこか)」。
+- 貼った文章に書かれていない点は、推測せず「不明」と書く。
+- 表の後に、「不明」の行の一覧と、それを確かめられそうな場所を書く。
+- どちらがよいかの結論は書かない。観点1についてだけ、表から読める違いを1文で書く。
+
+<mark class="ph">(ここに、公式の説明などの文章を貼る)</mark></code></pre></div></figure><figure class="fig fig-prompt"><figcaption>表の見落としを点検する</figcaption><div class="prompt"><div class="prompt-bar"><span>色のついた1か所を書き換えてから使います</span><button type="button" class="copy" data-copy>コピー</button></div><pre><code>上の表を点検してください。
+(1)「根拠」の欄が空、または貼った文章に無い内容の行。
+(2)AとBで、数え方がそろっていない行<mark class="ph">(例: 片方は月額、片方は年額)</mark>。
+(3)私の観点に入っていないが、決める前に確かめたほうがよい点があれば、3つまで。
+直す前に、問題点だけを書いてください。</code></pre></div></figure></section><section id="s5"><h2>実際の出力例</h2><p>この記事を書いた環境では、上のプロンプトをClaudeで実際に動かして、結果を載せることができませんでした。そのため、作り話の出力は載せません。</p><p>自分で動かしたときは、次の3点で確かめます。</p><ul><li>表の「根拠」の欄を、貼った文章と見比べる。文章に無い根拠が書かれていたら、その行は使いません。</li><li>「不明」の行の数が、0になっていないか。0なら、Claudeが推測で埋めた可能性があります。「根拠の文を、そのまま引用して」と頼み直します。</li><li>AとBで、単位(月額・年額、税込・税別)がそろっているか。</li></ul></section><section id="s6"><h2>使いどころと失敗例</h2><p>向く場面は、2つか3つの選択肢を、少ない観点で比べたいときです。たとえば、料金プラン、2つのやり方、2つの会場です。</p><p>向かない場面は、選択肢が多いとき、または数字が最新でなければならないときです。価格や上限は変わるので、表の数字を、公式のページで必ず確かめます。</p><p>よくある失敗と、その直し方です。</p><ul><li><strong>表の観点が、自分の決め手とずれている。</strong> 「大事な観点(この順番)」を、プロンプトに書き直します。</li><li><strong>単位がそろっていない。</strong> 「金額は、月あたりに直して書く。計算の式も添える」と頼みます。</li><li><strong>「おすすめ」を聞いたら、理由が弱い。</strong> 表の「不明」が多いときは、結論を急がず、先に不明の行を調べます。</li><li><strong>貼った文章が古い。</strong> 文章の日付を、表の上に書き添えておきます。</li></ul><aside class="note"><figcaption>決めるのは自分です</figcaption><p>Claudeの表は、考える材料です。迷いが残るときは、「観点の順番」を入れ替えて、もう一度表を作らせると、自分が本当に大事にしている点が見えてきます。</p></aside></section><section id="s7" class="trouble"><h2>うまくいかないとき</h2><ol><li><strong>表の列が増えすぎる。</strong> 「列は4つだけ」と、数を指定します。</li><li><strong>2つの違いが、ほとんど出ない。</strong> 観点を、より具体的にします(「安い」より「月に3,000円以内」)。公式のヘルプにも、期待と違う答えが返るときは、依頼を具体的にする、という考え方が書かれています。</li><li><strong>「不明」ばかりになる。</strong> 貼った文章が、観点に答えていません。文章を足すか、観点を変えます。</li><li><strong>スマホで表が見づらい。</strong> 「行を、観点ごとのカード(箇条書き)に直して」と頼みます。</li><li><strong>数字が、公式と合わない。</strong> 公式のページを正とし、Claudeには「この数字で直して」と貼り直します。</li></ol></section>
+  
+  <section class="related"><h2>つぎに試すなら</h2><ul class="card-list"><li class="card" data-level="intermediate" data-purpose="research" data-features="search connectors" data-text="research機能で、複数の選択肢を比較する research機能は、複数回の検索を重ねて調べてくれますが、使うほど「どの情報源まで見に行ったか」が見えにくくなります。比べる基準を先に決め、コネクタの扱いを確認し、大事な点は自分で出典を開いて確かめる手順を、公式のヘルプをもとに整理しました。 調べる web検索 コネクタ"><a class="card-title" href="../tips/research-feature-compare.html">Research機能で、複数の選択肢を比較する</a><p class="card-sum">Research機能は、複数回の検索を重ねて調べてくれますが、使うほど「どの情報源まで見に行ったか」が見えにくくなります。比べる基準を先に決め、コネクタの扱いを確認し、大事な点は自分で出典を開いて確かめる手順を、公式のヘルプをもとに整理しました。</p><p class="chips"><span class="chip lv-intermediate">中級者向け</span><span class="chip">約25分</span><span class="chip">調べる</span><span class="chip chip-f">Web検索</span><span class="chip chip-f">コネクタ</span></p></li></ul></section>
+  <aside class="sister" aria-labelledby="sister-h"><h2 id="sister-h">あわせて読みたい</h2><p>Claudeで作業を速くしたあとは、副業・個人事業で稼ぐ方法を整理した<a href="https://takahiroukai.github.io/kasegi-torisetsu/" rel="noopener">稼ぎのトリセツ</a>も、読み物として役に立つかもしれません。</p></aside>
+  <section class="books"><h2>この内容を扱っている本</h2><ul class="book-list"><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術</a><div class="by">ソーテック社</div></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技</a><div class="by">リンクアップ(技術評論社)</div></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理</a><div class="by">秀和システム新社</div></li></ul></section>
+  <section class="sources"><h2>調べた情報源</h2><ul class="source-list"><li><a href="https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/be-clear-and-direct" rel="noopener" target="_blank">Claude Platform Docs「Prompting best practices」の「Be clear and direct」(具体的に頼む、目的や理由を添える、例を示す、という考え方の確認。2026年11月27日に確認)</a></li><li><a href="https://support.claude.com/en/articles/7996857-my-prompt-isn-t-giving-me-a-helpful-answer" rel="noopener" target="_blank">Claude ヘルプセンター「My prompt isn&#x27;t giving me a helpful answer」(答えが期待と違うときの見直し方の確認。2026年11月27日に確認)</a></li><li><a href="https://www.amazon.co.jp/s?k=9784800721631&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">はじめての生成AI Claude「超」活用術(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784800721631" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784297158385&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">今すぐ使えるかんたんEx Claude 仕事術&amp;時短技(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784297158385" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li><li><a href="https://www.amazon.co.jp/s?k=9784798077383&amp;tag=torisetsu99-22" rel="sponsored noopener" target="_blank">これからのAI×業務改善本格講座 Claude AIで超効率資料作成・情報整理(Amazonで見る)</a><span class="by">書誌情報の確認: <a href="https://www.maruzenjunkudo.co.jp/products/9784798077383" rel="noopener" target="_blank">丸善ジュンク堂書店</a></span></li></ul></section>
+  <aside class="share" aria-labelledby="share-h" data-url="https://takahiroukai.github.io/anna-konna-claude/tips/compare-two-options-table.html" data-title="2つの選択肢を、表にして比べる | あんなことこんなことClaude"><h2 id="share-h">このページを共有する</h2><ul class="share-list"><li><a class="share-btn share-x" href="https://x.com/intent/post?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcompare-two-options-table.html&amp;text=2%E3%81%A4%E3%81%AE%E9%81%B8%E6%8A%9E%E8%82%A2%E3%82%92%E3%80%81%E8%A1%A8%E3%81%AB%E3%81%97%E3%81%A6%E6%AF%94%E3%81%B9%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">X<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-line" href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcompare-two-options-table.html" target="_blank" rel="noopener noreferrer">LINE<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcompare-two-options-table.html" target="_blank" rel="noopener noreferrer">Facebook<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><a class="share-btn share-hb" href="https://b.hatena.ne.jp/add?mode=confirm&amp;url=https%3A%2F%2Ftakahiroukai.github.io%2Fanna-konna-claude%2Ftips%2Fcompare-two-options-table.html&amp;title=2%E3%81%A4%E3%81%AE%E9%81%B8%E6%8A%9E%E8%82%A2%E3%82%92%E3%80%81%E8%A1%A8%E3%81%AB%E3%81%97%E3%81%A6%E6%AF%94%E3%81%B9%E3%82%8B%20%7C%20%E3%81%82%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8%E3%81%93%E3%82%93%E3%81%AA%E3%81%93%E3%81%A8Claude" target="_blank" rel="noopener noreferrer">はてなブックマーク<span class="sr-only">で共有(新しいタブで開きます)</span></a></li><li><button type="button" class="share-btn share-copy">リンクをコピー</button></li><li class="share-native" hidden><button type="button" class="share-btn">その他のアプリで共有</button></li></ul><p class="share-status" role="status" aria-live="polite"></p></aside>
+  <p style="margin-top:2.5rem"><a href="../">ホームにもどる</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <p><strong>このサイトについて</strong> 個人が運営する非公式のサイトです。Anthropic社とは関係ありません。「Claude」はAnthropic社の商標です。</p>
+    <p><strong>ご利用にあたって</strong> 一般的な情報の整理であり、結果を保証するものではありません。機能、画面、料金、提供プランは変わることがあるため、各ページの出典(公式情報)と、お使いの画面で確認してください。AIの答えには誤りが含まれることがあります。大事な内容は、自分で確かめてから使ってください。</p>
+    <p><strong>広告について</strong> このサイトには、書籍紹介のアフィリエイトリンク(広告)が含まれます。リンク先で購入されると、運営者に報酬が入ることがあります。Amazonのアソシエイトとして、あんなことこんなことClaudeは適格販売により収入を得ています。</p>
+  </div>
+</footer>
+</body>
+</html>
