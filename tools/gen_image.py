@@ -48,9 +48,8 @@ def estimate_neurons(width, height, steps):
 
 def generate(account, token, item):
     url = f"https://api.cloudflare.com/client/v4/accounts/{account}/ai/run/{MODEL}"
+    # seed(乱数の種)は、公式の例にあるが、実際に送ると「許可されていない項目」として断られたため送らない
     body = {"prompt": item["prompt"], "steps": item.get("steps", 4)}
-    if "seed" in item:
-        body["seed"] = item["seed"]
     req = urllib.request.Request(
         url, data=json.dumps(body).encode("utf-8"), method="POST",
         headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
@@ -99,7 +98,7 @@ def main():
         w, h = jpeg_size(img)
         steps = it.get("steps", 4)
         results[it["id"]] = {
-            "prompt": it["prompt"], "steps": steps, "seed": it.get("seed"),
+            "prompt": it["prompt"], "steps": steps,
             "width": w, "height": h, "bytes": len(img),
             "seconds": round(time.time() - start, 1),
             "estimated_neurons": estimate_neurons(w, h, steps) if w and h else None,
