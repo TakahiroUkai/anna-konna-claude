@@ -1,19 +1,19 @@
 {
   "desk-steps4": {
-    "prompt": "A cozy wooden desk seen from above with an open laptop, a small notebook, a cup of tea and a potted plant, soft morning light, pastel colors, flat illustration style, no text",
+    "prompt": "A cozy wooden desk seen from above with an open laptop, a small notebook, a cup of tea and a potted plant, soft morning light, pastel colors, flat illustration style, no text, no logos or brand marks",
     "steps": 4,
     "width": 1024,
     "height": 1024,
-    "bytes": 436207,
-    "seconds": 2.5,
+    "bytes": 445942,
+    "seconds": 1.8,
     "estimated_neurons": 57.6
   },
   "desk-steps8": {
-    "prompt": "A cozy wooden desk seen from above with an open laptop, a small notebook, a cup of tea and a potted plant, soft morning light, pastel colors, flat illustration style, no text",
+    "prompt": "A cozy wooden desk seen from above with an open laptop, a small notebook, a cup of tea and a potted plant, soft morning light, pastel colors, flat illustration style, no text, no logos or brand marks",
     "steps": 8,
     "width": 1024,
     "height": 1024,
-    "bytes": 468118,
+    "bytes": 507969,
     "seconds": 2.3,
     "estimated_neurons": 96.0
   },
