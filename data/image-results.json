@@ -1,0 +1,38 @@
+{
+  "desk-steps4": {
+    "prompt": "A cozy wooden desk seen from above with an open laptop, a small notebook, a cup of tea and a potted plant, soft morning light, pastel colors, flat illustration style, no text",
+    "steps": 4,
+    "width": 1024,
+    "height": 1024,
+    "bytes": 436207,
+    "seconds": 2.5,
+    "estimated_neurons": 57.6
+  },
+  "desk-steps8": {
+    "prompt": "A cozy wooden desk seen from above with an open laptop, a small notebook, a cup of tea and a potted plant, soft morning light, pastel colors, flat illustration style, no text",
+    "steps": 8,
+    "width": 1024,
+    "height": 1024,
+    "bytes": 468118,
+    "seconds": 2.3,
+    "estimated_neurons": 96.0
+  },
+  "desk-ja": {
+    "prompt": "やわらかい朝の光が差す木の机の上に、ノートパソコンとノートと紅茶がある、パステル調のイラスト",
+    "steps": 4,
+    "width": 1024,
+    "height": 1024,
+    "bytes": 358334,
+    "seconds": 2.3,
+    "estimated_neurons": 57.6
+  },
+  "idea-bubble": {
+    "prompt": "Minimal flat illustration of a glowing light bulb next to a speech bubble on a pastel blue background, simple shapes, no text",
+    "steps": 4,
+    "width": 1024,
+    "height": 1024,
+    "bytes": 183190,
+    "seconds": 1.6,
+    "estimated_neurons": 57.6
+  }
+}
