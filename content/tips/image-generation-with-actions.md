@@ -19,6 +19,7 @@ sources:
 - GitHub Docs「Using secrets in GitHub Actions」(Secretsの登録の手順と注意。2026年11月28日に検索結果で確認) | https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/use-secrets
 - GitHub Docs「About the GITHUB_TOKEN」(書き込み権限の指定と、Pagesの公開についての注意。2026年11月28日に検索結果で確認) | https://docs.github.com/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token
 - Claude Code Docs「Configure cloud environments」(クラウドセッションの接続先の制限。2026年11月28日に検索結果で確認) | https://code.claude.com/docs/en/cloud-environments
+- GitHub Docs「GitHub Pages limits」(リポジトリ推奨1GB、公開サイト1GB、転送量の目安100GB/月。2026年11月28日に検索結果で確認) | https://docs.github.com/en/pages/getting-started-with-github-pages/github-pages-limits
 - Hugging Face「FLUX.1-schnell」(モデルのライセンス。2026年11月28日に検索結果で確認) | https://huggingface.co/black-forest-labs/FLUX.1-schnell
 ---
 
@@ -59,25 +60,54 @@ GitHub Actionsから呼ぶ | GitHubの実行環境 | 鍵の登録 | **採用。�
 
 他のサービスとの細かい料金比較は、この記録には載せていません。
 
+## 先に知っておく言葉
+
+このページでは、**説明文の一覧**という言葉が何度も出てきます。先に、その中身を見ておきます。
+
+:::compare 図: 出てくる言葉
+言葉 | 意味
+説明文 | 作りたい絵を言葉で書いたもの。AIへの注文書
+説明文の一覧 | 説明文を並べたファイル。名前は `data/image-prompts.json`。1件が1枚の絵の注文
+一覧が変わる | このファイルに、注文が1件足される(または書き換わる)こと
+Actions | GitHubが用意する自動実行の機能。決めた合図で、決めた作業を動かす
+:::
+
+:::output 一覧の中身の例(注文が1件の状態)
+[
+  { "id": "idea-bubble", "prompt": "a glowing light bulb next to a speech bubble, pastel blue background", "steps": 4 }
+]
+:::
+
+ここに「食べ物の絵」の注文を1件足して、GitHubに送ったとします。
+
+:::output 注文を1件足したあと(これが「一覧が変わる」)
+[
+  { "id": "idea-bubble", "prompt": "a glowing light bulb next to a speech bubble, pastel blue background", "steps": 4 },
+  { "id": "food", "prompt": "a plate of sushi, flat illustration, pastel colors, no text", "steps": 4 }
+]
+:::
+
+GitHubは、「このファイルが変わった」ことを合図に、Actionsを自動で動かします。すると、まだ絵がない注文(上の例では `food`)だけが、画像になります。
+
 ## 全体の流れ
 
 :::flow 図: 全体の流れ
 自分: トークンとIDを取る | Cloudflareで2つの値を控える
 自分: Secretsに登録する | Claudeには見せない
 Claude: 仕組みを作って送る | スクリプト、設定ファイル、説明文の一覧
-GitHub Actions: 画像を作る | 一覧が変わると自動で動き、保存する
+GitHub Actions: 画像を作る | 説明文の一覧に注文が足されると自動で動き、保存する
 Claude: 見て確かめて貼る | 問題のある画像は使わない
 :::
 
 ## 画像ができるまで
 
 :::svg 図: 5つのしくみのつながり(上から下へ進む)
-<svg viewBox="0 0 360 624" role="img" aria-label="画像ができるまで。自分が頼み、Claudeが説明文を書いて送り、GitHub Actionsが起動してCloudflareに説明文を送り、画像を受け取って保存し、Claudeが確かめてページに貼る"><rect x="12" y="8" width="336" height="64" rx="10" fill="#fdf3d8" stroke="#b8860b" stroke-width="2"/><circle cx="36" cy="40" r="13" fill="#b8860b"/><text x="36" y="45" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">1</text><text x="60" y="35" font-size="15" font-weight="700" fill="#141413">自分: 画像がほしいと頼む</text><text x="60" y="56" font-size="13" fill="#3d3d3a">最初に1回だけ、鍵もSecretsに登録</text><path d="M180 74 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 86 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="94" width="336" height="64" rx="10" fill="#f6e6dd" stroke="#c15f3c" stroke-width="2"/><circle cx="36" cy="126" r="13" fill="#c15f3c"/><text x="36" y="131" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">2</text><text x="60" y="121" font-size="15" font-weight="700" fill="#141413">Claude: 説明文を書いて送る</text><text x="60" y="142" font-size="13" fill="#3d3d3a">image-prompts.json をGitHubへ</text><path d="M180 160 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 172 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="180" width="336" height="64" rx="10" fill="#e6eef8" stroke="#3b6ea5" stroke-width="2"/><circle cx="36" cy="212" r="13" fill="#3b6ea5"/><text x="36" y="217" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">3</text><text x="60" y="207" font-size="15" font-weight="700" fill="#141413">GitHub: Actionsを自動で起動</text><text x="60" y="228" font-size="13" fill="#3d3d3a">その一覧が変わったことが合図</text><path d="M180 246 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 258 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="266" width="336" height="64" rx="10" fill="#e6eef8" stroke="#3b6ea5" stroke-width="2"/><circle cx="36" cy="298" r="13" fill="#3b6ea5"/><text x="36" y="303" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">4</text><text x="60" y="293" font-size="15" font-weight="700" fill="#141413">Actions: 説明文を1件ずつ送る</text><text x="60" y="314" font-size="13" fill="#3d3d3a">鍵はSecretsから読む(表に出ない)</text><path d="M180 332 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 344 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="352" width="336" height="64" rx="10" fill="#e4f2e4" stroke="#2f7d32" stroke-width="2"/><circle cx="36" cy="384" r="13" fill="#2f7d32"/><text x="36" y="389" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">5</text><text x="60" y="379" font-size="15" font-weight="700" fill="#141413">Cloudflare: 画像を作って返す</text><text x="60" y="400" font-size="13" fill="#3d3d3a">FLUX.1 schnell が1024×1024の絵に</text><path d="M180 418 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 430 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="438" width="336" height="64" rx="10" fill="#e6eef8" stroke="#3b6ea5" stroke-width="2"/><circle cx="36" cy="470" r="13" fill="#3b6ea5"/><text x="36" y="475" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">6</text><text x="60" y="465" font-size="15" font-weight="700" fill="#141413">Actions: 画像を保存する</text><text x="60" y="486" font-size="13" fill="#3d3d3a">リポジトリに自動でコミット</text><path d="M180 504 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 516 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="524" width="336" height="64" rx="10" fill="#f6e6dd" stroke="#c15f3c" stroke-width="2"/><circle cx="36" cy="556" r="13" fill="#c15f3c"/><text x="36" y="561" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">7</text><text x="60" y="551" font-size="15" font-weight="700" fill="#141413">Claude: 見て確かめ、ページに貼る</text><text x="60" y="572" font-size="13" fill="#3d3d3a">問題なければ、GitHub Pagesで公開</text><g font-size="13" fill="#3d3d3a"><rect x="12" y="600" width="14" height="14" rx="3" fill="#fdf3d8" stroke="#b8860b" stroke-width="2"/><text x="32" y="612">自分</text><rect x="76" y="600" width="14" height="14" rx="3" fill="#f6e6dd" stroke="#c15f3c" stroke-width="2"/><text x="96" y="612">Claude</text><rect x="156" y="600" width="14" height="14" rx="3" fill="#e6eef8" stroke="#3b6ea5" stroke-width="2"/><text x="176" y="612">GitHub</text><rect x="240" y="600" width="14" height="14" rx="3" fill="#e4f2e4" stroke="#2f7d32" stroke-width="2"/><text x="260" y="612">Cloudflare</text></g></svg>
+<svg viewBox="0 0 360 624" role="img" aria-label="画像ができるまで。自分が頼み、Claudeが説明文を書いて送り、GitHub Actionsが起動してCloudflareに説明文を送り、画像を受け取って保存し、Claudeが確かめてページに貼る"><rect x="12" y="8" width="336" height="64" rx="10" fill="#fdf3d8" stroke="#b8860b" stroke-width="2"/><circle cx="36" cy="40" r="13" fill="#b8860b"/><text x="36" y="45" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">1</text><text x="60" y="35" font-size="15" font-weight="700" fill="#141413">自分: 画像がほしいと頼む</text><text x="60" y="56" font-size="13" fill="#3d3d3a">最初に1回だけ、鍵もSecretsに登録</text><path d="M180 74 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 86 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="94" width="336" height="64" rx="10" fill="#f6e6dd" stroke="#c15f3c" stroke-width="2"/><circle cx="36" cy="126" r="13" fill="#c15f3c"/><text x="36" y="131" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">2</text><text x="60" y="121" font-size="15" font-weight="700" fill="#141413">Claude: 説明文を書いて送る</text><text x="60" y="142" font-size="13" fill="#3d3d3a">image-prompts.json をGitHubへ</text><path d="M180 160 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 172 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="180" width="336" height="64" rx="10" fill="#e6eef8" stroke="#3b6ea5" stroke-width="2"/><circle cx="36" cy="212" r="13" fill="#3b6ea5"/><text x="36" y="217" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">3</text><text x="60" y="207" font-size="15" font-weight="700" fill="#141413">GitHub: Actionsを自動で起動</text><text x="60" y="228" font-size="13" fill="#3d3d3a">一覧に注文が足されたことが合図</text><path d="M180 246 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 258 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="266" width="336" height="64" rx="10" fill="#e6eef8" stroke="#3b6ea5" stroke-width="2"/><circle cx="36" cy="298" r="13" fill="#3b6ea5"/><text x="36" y="303" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">4</text><text x="60" y="293" font-size="15" font-weight="700" fill="#141413">Actions: 説明文を1件ずつ送る</text><text x="60" y="314" font-size="13" fill="#3d3d3a">鍵はSecretsから読む(表に出ない)</text><path d="M180 332 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 344 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="352" width="336" height="64" rx="10" fill="#e4f2e4" stroke="#2f7d32" stroke-width="2"/><circle cx="36" cy="384" r="13" fill="#2f7d32"/><text x="36" y="389" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">5</text><text x="60" y="379" font-size="15" font-weight="700" fill="#141413">Cloudflare: 画像を作って返す</text><text x="60" y="400" font-size="13" fill="#3d3d3a">FLUX.1 schnell が1024×1024の絵に</text><path d="M180 418 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 430 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="438" width="336" height="64" rx="10" fill="#e6eef8" stroke="#3b6ea5" stroke-width="2"/><circle cx="36" cy="470" r="13" fill="#3b6ea5"/><text x="36" y="475" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">6</text><text x="60" y="465" font-size="15" font-weight="700" fill="#141413">Actions: 画像を保存する</text><text x="60" y="486" font-size="13" fill="#3d3d3a">リポジトリに自動でコミット</text><path d="M180 504 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 516 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="524" width="336" height="64" rx="10" fill="#f6e6dd" stroke="#c15f3c" stroke-width="2"/><circle cx="36" cy="556" r="13" fill="#c15f3c"/><text x="36" y="561" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">7</text><text x="60" y="551" font-size="15" font-weight="700" fill="#141413">Claude: 見て確かめ、ページに貼る</text><text x="60" y="572" font-size="13" fill="#3d3d3a">問題なければ、GitHub Pagesで公開</text><g font-size="13" fill="#3d3d3a"><rect x="12" y="600" width="14" height="14" rx="3" fill="#fdf3d8" stroke="#b8860b" stroke-width="2"/><text x="32" y="612">自分</text><rect x="76" y="600" width="14" height="14" rx="3" fill="#f6e6dd" stroke="#c15f3c" stroke-width="2"/><text x="96" y="612">Claude</text><rect x="156" y="600" width="14" height="14" rx="3" fill="#e6eef8" stroke="#3b6ea5" stroke-width="2"/><text x="176" y="612">GitHub</text><rect x="240" y="600" width="14" height="14" rx="3" fill="#e4f2e4" stroke="#2f7d32" stroke-width="2"/><text x="260" y="612">Cloudflare</text></g></svg>
 :::
 
 ### なぜ、自分で説明文を書いていないのに画像ができたのか
 
-**説明文を書いたのは、Claudeです。** 今回は「画像生成のしくみを作って」と頼んだだけでした。Claudeが、動作を確かめるための説明文(机の絵、電球の絵など)を一覧に書き、GitHubへ送りました。送った時点で一覧が変わるので、Actionsが自動で動き、画像ができました。
+**説明文を書いたのは、Claudeです。** 今回は「画像生成のしくみを作って」と頼んだだけでした。Claudeが、動作を確かめるための説明文(机の絵、電球の絵など)を説明文の一覧に書き足し、GitHubへ送りました。一覧に注文が足されたので、Actionsが自動で動き、画像ができました。
 
 :::compare 図: 説明文を決めるのは誰か
 場合 | 説明文を書く人 | 自分のすること
@@ -86,7 +116,7 @@ Claude: 見て確かめて貼る | 問題のある画像は使わない
 一覧を直接直す | 自分 | `image-prompts.json` を書いて送る
 :::
 
-どの場合も、**一覧が変わる→Actionsが動く→画像ができる**は同じです。
+どの場合も、**一覧に注文が足される→Actionsが動く→画像ができる**は同じです。
 
 ## 手順
 
@@ -132,7 +162,7 @@ CLOUDFLARE_ACCOUNT_ID | 手順1のアカウントID
 - 画像は Cloudflare Workers AI の @cf/black-forest-labs/flux-1-schnell で作る
 - 説明文の一覧は data/image-prompts.json。項目は id、prompt、steps
 - tools/gen_image.py が、まだない画像だけを作って docs/img/gen/ に保存する。Pythonの標準ライブラリだけで書く
-- GitHub Actions の設定は .github/workflows/generate-images.yml。一覧が変わったときと、手動で動く
+- GitHub Actions の設定は .github/workflows/generate-images.yml。説明文の一覧に注文が足されたときと、手動で動く
 - 鍵は Secrets の CLOUDFLARE_API_TOKEN と CLOUDFLARE_ACCOUNT_ID から読む。表示もファイルへの書き出しもしない
 - 1回で作る枚数に上限を付ける
 - 失敗したときは、Cloudflareの返事の本文を表示する
@@ -266,6 +296,23 @@ seedを送って400エラー | seedを外す。同じ説明文でも、毎回違
 実在メーカーのロゴに似た絵が入った(机の絵5枚中2枚) | 公開せず、作り直した。「ロゴなし」と書いても入ることがあった
 steps=8の効果が分からない | 同じ絵で比べられないため、判断できない。時間はどちらも数秒
 :::
+
+## 容量の目安
+
+画像を増やし続けると、GitHubの容量の上限に近づきます。公式の上限と、今回の画像から出した目安です。
+
+:::compare 図: 容量の上限と目安
+項目 | 上限(公式) | 今回の目安
+リポジトリの大きさ | 推奨1GBまで | 画像1枚が約180〜520KB。約2,000枚で1GB(見積もり)
+公開するサイトの大きさ | 1GBまで | 同上
+1か月の転送量 | 100GBまで(目安で、厳密な上限ではない) | 1ページに4枚貼ると約1.6MB。月に約6万回の表示まで(見積もり)
+:::
+
+注意することが2つあります。
+- **画像を消しても、履歴には残ります。** リポジトリの大きさは、履歴も含めて増えます。作り直しが多いほど、早く増えます。
+- **増えたら対策します。** 画像を小さくする(大きさを下げる、圧縮する)、使わない画像を整理する、のどちらかです。Claudeに頼めます。
+
+数字は、公式の説明と今回の画像の大きさからの見積もりです。実際の大きさは、GitHubのリポジトリの画面で確かめられます。
 
 ## うまくいかないとき
 
