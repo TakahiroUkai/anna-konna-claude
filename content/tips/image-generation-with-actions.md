@@ -69,6 +69,25 @@ GitHub Actions: 画像を作る | 一覧が変わると自動で動き、保存�
 Claude: 見て確かめて貼る | 問題のある画像は使わない
 :::
 
+## 画像ができるまで
+
+:::svg 図: 5つのしくみのつながり(上から下へ進む)
+<svg viewBox="0 0 360 624" role="img" aria-label="画像ができるまで。自分が頼み、Claudeが説明文を書いて送り、GitHub Actionsが起動してCloudflareに説明文を送り、画像を受け取って保存し、Claudeが確かめてページに貼る"><rect x="12" y="8" width="336" height="64" rx="10" fill="#fdf3d8" stroke="#b8860b" stroke-width="2"/><circle cx="36" cy="40" r="13" fill="#b8860b"/><text x="36" y="45" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">1</text><text x="60" y="35" font-size="15" font-weight="700" fill="#141413">自分: 画像がほしいと頼む</text><text x="60" y="56" font-size="13" fill="#3d3d3a">最初に1回だけ、鍵もSecretsに登録</text><path d="M180 74 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 86 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="94" width="336" height="64" rx="10" fill="#f6e6dd" stroke="#c15f3c" stroke-width="2"/><circle cx="36" cy="126" r="13" fill="#c15f3c"/><text x="36" y="131" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">2</text><text x="60" y="121" font-size="15" font-weight="700" fill="#141413">Claude: 説明文を書いて送る</text><text x="60" y="142" font-size="13" fill="#3d3d3a">image-prompts.json をGitHubへ</text><path d="M180 160 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 172 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="180" width="336" height="64" rx="10" fill="#e6eef8" stroke="#3b6ea5" stroke-width="2"/><circle cx="36" cy="212" r="13" fill="#3b6ea5"/><text x="36" y="217" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">3</text><text x="60" y="207" font-size="15" font-weight="700" fill="#141413">GitHub: Actionsを自動で起動</text><text x="60" y="228" font-size="13" fill="#3d3d3a">その一覧が変わったことが合図</text><path d="M180 246 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 258 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="266" width="336" height="64" rx="10" fill="#e6eef8" stroke="#3b6ea5" stroke-width="2"/><circle cx="36" cy="298" r="13" fill="#3b6ea5"/><text x="36" y="303" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">4</text><text x="60" y="293" font-size="15" font-weight="700" fill="#141413">Actions: 説明文を1件ずつ送る</text><text x="60" y="314" font-size="13" fill="#3d3d3a">鍵はSecretsから読む(表に出ない)</text><path d="M180 332 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 344 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="352" width="336" height="64" rx="10" fill="#e4f2e4" stroke="#2f7d32" stroke-width="2"/><circle cx="36" cy="384" r="13" fill="#2f7d32"/><text x="36" y="389" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">5</text><text x="60" y="379" font-size="15" font-weight="700" fill="#141413">Cloudflare: 画像を作って返す</text><text x="60" y="400" font-size="13" fill="#3d3d3a">FLUX.1 schnell が1024×1024の絵に</text><path d="M180 418 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 430 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="438" width="336" height="64" rx="10" fill="#e6eef8" stroke="#3b6ea5" stroke-width="2"/><circle cx="36" cy="470" r="13" fill="#3b6ea5"/><text x="36" y="475" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">6</text><text x="60" y="465" font-size="15" font-weight="700" fill="#141413">Actions: 画像を保存する</text><text x="60" y="486" font-size="13" fill="#3d3d3a">リポジトリに自動でコミット</text><path d="M180 504 v16" stroke="#5e5d59" stroke-width="2" fill="none"/><path d="M173 516 l7 8 l7 -8 z" fill="#5e5d59"/><rect x="12" y="524" width="336" height="64" rx="10" fill="#f6e6dd" stroke="#c15f3c" stroke-width="2"/><circle cx="36" cy="556" r="13" fill="#c15f3c"/><text x="36" y="561" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">7</text><text x="60" y="551" font-size="15" font-weight="700" fill="#141413">Claude: 見て確かめ、ページに貼る</text><text x="60" y="572" font-size="13" fill="#3d3d3a">問題なければ、GitHub Pagesで公開</text><g font-size="13" fill="#3d3d3a"><rect x="12" y="600" width="14" height="14" rx="3" fill="#fdf3d8" stroke="#b8860b" stroke-width="2"/><text x="32" y="612">自分</text><rect x="76" y="600" width="14" height="14" rx="3" fill="#f6e6dd" stroke="#c15f3c" stroke-width="2"/><text x="96" y="612">Claude</text><rect x="156" y="600" width="14" height="14" rx="3" fill="#e6eef8" stroke="#3b6ea5" stroke-width="2"/><text x="176" y="612">GitHub</text><rect x="240" y="600" width="14" height="14" rx="3" fill="#e4f2e4" stroke="#2f7d32" stroke-width="2"/><text x="260" y="612">Cloudflare</text></g></svg>
+:::
+
+### なぜ、自分で説明文を書いていないのに画像ができたのか
+
+**説明文を書いたのは、Claudeです。** 今回は「画像生成のしくみを作って」と頼んだだけでした。Claudeが、動作を確かめるための説明文(机の絵、電球の絵など)を一覧に書き、GitHubへ送りました。送った時点で一覧が変わるので、Actionsが自動で動き、画像ができました。
+
+:::compare 図: 説明文を決めるのは誰か
+場合 | 説明文を書く人 | 自分のすること
+今回(動作の確認) | Claude | 「しくみを作って」と頼むだけ
+好きな絵がほしい | 自分が文章で伝え、Claudeが英語にして一覧に書く | 「○○の絵がほしい」と頼む
+一覧を直接直す | 自分 | `image-prompts.json` を書いて送る
+:::
+
+どの場合も、**一覧が変わる→Actionsが動く→画像ができる**は同じです。
+
 ## 手順
 
 ### 1. Cloudflareでトークンを取る
@@ -122,7 +141,7 @@ Secrets は登録済みです。書き終えたらGitHubに送り、Actionsの�
 公式ドキュメントで確認できない入力項目は、使わないでください。
 :::
 
-### 4. 説明文の一覧を書く
+### 4. 説明文の一覧(ふつうはClaudeが書く)
 
 :::prompt data/image-prompts.json の形
 [
@@ -142,7 +161,7 @@ steps | 仕上げの回数 | 1〜8、初期値4
 seed | 同じ絵を作り直すための値 | **送ると400エラー。使わない**
 :::
 
-一覧を保存してGitHubに送ると、Actionsが自動で動きます。
+自分で直す場合は、保存してGitHubに送ります。送ると、Actionsが自動で動きます。
 
 ### 5. 画像を見て、貼ってもらう
 
