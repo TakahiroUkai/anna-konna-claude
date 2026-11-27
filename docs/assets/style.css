@@ -246,3 +246,8 @@ details.howto summary { cursor: pointer; font-weight: 700; font-size: .95rem; }
   .cheatsheet .prompt pre { font-size: .82rem; line-height: 1.6; padding: .5rem .7rem; }
 }
 .prompt-bar .copy { white-space: nowrap; flex-shrink: 0; }
+
+.imgs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .9rem; }
+.imgs li { margin: 0; min-width: 0; }
+.imgs img { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
+.imgs p { margin: .45rem 0 0; font-size: .86rem; color: var(--muted); line-height: 1.7; }

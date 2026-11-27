@@ -743,5 +743,14 @@
     "features": [
       "skills"
     ]
+  },
+  {
+    "slug": "image-generation-with-actions",
+    "title": "Claudeに頼んで、無料のAIで画像を作り、GitHubのページに貼る",
+    "level": "intermediate",
+    "purpose": "build",
+    "features": [
+      "claude-code"
+    ]
   }
 ]

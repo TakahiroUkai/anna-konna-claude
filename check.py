@@ -102,6 +102,15 @@ for p in tips + news + guides:
             err(f"解説にscriptやon*属性がある: {p.name}")
         if "RULES.md" in body or "style.md" in body:
             err(f"規則ファイルの話が公開ページにある: {p.name}")
+    for blk in re.findall(r"^:::image[^\n]*\n(.*?)\n^:::", body, re.S | re.M):
+        for line in blk.splitlines():
+            if not line.strip():
+                continue
+            parts = [x.strip() for x in line.split("|")]
+            if not (ROOT / "docs" / parts[0]).is_file():
+                err(f"画像ファイルがありません {parts[0]}: {p.name}")
+            if len(parts) < 2 or not parts[1]:
+                err(f"画像の代替テキストがありません {parts[0]}: {p.name}")
     heads = re.findall(r"^## (.+)$", body, re.M)
     if is_tip:
         for need in ("ねらい", "準備", "手順", "うまくいかない"):

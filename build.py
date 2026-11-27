@@ -40,6 +40,8 @@ GLOSSARY = json.loads((ROOT / "data" / "glossary.json").read_text(encoding="utf-
 _TERM_ID = {w: g["id"] for g in GLOSSARY for w in g.get("link", [])}
 _TERM_RE = re.compile("|".join(re.escape(w) for w in sorted(_TERM_ID, key=len, reverse=True))) if _TERM_ID else None
 _LINKER = {"root": None, "seen": set()}
+_RES = ROOT / "data" / "image-results.json"
+IMAGE_RESULTS = json.loads(_RES.read_text(encoding="utf-8")) if _RES.exists() else {}  # 生成した画像の幅・高さなど
 
 LEVELS = {l["id"]: l for l in CONFIG["levels"]}
 PURPOSES = {p["id"]: p for p in CONFIG["purposes"]}
@@ -245,6 +247,7 @@ def render_fig(head, lines):
     :::prompt 見出し    行: そのまま使う文章(空行も保持。コピーボタンつき)
     :::compare 見出し   行: 左 | 右 (1行目は表の見出し)
     :::note 見出し      行: 注意書きの段落
+    :::image 見出し     行: 画像のパス(docs/からの相対) | 代替テキスト | 説明(任意)
     """
     kind, _, title = head.partition(" ")
     cap = f"<figcaption>{inline(title)}</figcaption>" if title else ""
@@ -263,6 +266,19 @@ def render_fig(head, lines):
         return (f'<figure class="fig fig-output">{cap}<div class="output">'
                 f'<div class="output-bar"><span>実際に出力された例(実行のたびに結果は変わります)</span></div>'
                 f'<pre><code>{esc(text)}</code></pre></div></figure>')
+    if kind == "image":
+        items = ""
+        for l in lines:
+            if not l.strip():
+                continue
+            parts = [c.strip() for c in l.split("|")]
+            src, alt = parts[0], (parts[1] if len(parts) > 1 else "")
+            note = parts[2] if len(parts) > 2 else ""
+            size = IMAGE_RESULTS.get(Path(src).stem, {})
+            wh = f' width="{size["width"]}" height="{size["height"]}"' if size.get("width") and size.get("height") else ""
+            cp = f"<p>{lt(inline(note))}</p>" if note else ""
+            items += f'<li><img src="{esc((_LINKER["root"] or "") + src)}" alt="{esc(alt)}" loading="lazy"{wh}>{cp}</li>'
+        return f'<figure class="fig fig-images">{cap}<ul class="imgs">{items}</ul></figure>'
     rows = [[c.strip() for c in l.split("|")] for l in lines if l.strip()]
     if kind == "table":
         head_row, body_rows = rows[0], rows[1:]

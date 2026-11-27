@@ -913,5 +913,105 @@
   "link": [
    "Install as app"
   ]
+ },
+ {
+  "id": "github-actions",
+  "term": "GitHub Actions(ギットハブ アクションズ)",
+  "reading": "ぎっとはぶ あくしょんず",
+  "category": "画像生成と自動化",
+  "explain": "GitHubの上で、決めた作業を自動で実行してくれる仕組みです。「ファイルが変わったら動く」「ボタンを押したら動く」のように、動くきっかけを決められます。",
+  "link": [
+   "GitHub Actions"
+  ]
+ },
+ {
+  "id": "workflow",
+  "term": "ワークフロー",
+  "reading": "わーくふろー",
+  "category": "画像生成と自動化",
+  "explain": "GitHub Actionsで、自動で行う作業の手順を書いた設定ファイルです。リポジトリの「.github/workflows」という場所に置きます。",
+  "link": [
+   "ワークフロー"
+  ]
+ },
+ {
+  "id": "github-secrets",
+  "term": "Secrets(シークレット)",
+  "reading": "しーくれっつ",
+  "category": "画像生成と自動化",
+  "explain": "GitHubのリポジトリに、APIキーなどの秘密の値をしまっておく場所です。保存したあとは値を見られず、Actionsの実行中にだけ使えます。",
+  "link": [
+   "Secrets"
+  ]
+ },
+ {
+  "id": "commit",
+  "term": "コミット",
+  "reading": "こみっと",
+  "category": "画像生成と自動化",
+  "explain": "ファイルの変更を、1まとまりの記録として保存することです。いつ、何を変えたかが、あとから見られます。",
+  "link": [
+   "コミット"
+  ]
+ },
+ {
+  "id": "github-pages",
+  "term": "GitHub Pages(ギットハブ ペイジズ)",
+  "reading": "ぎっとはぶ ぺいじず",
+  "category": "画像生成と自動化",
+  "explain": "GitHubのリポジトリに置いたファイルを、Webサイトとして公開する仕組みです。",
+  "link": [
+   "GitHub Pages"
+  ]
+ },
+ {
+  "id": "workers-ai",
+  "term": "Cloudflare Workers AI(クラウドフレア ワーカーズ エーアイ)",
+  "reading": "くらうどふれあ わーかーず えーあい",
+  "category": "画像生成と自動化",
+  "explain": "Cloudflareというサービスが提供する、公開されているAIモデルを動かせる仕組みです。文章を作るAIや、画像を作るAIなどがあります。",
+  "link": [
+   "Cloudflare Workers AI"
+  ]
+ },
+ {
+  "id": "neuron",
+  "term": "ニューロン(Workers AIの料金の単位)",
+  "reading": "にゅーろん",
+  "category": "画像生成と自動化",
+  "explain": "Cloudflare Workers AIで、AIを動かした量を数える単位です。1日に10,000ニューロンまでは無料で、それを超えると有料の契約が必要です(確認日時点)。",
+  "link": [
+   "ニューロン"
+  ]
+ },
+ {
+  "id": "flux-schnell",
+  "term": "FLUX.1 schnell(フラックス シュネル)",
+  "reading": "ふらっくす しゅねる",
+  "category": "画像生成と自動化",
+  "explain": "文章の説明から画像を作るAIモデルのひとつです。少ない回数の描き直しで、速く画像ができるのが特徴です。",
+  "link": [
+   "FLUX.1 schnell"
+  ]
+ },
+ {
+  "id": "steps",
+  "term": "ステップ数(steps)",
+  "reading": "すてっぷすう",
+  "category": "画像生成と自動化",
+  "explain": "画像を作るAIが、絵を少しずつ仕上げていく回数です。増やすと仕上がりが変わることがありますが、そのぶん時間と使用量も増えます。",
+  "link": [
+   "ステップ数"
+  ]
+ },
+ {
+  "id": "seed",
+  "term": "seed(シード)",
+  "reading": "しーど",
+  "category": "画像生成と自動化",
+  "explain": "画像を作るときの、乱数の「種」の数字です。同じ種を指定できれば、同じ説明文から、同じ絵を作り直しやすくなります。",
+  "link": [
+   "seed"
+  ]
  }
 ]
